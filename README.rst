@@ -9,7 +9,7 @@ pyclmuapp: A Python Package for Integration and Execution of the Urban Climate M
    :target: https://github.com/envdes/pyclmuapp
 
 .. |Docs| image:: https://img.shields.io/badge/docs-pyclmuapp-brightgreen.svg
-   :target: https://junjieyu-uom.github.io/pyclmuapp/
+   :target: https://envdes.github.io/pyclmuapp/
 
 .. |license| image:: https://img.shields.io/badge/License-MIT-blue.svg
    :target: https://github.com/envdes/pyclmuapp/blob/main/LICENSE
@@ -44,7 +44,7 @@ Step 2: install using pip::
 
 (optional) install from source:: 
 
-    $ git clone https://github.com/junjieyu-uom/pyclmuapp.git
+    $ git clone https://github.com/envdes/pyclmuapp.git
     $ cd pyclmuapp
     $ python setup.py pyclmuapp
 
@@ -191,8 +191,8 @@ Optional
 - **start_month/START_MONT**: Param for get_forcing. Start month, default is 1.
 - **end_month/END_MONTH**: Param for get_forcing. End month, default is 12.
 
-Please check `online documentation <https://junjieyu-uom.github.io/pyclmuapp/>`_ for more information.
+Please check `online documentation <https://envdes.github.io/pyclmuapp/>`_ for more information.
 
 How to ask for help
 -------------------
-The `GitHub issue tracker <https://junjieyu-uom.github.io/pyclmuapp/issues>`_ is the primary place for bug reports. 
+The `GitHub issue tracker <https://envdes.github.io/pyclmuapp/issues>`_ is the primary place for bug reports. 
