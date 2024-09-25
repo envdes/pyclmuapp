@@ -30,7 +30,7 @@ $ pip install pyclmuapp
 ---
 
 ```bash
-$ git clone https://github.com/JunjieYU-UoM/pyclmuapp
+$ git clone https://github.com/envdes/pyclmuapp
 $ cd pyclmuapp
 $ python setup.py install
 ```
