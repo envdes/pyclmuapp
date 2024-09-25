@@ -1,0 +1,470 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Example 4: Urban adaptation benefit across different region &mdash; pyclmuapp v0.0.0 documentation</title>
+      <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=80d5e7a1" />
+      <link rel="stylesheet" type="text/css" href="../../_static/css/theme.css?v=19f00094" />
+      <link rel="stylesheet" type="text/css" href="../../_static/nbsphinx-code-cells.css?v=2aa19091" />
+
+  
+  <!--[if lt IE 9]>
+    <script src="../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script src="../../_static/jquery.js?v=5d32c60e"></script>
+        <script src="../../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+        <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js?v=f3b75425"></script>
+        <script src="../../_static/doctools.js?v=888ff710"></script>
+        <script src="../../_static/sphinx_highlight.js?v=4825356b"></script>
+        <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+        <script>window.MathJax = {"tex": {"inlineMath": [["$", "$"], ["\\(", "\\)"]], "processEscapes": true}, "options": {"ignoreHtmlClass": "tex2jax_ignore|mathjax_ignore|document", "processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+        <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script src="../../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="../../index.html" class="icon icon-home">
+            pyclmuapp
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Overview</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../overview/overview.html">About</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../overview/installation.html">Installation</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Basic usage</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../basic/basic_usage_inter.html">Basic usage: Web interface</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../basic/basic_usage_cli.html">Basic usage: Command line</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Python: usp mode</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../usp/example1_usp_basic.html">Example 1: Basic usage</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../usp/example2_usp_global_warming.html">Example 2: How does global warming will affect urban climates?</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../usp/example3_usp_adaptation.html">Example 3: Urban climate adaption</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Python: created input files</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../own/prepare_forcing_from_era5.html">Make your own forcing data from ERA5</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../own/prepare_urbansurf_10evlurb.html">Make your own surface data</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Spinup</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../usp/usp_spinup_mode.html">How to spinup in USP mode</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../spinup/spinup_workstation.html">Spinup in CLMU</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">HPC</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../hpc/HPC.html">pyclmuapp on HPC: Command line</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../hpc/singularity.html">pyclmuapp on HPC: Python</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Validation</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../val/urban_plumber_usp.html">Urban-Plumber2: UK-Kin site CLMU5 simulation</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Python: pts mode</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="example1_workstation.html">Example 1: Run a simple simulation with a single case</a></li>
+<li class="toctree-l1"><a class="reference internal" href="example2_workstation.html">Example 2: How does global warming will affect urban climates?</a></li>
+<li class="toctree-l1"><a class="reference internal" href="example3_workstation.html">Example 3: Urban climate adaption</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">API Reference</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../modules.html">pyclmuapp</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">pyclmuapp</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../../index.html" class="icon icon-home" aria-label="Home"></a></li>
+      <li class="breadcrumb-item active">Example 4: Urban adaptation benefit across different region</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../../_sources/notebooks/pts/example4_workstation.ipynb.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="Example-4:-Urban-adaptation-benefit-across-different-region">
+<h1>Example 4: Urban adaptation benefit across different region<a class="headerlink" href="#Example-4:-Urban-adaptation-benefit-across-different-region" title="Permalink to this heading"></a></h1>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[1]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">pyclmuapp</span> <span class="kn">import</span> <span class="n">pts_clmu</span>
+<span class="kn">from</span> <span class="nn">pyclmuapp</span> <span class="kn">import</span> <span class="n">usp_clmu</span>
+<span class="kn">from</span> <span class="nn">pyclmuapp.getcity</span> <span class="kn">import</span> <span class="o">*</span>
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+<span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+<span class="kn">import</span> <span class="nn">os</span>
+</pre></div>
+</div>
+</div>
+<section id="1-PTS-mode:-using-the-CESM-provide-global-data">
+<h2>1 PTS mode: using the CESM provide global data<a class="headerlink" href="#1-PTS-mode:-using-the-CESM-provide-global-data" title="Permalink to this heading"></a></h2>
+<p>Using the PTS mdoe to explore the urban adaptation potential of the 24 selected cities.</p>
+<p>Only the high-density urban (HD) is considered in this experiment as HD has an obvious urban effect and is ubiquitous in each grid. Each HD urban surface parameter increased decreased 0.2 respectively, and then the differences of urban-related variables in case of changed parameters and default were compared.</p>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[2]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Cities&#39; lat and lon is from https://www.lboro.ac.uk/microsites/geography/gawc/world2020t.html</span>
+<span class="c1"># and then use getcity.py to get the nearest grid cell in CESM</span>
+<span class="n">case_loc</span> <span class="o">=</span> <span class="p">{</span><span class="mi">1</span><span class="p">:</span> <span class="p">{</span><span class="s1">&#39;case_lat&#39;</span><span class="p">:</span> <span class="s1">&#39;51.36&#39;</span><span class="p">,</span> <span class="s1">&#39;case_lon&#39;</span><span class="p">:</span> <span class="s1">&#39;0.0&#39;</span><span class="p">,</span> <span class="s1">&#39;city&#39;</span><span class="p">:</span> <span class="s1">&#39;London&#39;</span><span class="p">},</span>
+            <span class="mi">2</span><span class="p">:</span> <span class="p">{</span><span class="s1">&#39;case_lat&#39;</span><span class="p">:</span> <span class="s1">&#39;40.05&#39;</span><span class="p">,</span> <span class="s1">&#39;case_lon&#39;</span><span class="p">:</span> <span class="s1">&#39;-73.75&#39;</span><span class="p">,</span> <span class="s1">&#39;city&#39;</span><span class="p">:</span> <span class="s1">&#39;New_York&#39;</span><span class="p">},</span>
+            <span class="mi">3</span><span class="p">:</span> <span class="p">{</span><span class="s1">&#39;case_lat&#39;</span><span class="p">:</span> <span class="s1">&#39;40.05&#39;</span><span class="p">,</span> <span class="s1">&#39;case_lon&#39;</span><span class="p">:</span> <span class="s1">&#39;116.25&#39;</span><span class="p">,</span> <span class="s1">&#39;city&#39;</span><span class="p">:</span> <span class="s1">&#39;Beijing&#39;</span><span class="p">},</span>
+            <span class="mi">4</span><span class="p">:</span> <span class="p">{</span><span class="s1">&#39;case_lat&#39;</span><span class="p">:</span> <span class="s1">&#39;22.15&#39;</span><span class="p">,</span> <span class="s1">&#39;case_lon&#39;</span><span class="p">:</span> <span class="s1">&#39;113.75&#39;</span><span class="p">,</span> <span class="s1">&#39;city&#39;</span><span class="p">:</span> <span class="s1">&#39;Hong_Kong&#39;</span><span class="p">},</span>
+            <span class="mi">5</span><span class="p">:</span> <span class="p">{</span><span class="s1">&#39;case_lat&#39;</span><span class="p">:</span> <span class="s1">&#39;31.57&#39;</span><span class="p">,</span> <span class="s1">&#39;case_lon&#39;</span><span class="p">:</span> <span class="s1">&#39;121.25&#39;</span><span class="p">,</span> <span class="s1">&#39;city&#39;</span><span class="p">:</span> <span class="s1">&#39;Shanghai&#39;</span><span class="p">},</span>
+            <span class="mi">6</span><span class="p">:</span> <span class="p">{</span><span class="s1">&#39;case_lat&#39;</span><span class="p">:</span> <span class="s1">&#39;35.34&#39;</span><span class="p">,</span> <span class="s1">&#39;case_lon&#39;</span><span class="p">:</span> <span class="s1">&#39;140.0&#39;</span><span class="p">,</span> <span class="s1">&#39;city&#39;</span><span class="p">:</span> <span class="s1">&#39;Tokyo&#39;</span><span class="p">},</span>
+            <span class="mi">7</span><span class="p">:</span> <span class="p">{</span><span class="s1">&#39;case_lat&#39;</span><span class="p">:</span> <span class="s1">&#39;24.97&#39;</span><span class="p">,</span> <span class="s1">&#39;case_lon&#39;</span><span class="p">:</span> <span class="s1">&#39;55.0&#39;</span><span class="p">,</span> <span class="s1">&#39;city&#39;</span><span class="p">:</span> <span class="s1">&#39;Dubai&#39;</span><span class="p">},</span>
+            <span class="mi">8</span><span class="p">:</span> <span class="p">{</span><span class="s1">&#39;case_lat&#39;</span><span class="p">:</span> <span class="s1">&#39;48.53&#39;</span><span class="p">,</span> <span class="s1">&#39;case_lon&#39;</span><span class="p">:</span> <span class="s1">&#39;2.5&#39;</span><span class="p">,</span> <span class="s1">&#39;city&#39;</span><span class="p">:</span> <span class="s1">&#39;Paris&#39;</span><span class="p">},</span>
+            <span class="mi">9</span><span class="p">:</span> <span class="p">{</span><span class="s1">&#39;case_lat&#39;</span><span class="p">:</span> <span class="s1">&#39;1.41&#39;</span><span class="p">,</span> <span class="s1">&#39;case_lon&#39;</span><span class="p">:</span> <span class="s1">&#39;103.75&#39;</span><span class="p">,</span> <span class="s1">&#39;city&#39;</span><span class="p">:</span> <span class="s1">&#39;Singapore&#39;</span><span class="p">},</span>
+            <span class="mi">10</span><span class="p">:</span> <span class="p">{</span><span class="s1">&#39;case_lat&#39;</span><span class="p">:</span> <span class="s1">&#39;53.25&#39;</span><span class="p">,</span> <span class="s1">&#39;case_lon&#39;</span><span class="p">:</span> <span class="s1">&#39;6.25&#39;</span><span class="p">,</span> <span class="s1">&#39;city&#39;</span><span class="p">:</span> <span class="s1">&#39;Amsterdam&#39;</span><span class="p">},</span>
+            <span class="mi">11</span><span class="p">:</span> <span class="p">{</span><span class="s1">&#39;case_lat&#39;</span><span class="p">:</span> <span class="s1">&#39;-6.13&#39;</span><span class="p">,</span> <span class="s1">&#39;case_lon&#39;</span><span class="p">:</span> <span class="s1">&#39;106.25&#39;</span><span class="p">,</span> <span class="s1">&#39;city&#39;</span><span class="p">:</span> <span class="s1">&#39;Jakarta&#39;</span><span class="p">},</span>
+            <span class="mi">12</span><span class="p">:</span> <span class="p">{</span><span class="s1">&#39;case_lat&#39;</span><span class="p">:</span> <span class="s1">&#39;18.38&#39;</span><span class="p">,</span> <span class="s1">&#39;case_lon&#39;</span><span class="p">:</span> <span class="s1">&#39;-98.75&#39;</span><span class="p">,</span> <span class="s1">&#39;city&#39;</span><span class="p">:</span> <span class="s1">&#39;Mexico_City&#39;</span><span class="p">},</span>
+            <span class="mi">13</span><span class="p">:</span> <span class="p">{</span><span class="s1">&#39;case_lat&#39;</span><span class="p">:</span> <span class="s1">&#39;-23.09&#39;</span><span class="p">,</span> <span class="s1">&#39;case_lon&#39;</span><span class="p">:</span> <span class="s1">&#39;-46.25&#39;</span><span class="p">,</span> <span class="s1">&#39;city&#39;</span><span class="p">:</span> <span class="s1">&#39;Sao_Paulo&#39;</span><span class="p">},</span>
+            <span class="mi">14</span><span class="p">:</span> <span class="p">{</span><span class="s1">&#39;case_lat&#39;</span><span class="p">:</span> <span class="s1">&#39;50.42&#39;</span><span class="p">,</span> <span class="s1">&#39;case_lon&#39;</span><span class="p">:</span> <span class="s1">&#39;3.75&#39;</span><span class="p">,</span> <span class="s1">&#39;city&#39;</span><span class="p">:</span> <span class="s1">&#39;Brussels&#39;</span><span class="p">},</span>
+            <span class="mi">15</span><span class="p">:</span> <span class="p">{</span><span class="s1">&#39;case_lat&#39;</span><span class="p">:</span> <span class="s1">&#39;3.3&#39;</span><span class="p">,</span> <span class="s1">&#39;case_lon&#39;</span><span class="p">:</span> <span class="s1">&#39;101.25&#39;</span><span class="p">,</span> <span class="s1">&#39;city&#39;</span><span class="p">:</span> <span class="s1">&#39;Kuala_Lumpur&#39;</span><span class="p">},</span>
+            <span class="mi">16</span><span class="p">:</span> <span class="p">{</span><span class="s1">&#39;case_lat&#39;</span><span class="p">:</span> <span class="s1">&#39;45.71&#39;</span><span class="p">,</span> <span class="s1">&#39;case_lon&#39;</span><span class="p">:</span> <span class="s1">&#39;8.75&#39;</span><span class="p">,</span> <span class="s1">&#39;city&#39;</span><span class="p">:</span> <span class="s1">&#39;Milan&#39;</span><span class="p">},</span>
+            <span class="mi">17</span><span class="p">:</span> <span class="p">{</span><span class="s1">&#39;case_lat&#39;</span><span class="p">:</span> <span class="s1">&#39;-33.46&#39;</span><span class="p">,</span> <span class="s1">&#39;case_lon&#39;</span><span class="p">:</span> <span class="s1">&#39;151.25&#39;</span><span class="p">,</span> <span class="s1">&#39;city&#39;</span><span class="p">:</span> <span class="s1">&#39;Sydney&#39;</span><span class="p">},</span>
+            <span class="mi">18</span><span class="p">:</span> <span class="p">{</span><span class="s1">&#39;case_lat&#39;</span><span class="p">:</span> <span class="s1">&#39;41.94&#39;</span><span class="p">,</span> <span class="s1">&#39;case_lon&#39;</span><span class="p">:</span> <span class="s1">&#39;-87.5&#39;</span><span class="p">,</span> <span class="s1">&#39;city&#39;</span><span class="p">:</span> <span class="s1">&#39;Chicago&#39;</span><span class="p">},</span>
+            <span class="mi">19</span><span class="p">:</span> <span class="p">{</span><span class="s1">&#39;case_lat&#39;</span><span class="p">:</span> <span class="s1">&#39;34.4&#39;</span><span class="p">,</span> <span class="s1">&#39;case_lon&#39;</span><span class="p">:</span> <span class="s1">&#39;-118.75&#39;</span><span class="p">,</span> <span class="s1">&#39;city&#39;</span><span class="p">:</span> <span class="s1">&#39;Los_Angeles&#39;</span><span class="p">},</span>
+            <span class="mi">20</span><span class="p">:</span> <span class="p">{</span><span class="s1">&#39;case_lat&#39;</span><span class="p">:</span> <span class="s1">&#39;55.13&#39;</span><span class="p">,</span> <span class="s1">&#39;case_lon&#39;</span><span class="p">:</span> <span class="s1">&#39;37.5&#39;</span><span class="p">,</span> <span class="s1">&#39;city&#39;</span><span class="p">:</span> <span class="s1">&#39;Moscow&#39;</span><span class="p">},</span>
+            <span class="mi">21</span><span class="p">:</span> <span class="p">{</span><span class="s1">&#39;case_lat&#39;</span><span class="p">:</span> <span class="s1">&#39;43.82&#39;</span><span class="p">,</span> <span class="s1">&#39;case_lon&#39;</span><span class="p">:</span> <span class="s1">&#39;-78.75&#39;</span><span class="p">,</span> <span class="s1">&#39;city&#39;</span><span class="p">:</span> <span class="s1">&#39;Toronto&#39;</span><span class="p">},</span>
+            <span class="mi">22</span><span class="p">:</span> <span class="p">{</span><span class="s1">&#39;case_lat&#39;</span><span class="p">:</span> <span class="s1">&#39;50.42&#39;</span><span class="p">,</span> <span class="s1">&#39;case_lon&#39;</span><span class="p">:</span> <span class="s1">&#39;8.75&#39;</span><span class="p">,</span> <span class="s1">&#39;city&#39;</span><span class="p">:</span> <span class="s1">&#39;Frankfurt&#39;</span><span class="p">},</span>
+            <span class="mi">23</span><span class="p">:</span> <span class="p">{</span><span class="s1">&#39;case_lat&#39;</span><span class="p">:</span> <span class="s1">&#39;40.05&#39;</span><span class="p">,</span> <span class="s1">&#39;case_lon&#39;</span><span class="p">:</span> <span class="s1">&#39;-3.75&#39;</span><span class="p">,</span> <span class="s1">&#39;city&#39;</span><span class="p">:</span> <span class="s1">&#39;Madrid&#39;</span><span class="p">},</span>
+            <span class="mi">24</span><span class="p">:</span> <span class="p">{</span><span class="s1">&#39;case_lat&#39;</span><span class="p">:</span> <span class="s1">&#39;19.32&#39;</span><span class="p">,</span> <span class="s1">&#39;case_lon&#39;</span><span class="p">:</span> <span class="s1">&#39;72.5&#39;</span><span class="p">,</span> <span class="s1">&#39;city&#39;</span><span class="p">:</span> <span class="s1">&#39;Mumbai&#39;</span><span class="p">}}</span>
+</pre></div>
+</div>
+</div>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[3]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># initialize the pts_clmu object</span>
+<span class="k">def</span> <span class="nf">workflow</span><span class="p">(</span><span class="n">case_num</span><span class="p">):</span>
+    <span class="n">pts</span> <span class="o">=</span> <span class="n">pts_clmu</span><span class="p">(</span>
+        <span class="n">pwd</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
+        <span class="n">input_path</span><span class="o">=</span><span class="s2">&quot;/home/zhonghua/p/scratch/CESMDATAROOT/inputdata&quot;</span><span class="p">,</span>
+        <span class="n">output_path</span><span class="o">=</span><span class="s2">&quot;/home/zhonghua/p/scratch/CESMDATAROOT/Archive/lnd/hist&quot;</span><span class="p">,</span>
+        <span class="n">log_path</span><span class="o">=</span><span class="s2">&quot;/home/zhonghua/p/scratch/CESMDATAROOT/CaseOutputs&quot;</span><span class="p">,</span>
+        <span class="n">scripts_path</span> <span class="o">=</span> <span class="s2">&quot;/home/zhonghua/p/scripts&quot;</span><span class="p">,</span>
+        <span class="n">container_type</span><span class="o">=</span><span class="s1">&#39;docker&#39;</span><span class="p">)</span>
+
+    <span class="c1"># set the case configuration</span>
+    <span class="n">pts</span><span class="o">.</span><span class="n">caseconfig</span><span class="p">[</span><span class="s1">&#39;case_length&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="s2">&quot;3&quot;</span>
+    <span class="n">pts</span><span class="o">.</span><span class="n">caseconfig</span><span class="p">[</span><span class="s1">&#39;hist_nhtfrq&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="s1">&#39;1&#39;</span>
+    <span class="n">pts</span><span class="o">.</span><span class="n">caseconfig</span><span class="p">[</span><span class="s1">&#39;STOP_OPTION&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="s2">&quot;nmonths&quot;</span>
+    <span class="n">pts</span><span class="o">.</span><span class="n">caseconfig</span><span class="p">[</span><span class="s1">&#39;hist_mfilt&#39;</span><span class="p">]</span><span class="o">=</span><span class="s1">&#39;240000&#39;</span> <span class="c1"># large number to avoid output with more files</span>
+    <span class="n">pts</span><span class="o">.</span><span class="n">caseconfig</span><span class="p">[</span><span class="s1">&#39;output_murban&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="s1">&#39;True&#39;</span> <span class="c1"># output the whole urban area weather (if True, the output the TBD, HD and MD urban)</span>
+    <span class="n">pts</span><span class="o">.</span><span class="n">caseconfig</span><span class="p">[</span><span class="s1">&#39;mu_urban&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="s2">&quot;&#39;TSA&#39;,&#39;RH2M&#39;&quot;</span> <span class="c1"># output the urban landunit</span>
+    <span class="n">pts</span><span class="o">.</span><span class="n">caseconfig</span><span class="p">[</span><span class="s1">&#39;RUN_STARTDATE&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="s1">&#39;2012-06-01&#39;</span>
+    <span class="n">pts</span><span class="o">.</span><span class="n">caseconfig</span><span class="p">[</span><span class="s1">&#39;DATM_CLMNCEP_YR_START&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="s1">&#39;2012&#39;</span>
+    <span class="n">pts</span><span class="o">.</span><span class="n">caseconfig</span><span class="p">[</span><span class="s1">&#39;DATM_CLMNCEP_YR_END&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="s1">&#39;2012&#39;</span>
+
+    <span class="n">pts</span><span class="o">.</span><span class="n">caseconfig</span><span class="p">[</span><span class="s1">&#39;case_name&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">case_loc</span><span class="p">[</span><span class="n">case_num</span><span class="p">][</span><span class="s1">&#39;city&#39;</span><span class="p">]</span>
+    <span class="n">pts</span><span class="o">.</span><span class="n">caseconfig</span><span class="p">[</span><span class="s1">&#39;case_lat&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">case_loc</span><span class="p">[</span><span class="n">case_num</span><span class="p">][</span><span class="s1">&#39;case_lat&#39;</span><span class="p">]</span>
+    <span class="n">pts</span><span class="o">.</span><span class="n">caseconfig</span><span class="p">[</span><span class="s1">&#39;case_lon&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">case_loc</span><span class="p">[</span><span class="n">case_num</span><span class="p">][</span><span class="s1">&#39;case_lon&#39;</span><span class="p">]</span>
+    <span class="c1"># run the case</span>
+    <span class="n">pts_or</span><span class="o">=</span><span class="n">pts</span><span class="o">.</span><span class="n">run</span><span class="p">(</span><span class="n">iflog</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">cmdlogfile</span><span class="o">=</span><span class="s1">&#39;pts_London.log&#39;</span><span class="p">)</span>
+    <span class="c1"># modify the surface albedo of HD urban, numurbl=1; TBD urban, numurbl=0; MD urban, numurbl=2</span>
+    <span class="c1"># action=0.2 means increase the albedo by 0.2</span>
+    <span class="n">pts</span><span class="o">.</span><span class="n">modify_surf</span><span class="p">(</span><span class="n">var</span><span class="o">=</span><span class="s2">&quot;ALB_ROOF_DIR&quot;</span><span class="p">,</span> <span class="n">action</span><span class="o">=</span><span class="mf">0.2</span><span class="p">,</span> <span class="n">numurbl</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+    <span class="n">pts_surf</span><span class="o">=</span><span class="n">pts</span><span class="o">.</span><span class="n">run</span><span class="p">(</span><span class="n">iflog</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">cmdlogfile</span><span class="o">=</span><span class="s1">&#39;pts.log&#39;</span><span class="p">)</span>
+    <span class="n">pts</span><span class="o">.</span><span class="n">modify_surf</span><span class="p">(</span><span class="n">var</span><span class="o">=</span><span class="s2">&quot;ALB_ROOF_DIR&quot;</span><span class="p">,</span> <span class="n">action</span><span class="o">=-</span><span class="mf">0.2</span><span class="p">,</span> <span class="n">numurbl</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">pts_or</span><span class="p">,</span> <span class="n">pts_surf</span>
+
+<span class="n">result_or</span> <span class="o">=</span> <span class="p">{}</span>
+<span class="n">result_surf</span><span class="o">=</span> <span class="p">{}</span>
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">25</span><span class="p">):</span>
+    <span class="n">result_or</span><span class="p">[</span><span class="n">i</span><span class="p">],</span> <span class="n">result_surf</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="n">workflow</span><span class="p">(</span><span class="n">i</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">result_or</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">result_surf</span><span class="p">)</span>
+<br/></pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+The surface input file has been modified. The modified file is /p/scratch/CESMDATAROOT/inputdata/lnd/clm2/surfdata_map/release-clm5.0.18/surfdata_0.9x1.25_hist_16pfts_Irrig_CMIP6_simyr2000_c190214_modified_London.nc.
+The surface input file has been modified. The modified file is /p/scratch/CESMDATAROOT/inputdata/lnd/clm2/surfdata_map/release-clm5.0.18/surfdata_0.9x1.25_hist_16pfts_Irrig_CMIP6_simyr2000_c190214_modified_London.nc.
+The surface input file has been modified. The modified file is /p/scratch/CESMDATAROOT/inputdata/lnd/clm2/surfdata_map/release-clm5.0.18/surfdata_0.9x1.25_hist_16pfts_Irrig_CMIP6_simyr2000_c190214_modified_New_York.nc.
+The surface input file has been modified. The modified file is /p/scratch/CESMDATAROOT/inputdata/lnd/clm2/surfdata_map/release-clm5.0.18/surfdata_0.9x1.25_hist_16pfts_Irrig_CMIP6_simyr2000_c190214_modified_New_York.nc.
+The surface input file has been modified. The modified file is /p/scratch/CESMDATAROOT/inputdata/lnd/clm2/surfdata_map/release-clm5.0.18/surfdata_0.9x1.25_hist_16pfts_Irrig_CMIP6_simyr2000_c190214_modified_Beijing.nc.
+The surface input file has been modified. The modified file is /p/scratch/CESMDATAROOT/inputdata/lnd/clm2/surfdata_map/release-clm5.0.18/surfdata_0.9x1.25_hist_16pfts_Irrig_CMIP6_simyr2000_c190214_modified_Beijing.nc.
+The surface input file has been modified. The modified file is /p/scratch/CESMDATAROOT/inputdata/lnd/clm2/surfdata_map/release-clm5.0.18/surfdata_0.9x1.25_hist_16pfts_Irrig_CMIP6_simyr2000_c190214_modified_Hong_Kong.nc.
+The surface input file has been modified. The modified file is /p/scratch/CESMDATAROOT/inputdata/lnd/clm2/surfdata_map/release-clm5.0.18/surfdata_0.9x1.25_hist_16pfts_Irrig_CMIP6_simyr2000_c190214_modified_Hong_Kong.nc.
+The surface input file has been modified. The modified file is /p/scratch/CESMDATAROOT/inputdata/lnd/clm2/surfdata_map/release-clm5.0.18/surfdata_0.9x1.25_hist_16pfts_Irrig_CMIP6_simyr2000_c190214_modified_Shanghai.nc.
+The surface input file has been modified. The modified file is /p/scratch/CESMDATAROOT/inputdata/lnd/clm2/surfdata_map/release-clm5.0.18/surfdata_0.9x1.25_hist_16pfts_Irrig_CMIP6_simyr2000_c190214_modified_Shanghai.nc.
+The surface input file has been modified. The modified file is /p/scratch/CESMDATAROOT/inputdata/lnd/clm2/surfdata_map/release-clm5.0.18/surfdata_0.9x1.25_hist_16pfts_Irrig_CMIP6_simyr2000_c190214_modified_Tokyo.nc.
+The surface input file has been modified. The modified file is /p/scratch/CESMDATAROOT/inputdata/lnd/clm2/surfdata_map/release-clm5.0.18/surfdata_0.9x1.25_hist_16pfts_Irrig_CMIP6_simyr2000_c190214_modified_Tokyo.nc.
+The surface input file has been modified. The modified file is /p/scratch/CESMDATAROOT/inputdata/lnd/clm2/surfdata_map/release-clm5.0.18/surfdata_0.9x1.25_hist_16pfts_Irrig_CMIP6_simyr2000_c190214_modified_Dubai.nc.
+The surface input file has been modified. The modified file is /p/scratch/CESMDATAROOT/inputdata/lnd/clm2/surfdata_map/release-clm5.0.18/surfdata_0.9x1.25_hist_16pfts_Irrig_CMIP6_simyr2000_c190214_modified_Dubai.nc.
+The surface input file has been modified. The modified file is /p/scratch/CESMDATAROOT/inputdata/lnd/clm2/surfdata_map/release-clm5.0.18/surfdata_0.9x1.25_hist_16pfts_Irrig_CMIP6_simyr2000_c190214_modified_Paris.nc.
+The surface input file has been modified. The modified file is /p/scratch/CESMDATAROOT/inputdata/lnd/clm2/surfdata_map/release-clm5.0.18/surfdata_0.9x1.25_hist_16pfts_Irrig_CMIP6_simyr2000_c190214_modified_Paris.nc.
+The surface input file has been modified. The modified file is /p/scratch/CESMDATAROOT/inputdata/lnd/clm2/surfdata_map/release-clm5.0.18/surfdata_0.9x1.25_hist_16pfts_Irrig_CMIP6_simyr2000_c190214_modified_Singapore.nc.
+The surface input file has been modified. The modified file is /p/scratch/CESMDATAROOT/inputdata/lnd/clm2/surfdata_map/release-clm5.0.18/surfdata_0.9x1.25_hist_16pfts_Irrig_CMIP6_simyr2000_c190214_modified_Singapore.nc.
+The surface input file has been modified. The modified file is /p/scratch/CESMDATAROOT/inputdata/lnd/clm2/surfdata_map/release-clm5.0.18/surfdata_0.9x1.25_hist_16pfts_Irrig_CMIP6_simyr2000_c190214_modified_Amsterdam.nc.
+The surface input file has been modified. The modified file is /p/scratch/CESMDATAROOT/inputdata/lnd/clm2/surfdata_map/release-clm5.0.18/surfdata_0.9x1.25_hist_16pfts_Irrig_CMIP6_simyr2000_c190214_modified_Amsterdam.nc.
+The surface input file has been modified. The modified file is /p/scratch/CESMDATAROOT/inputdata/lnd/clm2/surfdata_map/release-clm5.0.18/surfdata_0.9x1.25_hist_16pfts_Irrig_CMIP6_simyr2000_c190214_modified_Jakarta.nc.
+The surface input file has been modified. The modified file is /p/scratch/CESMDATAROOT/inputdata/lnd/clm2/surfdata_map/release-clm5.0.18/surfdata_0.9x1.25_hist_16pfts_Irrig_CMIP6_simyr2000_c190214_modified_Jakarta.nc.
+The surface input file has been modified. The modified file is /p/scratch/CESMDATAROOT/inputdata/lnd/clm2/surfdata_map/release-clm5.0.18/surfdata_0.9x1.25_hist_16pfts_Irrig_CMIP6_simyr2000_c190214_modified_Mexico_City.nc.
+The surface input file has been modified. The modified file is /p/scratch/CESMDATAROOT/inputdata/lnd/clm2/surfdata_map/release-clm5.0.18/surfdata_0.9x1.25_hist_16pfts_Irrig_CMIP6_simyr2000_c190214_modified_Mexico_City.nc.
+The surface input file has been modified. The modified file is /p/scratch/CESMDATAROOT/inputdata/lnd/clm2/surfdata_map/release-clm5.0.18/surfdata_0.9x1.25_hist_16pfts_Irrig_CMIP6_simyr2000_c190214_modified_Sao_Paulo.nc.
+The surface input file has been modified. The modified file is /p/scratch/CESMDATAROOT/inputdata/lnd/clm2/surfdata_map/release-clm5.0.18/surfdata_0.9x1.25_hist_16pfts_Irrig_CMIP6_simyr2000_c190214_modified_Sao_Paulo.nc.
+The surface input file has been modified. The modified file is /p/scratch/CESMDATAROOT/inputdata/lnd/clm2/surfdata_map/release-clm5.0.18/surfdata_0.9x1.25_hist_16pfts_Irrig_CMIP6_simyr2000_c190214_modified_Brussels.nc.
+The surface input file has been modified. The modified file is /p/scratch/CESMDATAROOT/inputdata/lnd/clm2/surfdata_map/release-clm5.0.18/surfdata_0.9x1.25_hist_16pfts_Irrig_CMIP6_simyr2000_c190214_modified_Brussels.nc.
+The surface input file has been modified. The modified file is /p/scratch/CESMDATAROOT/inputdata/lnd/clm2/surfdata_map/release-clm5.0.18/surfdata_0.9x1.25_hist_16pfts_Irrig_CMIP6_simyr2000_c190214_modified_Kuala_Lumpur.nc.
+The surface input file has been modified. The modified file is /p/scratch/CESMDATAROOT/inputdata/lnd/clm2/surfdata_map/release-clm5.0.18/surfdata_0.9x1.25_hist_16pfts_Irrig_CMIP6_simyr2000_c190214_modified_Kuala_Lumpur.nc.
+The surface input file has been modified. The modified file is /p/scratch/CESMDATAROOT/inputdata/lnd/clm2/surfdata_map/release-clm5.0.18/surfdata_0.9x1.25_hist_16pfts_Irrig_CMIP6_simyr2000_c190214_modified_Milan.nc.
+The surface input file has been modified. The modified file is /p/scratch/CESMDATAROOT/inputdata/lnd/clm2/surfdata_map/release-clm5.0.18/surfdata_0.9x1.25_hist_16pfts_Irrig_CMIP6_simyr2000_c190214_modified_Milan.nc.
+The surface input file has been modified. The modified file is /p/scratch/CESMDATAROOT/inputdata/lnd/clm2/surfdata_map/release-clm5.0.18/surfdata_0.9x1.25_hist_16pfts_Irrig_CMIP6_simyr2000_c190214_modified_Sydney.nc.
+The surface input file has been modified. The modified file is /p/scratch/CESMDATAROOT/inputdata/lnd/clm2/surfdata_map/release-clm5.0.18/surfdata_0.9x1.25_hist_16pfts_Irrig_CMIP6_simyr2000_c190214_modified_Sydney.nc.
+The surface input file has been modified. The modified file is /p/scratch/CESMDATAROOT/inputdata/lnd/clm2/surfdata_map/release-clm5.0.18/surfdata_0.9x1.25_hist_16pfts_Irrig_CMIP6_simyr2000_c190214_modified_Chicago.nc.
+The surface input file has been modified. The modified file is /p/scratch/CESMDATAROOT/inputdata/lnd/clm2/surfdata_map/release-clm5.0.18/surfdata_0.9x1.25_hist_16pfts_Irrig_CMIP6_simyr2000_c190214_modified_Chicago.nc.
+The surface input file has been modified. The modified file is /p/scratch/CESMDATAROOT/inputdata/lnd/clm2/surfdata_map/release-clm5.0.18/surfdata_0.9x1.25_hist_16pfts_Irrig_CMIP6_simyr2000_c190214_modified_Los_Angeles.nc.
+The surface input file has been modified. The modified file is /p/scratch/CESMDATAROOT/inputdata/lnd/clm2/surfdata_map/release-clm5.0.18/surfdata_0.9x1.25_hist_16pfts_Irrig_CMIP6_simyr2000_c190214_modified_Los_Angeles.nc.
+The surface input file has been modified. The modified file is /p/scratch/CESMDATAROOT/inputdata/lnd/clm2/surfdata_map/release-clm5.0.18/surfdata_0.9x1.25_hist_16pfts_Irrig_CMIP6_simyr2000_c190214_modified_Moscow.nc.
+The surface input file has been modified. The modified file is /p/scratch/CESMDATAROOT/inputdata/lnd/clm2/surfdata_map/release-clm5.0.18/surfdata_0.9x1.25_hist_16pfts_Irrig_CMIP6_simyr2000_c190214_modified_Moscow.nc.
+The surface input file has been modified. The modified file is /p/scratch/CESMDATAROOT/inputdata/lnd/clm2/surfdata_map/release-clm5.0.18/surfdata_0.9x1.25_hist_16pfts_Irrig_CMIP6_simyr2000_c190214_modified_Toronto.nc.
+The surface input file has been modified. The modified file is /p/scratch/CESMDATAROOT/inputdata/lnd/clm2/surfdata_map/release-clm5.0.18/surfdata_0.9x1.25_hist_16pfts_Irrig_CMIP6_simyr2000_c190214_modified_Toronto.nc.
+The surface input file has been modified. The modified file is /p/scratch/CESMDATAROOT/inputdata/lnd/clm2/surfdata_map/release-clm5.0.18/surfdata_0.9x1.25_hist_16pfts_Irrig_CMIP6_simyr2000_c190214_modified_Frankfurt.nc.
+The surface input file has been modified. The modified file is /p/scratch/CESMDATAROOT/inputdata/lnd/clm2/surfdata_map/release-clm5.0.18/surfdata_0.9x1.25_hist_16pfts_Irrig_CMIP6_simyr2000_c190214_modified_Frankfurt.nc.
+The surface input file has been modified. The modified file is /p/scratch/CESMDATAROOT/inputdata/lnd/clm2/surfdata_map/release-clm5.0.18/surfdata_0.9x1.25_hist_16pfts_Irrig_CMIP6_simyr2000_c190214_modified_Madrid.nc.
+The surface input file has been modified. The modified file is /p/scratch/CESMDATAROOT/inputdata/lnd/clm2/surfdata_map/release-clm5.0.18/surfdata_0.9x1.25_hist_16pfts_Irrig_CMIP6_simyr2000_c190214_modified_Madrid.nc.
+The surface input file has been modified. The modified file is /p/scratch/CESMDATAROOT/inputdata/lnd/clm2/surfdata_map/release-clm5.0.18/surfdata_0.9x1.25_hist_16pfts_Irrig_CMIP6_simyr2000_c190214_modified_Mumbai.nc.
+The surface input file has been modified. The modified file is /p/scratch/CESMDATAROOT/inputdata/lnd/clm2/surfdata_map/release-clm5.0.18/surfdata_0.9x1.25_hist_16pfts_Irrig_CMIP6_simyr2000_c190214_modified_Mumbai.nc.
+{1: [&#39;/home/zhonghua/p/scratch/CESMDATAROOT/Archive/lnd/hist/London_hist0_2024-05-14_07-26-58_clm.nc&#39;], 2: [&#39;/home/zhonghua/p/scratch/CESMDATAROOT/Archive/lnd/hist/New_York_hist0_2024-05-14_07-28-56_clm.nc&#39;], 3: [&#39;/home/zhonghua/p/scratch/CESMDATAROOT/Archive/lnd/hist/Beijing_hist0_2024-05-14_07-30-54_clm.nc&#39;], 4: [&#39;/home/zhonghua/p/scratch/CESMDATAROOT/Archive/lnd/hist/Hong_Kong_hist0_2024-05-14_07-32-53_clm.nc&#39;], 5: [&#39;/home/zhonghua/p/scratch/CESMDATAROOT/Archive/lnd/hist/Shanghai_hist0_2024-05-14_07-34-52_clm.nc&#39;], 6: [&#39;/home/zhonghua/p/scratch/CESMDATAROOT/Archive/lnd/hist/Tokyo_hist0_2024-05-14_07-36-50_clm.nc&#39;], 7: [&#39;/home/zhonghua/p/scratch/CESMDATAROOT/Archive/lnd/hist/Dubai_hist0_2024-05-14_07-38-48_clm.nc&#39;], 8: [&#39;/home/zhonghua/p/scratch/CESMDATAROOT/Archive/lnd/hist/Paris_hist0_2024-05-14_07-40-47_clm.nc&#39;], 9: [&#39;/home/zhonghua/p/scratch/CESMDATAROOT/Archive/lnd/hist/Singapore_hist0_2024-05-14_07-42-45_clm.nc&#39;], 10: [&#39;/home/zhonghua/p/scratch/CESMDATAROOT/Archive/lnd/hist/Amsterdam_hist0_2024-05-14_07-44-43_clm.nc&#39;], 11: [&#39;/home/zhonghua/p/scratch/CESMDATAROOT/Archive/lnd/hist/Jakarta_hist0_2024-05-14_07-46-41_clm.nc&#39;], 12: [&#39;/home/zhonghua/p/scratch/CESMDATAROOT/Archive/lnd/hist/Mexico_City_hist0_2024-05-14_07-48-39_clm.nc&#39;], 13: [&#39;/home/zhonghua/p/scratch/CESMDATAROOT/Archive/lnd/hist/Sao_Paulo_hist0_2024-05-14_07-50-37_clm.nc&#39;], 14: [&#39;/home/zhonghua/p/scratch/CESMDATAROOT/Archive/lnd/hist/Brussels_hist0_2024-05-14_07-52-36_clm.nc&#39;], 15: [&#39;/home/zhonghua/p/scratch/CESMDATAROOT/Archive/lnd/hist/Kuala_Lumpur_hist0_2024-05-14_07-54-33_clm.nc&#39;], 16: [&#39;/home/zhonghua/p/scratch/CESMDATAROOT/Archive/lnd/hist/Milan_hist0_2024-05-14_07-56-32_clm.nc&#39;], 17: [&#39;/home/zhonghua/p/scratch/CESMDATAROOT/Archive/lnd/hist/Sydney_hist0_2024-05-14_07-58-32_clm.nc&#39;], 18: [&#39;/home/zhonghua/p/scratch/CESMDATAROOT/Archive/lnd/hist/Chicago_hist0_2024-05-14_08-00-31_clm.nc&#39;], 19: [&#39;/home/zhonghua/p/scratch/CESMDATAROOT/Archive/lnd/hist/Los_Angeles_hist0_2024-05-14_08-02-29_clm.nc&#39;], 20: [&#39;/home/zhonghua/p/scratch/CESMDATAROOT/Archive/lnd/hist/Moscow_hist0_2024-05-14_08-04-27_clm.nc&#39;], 21: [&#39;/home/zhonghua/p/scratch/CESMDATAROOT/Archive/lnd/hist/Toronto_hist0_2024-05-14_08-06-26_clm.nc&#39;], 22: [&#39;/home/zhonghua/p/scratch/CESMDATAROOT/Archive/lnd/hist/Frankfurt_hist0_2024-05-14_08-08-24_clm.nc&#39;], 23: [&#39;/home/zhonghua/p/scratch/CESMDATAROOT/Archive/lnd/hist/Madrid_hist0_2024-05-14_08-10-22_clm.nc&#39;], 24: [&#39;/home/zhonghua/p/scratch/CESMDATAROOT/Archive/lnd/hist/Mumbai_hist0_2024-05-14_08-12-20_clm.nc&#39;]}
+{1: [&#39;/home/zhonghua/p/scratch/CESMDATAROOT/Archive/lnd/hist/London_hist0_2024-05-14_07-27-27_clm.nc&#39;], 2: [&#39;/home/zhonghua/p/scratch/CESMDATAROOT/Archive/lnd/hist/New_York_hist0_2024-05-14_07-29-25_clm.nc&#39;], 3: [&#39;/home/zhonghua/p/scratch/CESMDATAROOT/Archive/lnd/hist/Beijing_hist0_2024-05-14_07-31-23_clm.nc&#39;], 4: [&#39;/home/zhonghua/p/scratch/CESMDATAROOT/Archive/lnd/hist/Hong_Kong_hist0_2024-05-14_07-33-22_clm.nc&#39;], 5: [&#39;/home/zhonghua/p/scratch/CESMDATAROOT/Archive/lnd/hist/Shanghai_hist0_2024-05-14_07-35-21_clm.nc&#39;], 6: [&#39;/home/zhonghua/p/scratch/CESMDATAROOT/Archive/lnd/hist/Tokyo_hist0_2024-05-14_07-37-19_clm.nc&#39;], 7: [&#39;/home/zhonghua/p/scratch/CESMDATAROOT/Archive/lnd/hist/Dubai_hist0_2024-05-14_07-39-18_clm.nc&#39;], 8: [&#39;/home/zhonghua/p/scratch/CESMDATAROOT/Archive/lnd/hist/Paris_hist0_2024-05-14_07-41-16_clm.nc&#39;], 9: [&#39;/home/zhonghua/p/scratch/CESMDATAROOT/Archive/lnd/hist/Singapore_hist0_2024-05-14_07-43-13_clm.nc&#39;], 10: [&#39;/home/zhonghua/p/scratch/CESMDATAROOT/Archive/lnd/hist/Amsterdam_hist0_2024-05-14_07-45-12_clm.nc&#39;], 11: [&#39;/home/zhonghua/p/scratch/CESMDATAROOT/Archive/lnd/hist/Jakarta_hist0_2024-05-14_07-47-10_clm.nc&#39;], 12: [&#39;/home/zhonghua/p/scratch/CESMDATAROOT/Archive/lnd/hist/Mexico_City_hist0_2024-05-14_07-49-08_clm.nc&#39;], 13: [&#39;/home/zhonghua/p/scratch/CESMDATAROOT/Archive/lnd/hist/Sao_Paulo_hist0_2024-05-14_07-51-06_clm.nc&#39;], 14: [&#39;/home/zhonghua/p/scratch/CESMDATAROOT/Archive/lnd/hist/Brussels_hist0_2024-05-14_07-53-04_clm.nc&#39;], 15: [&#39;/home/zhonghua/p/scratch/CESMDATAROOT/Archive/lnd/hist/Kuala_Lumpur_hist0_2024-05-14_07-55-02_clm.nc&#39;], 16: [&#39;/home/zhonghua/p/scratch/CESMDATAROOT/Archive/lnd/hist/Milan_hist0_2024-05-14_07-57-02_clm.nc&#39;], 17: [&#39;/home/zhonghua/p/scratch/CESMDATAROOT/Archive/lnd/hist/Sydney_hist0_2024-05-14_07-59-01_clm.nc&#39;], 18: [&#39;/home/zhonghua/p/scratch/CESMDATAROOT/Archive/lnd/hist/Chicago_hist0_2024-05-14_08-01-00_clm.nc&#39;], 19: [&#39;/home/zhonghua/p/scratch/CESMDATAROOT/Archive/lnd/hist/Los_Angeles_hist0_2024-05-14_08-02-58_clm.nc&#39;], 20: [&#39;/home/zhonghua/p/scratch/CESMDATAROOT/Archive/lnd/hist/Moscow_hist0_2024-05-14_08-04-56_clm.nc&#39;], 21: [&#39;/home/zhonghua/p/scratch/CESMDATAROOT/Archive/lnd/hist/Toronto_hist0_2024-05-14_08-06-55_clm.nc&#39;], 22: [&#39;/home/zhonghua/p/scratch/CESMDATAROOT/Archive/lnd/hist/Frankfurt_hist0_2024-05-14_08-08-53_clm.nc&#39;], 23: [&#39;/home/zhonghua/p/scratch/CESMDATAROOT/Archive/lnd/hist/Madrid_hist0_2024-05-14_08-10-51_clm.nc&#39;], 24: [&#39;/home/zhonghua/p/scratch/CESMDATAROOT/Archive/lnd/hist/Mumbai_hist0_2024-05-14_08-12-48_clm.nc&#39;]}
+</pre></div></div>
+</div>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[4]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">xarray</span> <span class="k">as</span> <span class="nn">xr</span>
+<span class="kn">import</span> <span class="nn">warnings</span>
+<span class="n">warnings</span><span class="o">.</span><span class="n">filterwarnings</span><span class="p">(</span><span class="s1">&#39;ignore&#39;</span><span class="p">)</span>
+<span class="n">df_plot</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">()</span>
+
+<span class="k">def</span> <span class="nf">open_res</span><span class="p">(</span><span class="n">dsfile</span><span class="p">):</span>
+    <span class="n">ds</span> <span class="o">=</span> <span class="n">xr</span><span class="o">.</span><span class="n">open_dataset</span><span class="p">(</span><span class="n">dsfile</span><span class="p">)</span>
+    <span class="n">ds</span> <span class="o">=</span> <span class="n">ds</span><span class="o">.</span><span class="n">assign_coords</span><span class="p">({</span><span class="s1">&#39;landunit&#39;</span><span class="p">:</span> <span class="n">ds</span><span class="p">[</span><span class="s1">&#39;land1d_ityplunit&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">values</span><span class="p">})</span><span class="o">.</span><span class="n">sel</span><span class="p">(</span><span class="n">landunit</span><span class="o">=</span><span class="mi">8</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">ds</span>
+
+
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">25</span><span class="p">):</span>
+    <span class="n">plotting_res</span> <span class="o">=</span> <span class="p">{}</span>
+    <span class="n">plotting_res</span><span class="p">[</span><span class="s1">&#39;city&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">case_loc</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="s1">&#39;city&#39;</span><span class="p">]</span>
+    <span class="n">plotting_res</span><span class="p">[</span><span class="s1">&#39;case_num&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">i</span>
+    <span class="n">plotting_res</span><span class="p">[</span><span class="s1">&#39;lat&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="nb">float</span><span class="p">(</span><span class="n">case_loc</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="s1">&#39;case_lat&#39;</span><span class="p">])</span>
+    <span class="n">plotting_res</span><span class="p">[</span><span class="s1">&#39;lon&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="nb">float</span><span class="p">(</span><span class="n">case_loc</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="s1">&#39;case_lon&#39;</span><span class="p">])</span>
+    <span class="n">ds</span> <span class="o">=</span> <span class="n">open_res</span><span class="p">(</span><span class="n">result_or</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="mi">0</span><span class="p">])</span>
+    <span class="n">plotting_res</span><span class="p">[</span><span class="s1">&#39;TSA&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">ds</span><span class="p">[</span><span class="s1">&#39;TSA&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">mean</span><span class="p">()</span><span class="o">.</span><span class="n">values</span>
+    <span class="n">plotting_res</span><span class="p">[</span><span class="s1">&#39;RH&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">ds</span><span class="p">[</span><span class="s1">&#39;RH2M&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">mean</span><span class="p">()</span><span class="o">.</span><span class="n">values</span>
+    <span class="n">ds1</span> <span class="o">=</span> <span class="n">open_res</span><span class="p">(</span><span class="n">result_surf</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="mi">0</span><span class="p">])</span>
+    <span class="n">plotting_res</span><span class="p">[</span><span class="s1">&#39;TSA_surf&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">ds1</span><span class="p">[</span><span class="s1">&#39;TSA&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">mean</span><span class="p">()</span><span class="o">.</span><span class="n">values</span>
+    <span class="n">plotting_res</span><span class="p">[</span><span class="s1">&#39;RH_surf&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">ds1</span><span class="p">[</span><span class="s1">&#39;RH2M&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">mean</span><span class="p">()</span><span class="o">.</span><span class="n">values</span>
+    <span class="n">df_plot</span> <span class="o">=</span> <span class="n">df_plot</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">plotting_res</span><span class="p">,</span> <span class="n">ignore_index</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+
+<span class="n">df_plot</span><span class="o">.</span><span class="n">to_csv</span><span class="p">(</span><span class="s1">&#39;example4.csv&#39;</span><span class="p">)</span>
+<span class="n">df_plot</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[4]:
+</pre></div>
+</div>
+<div class="output_area rendered_html docutils container">
+<div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>city</th>
+      <th>case_num</th>
+      <th>lat</th>
+      <th>lon</th>
+      <th>TSA</th>
+      <th>RH</th>
+      <th>TSA_surf</th>
+      <th>RH_surf</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>London</td>
+      <td>1</td>
+      <td>51.36</td>
+      <td>0.00</td>
+      <td>290.27463</td>
+      <td>74.47812</td>
+      <td>290.17596</td>
+      <td>74.88281</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>New_York</td>
+      <td>2</td>
+      <td>40.05</td>
+      <td>-73.75</td>
+      <td>297.79132</td>
+      <td>68.583374</td>
+      <td>297.6874</td>
+      <td>68.97435</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>Beijing</td>
+      <td>3</td>
+      <td>40.05</td>
+      <td>116.25</td>
+      <td>299.26642</td>
+      <td>58.680374</td>
+      <td>299.11734</td>
+      <td>59.1256</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>Hong_Kong</td>
+      <td>4</td>
+      <td>22.15</td>
+      <td>113.75</td>
+      <td>302.09396</td>
+      <td>77.50493</td>
+      <td>302.01538</td>
+      <td>77.77857</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>Shanghai</td>
+      <td>5</td>
+      <td>31.57</td>
+      <td>121.25</td>
+      <td>301.162</td>
+      <td>72.778755</td>
+      <td>301.06674</td>
+      <td>73.14553</td>
+    </tr>
+  </tbody>
+</table>
+</div></div>
+</div>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[5]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">src.plotmap</span> <span class="kn">import</span> <span class="n">plotmap</span> <span class="c1"># import the plotmap function from floder src</span>
+<span class="kn">import</span> <span class="nn">cartopy.crs</span> <span class="k">as</span> <span class="nn">ccrs</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="n">fig</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">8</span><span class="p">,</span><span class="mi">4</span><span class="p">))</span>
+<span class="n">df_plot</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s1">&#39;example4.csv&#39;</span><span class="p">)</span>
+<span class="n">df_plot</span><span class="p">[</span><span class="s1">&#39;Diff_TSA&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">df_plot</span><span class="p">[</span><span class="s1">&#39;TSA_surf&#39;</span><span class="p">]</span> <span class="o">-</span> <span class="n">df_plot</span><span class="p">[</span><span class="s1">&#39;TSA&#39;</span><span class="p">]</span>
+<span class="n">df_plot</span><span class="p">[</span><span class="s1">&#39;Diff_RH&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">df_plot</span><span class="p">[</span><span class="s1">&#39;RH_surf&#39;</span><span class="p">]</span> <span class="o">-</span> <span class="n">df_plot</span><span class="p">[</span><span class="s1">&#39;RH&#39;</span><span class="p">]</span>
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">2</span><span class="p">):</span>
+    <span class="k">if</span> <span class="n">i</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+        <span class="n">ax</span> <span class="o">=</span> <span class="n">fig</span><span class="o">.</span><span class="n">add_subplot</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="n">i</span><span class="o">+</span><span class="mi">1</span><span class="p">,</span> <span class="n">projection</span><span class="o">=</span><span class="n">ccrs</span><span class="o">.</span><span class="n">PlateCarree</span><span class="p">())</span>
+        <span class="n">plotmap</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="n">df_plot</span><span class="p">[</span><span class="s1">&#39;lon&#39;</span><span class="p">],</span> <span class="n">y</span><span class="o">=</span><span class="n">df_plot</span><span class="p">[</span><span class="s1">&#39;lat&#39;</span><span class="p">],</span> <span class="n">c</span><span class="o">=</span><span class="n">df_plot</span><span class="p">[</span><span class="s1">&#39;Diff_TSA&#39;</span><span class="p">],</span> <span class="n">title</span><span class="o">=</span><span class="s1">&#39;$\Delta$TSA [K]&#39;</span><span class="p">,</span> <span class="n">ax</span><span class="o">=</span><span class="n">ax</span><span class="p">,</span> <span class="n">camp</span><span class="o">=</span><span class="s1">&#39;coolwarm_r&#39;</span><span class="p">)</span>
+        <span class="n">ax</span><span class="o">.</span><span class="n">set_yticks</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="o">-</span><span class="mi">60</span><span class="p">,</span><span class="o">-</span><span class="mi">30</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">30</span><span class="p">,</span><span class="mi">60</span><span class="p">]),</span> <span class="n">crs</span><span class="o">=</span><span class="n">ccrs</span><span class="o">.</span><span class="n">PlateCarree</span><span class="p">())</span>
+        <span class="n">ax</span><span class="o">.</span><span class="n">set_xticks</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="o">-</span><span class="mi">90</span><span class="p">,</span> <span class="mi">90</span><span class="p">,</span> <span class="mi">3</span><span class="p">),</span> <span class="n">crs</span><span class="o">=</span><span class="n">ccrs</span><span class="o">.</span><span class="n">PlateCarree</span><span class="p">())</span>
+        <span class="n">ax</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="s1">&#39;a&#39;</span><span class="p">,</span> <span class="n">loc</span><span class="o">=</span><span class="s1">&#39;left&#39;</span><span class="p">,</span> <span class="n">weight</span><span class="o">=</span><span class="s1">&#39;bold&#39;</span><span class="p">)</span>
+    <span class="k">elif</span> <span class="n">i</span> <span class="o">==</span> <span class="mi">1</span><span class="p">:</span>
+        <span class="n">ax</span> <span class="o">=</span> <span class="n">fig</span><span class="o">.</span><span class="n">add_subplot</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="n">i</span><span class="o">+</span><span class="mi">1</span><span class="p">,</span> <span class="n">projection</span><span class="o">=</span><span class="n">ccrs</span><span class="o">.</span><span class="n">PlateCarree</span><span class="p">())</span>
+        <span class="n">plotmap</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="n">df_plot</span><span class="p">[</span><span class="s1">&#39;lon&#39;</span><span class="p">],</span> <span class="n">y</span><span class="o">=</span><span class="n">df_plot</span><span class="p">[</span><span class="s1">&#39;lat&#39;</span><span class="p">],</span> <span class="n">c</span><span class="o">=</span><span class="n">df_plot</span><span class="p">[</span><span class="s1">&#39;Diff_RH&#39;</span><span class="p">],</span> <span class="n">title</span><span class="o">=</span><span class="s1">&#39;$\Delta$RH [%]&#39;</span><span class="p">,</span> <span class="n">ax</span><span class="o">=</span><span class="n">ax</span><span class="p">,</span> <span class="n">camp</span><span class="o">=</span><span class="s1">&#39;coolwarm&#39;</span><span class="p">)</span>
+        <span class="n">ax</span><span class="o">.</span><span class="n">set_yticks</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="o">-</span><span class="mi">60</span><span class="p">,</span><span class="o">-</span><span class="mi">30</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">30</span><span class="p">,</span><span class="mi">60</span><span class="p">]),</span> <span class="n">crs</span><span class="o">=</span><span class="n">ccrs</span><span class="o">.</span><span class="n">PlateCarree</span><span class="p">())</span>
+        <span class="n">ax</span><span class="o">.</span><span class="n">set_xticks</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="o">-</span><span class="mi">90</span><span class="p">,</span> <span class="mi">90</span><span class="p">,</span> <span class="mi">3</span><span class="p">),</span> <span class="n">crs</span><span class="o">=</span><span class="n">ccrs</span><span class="o">.</span><span class="n">PlateCarree</span><span class="p">())</span>
+        <span class="n">ax</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="s1">&#39;b&#39;</span><span class="p">,</span> <span class="n">loc</span><span class="o">=</span><span class="s1">&#39;left&#39;</span><span class="p">,</span> <span class="n">weight</span><span class="o">=</span><span class="s1">&#39;bold&#39;</span><span class="p">)</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">tight_layout</span><span class="p">()</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">savefig</span><span class="p">(</span><span class="s1">&#39;figs/example4.pdf&#39;</span><span class="p">,</span> <span class="n">dpi</span><span class="o">=</span><span class="mi">188</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<img alt="../../_images/notebooks_pts_example4_workstation_7_0.png" src="../../_images/notebooks_pts_example4_workstation_7_0.png" />
+</div>
+</div>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2024, Junjie Yu, Zhonghua Zheng.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

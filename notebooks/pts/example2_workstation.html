@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Example 2: How does global warming will affect urban climates? &mdash; pyclmuapp v0.0.0 documentation</title>
+      <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=80d5e7a1" />
+      <link rel="stylesheet" type="text/css" href="../../_static/css/theme.css?v=19f00094" />
+      <link rel="stylesheet" type="text/css" href="../../_static/nbsphinx-code-cells.css?v=2aa19091" />
+
+  
+  <!--[if lt IE 9]>
+    <script src="../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script src="../../_static/jquery.js?v=5d32c60e"></script>
+        <script src="../../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+        <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js?v=f3b75425"></script>
+        <script src="../../_static/doctools.js?v=888ff710"></script>
+        <script src="../../_static/sphinx_highlight.js?v=4825356b"></script>
+        <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+        <script>window.MathJax = {"tex": {"inlineMath": [["$", "$"], ["\\(", "\\)"]], "processEscapes": true}, "options": {"ignoreHtmlClass": "tex2jax_ignore|mathjax_ignore|document", "processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+        <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script src="../../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="Example 3: Urban climate adaption" href="example3_workstation.html" />
+    <link rel="prev" title="Example 1: Run a simple simulation with a single case" href="example1_workstation.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="../../index.html" class="icon icon-home">
+            pyclmuapp
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Overview</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../overview/overview.html">About</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../overview/installation.html">Installation</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Basic usage</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../basic/basic_usage_inter.html">Basic usage: Web interface</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../basic/basic_usage_cli.html">Basic usage: Command line</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Python: usp mode</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../usp/example1_usp_basic.html">Example 1: Basic usage</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../usp/example2_usp_global_warming.html">Example 2: How does global warming will affect urban climates?</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../usp/example3_usp_adaptation.html">Example 3: Urban climate adaption</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Python: created input files</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../own/prepare_forcing_from_era5.html">Make your own forcing data from ERA5</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../own/prepare_urbansurf_10evlurb.html">Make your own surface data</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Spinup</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../usp/usp_spinup_mode.html">How to spinup in USP mode</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../spinup/spinup_workstation.html">Spinup in CLMU</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">HPC</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../hpc/HPC.html">pyclmuapp on HPC: Command line</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../hpc/singularity.html">pyclmuapp on HPC: Python</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Validation</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../val/urban_plumber_usp.html">Urban-Plumber2: UK-Kin site CLMU5 simulation</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Python: pts mode</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="example1_workstation.html">Example 1: Run a simple simulation with a single case</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Example 2: How does global warming will affect urban climates?</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#1-PTS-mode:-using-the-CESM-provide-global-data">1 PTS mode: using the CESM provide global data</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="example3_workstation.html">Example 3: Urban climate adaption</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">API Reference</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../modules.html">pyclmuapp</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">pyclmuapp</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../../index.html" class="icon icon-home" aria-label="Home"></a></li>
+      <li class="breadcrumb-item active">Example 2: How does global warming will affect urban climates?</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../../_sources/notebooks/pts/example2_workstation.ipynb.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="Example-2:-How-does-global-warming-will-affect-urban-climates?">
+<h1>Example 2: How does global warming will affect urban climates?<a class="headerlink" href="#Example-2:-How-does-global-warming-will-affect-urban-climates?" title="Permalink to this heading"></a></h1>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[1]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">pyclmuapp</span> <span class="kn">import</span> <span class="n">pts_clmu</span>
+<span class="kn">from</span> <span class="nn">pyclmuapp</span> <span class="kn">import</span> <span class="n">usp_clmu</span>
+<span class="kn">from</span> <span class="nn">pyclmuapp.getcity</span> <span class="kn">import</span> <span class="o">*</span>
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+<span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+<span class="kn">import</span> <span class="nn">os</span>
+</pre></div>
+</div>
+</div>
+<section id="1-PTS-mode:-using-the-CESM-provide-global-data">
+<h2>1 PTS mode: using the CESM provide global data<a class="headerlink" href="#1-PTS-mode:-using-the-CESM-provide-global-data" title="Permalink to this heading"></a></h2>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[2]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># the mask if from UrbanClimateExplorer/docs/notebooks/CESM1_get_urban_areas_mask.ipynb</span>
+<span class="c1"># https://github.com/zhonghua-zheng/UrbanClimateExplorer/blob/main/docs/notebooks/CESM1_get_urban_areas_mask.ipynb</span>
+<span class="n">mask</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s2">&quot;src/CESM1_urban_mask.csv&quot;</span><span class="p">,</span> <span class="n">index_col</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
+<span class="n">citylist</span> <span class="o">=</span> <span class="n">get_mask_cities</span><span class="p">(</span><span class="n">mask</span><span class="p">)</span>
+
+
+<span class="c1"># set the location of London</span>
+<span class="n">London</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;lat&#39;</span><span class="p">:</span> <span class="mf">51.5</span><span class="p">,</span> <span class="s1">&#39;lon&#39;</span><span class="p">:</span> <span class="o">-</span><span class="mf">0.1</span><span class="p">}</span>
+
+<span class="c1"># find the closest city grid point to London (resolution is 1 degree, CESM nominal resolution)</span>
+<span class="n">closecity</span> <span class="o">=</span> <span class="n">closest</span><span class="p">(</span><span class="n">citylist</span><span class="p">,</span><span class="n">London</span><span class="p">)</span>
+
+<span class="n">closecity</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[2]:
+</pre></div>
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+{&#39;lat&#39;: 51.361255645752, &#39;lon&#39;: 0.0}
+</pre></div></div>
+</div>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[3]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># initialize the pts_clmu object</span>
+
+<span class="n">pts</span> <span class="o">=</span> <span class="n">pts_clmu</span><span class="p">(</span>
+    <span class="n">pwd</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
+    <span class="n">input_path</span><span class="o">=</span><span class="s2">&quot;/home/zhonghua/p/scratch/CESMDATAROOT/inputdata&quot;</span><span class="p">,</span>
+    <span class="n">output_path</span><span class="o">=</span><span class="s2">&quot;/home/zhonghua/p/scratch/CESMDATAROOT/Archive/lnd/hist&quot;</span><span class="p">,</span>
+    <span class="n">log_path</span><span class="o">=</span><span class="s2">&quot;/home/zhonghua/p/scratch/CESMDATAROOT/CaseOutputs&quot;</span><span class="p">,</span>
+    <span class="n">scripts_path</span> <span class="o">=</span> <span class="s2">&quot;/home/zhonghua/p/scripts&quot;</span><span class="p">,</span>
+    <span class="n">container_type</span><span class="o">=</span><span class="s1">&#39;docker&#39;</span><span class="p">)</span>
+
+<span class="c1"># set the case configuration</span>
+<span class="n">pts</span><span class="o">.</span><span class="n">caseconfig</span><span class="p">[</span><span class="s1">&#39;case_name&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="s1">&#39;London&#39;</span>
+<span class="n">pts</span><span class="o">.</span><span class="n">caseconfig</span><span class="p">[</span><span class="s1">&#39;case_length&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="s2">&quot;3&quot;</span>
+<span class="n">pts</span><span class="o">.</span><span class="n">caseconfig</span><span class="p">[</span><span class="s1">&#39;hist_nhtfrq&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="s1">&#39;-24&#39;</span>
+<span class="n">pts</span><span class="o">.</span><span class="n">caseconfig</span><span class="p">[</span><span class="s1">&#39;STOP_OPTION&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="s2">&quot;nmonths&quot;</span>
+<span class="n">pts</span><span class="o">.</span><span class="n">caseconfig</span><span class="p">[</span><span class="s1">&#39;hist_mfilt&#39;</span><span class="p">]</span><span class="o">=</span><span class="s1">&#39;240000&#39;</span>
+<span class="n">pts</span><span class="o">.</span><span class="n">caseconfig</span><span class="p">[</span><span class="s1">&#39;RUN_STARTDATE&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="s1">&#39;2012-06-01&#39;</span>
+<span class="n">pts</span><span class="o">.</span><span class="n">caseconfig</span><span class="p">[</span><span class="s1">&#39;DATM_CLMNCEP_YR_START&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="s1">&#39;2012&#39;</span>
+<span class="n">pts</span><span class="o">.</span><span class="n">caseconfig</span><span class="p">[</span><span class="s1">&#39;DATM_CLMNCEP_YR_END&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="s1">&#39;2012&#39;</span>
+<span class="n">pts</span><span class="o">.</span><span class="n">caseconfig</span><span class="p">[</span><span class="s1">&#39;case_lat&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="nb">str</span><span class="p">(</span><span class="n">closecity</span><span class="p">[</span><span class="s1">&#39;lat&#39;</span><span class="p">])</span>
+<span class="n">pts</span><span class="o">.</span><span class="n">caseconfig</span><span class="p">[</span><span class="s1">&#39;case_lon&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="nb">str</span><span class="p">(</span><span class="n">closecity</span><span class="p">[</span><span class="s1">&#39;lon&#39;</span><span class="p">])</span>
+
+<span class="c1"># run the case</span>
+<span class="n">pts_or</span><span class="o">=</span><span class="n">pts</span><span class="o">.</span><span class="n">run</span><span class="p">(</span><span class="n">iflog</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">cmdlogfile</span><span class="o">=</span><span class="s1">&#39;./pts_London.log&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[4]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">forcing</span> <span class="o">=</span> <span class="n">pts</span><span class="o">.</span><span class="n">input_path</span><span class="o">+</span><span class="s2">&quot;/atm/datm7/atm_forcing.datm7.cruncep_qianFill.0.5d.v7.c160715&quot;</span> <span class="o">+</span> \
+         <span class="s2">&quot;/TPHWL6Hrly&quot;</span> <span class="o">+</span> <span class="s2">&quot;/clmforc.cruncep.V7.c2016.0.5d.TPQWL.2012-</span><span class="si">{month}</span><span class="s2">.nc&quot;</span>
+
+<span class="c1"># modify the forcing</span>
+<span class="c1"># Here, we modify the forcing to increase the temperature by 1 degree of forcing</span>
+<span class="c1"># to simulate the global warming effect</span>
+<span class="c1"># other forcing can be modified in the same way, e.g., precipitation, wind speed, etc.</span>
+<span class="c1"># the action is a dict, the key is the forcing variable, the value is the modification value</span>
+<span class="c1"># the modification value is the value to be added to the original forcing value</span>
+<span class="c1"># the modification value can be negative, which means to decrease the original forcing value</span>
+<span class="n">action</span> <span class="o">=</span> <span class="p">{</span><span class="s2">&quot;TBOT&quot;</span><span class="p">:</span><span class="mf">1.0</span><span class="p">}</span>
+<span class="n">action_r</span> <span class="o">=</span> <span class="p">{</span><span class="s2">&quot;TBOT&quot;</span><span class="p">:</span><span class="o">-</span><span class="mf">1.0</span><span class="p">}</span>
+
+<span class="k">def</span> <span class="nf">modify_forcing</span><span class="p">(</span><span class="n">forcing</span><span class="p">,</span> <span class="n">action</span><span class="p">):</span>
+    <span class="k">for</span> <span class="n">month</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">6</span><span class="p">,</span> <span class="mi">9</span><span class="p">):</span>
+        <span class="n">forcing_file</span> <span class="o">=</span> <span class="n">forcing</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">month</span><span class="o">=</span><span class="nb">str</span><span class="p">(</span><span class="n">month</span><span class="p">)</span><span class="o">.</span><span class="n">zfill</span><span class="p">(</span><span class="mi">2</span><span class="p">))</span>
+        <span class="n">pts</span><span class="o">.</span><span class="n">modify_forcing</span><span class="p">(</span><span class="n">var</span><span class="o">=</span><span class="s2">&quot;None&quot;</span><span class="p">,</span> <span class="n">action</span><span class="o">=</span><span class="n">action</span><span class="p">,</span> <span class="n">forcing_location</span><span class="o">=</span><span class="n">forcing_file</span><span class="p">)</span>
+
+<span class="n">modify_forcing</span><span class="p">(</span><span class="n">forcing</span><span class="p">,</span> <span class="n">action</span><span class="p">)</span>
+
+<span class="c1"># get the result</span>
+<span class="n">pts_warming</span> <span class="o">=</span> <span class="n">pts</span><span class="o">.</span><span class="n">run</span><span class="p">(</span><span class="n">iflog</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">cmdlogfile</span><span class="o">=</span><span class="s1">&#39;./pts_London.log&#39;</span><span class="p">)</span>
+
+<span class="c1"># recover the forcing</span>
+<span class="n">modify_forcing</span><span class="p">(</span><span class="n">forcing</span><span class="p">,</span> <span class="n">action_r</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<p>Print dataset location</p>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[5]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">pts_or</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">pts_warming</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+[&#39;/home/zhonghua/p/scratch/CESMDATAROOT/Archive/lnd/hist/London_hist0_2024-06-17_16-01-25_clm.nc&#39;]
+[&#39;/home/zhonghua/p/scratch/CESMDATAROOT/Archive/lnd/hist/London_hist0_2024-06-17_16-01-56_clm.nc&#39;]
+</pre></div></div>
+</div>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[6]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">pts</span><span class="o">.</span><span class="n">case_clean</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="example1_workstation.html" class="btn btn-neutral float-left" title="Example 1: Run a simple simulation with a single case" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="example3_workstation.html" class="btn btn-neutral float-right" title="Example 3: Urban climate adaption" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2024, Junjie Yu, Zhonghua Zheng.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

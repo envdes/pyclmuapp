@@ -1,0 +1,389 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Make your own forcing data from ERA5 &mdash; pyclmuapp v0.0.0 documentation</title>
+      <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=80d5e7a1" />
+      <link rel="stylesheet" type="text/css" href="../../_static/css/theme.css?v=19f00094" />
+      <link rel="stylesheet" type="text/css" href="../../_static/nbsphinx-code-cells.css?v=2aa19091" />
+
+  
+  <!--[if lt IE 9]>
+    <script src="../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script src="../../_static/jquery.js?v=5d32c60e"></script>
+        <script src="../../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+        <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js?v=f3b75425"></script>
+        <script src="../../_static/doctools.js?v=888ff710"></script>
+        <script src="../../_static/sphinx_highlight.js?v=4825356b"></script>
+        <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+        <script>window.MathJax = {"tex": {"inlineMath": [["$", "$"], ["\\(", "\\)"]], "processEscapes": true}, "options": {"ignoreHtmlClass": "tex2jax_ignore|mathjax_ignore|document", "processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+        <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script src="../../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="../../index.html" class="icon icon-home">
+            pyclmuapp
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Overview</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../overview/overview.html">About</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../overview/installation.html">Installation</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Basic usage</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../basic/basic_usage_inter.html">Basic usage: Web interface</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../basic/basic_usage_cli.html">Basic usage: Command line</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Python: usp mode</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../usp/example1_usp_basic.html">Example 1: Basic usage</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../usp/example2_usp_global_warming.html">Example 2: How does global warming will affect urban climates?</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../usp/example3_usp_adaptation.html">Example 3: Urban climate adaption</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Python: created input files</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="prepare_forcing_from_era5.html">Make your own forcing data from ERA5</a></li>
+<li class="toctree-l1"><a class="reference internal" href="prepare_urbansurf_10evlurb.html">Make your own surface data</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Spinup</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../usp/usp_spinup_mode.html">How to spinup in USP mode</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../spinup/spinup_workstation.html">Spinup in CLMU</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">HPC</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../hpc/HPC.html">pyclmuapp on HPC: Command line</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../hpc/singularity.html">pyclmuapp on HPC: Python</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Validation</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../val/urban_plumber_usp.html">Urban-Plumber2: UK-Kin site CLMU5 simulation</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Python: pts mode</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../pts/example1_workstation.html">Example 1: Run a simple simulation with a single case</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../pts/example2_workstation.html">Example 2: How does global warming will affect urban climates?</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../pts/example3_workstation.html">Example 3: Urban climate adaption</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">API Reference</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../modules.html">pyclmuapp</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">pyclmuapp</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../../index.html" class="icon icon-home" aria-label="Home"></a></li>
+      <li class="breadcrumb-item active">Make your own forcing data from ERA5</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../../_sources/notebooks/own/prepare_forcing_from_era5_old.ipynb.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="Make-your-own-forcing-data-from-ERA5">
+<h1>Make your own forcing data from ERA5<a class="headerlink" href="#Make-your-own-forcing-data-from-ERA5" title="Permalink to this heading"></a></h1>
+<p>Introduction: There are lots of forcing data can be used to drive the model, such as ERA5, NCEP (<a class="reference external" href="https://psl.noaa.gov/data/gridded/data.ncep.reanalysis.html">https://psl.noaa.gov/data/gridded/data.ncep.reanalysis.html</a>), etc. Here, we recommend ERA5 to make your own single point forcing as the NCEP and others are too big to download. The ERA5 data can be obtained in a small scale, which usually light weight to download and store.</p>
+<section id="Download-the-required-variables-from-the-cdsapi">
+<h2>Download the required variables from the cdsapi<a class="headerlink" href="#Download-the-required-variables-from-the-cdsapi" title="Permalink to this heading"></a></h2>
+<p>First, we will use the <code class="docutils literal notranslate"><span class="pre">cdsapi</span></code> package to download the data. If you don’t have the package installed, you can install it using the following command:</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>pip install cdsapi
+
+cat &lt;&lt;EOF &gt; ~/.cdsapirc
+url: {api-url}
+key: {uid}:{api-key}
+EOF
+</pre></div>
+</div>
+<p><a class="reference external" href="https://cds.climate.copernicus.eu/api-how-to">How to get your CDS API?</a></p>
+<p><strong>note: it will take a long time to run this script, so you can run it in the background and check the output file later.</strong></p>
+<p>We also can use the interface to download the data. The code below is an example of how to download the data using the interface.</p>
+<p>ref: <a class="reference external" href="https://cds.climate.copernicus.eu/cdsapp#!/dataset/reanalysis-era5-single-levels">https://cds.climate.copernicus.eu/cdsapp#!/dataset/reanalysis-era5-single-levels</a>?tab=form</p>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[1]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">pyclmuapp</span> <span class="kn">import</span> <span class="n">get_forcing</span>
+<span class="n">lat</span><span class="o">=</span><span class="mf">51.5</span>
+<span class="n">lon</span><span class="o">=</span><span class="mf">0.12</span>
+<span class="n">zbot</span><span class="o">=</span><span class="mi">30</span>
+<span class="n">start_year</span><span class="o">=</span><span class="mi">2012</span>
+<span class="n">end_year</span><span class="o">=</span><span class="mi">2012</span>
+<span class="n">start_month</span><span class="o">=</span><span class="mi">1</span>
+<span class="n">end_month</span><span class="o">=</span><span class="mi">2</span>
+<span class="n">get_forcing</span><span class="p">(</span>
+    <span class="n">lat</span><span class="o">=</span><span class="n">lat</span><span class="p">,</span> <span class="n">lon</span><span class="o">=</span><span class="n">lon</span><span class="p">,</span> <span class="n">zbot</span><span class="o">=</span><span class="n">zbot</span><span class="p">,</span>
+    <span class="n">start_year</span><span class="o">=</span><span class="n">start_year</span><span class="p">,</span> <span class="n">end_year</span><span class="o">=</span><span class="n">end_year</span><span class="p">,</span>
+    <span class="n">start_month</span><span class="o">=</span><span class="n">start_month</span><span class="p">,</span> <span class="n">end_month</span><span class="o">=</span><span class="n">end_month</span><span class="p">,</span>
+    <span class="n">source</span><span class="o">=</span><span class="s1">&#39;cds&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area stderr docutils container">
+<div class="highlight"><pre>
+2024-06-27 12:00:16,424 INFO Welcome to the CDS
+2024-06-27 12:00:16,424 INFO Sending request to https://cds.climate.copernicus.eu/api/v2/resources/reanalysis-era5-single-levels
+</pre></div></div>
+</div>
+<div class="nboutput docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+download: ./era5_data/era5_single_2012_01_51.5_0.12.nc
+</pre></div></div>
+</div>
+<div class="nboutput docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area stderr docutils container">
+<div class="highlight"><pre>
+2024-06-27 12:00:16,539 INFO Request is completed
+2024-06-27 12:00:16,541 INFO Downloading https://download-0019.copernicus-climate.eu/cache-compute-0019/cache/data4/adaptor.mars.internal-1719485113.5101933-9971-11-4b2c9802-6dcb-4b24-9e4a-2705adec9046.nc to ./era5_data/era5_single_2012_01_51.5_0.12.nc (123.8K)
+2024-06-27 12:00:16,865 INFO Download rate 382.4K/s
+2024-06-27 12:00:17,862 INFO Welcome to the CDS
+2024-06-27 12:00:17,862 INFO Sending request to https://cds.climate.copernicus.eu/api/v2/resources/reanalysis-era5-single-levels
+2024-06-27 12:00:17,958 INFO Request is completed
+2024-06-27 12:00:17,958 INFO Downloading https://download-0018.copernicus-climate.eu/cache-compute-0018/cache/data8/adaptor.mars.internal-1719485668.0006976-4897-15-6013a414-d43b-4ed3-820a-8cdfd184bfe1.nc to ./era5_data/era5_single_2012_02_51.5_0.12.nc (116K)
+</pre></div></div>
+</div>
+<div class="nboutput docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+download: ./era5_data/era5_single_2012_02_51.5_0.12.nc
+</pre></div></div>
+</div>
+<div class="nboutput docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area stderr docutils container">
+<div class="highlight"><pre>
+2024-06-27 12:00:18,261 INFO Download rate 382.6K/s
+</pre></div></div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[1]:
+</pre></div>
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+&#39;/Users/user/Documents/GitHub/pyclmuapp/era5_data/era5_forcing_51.5_0.12_30_2012_1_2012_2.nc&#39;
+</pre></div></div>
+</div>
+</section>
+<section id="command-line">
+<h2>command line<a class="headerlink" href="#command-line" title="Permalink to this heading"></a></h2>
+<p>this is same as above</p>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[2]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">!</span><span class="w"> </span>pyclmuapp<span class="w"> </span>--pyclmuapp_mode<span class="w"> </span>get_forcing<span class="w"> </span><span class="err">\</span>
+    <span class="o">--</span><span class="n">lat</span> <span class="mf">51.5</span> <span class="o">--</span><span class="n">lon</span> <span class="mf">0.12</span> <span class="o">--</span><span class="n">zbot</span> <span class="mi">30</span> \
+    <span class="o">--</span><span class="n">start_year</span> <span class="mi">2012</span> <span class="o">--</span><span class="n">end_year</span> <span class="mi">2012</span> \
+    <span class="o">--</span><span class="n">start_month</span> <span class="mi">1</span> <span class="o">--</span><span class="n">end_month</span> <span class="mi">2</span>
+<span class="c1"># will download and save in the default folder `./era5_forcing/`</span>
+<span class="c1"># the output file will be `./era5_forcing/era5_forcing_51.5_0.12_30_2012_01_2012_2.nc`</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+Namespace(init=False, pwd=&#39;/Users/user/Documents/GitHub/pyclmuapp&#39;, container_type=&#39;docker&#39;, input_path=None, output_path=None, log_path=None, scripts_path=None, pyclmuapp_mode=&#39;get_forcing&#39;, has_container=True, usr_domain=None, usr_forcing=None, usr_surfdata=None, output_prefix=&#39;_clm.nc&#39;, case_name=&#39;usp_case&#39;, run_startdate=None, stop_option=&#39;ndays&#39;, stop_n=&#39;1&#39;, run_type=&#39;coldstart&#39;, run_refcase=&#39;None&#39;, run_refdate=&#39;None&#39;, iflog=True, logfile=&#39;pyclmuapp.log&#39;, hist_type=&#39;GRID&#39;, hist_nhtfrq=1, hist_mfilt=1000000000, clean=False, surf_var=None, surf_action=0, forcing_var=None, forcing_action=0, script=None, urbsurf=None, soildata=None, pct_urban=[0, 0, 100.0], lat=51.5, lon=0.12, outputname=&#39;surfdata.nc&#39;, zbot=30, start_year=2012, end_year=2012, start_month=1, end_month=2)
+download: ./era5_data/era5_single_2012_01_51.5_0.12.nc
+2024-06-27 12:00:31,297 INFO Welcome to the CDS
+2024-06-27 12:00:31,297 INFO Sending request to https://cds.climate.copernicus.eu/api/v2/resources/reanalysis-era5-single-levels
+2024-06-27 12:00:31,373 INFO Request is completed
+2024-06-27 12:00:31,373 INFO Downloading https://download-0019.copernicus-climate.eu/cache-compute-0019/cache/data4/adaptor.mars.internal-1719485113.5101933-9971-11-4b2c9802-6dcb-4b24-9e4a-2705adec9046.nc to ./era5_data/era5_single_2012_01_51.5_0.12.nc (123.8K)
+2024-06-27 12:00:31,674 INFO Download rate 411.9K/s
+download: ./era5_data/era5_single_2012_02_51.5_0.12.nc
+2024-06-27 12:00:32,532 INFO Welcome to the CDS
+2024-06-27 12:00:32,532 INFO Sending request to https://cds.climate.copernicus.eu/api/v2/resources/reanalysis-era5-single-levels
+2024-06-27 12:00:32,637 INFO Request is completed
+2024-06-27 12:00:32,637 INFO Downloading https://download-0018.copernicus-climate.eu/cache-compute-0018/cache/data8/adaptor.mars.internal-1719485668.0006976-4897-15-6013a414-d43b-4ed3-820a-8cdfd184bfe1.nc to ./era5_data/era5_single_2012_02_51.5_0.12.nc (116K)
+2024-06-27 12:00:32,908 INFO Download rate 427.7K/s
+</pre></div></div>
+</div>
+<p><strong>test the forcing data</strong></p>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[3]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">!</span><span class="w"> </span>pyclmuapp<span class="w"> </span><span class="err">\</span>
+    <span class="o">--</span><span class="n">container_type</span> <span class="n">docker</span> \
+    <span class="o">--</span><span class="n">iflog</span> <span class="kc">True</span> \
+    <span class="o">--</span><span class="n">logfile</span> <span class="s2">&quot;pyclmuapp.log&quot;</span> \
+    <span class="o">--</span><span class="n">usr_forcing</span> <span class="s2">&quot;era5_data/era5_forcing_51.5_0.12_30_2012_1_2012_2.nc&quot;</span> \
+    <span class="o">--</span><span class="n">usr_surfdata</span> <span class="s2">&quot;inputfolder/surfdata.nc&quot;</span> \
+    <span class="o">--</span><span class="n">RUN_STARTDATE</span> <span class="s2">&quot;2012-01-01&quot;</span> <span class="o">--</span><span class="n">STOP_OPTION</span> <span class="s2">&quot;ndays&quot;</span> <span class="o">--</span><span class="n">STOP_N</span> <span class="s2">&quot;15&quot;</span> \
+    <span class="o">--</span><span class="n">RUN_TYPE</span> <span class="s2">&quot;coldstart&quot;</span> \
+    <span class="o">--</span><span class="n">hist_type</span> <span class="s2">&quot;GRID&quot;</span> <span class="o">--</span><span class="n">hist_nhtfrq</span> <span class="s2">&quot;1&quot;</span> \
+    <span class="o">--</span><span class="n">hist_mfilt</span> <span class="s2">&quot;1000000000&quot;</span> \
+    <span class="o">--</span><span class="n">output_prefix</span> <span class="s2">&quot;_clm.nc&quot;</span> \
+    <span class="o">--</span><span class="n">CASE_NAME</span> <span class="s2">&quot;pyclmuapp&quot;</span> \
+    <span class="o">--</span><span class="n">run_type</span> <span class="s2">&quot;coldstart&quot;</span> <span class="o">--</span><span class="n">run_refcase</span> <span class="s2">&quot;None&quot;</span> <span class="o">--</span><span class="n">run_refdate</span> <span class="s2">&quot;None&quot;</span> <span class="o">--</span><span class="n">clean</span> <span class="kc">True</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+Namespace(init=False, pwd=&#39;/Users/user/Documents/GitHub/pyclmuapp&#39;, container_type=&#39;docker&#39;, input_path=None, output_path=None, log_path=None, scripts_path=None, pyclmuapp_mode=&#39;usp&#39;, has_container=True, usr_domain=None, usr_forcing=&#39;era5_data/era5_forcing_51.5_0.12_30_2012_1_2012_2.nc&#39;, usr_surfdata=&#39;inputfolder/surfdata.nc&#39;, output_prefix=&#39;_clm.nc&#39;, case_name=&#39;pyclmuapp&#39;, run_startdate=&#39;2012-01-01&#39;, stop_option=&#39;ndays&#39;, stop_n=&#39;15&#39;, run_type=&#39;coldstart&#39;, run_refcase=&#39;None&#39;, run_refdate=&#39;None&#39;, iflog=True, logfile=&#39;pyclmuapp.log&#39;, hist_type=&#39;GRID&#39;, hist_nhtfrq=1, hist_mfilt=1000000000, clean=&#39;True&#39;, surf_var=None, surf_action=0, forcing_var=None, forcing_action=0, script=None, urbsurf=None, soildata=None, pct_urban=[0, 0, 100.0], lat=None, lon=None, outputname=&#39;surfdata.nc&#39;, zbot=30, start_year=2012, end_year=2012, start_month=1, end_month=12)
+Folder &#39;inputfolder&#39; already exists.
+Folder &#39;outputfolder&#39; already exists.
+Folder &#39;logfolder&#39; already exists.
+Folder &#39;scriptsfolder&#39; already exists.
+Folder &#39;/Users/user/Documents/GitHub/pyclmuapp/inputfolder/usp&#39; created successfully!
+Copying the file era5_forcing_51.5_0.12_30_2012_1_2012_2.nc to the /Users/user/Documents/GitHub/pyclmuapp/inputfolder/usp
+The domain file is not provided
+The case is:  pyclmuapp
+The log file is:  pyclmuapp.log
+The output file is:  {&#39;original&#39;: [&#39;/Users/user/Documents/GitHub/pyclmuapp/outputfolder/lnd/hist/pyclmuapp_clm0_2024-06-27_12-00-50_clm.nc&#39;]}
+</pre></div></div>
+</div>
+</section>
+<section id="Download-the-forcing-from-the-arco-era5">
+<h2>Download the forcing from the arco-era5<a class="headerlink" href="#Download-the-forcing-from-the-arco-era5" title="Permalink to this heading"></a></h2>
+<p>ref: <a class="reference external" href="https://github.com/google-research/arco-era5">https://github.com/google-research/arco-era5</a></p>
+<p><strong>note: it will take a long time to run this script, so you can run it in the background and check the output file later.</strong></p>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[4]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">pyclmuapp</span> <span class="kn">import</span> <span class="n">get_forcing</span>
+<span class="n">lat</span><span class="o">=</span><span class="mf">51.5</span>
+<span class="n">lon</span><span class="o">=</span><span class="mf">0.12</span>
+<span class="n">zbot</span><span class="o">=</span><span class="mi">30</span>
+<span class="n">start_year</span><span class="o">=</span><span class="mi">2012</span>
+<span class="n">end_year</span><span class="o">=</span><span class="mi">2012</span>
+<span class="n">start_month</span><span class="o">=</span><span class="mi">1</span>
+<span class="n">end_month</span><span class="o">=</span><span class="mi">2</span>
+<span class="n">get_forcing</span><span class="p">(</span>
+    <span class="n">lat</span><span class="o">=</span><span class="n">lat</span><span class="p">,</span> <span class="n">lon</span><span class="o">=</span><span class="n">lon</span><span class="p">,</span> <span class="n">zbot</span><span class="o">=</span><span class="n">zbot</span><span class="p">,</span>
+    <span class="n">start_year</span><span class="o">=</span><span class="n">start_year</span><span class="p">,</span> <span class="n">end_year</span><span class="o">=</span><span class="n">end_year</span><span class="p">,</span>
+    <span class="n">start_month</span><span class="o">=</span><span class="n">start_month</span><span class="p">,</span> <span class="n">end_month</span><span class="o">=</span><span class="n">end_month</span><span class="p">,</span>
+    <span class="n">source</span><span class="o">=</span><span class="s1">&#39;arco-era5&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[4]:
+</pre></div>
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+&#39;/Users/user/Documents/GitHub/pyclmuapp/era5_data/arco_era5_forcing_51.5_0.12_30_2012_1_2012_2.nc&#39;
+</pre></div></div>
+</div>
+<p><strong>compare the difference between the two forcing datasets</strong></p>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[5]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">xarray</span> <span class="k">as</span> <span class="nn">xr</span>
+<span class="n">cds</span> <span class="o">=</span> <span class="n">xr</span><span class="o">.</span><span class="n">open_dataset</span><span class="p">(</span><span class="s1">&#39;era5_data/era5_forcing_51.5_0.12_30_2012_1_2012_2.nc&#39;</span><span class="p">)</span>
+<span class="n">arco</span> <span class="o">=</span> <span class="n">xr</span><span class="o">.</span><span class="n">open_dataset</span><span class="p">(</span><span class="s1">&#39;era5_data/arco_era5_forcing_51.5_0.12_30_2012_1_2012_2.nc&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[6]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="p">(</span><span class="n">cds</span><span class="p">[</span><span class="s1">&#39;Tair&#39;</span><span class="p">]</span><span class="o">-</span><span class="n">arco</span><span class="p">[</span><span class="s1">&#39;Tair&#39;</span><span class="p">])</span><span class="o">.</span><span class="n">plot</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[6]:
+</pre></div>
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+[&lt;matplotlib.lines.Line2D at 0x31e1b3950&gt;]
+</pre></div></div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<img alt="../../_images/notebooks_own_prepare_forcing_from_era5_old_13_1.png" src="../../_images/notebooks_own_prepare_forcing_from_era5_old_13_1.png" />
+</div>
+</div>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2024, Junjie Yu, Zhonghua Zheng.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

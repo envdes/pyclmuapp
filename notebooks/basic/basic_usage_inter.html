@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Basic usage: Web interface &mdash; pyclmuapp v0.0.0 documentation</title>
+      <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=80d5e7a1" />
+      <link rel="stylesheet" type="text/css" href="../../_static/css/theme.css?v=19f00094" />
+
+  
+  <!--[if lt IE 9]>
+    <script src="../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script src="../../_static/jquery.js?v=5d32c60e"></script>
+        <script src="../../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+        <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js?v=f3b75425"></script>
+        <script src="../../_static/doctools.js?v=888ff710"></script>
+        <script src="../../_static/sphinx_highlight.js?v=4825356b"></script>
+        <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+    <script src="../../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="Basic usage: Command line" href="basic_usage_cli.html" />
+    <link rel="prev" title="Installation" href="../overview/installation.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="../../index.html" class="icon icon-home">
+            pyclmuapp
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Overview</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../overview/overview.html">About</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../overview/installation.html">Installation</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Basic usage</span></p>
+<ul class="current">
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Basic usage: Web interface</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#usp">1 USP</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#create-forcing-from-era5">2 Create forcing from ERA5</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#create-surfdata">3 Create surfdata</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#create-fake-forcing">4 Create fake forcing</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#input-parameters">Input Parameters</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#id1">1 USP</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id2">2 Create forcing from ERA5</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id3">3 Create surfdata</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id4">4 Create fake forcing</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#clean-files">5 Clean files</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="basic_usage_cli.html">Basic usage: Command line</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Python: usp mode</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../usp/example1_usp_basic.html">Example 1: Basic usage</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../usp/example2_usp_global_warming.html">Example 2: How does global warming will affect urban climates?</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../usp/example3_usp_adaptation.html">Example 3: Urban climate adaption</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Python: created input files</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../own/prepare_forcing_from_era5.html">Make your own forcing data from ERA5</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../own/prepare_urbansurf_10evlurb.html">Make your own surface data</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Spinup</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../usp/usp_spinup_mode.html">How to spinup in USP mode</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../spinup/spinup_workstation.html">Spinup in CLMU</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">HPC</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../hpc/HPC.html">pyclmuapp on HPC: Command line</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../hpc/singularity.html">pyclmuapp on HPC: Python</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Validation</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../val/urban_plumber_usp.html">Urban-Plumber2: UK-Kin site CLMU5 simulation</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Python: pts mode</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../pts/example1_workstation.html">Example 1: Run a simple simulation with a single case</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../pts/example2_workstation.html">Example 2: How does global warming will affect urban climates?</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../pts/example3_workstation.html">Example 3: Urban climate adaption</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">API Reference</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../modules.html">pyclmuapp</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">pyclmuapp</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../../index.html" class="icon icon-home" aria-label="Home"></a></li>
+      <li class="breadcrumb-item active">Basic usage: Web interface</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../../_sources/notebooks/basic/basic_usage_inter.md.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="basic-usage-web-interface">
+<h1>Basic usage: Web interface<a class="headerlink" href="#basic-usage-web-interface" title="Permalink to this heading"></a></h1>
+<hr class="docutils" />
+<p>Step 1: Run pyclmuapp container</p>
+<p>Open the terminal and input follow</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>docker<span class="w"> </span>pull<span class="w"> </span>envdes/pyclmuapp:1.0
+docker<span class="w"> </span>run<span class="w"> </span>--hostname<span class="w"> </span>clmu-app<span class="w"> </span>-p<span class="w"> </span><span class="m">8080</span>:7860<span class="w"> </span>envdes/pyclmuapp:1.0
+</pre></div>
+</div>
+<p>then copy http://localhost:8080 to your browser.</p>
+<section id="usp">
+<h2>1 USP<a class="headerlink" href="#usp" title="Permalink to this heading"></a></h2>
+<p>Step 2: Run simulation by providing <code class="docutils literal notranslate"><span class="pre">surface</span> <span class="pre">data</span></code> and <code class="docutils literal notranslate"><span class="pre">forcing</span> <span class="pre">data</span></code>.</p>
+<p>Click <code class="docutils literal notranslate"><span class="pre">Submit</span></code> button, and then get the result from the left. The <code class="docutils literal notranslate"><span class="pre">Output</span> <span class="pre">files</span></code> are the simulation output files location. The outputs are Netcdf file, which can be read using lots tools, including <code class="docutils literal notranslate"><span class="pre">Xarray</span></code> and <code class="docutils literal notranslate"><span class="pre">Netcdf4</span></code> Python package, Matlab, NCAR Command Language, HDFView, Panoply etc. The figures on the left were generated by Python.
+<img alt="run clmuapp" src="../../_images/usp_era5.png" /></p>
+<p>Optional: Modify the urban surface or/and forcing and run simulations.</p>
+<p><img alt="run clmuapp" src="../../_images/usp_surf_f.png" /></p>
+</section>
+<section id="create-forcing-from-era5">
+<h2>2 Create forcing from ERA5<a class="headerlink" href="#create-forcing-from-era5" title="Permalink to this heading"></a></h2>
+<p>Optional: Create forcing from ERA5 single level data.</p>
+<p><img alt="run clmuapp" src="../../_images/era5forcing.png" /></p>
+</section>
+<section id="create-surfdata">
+<h2>3 Create surfdata<a class="headerlink" href="#create-surfdata" title="Permalink to this heading"></a></h2>
+<p>Optional: Create surface data.</p>
+<p><img alt="run clmuapp" src="../../_images/createsurf.png" /></p>
+</section>
+<section id="create-fake-forcing">
+<h2>4 Create fake forcing<a class="headerlink" href="#create-fake-forcing" title="Permalink to this heading"></a></h2>
+<p>Optional: Create fake forcing.</p>
+<p><img alt="run clmuapp" src="../../_images/fakeforcing.png" /></p>
+</section>
+<section id="input-parameters">
+<h2>Input Parameters<a class="headerlink" href="#input-parameters" title="Permalink to this heading"></a></h2>
+<hr class="docutils" />
+<section id="id1">
+<h3>1 USP<a class="headerlink" href="#id1" title="Permalink to this heading"></a></h3>
+<ul class="simple">
+<li><p><strong>Case name</strong>: Case name, default is pyclmuapp</p></li>
+<li><p><strong>CLM surface data</strong>: User surface data file, default is None If have the domain file, input the file path.</p></li>
+<li><p><strong>Forcing file</strong>: User forcing file, default is None. If have the domain file, input the file path.</p></li>
+<li><p><strong>Run start date</strong>: Start date, default is <code class="docutils literal notranslate"><span class="pre">2012-08-08</span></code>.</p></li>
+<li><p><strong>Stop option</strong>: Stop option, default is <code class="docutils literal notranslate"><span class="pre">ndays</span></code>, can be nyears, nmonths, ndays.</p></li>
+<li><p><strong>Stop_n</strong>: Stop number, default is <code class="docutils literal notranslate"><span class="pre">1</span></code>. Case length is STOP_OPTION * STOP_N</p></li>
+</ul>
+<p>Additional Inputs</p>
+<ul class="simple">
+<li><p><strong>surf_var</strong>: Surface variable to modify, default is <code class="docutils literal notranslate"><span class="pre">None</span></code>. Can be one/some (use ‘,’(withou space to seperate each)) of ‘CANYON_HWR’, ‘HT_ROOF’,’THICK_ROOF’,’THICK_WALL’,’ WTLUNIT_ROOF’,’WTROAD_PERV’,’WIND_HGT_CANYON’,’NLEV_IM PROAD’,’TK_ROOF’,’TK_WALL’,’TK_IMPROAD’,’CV_ROOF’,’CV_ WALL’,’CV_IMPROAD’,’EM_IMPROAD’,’EM_PERROAD’,’EM_ROOF’ ,’EM_WALL’,’ALB_IMPROAD_DIR’,’ALB_IMPROAD_DIF’,’ALB_PERROAD_DIR’,’ALB_PERROAD_DIF’,’ALB_ROOF_DIR’,’ALB_ROOF_DIF’,’ALB_WALL_DIR’,’ALB_WALL_DIF’,’T_BUILDING_MIN’.</p></li>
+<li><p><strong>surf_action</strong>: Surface action to add, default is <code class="docutils literal notranslate"><span class="pre">0</span></code>. The number is same as surf_var with “,” seperated (not “, “).</p></li>
+<li><p><strong>forcing_var</strong>: Forcing variable to modify, default is <code class="docutils literal notranslate"><span class="pre">None</span></code>. Can be one/some (use ‘,’(withou space to seperate each)) of ‘Prectmms’,’Wind’,’LWdown’,’PSurf’,’Qair’,’Tair’,’S Wdown’.</p></li>
+<li><p><strong>forcing_action</strong>: Forcing action to add, default is 0. The number is same as forcing_var with “,” seperated (not “, “).</p></li>
+<li><p><strong>run_type</strong>: Run type, default is <code class="docutils literal notranslate"><span class="pre">coldstart</span></code>, can be branch.</p></li>
+<li><p><strong>run_refcase</strong>: Reference case, default is <code class="docutils literal notranslate"><span class="pre">None</span></code>.</p></li>
+<li><p><strong>run_refdate</strong>: Reference date, default is <code class="docutils literal notranslate"><span class="pre">None</span></code>.</p></li>
+<li><p><strong>hist_type</strong>: Param for usp. ouput type. Can be GRID, LAND, COLS, default is GRID</p></li>
+<li><p><strong>hist_nhtfrq</strong>: Param for usp. History file frequency, default is 1 (ouput each time step)</p></li>
+<li><p><strong>hist_mfilt</strong>: Param for usp. each history file will include mfilt time steps, default is 1000000000</p></li>
+<li><p><strong>logfile</strong>: Log file, default is <code class="docutils literal notranslate"><span class="pre">pyclmuapp.log</span></code>.</p></li>
+<li><p><strong>case clean</strong>: Clean, default is <code class="docutils literal notranslate"><span class="pre">False</span></code>. True, will clean the case files.</p></li>
+</ul>
+</section>
+<section id="id2">
+<h3>2 Create forcing from ERA5<a class="headerlink" href="#id2" title="Permalink to this heading"></a></h3>
+<ul class="simple">
+<li><p><strong>Start year</strong>: Param for get_forcing. Start year, default is 2012.</p></li>
+<li><p><strong>End year</strong>: Param for get_forcing. End year, default is 2012.</p></li>
+<li><p><strong>Start month</strong>: Param for get_forcing. Start month, default is 1.</p></li>
+<li><p><strong>End month</strong>: Param for get_forcing. End month, default is 12.</p></li>
+<li><p><strong>Latitude</strong>: Latitude of interesting point.</p></li>
+<li><p><strong>Longitude</strong>: Longitude of interesting point.</p></li>
+<li><p><strong>Zbot</strong>: Forcing height.</p></li>
+<li><p><strong>CDS API UID</strong>: CDS API UID</p></li>
+<li><p><strong>CDS API key</strong>: API Keys.</p></li>
+</ul>
+<p><a class="reference external" href="https://cds.climate.copernicus.eu/api-how-to">How to get CDS API?</a></p>
+</section>
+<section id="id3">
+<h3>3 Create surfdata<a class="headerlink" href="#id3" title="Permalink to this heading"></a></h3>
+<ul class="simple">
+<li><p><strong>Latitude</strong>: Latitude of interesting point.</p></li>
+<li><p><strong>Longitude</strong>: Longitude of interesting point.</p></li>
+<li><p>Percentage of urban land use in each density class, sum should be 100, default is [0,0,100.0]</p></li>
+<li><p><strong>Output name</strong>: the output surfdata name.</p></li>
+</ul>
+</section>
+<section id="id4">
+<h3>4 Create fake forcing<a class="headerlink" href="#id4" title="Permalink to this heading"></a></h3>
+<ul class="simple">
+<li><p><strong>Distribution file</strong>: Like the file of <a class="reference external" href="https://github.com/JunjieYU-UoM/CLMU_fake_forcing/blob/main/data/distribution.csv"><code class="docutils literal notranslate"><span class="pre">distribution.csv</span></code></a>. Not required. Default file is generated from <a class="reference external" href="https://github.com/JunjieYU-UoM/CLMU_fake_forcing/blob/main/generate_fake.ipynb"><code class="docutils literal notranslate"><span class="pre">generate_fake.ipynb</span></code></a>.</p></li>
+<li><p><strong>Run date</strong>: Start date, default is <code class="docutils literal notranslate"><span class="pre">2012-08-08</span></code>.</p></li>
+<li><p><strong>Stop option</strong>: Stop option, default is <code class="docutils literal notranslate"><span class="pre">ndays</span></code>, can be nyears, nmonths, ndays.</p></li>
+<li><p><strong>Stop_n</strong>: Stop number, default is <code class="docutils literal notranslate"><span class="pre">1</span></code>. Case length is STOP_OPTION * STOP_N</p></li>
+<li><p><strong>Zbot</strong>: Forcing height.</p></li>
+</ul>
+</section>
+<section id="clean-files">
+<h3>5 Clean files<a class="headerlink" href="#clean-files" title="Permalink to this heading"></a></h3>
+<ul class="simple">
+<li><p><strong>Clean USP files</strong>: delete the USP folder.</p></li>
+<li><p><strong>Case name</strong>: delete the case cache files.</p></li>
+<li><p><strong>Clean era5 files</strong>: delete the eraß5 cache files.</p></li>
+<li><p><strong>Clean cache files</strong>: delete the cache files of CLM.</p></li>
+</ul>
+</section>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="../overview/installation.html" class="btn btn-neutral float-left" title="Installation" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="basic_usage_cli.html" class="btn btn-neutral float-right" title="Basic usage: Command line" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2024, Junjie Yu, Zhonghua Zheng.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Basic usage: Command line &mdash; pyclmuapp v0.0.0 documentation</title>
+      <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=80d5e7a1" />
+      <link rel="stylesheet" type="text/css" href="../../_static/css/theme.css?v=19f00094" />
+
+  
+  <!--[if lt IE 9]>
+    <script src="../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script src="../../_static/jquery.js?v=5d32c60e"></script>
+        <script src="../../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+        <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js?v=f3b75425"></script>
+        <script src="../../_static/doctools.js?v=888ff710"></script>
+        <script src="../../_static/sphinx_highlight.js?v=4825356b"></script>
+        <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+    <script src="../../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="Example 1: Basic usage" href="../usp/example1_usp_basic.html" />
+    <link rel="prev" title="Basic usage: Web interface" href="basic_usage_inter.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="../../index.html" class="icon icon-home">
+            pyclmuapp
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Overview</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../overview/overview.html">About</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../overview/installation.html">Installation</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Basic usage</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="basic_usage_inter.html">Basic usage: Web interface</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Basic usage: Command line</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#check-the-version">1 check the version</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#example-for-running-your-case">2 example for running your case</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#help">3 help</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#pyclmuapp-input-parameters">4 pyclmuapp Input Parameters</a></li>
+</ul>
+</li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Python: usp mode</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../usp/example1_usp_basic.html">Example 1: Basic usage</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../usp/example2_usp_global_warming.html">Example 2: How does global warming will affect urban climates?</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../usp/example3_usp_adaptation.html">Example 3: Urban climate adaption</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Python: created input files</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../own/prepare_forcing_from_era5.html">Make your own forcing data from ERA5</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../own/prepare_urbansurf_10evlurb.html">Make your own surface data</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Spinup</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../usp/usp_spinup_mode.html">How to spinup in USP mode</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../spinup/spinup_workstation.html">Spinup in CLMU</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">HPC</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../hpc/HPC.html">pyclmuapp on HPC: Command line</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../hpc/singularity.html">pyclmuapp on HPC: Python</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Validation</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../val/urban_plumber_usp.html">Urban-Plumber2: UK-Kin site CLMU5 simulation</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Python: pts mode</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../pts/example1_workstation.html">Example 1: Run a simple simulation with a single case</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../pts/example2_workstation.html">Example 2: How does global warming will affect urban climates?</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../pts/example3_workstation.html">Example 3: Urban climate adaption</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">API Reference</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../modules.html">pyclmuapp</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">pyclmuapp</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../../index.html" class="icon icon-home" aria-label="Home"></a></li>
+      <li class="breadcrumb-item active">Basic usage: Command line</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../../_sources/notebooks/basic/basic_usage_cli.md.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="basic-usage-command-line">
+<h1>Basic usage: Command line<a class="headerlink" href="#basic-usage-command-line" title="Permalink to this heading"></a></h1>
+<hr class="docutils" />
+<p>The direct usage of pyclmuapp (Python) is using the provided command line tool. Here is the example.</p>
+<section id="check-the-version">
+<h2>1 check the version<a class="headerlink" href="#check-the-version" title="Permalink to this heading"></a></h2>
+<hr class="docutils" />
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">&gt;</span> <span class="n">pip</span> <span class="n">install</span> <span class="n">pyclmuapp</span> <span class="c1"># before using the command line tool</span>
+<span class="o">&gt;</span> <span class="n">pyclmuapp</span> <span class="o">-</span><span class="n">v</span> <span class="c1">#or python -m pyclmuapp -v</span>
+<span class="c1"># pyclmuapp 0.0.0. Author: Junjie Yu. Email: yjj1997@live.cn</span>
+</pre></div>
+</div>
+</section>
+<section id="example-for-running-your-case">
+<h2>2 example for running your case<a class="headerlink" href="#example-for-running-your-case" title="Permalink to this heading"></a></h2>
+<hr class="docutils" />
+<p>First, if you not have the CLMU-App container. Download the Docker (or Singularity), then use the following command to run the CLMU-App.</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>pyclmuapp<span class="w"> </span>--has_container<span class="w"> </span>False<span class="w"> </span>--container_type<span class="w"> </span>docker<span class="w"> </span>--init<span class="w"> </span>True<span class="w"> </span><span class="c1"># or singularity</span>
+</pre></div>
+</div>
+<p>Run the case with the user forcing file and start date. The output file will be saved in the output folder.</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>pyclmuapp<span class="w"> </span>--usr_forcing<span class="w"> </span><span class="s2">&quot;inputfolder/usp/CTSM_forcing_London_ERA5_2002_2014.nc&quot;</span><span class="w"> </span><span class="se">\</span>
+$<span class="w"> </span>--CASE_NAME<span class="w"> </span><span class="s2">&quot;basic_test&quot;</span><span class="w"> </span><span class="se">\</span>
+$<span class="w"> </span>--RUN_STARTDATE<span class="w"> </span><span class="s2">&quot;2012-01-01&quot;</span><span class="w"> </span><span class="se">\</span>
+$<span class="w"> </span>--STOP_OPTION<span class="w"> </span><span class="s2">&quot;ndays&quot;</span><span class="w"> </span><span class="se">\</span>
+$<span class="w"> </span>--STOP_N<span class="w"> </span><span class="s2">&quot;15&quot;</span><span class="w"> </span>
+
+Namespace<span class="o">(</span><span class="nv">pwd</span><span class="o">=</span><span class="s1">&#39;/Users/user/Documents/GitHub/pyclmuapp&#39;</span>,<span class="w"> </span><span class="nv">container_type</span><span class="o">=</span><span class="s1">&#39;docker&#39;</span>,<span class="w"> </span><span class="nv">input_path</span><span class="o">=</span>None,<span class="w"> </span><span class="nv">output_path</span><span class="o">=</span>None,<span class="w"> </span><span class="nv">log_path</span><span class="o">=</span>None,<span class="w"> </span><span class="nv">scripts_path</span><span class="o">=</span>None,<span class="w"> </span><span class="nv">pyclmuapp_mode</span><span class="o">=</span><span class="s1">&#39;usp&#39;</span>,<span class="w"> </span><span class="nv">has_container</span><span class="o">=</span>True,<span class="w"> </span><span class="nv">usr_domain</span><span class="o">=</span>None,<span class="w"> </span><span class="nv">usr_forcing</span><span class="o">=</span><span class="s1">&#39;inputfolder/usp/CTSM_forcing_London_ERA5_2002_2014.nc&#39;</span>,<span class="w"> </span><span class="nv">usr_surfdata</span><span class="o">=</span>None,<span class="w"> </span><span class="nv">output_prefix</span><span class="o">=</span><span class="s1">&#39;_clm.nc&#39;</span>,<span class="w"> </span><span class="nv">case_name</span><span class="o">=</span><span class="s1">&#39;basic_test&#39;</span>,<span class="w"> </span><span class="nv">run_startdate</span><span class="o">=</span><span class="s1">&#39;2012-01-01&#39;</span>,<span class="w"> </span><span class="nv">stop_option</span><span class="o">=</span><span class="s1">&#39;ndays&#39;</span>,<span class="w"> </span><span class="nv">stop_n</span><span class="o">=</span><span class="s1">&#39;15&#39;</span>,<span class="w"> </span><span class="nv">run_type</span><span class="o">=</span><span class="s1">&#39;coldstart&#39;</span>,<span class="w"> </span><span class="nv">run_refcase</span><span class="o">=</span><span class="s1">&#39;None&#39;</span>,<span class="w"> </span><span class="nv">run_refdate</span><span class="o">=</span><span class="s1">&#39;None&#39;</span>,<span class="w"> </span><span class="nv">iflog</span><span class="o">=</span>True,<span class="w"> </span><span class="nv">logfile</span><span class="o">=</span><span class="s1">&#39;pyclmuapp.log&#39;</span>,<span class="w"> </span><span class="nv">var_add</span><span class="o">=</span><span class="s1">&#39;Qle&#39;</span>,<span class="w"> </span><span class="nv">claen</span><span class="o">=</span>False,<span class="w"> </span><span class="nv">script</span><span class="o">=</span>None<span class="o">)</span>
+Folder<span class="w"> </span><span class="s1">&#39;inputfolder&#39;</span><span class="w"> </span>already<span class="w"> </span>exists.
+Folder<span class="w"> </span><span class="s1">&#39;outputfolder&#39;</span><span class="w"> </span>already<span class="w"> </span>exists.
+Folder<span class="w"> </span><span class="s1">&#39;logfolder&#39;</span><span class="w"> </span>already<span class="w"> </span>exists.
+Folder<span class="w"> </span><span class="s1">&#39;scriptsfolder&#39;</span><span class="w"> </span>already<span class="w"> </span>exists.
+Folder<span class="w"> </span><span class="s1">&#39;/Users/user/Documents/GitHub/pyclmuapp/inputfolder/usp&#39;</span><span class="w"> </span>already<span class="w"> </span>exists.
+The<span class="w"> </span>file<span class="w"> </span>CTSM_forcing_London_ERA5_2002_2014.nc<span class="w"> </span>already<span class="w"> </span>exists.
+The<span class="w"> </span>/Users/user/Documents/GitHub/pyclmuapp/inputfolder/usp/usp.sh<span class="w"> </span>already<span class="w"> </span>exists.
+The<span class="w"> </span><span class="k">case</span><span class="w"> </span>is:<span class="w">  </span>basic_test
+The<span class="w"> </span>log<span class="w"> </span>file<span class="w"> </span>is:<span class="w">  </span>pyclmuapp.log
+The<span class="w"> </span>output<span class="w"> </span>file<span class="w"> </span>is:<span class="w">  </span><span class="o">[</span><span class="s1">&#39;/Users/user/Documents/GitHub/pyclmuapp/outputfolder/lnd/hist/basic_test_clm0_2024-05-18_19-46-33_clm.nc&#39;</span><span class="o">]</span>
+</pre></div>
+</div>
+<p>If you are using <strong>Docker</strong>, stop and remove the running container by</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>pyclmuapp<span class="w"> </span>--has_container<span class="w"> </span>True<span class="w"> </span>--container_type<span class="w"> </span>docker<span class="w"> </span>--init<span class="w"> </span>False<span class="w"> </span><span class="c1"># or singularity</span>
+</pre></div>
+</div>
+<p>(Optional)</p>
+<p>Create your own surface data file.</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>pyclmuapp<span class="w"> </span>--pyclmuapp_mode<span class="w"> </span>get_surfdata<span class="w"> </span><span class="se">\</span>
+$<span class="w"> </span>--lat<span class="w"> </span><span class="m">51</span>.5074<span class="w"> </span>--lon<span class="w"> </span><span class="m">0</span>.1278<span class="w"> </span><span class="se">\</span>
+$<span class="w"> </span>--outputname<span class="w"> </span><span class="s2">&quot;surfdata.nc&quot;</span><span class="w"> </span><span class="se">\</span>
+$<span class="w"> </span>--pct_urban<span class="w"> </span><span class="m">0</span>,0,100.0<span class="w"> </span><span class="se">\</span>
+$<span class="w"> </span>--urbsurf<span class="w"> </span><span class="s2">&quot;inputfolder/mksrf_urban_0.05x0.05_simyr2000.c120601.nc&quot;</span><span class="w"> </span><span class="se">\</span>
+$<span class="w"> </span>--soildata<span class="w"> </span><span class="s2">&quot;inputfolder/mksrf_soitex.10level.c010119.nc&quot;</span><span class="w"> </span>
+</pre></div>
+</div>
+<p>Create your own forcing data file.</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>pyclmuapp<span class="w"> </span>--pyclmuapp_mode<span class="w"> </span>get_forcing<span class="w"> </span><span class="se">\</span>
+$<span class="w">    </span>--lat<span class="w"> </span><span class="m">51</span>.5<span class="w"> </span>--lon<span class="w"> </span><span class="m">0</span>.12<span class="w"> </span>--zbot<span class="w"> </span><span class="m">30</span><span class="w"> </span><span class="se">\</span>
+$<span class="w">    </span>--start_year<span class="w"> </span><span class="m">2012</span><span class="w"> </span>--end_year<span class="w"> </span><span class="m">2012</span><span class="w"> </span><span class="se">\</span>
+$<span class="w">    </span>--start_month<span class="w"> </span><span class="m">1</span><span class="w"> </span>--end_month<span class="w"> </span><span class="m">2</span>
+<span class="c1"># will download and save in the default folder `./era5_forcing/`</span>
+<span class="c1"># the output file will be `./era5_forcing/era5_forcing_51.5_0.12_30_2012_01_2012_2.nc`</span>
+<span class="c1">#will download and save in the default folder `./era5_forcing/`</span>
+</pre></div>
+</div>
+</section>
+<section id="help">
+<h2>3 help<a class="headerlink" href="#help" title="Permalink to this heading"></a></h2>
+<hr class="docutils" />
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>&gt;<span class="w"> </span>pyclmuapp<span class="w"> </span>-h<span class="w"> </span><span class="c1">#or python -m pyclmuapp -h</span>
+</pre></div>
+</div>
+</section>
+<section id="pyclmuapp-input-parameters">
+<h2>4 pyclmuapp Input Parameters<a class="headerlink" href="#pyclmuapp-input-parameters" title="Permalink to this heading"></a></h2>
+<hr class="docutils" />
+<p><strong>Required:</strong></p>
+<ul class="simple">
+<li><p><strong>usr_forcing/USR_FORCING</strong>: User forcing file, default is None. If have the domain file, input the file path.</p></li>
+<li><p><strong>run_startdate/RUN_STARTDATE</strong>: Start date, default is None</p></li>
+</ul>
+<p><strong>Ususally required:</strong></p>
+<ul class="simple">
+<li><p><strong>strat_tod/START_TOD</strong>: The start time of the day. The default is “00000”.</p></li>
+<li><p><strong>stop_option/STOP_OPTION</strong>: Stop option, default is ndays, can be nyears, nmonths, ndays</p></li>
+<li><p><strong>stop_n/STOP_N</strong>: Stop number, default is 1. Case length is STOP_OPTION * STOP_N</p></li>
+<li><p><strong>pyclmuapp_mode/PYCLMUAPP_MODE</strong>: pyclmuapp mode, default is usp, can be script, pts, get_forcing, get_surfdata.</p></li>
+</ul>
+<p><strong>Optional:</strong></p>
+<p>common:</p>
+<ul class="simple">
+<li><p><strong>init/INIT</strong>: If true, only pull(/run) the container. Default is False.</p></li>
+<li><p><strong>pwd/PWD</strong>: Current working directory, default is pwd, can be none. If is not none, the the input_path, output_path, log_path, scripts_path will be used in pwd or be created. If none, the input_path, output_path, log_path, scripts_path should be provided.</p></li>
+<li><p><strong>container_type/CONTAINER_TYPE</strong>: Container type, default is “docker”, can be “singularity”.</p></li>
+<li><p><strong>input_path/INPUT_PATH</strong>: CTSM input path, default is None. The path will be binded to “inputdata” in container</p></li>
+<li><p><strong>output_path/OUTPUT_PATH</strong>: CTSM output path, default is None. The path will be binded to “Archive” in container.</p></li>
+<li><p><strong>log_path/LOG_PATH</strong>: CTSM log path, default is None. The path will be binded to “CaseOutputs” in container.</p></li>
+<li><p><strong>scripts_path/SCRIPTS_PATH</strong>: CTSM scripts path, default is None. The path will be binded to “/p/scripts” in container.</p></li>
+<li><p><strong>has_container/HAS_CONTAINER</strong>: Has container, default is True</p></li>
+<li><p><strong>iflog/IFLOG</strong>: If log, default is True</p></li>
+<li><p><strong>logfile/LOGFILE</strong>: Log file, default is pyclmuapp.log</p></li>
+</ul>
+<p>For PYCLMUAPP_MODE = usp:</p>
+<ul class="simple">
+<li><p><strong>usr_domain/USR_DOMAIN</strong>: User domain file, default is None. If have the domain file, input the file path.</p></li>
+<li><p><strong>usr_surfdata/USR_SURFDATA</strong>: User surface data file, default is <code class="docutils literal notranslate"><span class="pre">surfdata.nc</span></code>. If have the surface data file, input the file path.</p></li>
+<li><p><strong>output_prefix/output_prefix</strong>: Output file name prefix, default is _clm.nc, is used to generate the output file of pyclmuapp</p></li>
+<li><p><strong>case_name/CASE_NAME</strong>: Case name, default is usp_case</p></li>
+<li><p><strong>hist_type/HIST_TYPE</strong>: Param for usp. ouput type. Can be GRID, LAND, COLS, default is GRID</p></li>
+<li><p><strong>hist_nhtfrq/HIST_NHTFRQ</strong>: Param for usp. History file frequency, default is 1 (ouput each time step)</p></li>
+<li><p><strong>hist_mfilt/HIST_MFILT</strong>: Param for usp. each history file will include mfilt time steps, default is 1000000000</p></li>
+<li><p><strong>claen/CLAEN</strong>: Clean, default is False. True, will clean the case files.</p></li>
+<li><p><strong>surf_var/SURF_VAR</strong>: Param for usp. Surface variable, default is None. Can be one/some (use ‘,’(withou space to seperate each)) of ‘CANYON_HWR’, ‘HT_ROOF’,’THICK_ROOF’,’THICK_WALL’,’ WTLUNIT_ROOF’,’WTROAD_PERV’,’WIND_HGT_CANYON’,’NLEV_IM PROAD’,’TK_ROOF’,’TK_WALL’,’TK_IMPROAD’,’CV_ROOF’,’CV_ WALL’,’CV_IMPROAD’,’EM_IMPROAD’,’EM_PERROAD’,’EM_ROOF’ ,’EM_WALL’,’ALB_IMPROAD_DIR’,’ALB_IMPROAD_DIF’,’ALB_PERROAD_DIR’,’ALB_PERROAD_DIF’,’ALB_ROOF_DIR’,’ALB_ROOF_DIF’,’ALB_WALL_DIR’,’ALB_WALL_DIF’,’T_BUILDING_MIN’.</p></li>
+<li><p><strong>surf_action/SURF_ACTION</strong>: Param for usp. Surface action, default is None. The number is same as surf_var with “,” seperated (not “, “).</p></li>
+<li><p><strong>forcing_var/FORCING_VAR</strong>: Param for usp. Forcing variable, default is None. Can be one/some (use ‘,’(withou space to seperate each)) of ‘Prectmms’,’Wind’,’LWdown’,’PSurf’,’Qair’,’Tair’,’S Wdown’.</p></li>
+<li><p><strong>forcing_action/FORCING_ACTION</strong>: Param for usp. Forcing action, default is None. The number is same as forcing_var with “,” seperated (not “, “).</p></li>
+<li><p><strong>urban_hac/URBAN_HAC</strong>: The flag to turn on the urban HAC. The default is “ON_WASTEHEAT”. valid_values=”OFF,ON,ON_WASTEHEAT”.</p></li>
+</ul>
+<p>For PYCLMUAPP_MODE = usp and RUN_TYPE = branch:</p>
+<ul class="simple">
+<li><p><strong>run_type/RUN_TYPE</strong>: Run type, default is coldstart, can be branch</p></li>
+<li><p><strong>run_refcase/RUN_REFCASE</strong>: Reference case, default is None</p></li>
+<li><p><strong>run_refdate/RUN_REFDATE</strong>: Reference date, default is None</p></li>
+<li><p><strong>run_reftod/RUN_REFTOD</strong>: Reference time of the day, default is 00000. Need to be provided when the RUN_TYPE is “branch”.</p></li>
+</ul>
+<p>For PYCLMUAPP_MODE = script:</p>
+<ul class="simple">
+<li><p><strong>script/SCRIPT</strong>: Script file in container, default is None</p></li>
+</ul>
+<p>For PYCLMUAPP_MODE = get_surfdata and get_forcing</p>
+<ul class="simple">
+<li><p><strong>urbsurf/URBSURF</strong>: Param for get_surfdata. Urban surface data file, default is None. Here to download the urban surface data file: https://svn-ccsm-inputdata.cgd.ucar.edu/trunk/inputdata/lnd/clm2/rawdata/mksrf_urban_0.05x0.05_simyr2000.c120601.nc</p></li>
+<li><p><strong>soildata/SOILDATA</strong>: Param for get_surfdata. Soil data file, default is None. Here to download the soil data file: https://svn-ccsm-inputdata.cgd.ucar.edu/trunk/inputdata/lnd/clm2/rawdata/mksrf_soitex.10level.c010119.nc</p></li>
+<li><p><strong>pct_urban/PCT_URBAN</strong>:  Param for get_surfdata. Percentage of urban land use in each density class, sum should be 100, default is [0,0,100.0].</p></li>
+<li><p><strong>lat/LAT</strong>: Param for get_surfdata and get_forcing. Latitude of the urban area, default is None</p></li>
+<li><p><strong>lon/LON</strong>: Param for get_surfdata and get_forcing. Longitude of the urban area, default is None</p></li>
+<li><p><strong>outputname/OUTPUTNAME</strong>: Param for get_surfdata. Output file name, default is surfdata.nc</p></li>
+<li><p><strong>zbot/ZBOT</strong>: Param for get_forcing. Zbot, default is 30 m.</p></li>
+<li><p><strong>start_year/START_YEAR</strong>: Param for get_forcing. Start year, default is 2012.</p></li>
+<li><p><strong>end_year/END_YEAR</strong>: Param for get_forcing. End year, default is 2012.</p></li>
+<li><p><strong>start_month/START_MONT</strong>: Param for get_forcing. Start month, default is 1.</p></li>
+<li><p><strong>end_month/END_MONTH</strong>: Param for get_forcing. End month, default is 12.</p></li>
+</ul>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="basic_usage_inter.html" class="btn btn-neutral float-left" title="Basic usage: Web interface" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="../usp/example1_usp_basic.html" class="btn btn-neutral float-right" title="Example 1: Basic usage" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2024, Junjie Yu, Zhonghua Zheng.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

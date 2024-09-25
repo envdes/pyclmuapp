@@ -1,0 +1,572 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>clmu module &mdash; pyclmuapp v0.0.0 documentation</title>
+      <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=80d5e7a1" />
+      <link rel="stylesheet" type="text/css" href="_static/css/theme.css?v=19f00094" />
+
+  
+  <!--[if lt IE 9]>
+    <script src="_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script src="_static/jquery.js?v=5d32c60e"></script>
+        <script src="_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+        <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js?v=f3b75425"></script>
+        <script src="_static/doctools.js?v=888ff710"></script>
+        <script src="_static/sphinx_highlight.js?v=4825356b"></script>
+        <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+    <script src="_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="index.html" class="icon icon-home">
+            pyclmuapp
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Overview</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="notebooks/overview/overview.html">About</a></li>
+<li class="toctree-l1"><a class="reference internal" href="notebooks/overview/installation.html">Installation</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Basic usage</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="notebooks/basic/basic_usage_inter.html">Basic usage: Web interface</a></li>
+<li class="toctree-l1"><a class="reference internal" href="notebooks/basic/basic_usage_cli.html">Basic usage: Command line</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Python: usp mode</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="notebooks/usp/example1_usp_basic.html">Example 1: Basic usage</a></li>
+<li class="toctree-l1"><a class="reference internal" href="notebooks/usp/example2_usp_global_warming.html">Example 2: How does global warming will affect urban climates?</a></li>
+<li class="toctree-l1"><a class="reference internal" href="notebooks/usp/example3_usp_adaptation.html">Example 3: Urban climate adaption</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Python: created input files</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="notebooks/own/prepare_forcing_from_era5.html">Make your own forcing data from ERA5</a></li>
+<li class="toctree-l1"><a class="reference internal" href="notebooks/own/prepare_urbansurf_10evlurb.html">Make your own surface data</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Spinup</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="notebooks/usp/usp_spinup_mode.html">How to spinup in USP mode</a></li>
+<li class="toctree-l1"><a class="reference internal" href="notebooks/spinup/spinup_workstation.html">Spinup in CLMU</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">HPC</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="notebooks/hpc/HPC.html">pyclmuapp on HPC: Command line</a></li>
+<li class="toctree-l1"><a class="reference internal" href="notebooks/hpc/singularity.html">pyclmuapp on HPC: Python</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Validation</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="notebooks/val/urban_plumber_usp.html">Urban-Plumber2: UK-Kin site CLMU5 simulation</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Python: pts mode</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="notebooks/pts/example1_workstation.html">Example 1: Run a simple simulation with a single case</a></li>
+<li class="toctree-l1"><a class="reference internal" href="notebooks/pts/example2_workstation.html">Example 2: How does global warming will affect urban climates?</a></li>
+<li class="toctree-l1"><a class="reference internal" href="notebooks/pts/example3_workstation.html">Example 3: Urban climate adaption</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">API Reference</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="modules.html">pyclmuapp</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">pyclmuapp</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="index.html" class="icon icon-home" aria-label="Home"></a></li>
+      <li class="breadcrumb-item active">clmu module</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="_sources/clmu.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="module-clmu">
+<span id="clmu-module"></span><h1>clmu module<a class="headerlink" href="#module-clmu" title="Permalink to this heading"></a></h1>
+<dl class="py class">
+<dt class="sig sig-object py" id="clmu.cesm_run">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">clmu.</span></span><span class="sig-name descname"><span class="pre">cesm_run</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">CASESCRIPT_local</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">CASEROOT_local</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">DOUT_S_ROOT</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">caseconfig</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">dict</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">DataFrame</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">Series</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#clmu.cesm_run" title="Permalink to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<dl class="simple">
+<dt>This class is used to create CESM2/CTSM case. Run the CESM2/CTSM case should be done by running the generated shell script</dt><dd><p>using terminal or python subprocess or container (docker or singularity with CESM2/CTSM installed)</p>
+</dd>
+</dl>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>CASESCRIPT_local</strong> (<em>str</em>) – The path of the case script in the local machine.</p></li>
+<li><p><strong>CASEROOT_local</strong> (<em>str</em>) – The path of the case root in the local machine.</p></li>
+<li><p><strong>DOUT_S_ROOT</strong> (<em>str</em>) – The path of the output root in the local machine.</p></li>
+<li><p><strong>caseconfig</strong> (<em>Union</em><em>[</em><em>str</em><em>, </em><em>dict</em><em>, </em><em>pd.DataFrame</em><em>, </em><em>pd.Series</em><em>]</em>) – The configuration of the case to be built.</p></li>
+</ul>
+</dd>
+</dl>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="clmu.cesm_run.CASESCRIPT">
+<span class="sig-name descname"><span class="pre">CASESCRIPT</span></span><a class="headerlink" href="#clmu.cesm_run.CASESCRIPT" title="Permalink to this definition"></a></dt>
+<dd><p>The path of the case script.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>str</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="clmu.cesm_run.CASEROOT">
+<span class="sig-name descname"><span class="pre">CASEROOT</span></span><a class="headerlink" href="#clmu.cesm_run.CASEROOT" title="Permalink to this definition"></a></dt>
+<dd><p>The path of the case root.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>str</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="clmu.cesm_run.DOUT_S_ROOT">
+<span class="sig-name descname"><span class="pre">DOUT_S_ROOT</span></span><a class="headerlink" href="#clmu.cesm_run.DOUT_S_ROOT" title="Permalink to this definition"></a></dt>
+<dd><p>The path of the output root.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>str</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="clmu.cesm_run.case_lat">
+<span class="sig-name descname"><span class="pre">case_lat</span></span><a class="headerlink" href="#clmu.cesm_run.case_lat" title="Permalink to this definition"></a></dt>
+<dd><p>The latitude of the case.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>float</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="clmu.cesm_run.case_lon">
+<span class="sig-name descname"><span class="pre">case_lon</span></span><a class="headerlink" href="#clmu.cesm_run.case_lon" title="Permalink to this definition"></a></dt>
+<dd><p>The longitude of the case.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>float</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="clmu.cesm_run.case_name">
+<span class="sig-name descname"><span class="pre">case_name</span></span><a class="headerlink" href="#clmu.cesm_run.case_name" title="Permalink to this definition"></a></dt>
+<dd><p>The name of the case.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>str</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="clmu.cesm_run.json_file_path">
+<span class="sig-name descname"><span class="pre">json_file_path</span></span><a class="headerlink" href="#clmu.cesm_run.json_file_path" title="Permalink to this definition"></a></dt>
+<dd><p>The path of the JSON file.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>str</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="clmu.cesm_run.config">
+<span class="sig-name descname"><span class="pre">config</span></span><a class="headerlink" href="#clmu.cesm_run.config" title="Permalink to this definition"></a></dt>
+<dd><p>The configuration data.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>dict</p>
+</dd>
+</dl>
+</dd></dl>
+
+<p class="rubric">Methods</p>
+<table class="autosummary longtable docutils align-default">
+<tbody>
+<tr class="row-odd"><td><p><a class="reference internal" href="#clmu.cesm_run.create_case" title="clmu.cesm_run.create_case"><code class="xref py py-obj docutils literal notranslate"><span class="pre">create_case</span></code></a>(scriptpath)</p></td>
+<td><p>Create the case scripts for single point modeling.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#clmu.cesm_run.modify_case_config" title="clmu.cesm_run.modify_case_config"><code class="xref py py-obj docutils literal notranslate"><span class="pre">modify_case_config</span></code></a>(scriptpaht)</p></td>
+<td><p>Modify the case config file.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#clmu.cesm_run.modify_forcing" title="clmu.cesm_run.modify_forcing"><code class="xref py py-obj docutils literal notranslate"><span class="pre">modify_forcing</span></code></a>(var, action, forcing_location)</p></td>
+<td><p>Modify the forcing file.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#clmu.cesm_run.modify_surf" title="clmu.cesm_run.modify_surf"><code class="xref py py-obj docutils literal notranslate"><span class="pre">modify_surf</span></code></a>(var, action[, numurbl])</p></td>
+<td><p>Modify the surface data file.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#clmu.cesm_run.nc_view" title="clmu.cesm_run.nc_view"><code class="xref py py-obj docutils literal notranslate"><span class="pre">nc_view</span></code></a>([ds])</p></td>
+<td><p>View the netcdf file.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#clmu.cesm_run.read_json_config" title="clmu.cesm_run.read_json_config"><code class="xref py py-obj docutils literal notranslate"><span class="pre">read_json_config</span></code></a>()</p></td>
+<td><p>Read the JSON config file.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#clmu.cesm_run.recover_forcing" title="clmu.cesm_run.recover_forcing"><code class="xref py py-obj docutils literal notranslate"><span class="pre">recover_forcing</span></code></a>(forcing_location, ...)</p></td>
+<td><p>Recover the forcing file.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#clmu.cesm_run.reset_case" title="clmu.cesm_run.reset_case"><code class="xref py py-obj docutils literal notranslate"><span class="pre">reset_case</span></code></a>([password])</p></td>
+<td><p>Reset the case.</p></td>
+</tr>
+</tbody>
+</table>
+<dl class="py method">
+<dt class="sig sig-object py" id="clmu.cesm_run.create_case">
+<span class="sig-name descname"><span class="pre">create_case</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">scriptpath</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">str</span></span></span><a class="headerlink" href="#clmu.cesm_run.create_case" title="Permalink to this definition"></a></dt>
+<dd><p>Create the case scripts for single point modeling.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>filepath</strong> (<em>str</em>) – File path of the config file.</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>The modified script file.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>script (str)</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="clmu.cesm_run.modify_case_config">
+<span class="sig-name descname"><span class="pre">modify_case_config</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">scriptpaht</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">str</span></span></span><a class="headerlink" href="#clmu.cesm_run.modify_case_config" title="Permalink to this definition"></a></dt>
+<dd><p>Modify the case config file.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>scriptpath</strong> (<em>str</em>) – The path of the script file.</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>The modified script file.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>script (str)</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="clmu.cesm_run.modify_forcing">
+<span class="sig-name descname"><span class="pre">modify_forcing</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">var</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">action</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">forcing_location</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#clmu.cesm_run.modify_forcing" title="Permalink to this definition"></a></dt>
+<dd><p>Modify the forcing file.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>var</strong> (<em>str</em>) – The variable to be modified.</p></li>
+<li><p><strong>action</strong> (<em>float</em><em>, </em><em>np.ndarray</em><em>, </em><em>dict</em>) – The action to be taken.</p></li>
+<li><p><strong>forcing_location</strong> (<em>str</em>) – The location of the forcing file.
+- if action is a dict, the key is the variable name, the value is the action.
+- if action is a float, the action will be added to the variable.
+- if action is a np.ndarray, the variable will be replaced by the action.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>None</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="clmu.cesm_run.modify_surf">
+<span class="sig-name descname"><span class="pre">modify_surf</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">var</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">action</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">numurbl</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">str</span></span></span><a class="headerlink" href="#clmu.cesm_run.modify_surf" title="Permalink to this definition"></a></dt>
+<dd><p>Modify the surface data file.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>var</strong> (<em>str</em>) – The variable to be modified.</p></li>
+<li><p><strong>action</strong> (<em>float</em><em>, </em><em>np.ndarray</em><em>, </em><em>dict</em>) – The action to be taken.
+- if action is a dict, the key is the variable name, the value is the action.
+- if action is a float, the action will be added to the variable.
+- if action is a np.ndarray, the variable will be replaced by the action.</p></li>
+<li><p><strong>numurbl</strong> (<em>int</em><em>, </em><em>optional</em>) – The number of urban land units. Defaults to None.
+None means the action will be implemented to all the urban land units.
+numurbl 0 –&gt; TBD urban, numurbl 1 –&gt; HD urban, numurbl 2 –&gt; MD urban</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>The modified surface data file path.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>str</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="clmu.cesm_run.nc_view">
+<span class="sig-name descname"><span class="pre">nc_view</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">ds</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">'None'</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">Dataset</span></span></span><a class="headerlink" href="#clmu.cesm_run.nc_view" title="Permalink to this definition"></a></dt>
+<dd><p>View the netcdf file.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>xarray.Dataset</strong> – The xarray dataset.</p></li>
+<li><p><strong>ds</strong> (<em>str</em><em>, </em><em>optional</em>) – The path of the netcdf file. Defaults to “None”.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>The xarray dataset.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>xarray.Dataset</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="clmu.cesm_run.read_json_config">
+<span class="sig-name descname"><span class="pre">read_json_config</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">dict</span></span></span><a class="headerlink" href="#clmu.cesm_run.read_json_config" title="Permalink to this definition"></a></dt>
+<dd><p>Read the JSON config file.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>The configuration data.</p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p>config (dict)</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="clmu.cesm_run.recover_forcing">
+<span class="sig-name descname"><span class="pre">recover_forcing</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">forcing_location</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">backup_location</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#clmu.cesm_run.recover_forcing" title="Permalink to this definition"></a></dt>
+<dd><p>Recover the forcing file.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>forcing_location</strong> (<em>str</em>) – The location of the forcing file.</p></li>
+<li><p><strong>backup_location</strong> (<em>str</em>) – The location of the backup file.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>None</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="clmu.cesm_run.reset_case">
+<span class="sig-name descname"><span class="pre">reset_case</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">password</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">CompletedProcess</span></span></span><a class="headerlink" href="#clmu.cesm_run.reset_case" title="Permalink to this definition"></a></dt>
+<dd><p>Reset the case. (delete the case folders and files)</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>password</strong> (<em>str</em><em>, </em><em>optional</em>) – The password of the server. Defaults to None.</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>The result of the command.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>subprocess.CompletedProcess</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="clmu.copy_file_if_not_exists">
+<span class="sig-prename descclassname"><span class="pre">clmu.</span></span><span class="sig-name descname"><span class="pre">copy_file_if_not_exists</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">source_path</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">destination_path</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#clmu.copy_file_if_not_exists" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="clmu.copy_file_if_not_exists2">
+<span class="sig-prename descclassname"><span class="pre">clmu.</span></span><span class="sig-name descname"><span class="pre">copy_file_if_not_exists2</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">source_path</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">destination_path</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">lon</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">lat</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">res</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'1.25*0.9'</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#clmu.copy_file_if_not_exists2" title="Permalink to this definition"></a></dt>
+<dd><p>Copy the file if the destination file does not exist.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>source_path</strong> (<em>str</em>) – The source file path.</p></li>
+<li><p><strong>destination_path</strong> (<em>str</em>) – The destination file path.</p></li>
+<li><p><strong>lon</strong> (<em>str</em>) – The longitude of the point.</p></li>
+<li><p><strong>lat</strong> (<em>str</em>) – The latitude of the point.</p></li>
+<li><p><strong>res</strong> (<em>str</em>) – The resolution of the file. Defaults to “1.25*0.9”.</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="clmu.get_forcing">
+<span class="sig-prename descclassname"><span class="pre">clmu.</span></span><span class="sig-name descname"><span class="pre">get_forcing</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">start_year</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">end_year</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">start_month</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">end_month</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">lat</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">lon</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">zbot</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">source</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'cds'</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#clmu.get_forcing" title="Permalink to this definition"></a></dt>
+<dd><p>get the forcing data from the era5 dataset</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>start_year</strong> (<em>_type_</em>) – the start year</p></li>
+<li><p><strong>end_year</strong> (<em>_type_</em>) – the end year</p></li>
+<li><p><strong>start_month</strong> (<em>_type_</em>) – the start month</p></li>
+<li><p><strong>end_month</strong> (<em>_type_</em>) – the end month</p></li>
+<li><p><strong>lat</strong> (<em>_type_</em>) – latitude of interest point</p></li>
+<li><p><strong>lon</strong> (<em>_type_</em>) – longitude of interest point</p></li>
+<li><p><strong>zbot</strong> (<em>_type_</em>) – the bottom level height</p></li>
+<li><p><strong>source</strong> (<em>_type_</em>) – the source of the data, cds or arco-era5</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>the forcing dataset</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>_type_</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="clmu.get_soil_params">
+<span class="sig-prename descclassname"><span class="pre">clmu.</span></span><span class="sig-name descname"><span class="pre">get_soil_params</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">ds</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Dataset</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">DataArray</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">lat</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">float</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">51.508965</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">lon</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">float</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">-0.118092</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">tuple</span></span></span><a class="headerlink" href="#clmu.get_soil_params" title="Permalink to this definition"></a></dt>
+<dd><p>Get the soil parameters.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>ds</strong> (<em>_type_</em>) – the soil dataset</p></li>
+<li><p><strong>lat</strong> (<em>_type_</em>) – latitude of interest point</p></li>
+<li><p><strong>lon</strong> (<em>_type_</em>) – longitude of interest point</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>sand and clay content from the soil dataset</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>tuple</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="clmu.get_urban_params">
+<span class="sig-prename descclassname"><span class="pre">clmu.</span></span><span class="sig-name descname"><span class="pre">get_urban_params</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">urban_ds</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Dataset</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">soil_ds</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Dataset</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">template</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Dataset</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">lat</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">float</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">lon</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">float</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">PTC_URBAN</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">list</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">[0,</span> <span class="pre">0,</span> <span class="pre">100]</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">outputname</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">'surfdata.nc'</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">Dataset</span></span></span><a class="headerlink" href="#clmu.get_urban_params" title="Permalink to this definition"></a></dt>
+<dd><p>Get the urban parameters.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>urban_ds</strong> (<em>_type_</em>) – the urban dataset</p></li>
+<li><p><strong>soil_ds</strong> (<em>_type_</em>) – the soil dataset</p></li>
+<li><p><strong>template</strong> (<em>_type_</em>) – the template dataset</p></li>
+<li><p><strong>lat</strong> (<em>_type_</em>) – latitude of interest point</p></li>
+<li><p><strong>lon</strong> (<em>_type_</em>) – longitude of interest point</p></li>
+<li><p><strong>PTC_URBAN</strong> (<em>list</em><em>, </em><em>optional</em>) – The percentage of urban. Defaults to [0,0,100].
+0. TBD urban, 1. HD urban, 2. MD urban</p></li>
+<li><p><strong>outputname</strong> (<em>_type_</em><em>, </em><em>optional</em>) – the output file name. Defaults to “surfdata.nc”.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>the modified template dataset</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>_type_</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="clmu.getconfig">
+<span class="sig-prename descclassname"><span class="pre">clmu.</span></span><span class="sig-name descname"><span class="pre">getconfig</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">caseconfig</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">dict</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">DataFrame</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">Series</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">'None'</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">dict</span></span></span><a class="headerlink" href="#clmu.getconfig" title="Permalink to this definition"></a></dt>
+<dd><p>Read the configuration of the case to be built.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>caseconfig</strong> (<em>Union</em><em>[</em><em>str</em><em>, </em><em>dict</em><em>, </em><em>pd.DataFrame</em><em>, </em><em>pd.Series</em><em>]</em>) – The configuration of the case to be built.</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>The configuration data.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>dict</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="clmu.now_time">
+<span class="sig-prename descclassname"><span class="pre">clmu.</span></span><span class="sig-name descname"><span class="pre">now_time</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#clmu.now_time" title="Permalink to this definition"></a></dt>
+<dd><p>Get the current time</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="clmu.run_command">
+<span class="sig-prename descclassname"><span class="pre">clmu.</span></span><span class="sig-name descname"><span class="pre">run_command</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">command</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">password</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'None'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">logname</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'None'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">iflog</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#clmu.run_command" title="Permalink to this definition"></a></dt>
+<dd><p>Run the command. There are two ways to run the command, with or without password.
+The loges will be saved in the log_ppo.txt file.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>command</strong> (<em>str</em>) – The command to be run.</p></li>
+<li><p><strong>password</strong> (<em>str</em><em>, </em><em>optional</em>) – The password of the server.</p></li>
+<li><p><strong>logname</strong> (<em>str</em><em>, </em><em>optional</em>) – The name of the log file. Defaults to “cmdlog.txt”.</p></li>
+<li><p><strong>iflog</strong> (<em>bool</em><em>, </em><em>optional</em>) – If log is needed. Defaults to True.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>None</p>
+</dd>
+</dl>
+</dd></dl>
+
+</section>
+
+
+           </div>
+          </div>
+          <footer>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2024, Junjie Yu, Zhonghua Zheng.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

@@ -1,9 +1,0 @@
-numpydoc
-ipython
-nbsphinx
-sphinx_rtd_theme
-recommonmark 
-sphinx-markdown-tables
-haversine
-xarray
-numpy

@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>pyclmuapp on HPC: Python &mdash; pyclmuapp v0.0.0 documentation</title>
+      <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=80d5e7a1" />
+      <link rel="stylesheet" type="text/css" href="../../_static/css/theme.css?v=19f00094" />
+
+  
+  <!--[if lt IE 9]>
+    <script src="../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script src="../../_static/jquery.js?v=5d32c60e"></script>
+        <script src="../../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+        <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js?v=f3b75425"></script>
+        <script src="../../_static/doctools.js?v=888ff710"></script>
+        <script src="../../_static/sphinx_highlight.js?v=4825356b"></script>
+        <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+    <script src="../../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="Urban-Plumber2: UK-Kin site CLMU5 simulation" href="../val/urban_plumber_usp.html" />
+    <link rel="prev" title="pyclmuapp on HPC: Command line" href="HPC.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="../../index.html" class="icon icon-home">
+            pyclmuapp
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Overview</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../overview/overview.html">About</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../overview/installation.html">Installation</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Basic usage</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../basic/basic_usage_inter.html">Basic usage: Web interface</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../basic/basic_usage_cli.html">Basic usage: Command line</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Python: usp mode</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../usp/example1_usp_basic.html">Example 1: Basic usage</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../usp/example2_usp_global_warming.html">Example 2: How does global warming will affect urban climates?</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../usp/example3_usp_adaptation.html">Example 3: Urban climate adaption</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Python: created input files</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../own/prepare_forcing_from_era5.html">Make your own forcing data from ERA5</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../own/prepare_urbansurf_10evlurb.html">Make your own surface data</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Spinup</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../usp/usp_spinup_mode.html">How to spinup in USP mode</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../spinup/spinup_workstation.html">Spinup in CLMU</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">HPC</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="HPC.html">pyclmuapp on HPC: Command line</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">pyclmuapp on HPC: Python</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#how-to-run-the-python-in-hpc">How to run the python in HPC?</a></li>
+</ul>
+</li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Validation</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../val/urban_plumber_usp.html">Urban-Plumber2: UK-Kin site CLMU5 simulation</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Python: pts mode</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../pts/example1_workstation.html">Example 1: Run a simple simulation with a single case</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../pts/example2_workstation.html">Example 2: How does global warming will affect urban climates?</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../pts/example3_workstation.html">Example 3: Urban climate adaption</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">API Reference</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../modules.html">pyclmuapp</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">pyclmuapp</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../../index.html" class="icon icon-home" aria-label="Home"></a></li>
+      <li class="breadcrumb-item active">pyclmuapp on HPC: Python</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../../_sources/notebooks/hpc/singularity.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="pyclmuapp-on-hpc-python">
+<h1>pyclmuapp on HPC: Python<a class="headerlink" href="#pyclmuapp-on-hpc-python" title="Permalink to this heading"></a></h1>
+<p>Docker are not always available on HPC. Singularity is a container software usually employed in <strong>HPC</strong> (High performance computer). It provides a mechanism to run containers where containers can be used to package entire scientific workflows, software and libraries, and even data. Ref: <a class="reference external" href="https://ri.itservices.manchester.ac.uk/csf3/software/applications/singularity/">https://ri.itservices.manchester.ac.uk/csf3/software/applications/singularity/</a></p>
+<p>A quick look for python scripts of pyclmuapp <code class="docutils literal notranslate"><span class="pre">singularity</span></code> mode</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">pyclmuapp</span> <span class="kn">import</span> <span class="n">usp_clmu</span>
+
+<span class="c1"># initialize</span>
+<span class="n">o</span> <span class="o">=</span> <span class="n">usp_clmu</span><span class="p">(</span>
+    <span class="n">pwd</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
+    <span class="n">input_path</span><span class="o">=</span><span class="s2">&quot;your_inputdata_path&quot;</span><span class="p">,</span>
+    <span class="n">output_path</span><span class="o">=</span><span class="s2">&quot;your_ctsm_arhchive&quot;</span><span class="p">,</span>
+    <span class="n">log_path</span><span class="o">=</span><span class="s2">&quot;your_ctsm_caseoutputs&quot;</span><span class="p">,</span>
+    <span class="n">scripts_path</span><span class="o">=</span><span class="s2">&quot;your_ctsm_case_scripts_path&quot;</span><span class="p">,</span>
+    <span class="n">container_type</span><span class="o">=</span><span class="s1">&#39;singularity&#39;</span><span class="p">)</span>  <span class="c1"># important to define the container_type. The default is docker</span>
+
+<span class="c1"># the clmu-app_1.0.sif image will be download from docker hub at the current work dir.</span>
+<span class="n">o</span><span class="o">.</span><span class="n">docker</span><span class="p">(</span><span class="n">cmd</span><span class="o">=</span><span class="s2">&quot;pull&quot;</span><span class="p">,</span>
+         <span class="n">cmdlogfile</span><span class="o">=</span><span class="s2">&quot;None&quot;</span><span class="p">,)</span>  <span class="c1"># This will pull the image from the docker hub</span>
+<span class="c1"># other parameters are available, see the Python API documentation</span>
+<span class="c1"># no need to o.docker(cmd=&quot;run&quot;) for singularity</span>
+<span class="c1"># then same as usually</span>
+<span class="n">o</span><span class="o">.</span><span class="n">check_surf_data</span><span class="p">()</span>
+<span class="n">o</span><span class="o">.</span><span class="n">check_domain_data</span><span class="p">()</span>
+<span class="n">o</span><span class="o">.</span><span class="n">check_forcing_data</span><span class="p">(</span>
+    <span class="n">usr_forcing</span><span class="o">=</span><span class="s2">&quot;provided_forcing_netcdf_file.nc&quot;</span><span class="p">)</span>
+
+<span class="n">original</span> <span class="o">=</span> <span class="n">o</span><span class="o">.</span><span class="n">run</span><span class="p">(</span>
+    <span class="n">ouptname</span><span class="o">=</span><span class="s2">&quot;_clm.nc&quot;</span><span class="p">,</span>
+    <span class="n">case_name</span><span class="o">=</span><span class="s2">&quot;usp_case&quot;</span><span class="p">,</span>
+    <span class="n">RUN_STARTDATE</span><span class="o">=</span><span class="s2">&quot;2012-08-08&quot;</span><span class="p">,</span>
+    <span class="n">STOP_OPTION</span><span class="o">=</span><span class="s2">&quot;ndays&quot;</span><span class="p">,</span>
+    <span class="n">STOP_N</span><span class="o">=</span><span class="s2">&quot;10&quot;</span><span class="p">,</span>
+    <span class="n">iflog</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
+    <span class="n">logfile</span><span class="o">=</span><span class="s2">&quot;log.log&quot;</span><span class="p">,</span>
+    <span class="n">run_tyep</span><span class="o">=</span><span class="s2">&quot;usp-exec&quot;</span>  <span class="c1">#</span>
+<span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">original</span><span class="p">)</span>
+</pre></div>
+</div>
+<section id="how-to-run-the-python-in-hpc">
+<h2>How to run the python in HPC?<a class="headerlink" href="#how-to-run-the-python-in-hpc" title="Permalink to this heading"></a></h2>
+<p>HPC usually uses batch system like
+- Manchester csf3 (The Computational Shared Facility 3) : <a class="reference external" href="https://ri.itservices.manchester.ac.uk/csf3/batch/">https://ri.itservices.manchester.ac.uk/csf3/batch/</a>
+- UK ARHCER2 : <a class="reference external" href="https://docs.archer2.ac.uk/user-guide/scheduler/">https://docs.archer2.ac.uk/user-guide/scheduler/</a></p>
+<p>A quick look for Manchester csf3 batch scripts, e.g., named as job_pyclmuapp.sh</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="ch">#!/bin/bash --login</span>
+<span class="c1">#$ -cwd</span>
+<span class="c1">#$ -pe smp.pe 2</span>
+<span class="c1"># activate conda env</span>
+<span class="nb">source</span><span class="w"> </span>activate<span class="w"> </span>pyclmuapp
+python<span class="w"> </span>your_python_script_path.py
+</pre></div>
+</div>
+<p>Then submit to the batch system by</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>qsub<span class="w"> </span>job_pyclmuapp.sh
+</pre></div>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p><code class="docutils literal notranslate"><span class="pre">singularity</span></code> mode is slightly different from <code class="docutils literal notranslate"><span class="pre">docker</span></code> mode. The image is usually downloaded from docker hub at the current work dir.</p>
+</div>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="HPC.html" class="btn btn-neutral float-left" title="pyclmuapp on HPC: Command line" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="../val/urban_plumber_usp.html" class="btn btn-neutral float-right" title="Urban-Plumber2: UK-Kin site CLMU5 simulation" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2024, Junjie Yu, Zhonghua Zheng.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>
