@@ -26,7 +26,7 @@ Contributors: `Junjie Yu <https://junjieyu-uom.github.io>`_, `Keith Oleson <http
 
 
 .. toctree::
-   :maxdepth: 2
+   :maxdepth: 1
    :caption: Overview
 
    notebooks/overview/overview.md
@@ -40,7 +40,7 @@ Contributors: `Junjie Yu <https://junjieyu-uom.github.io>`_, `Keith Oleson <http
    notebooks/basic/basic_usage_cli.md
 
 .. toctree::
-   :maxdepth: 2
+   :maxdepth: 1
    :caption: Python: usp mode
 
    notebooks/usp/example1_usp_basic.ipynb
@@ -48,7 +48,7 @@ Contributors: `Junjie Yu <https://junjieyu-uom.github.io>`_, `Keith Oleson <http
    notebooks/usp/example3_usp_adaptation.ipynb
 
 .. toctree::
-   :maxdepth: 2
+   :maxdepth: 1
    :caption: Python: created input files
 
    notebooks/own/prepare_forcing_from_era5.ipynb
@@ -62,7 +62,7 @@ Contributors: `Junjie Yu <https://junjieyu-uom.github.io>`_, `Keith Oleson <http
    notebooks/spinup/spinup_workstation.ipynb
 
 .. toctree::
-   :maxdepth: 2
+   :maxdepth: 1
    :caption: HPC
 
    notebooks/hpc/HPC.ipynb
@@ -70,13 +70,13 @@ Contributors: `Junjie Yu <https://junjieyu-uom.github.io>`_, `Keith Oleson <http
    
 
 .. toctree::
-   :maxdepth: 2
+   :maxdepth: 1
    :caption: Validation
 
    notebooks/val/urban_plumber_usp.ipynb
 
 .. toctree::
-   :maxdepth: 2
+   :maxdepth: 1
    :caption: Python: pts mode
 
    notebooks/pts/example1_workstation.ipynb
