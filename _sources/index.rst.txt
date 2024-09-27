@@ -55,7 +55,7 @@ Contributors: `Junjie Yu <https://junjieyu-uom.github.io>`_, `Keith Oleson <http
    notebooks/own/prepare_urbansurf_10evlurb.ipynb
 
 .. toctree::
-   :maxdepth: 2
+   :maxdepth: 1
    :caption: Spinup
 
    notebooks/usp/usp_spinup_mode.ipynb
