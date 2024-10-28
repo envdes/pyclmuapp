@@ -33,7 +33,7 @@ Contributors: `Junjie Yu <https://junjieyu-uom.github.io>`_, `Keith Oleson <http
    notebooks/overview/installation.md
 
 .. toctree::
-   :maxdepth: 2
+   :maxdepth: 1
    :caption: Basic usage
 
    notebooks/basic/basic_usage_inter.md
