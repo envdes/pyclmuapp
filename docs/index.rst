@@ -12,13 +12,13 @@ pyclmuapp: A Python Package for Integration and Execution of the Urban Climate M
   :target: https://zenodo.org/doi/10.5281/zenodo.10710695
 
 .. |GitHub| image:: https://img.shields.io/badge/GitHub-pyclmuapp-brightgreen.svg
-   :target: https://github.com/JunjieYU-UoM/pyclmuapp
+   :target: https://github.com/envdes/pyclmuapp
 
-.. |Docs| image:: https://readthedocs.org/projects/clmu-app/badge/?version=latest
-   :target: https://clmu-app.readthedocs.io/en/latest/?badge=latest
+.. |Docs| image:: https://img.shields.io/badge/docs-pyclmuapp-brightgreen.svg
+   :target: https://envdes.github.io/pyclmuapp/index.html
 
 .. |license| image:: https://img.shields.io/badge/License-MIT-blue.svg
-   :target: https://github.com/JunjieYU-UoM/pyclmuapp/blob/main/LICENSE
+   :target: https://github.com/envdes/pyclmuapp/blob/main/LICENSE
 
 pyclmuapp: A Python Package for Integration and Execution of the Urban Climate Model in a Containerized Environment
 
