@@ -75,7 +75,7 @@ Additional Inputs
 - **CDS API UID**: CDS API UID
 - **CDS API key**: API Keys.
 
-[How to get CDS API?](https://cds.climate.copernicus.eu/api-how-to)
+[How to get CDS API?](https://cds.climate.copernicus.eu/how-to-api)
 
 ### 3 Create surfdata
 - **Latitude**: Latitude of interesting point.
