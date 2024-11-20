@@ -5,7 +5,7 @@ Step 1: install docker before using pyclmuapp
 - [How to install Docker on Linux?](https://envdes.github.io/clmu-app/container/install_docker.html)
 - [How to install Docker Desktop](https://www.docker.com/products/docker-desktop/)
 
-**If you would like to you use the python package, then,**
+**If you would like to use the python package, then,**
 
 Step 2: create a conda environment
 
