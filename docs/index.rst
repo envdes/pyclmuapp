@@ -3,7 +3,7 @@
    You can adapt this file completely to your liking, but it should at least
    contain the root `toctree` directive.
 
-pyclmuapp: A Python Package for Integration and Execution of the Urban Climate Model in a Containerized Environment
+pyclmuapp: A Python Package for Integration and Execution of Community Land Model Urban (CLMU) in a Containerized Environment
 ========================================
 
 |DOI| |GitHub| |Docs| |License|
@@ -15,12 +15,12 @@ pyclmuapp: A Python Package for Integration and Execution of the Urban Climate M
    :target: https://github.com/envdes/pyclmuapp
 
 .. |Docs| image:: https://img.shields.io/badge/docs-pyclmuapp-brightgreen.svg
-   :target: https://envdes.github.io/pyclmuapp/index.html
+   :target: https://junjieyu-uom.github.io/pyclmuapp/
 
 .. |license| image:: https://img.shields.io/badge/License-MIT-blue.svg
    :target: https://github.com/envdes/pyclmuapp/blob/main/LICENSE
 
-pyclmuapp: A Python Package for Integration and Execution of the Urban Climate Model in a Containerized Environment
+pyclmuapp: A Python Package for Integration and Execution of Community Land Model Urban (CLMU) in a Containerized Environment
 
 Contributors: `Junjie Yu <https://junjieyu-uom.github.io>`_, `Keith Oleson <https://staff.ucar.edu/users/oleson>`_, `Yuan Sun <https://github.com/YuanSun-UoM>`_, `David Topping <https://research.manchester.ac.uk/en/persons/david.topping>`_, `Zhonghua Zheng <https://zhonghuazheng.com>`_ (zhonghua.zheng@manchester.ac.uk)
 
@@ -34,18 +34,24 @@ Contributors: `Junjie Yu <https://junjieyu-uom.github.io>`_, `Keith Oleson <http
 
 .. toctree::
    :maxdepth: 1
-   :caption: Basic usage
+   :caption: Python: warmup
 
-   notebooks/basic/basic_usage_inter.md
-   notebooks/basic/basic_usage_cli.md
+   notebooks/usp/warmup.ipynb
 
 .. toctree::
    :maxdepth: 1
-   :caption: Python: usp mode
+   :caption: Python: examples
 
    notebooks/usp/example1_usp_basic.ipynb
    notebooks/usp/example2_usp_global_warming.ipynb
    notebooks/usp/example3_usp_adaptation.ipynb
+
+.. toctree::
+   :maxdepth: 2
+   :caption: Other usage
+
+   notebooks/basic/basic_usage_inter.md
+   notebooks/basic/basic_usage_cli.md
 
 .. toctree::
    :maxdepth: 1
@@ -59,7 +65,6 @@ Contributors: `Junjie Yu <https://junjieyu-uom.github.io>`_, `Keith Oleson <http
    :caption: Spinup
 
    notebooks/usp/usp_spinup_mode.ipynb
-   notebooks/spinup/spinup_workstation.ipynb
 
 .. toctree::
    :maxdepth: 1
@@ -71,17 +76,9 @@ Contributors: `Junjie Yu <https://junjieyu-uom.github.io>`_, `Keith Oleson <http
 
 .. toctree::
    :maxdepth: 1
-   :caption: Validation
+   :caption: Evaluation
 
    notebooks/val/urban_plumber_usp.ipynb
-
-.. toctree::
-   :maxdepth: 1
-   :caption: Python: pts mode
-
-   notebooks/pts/example1_workstation.ipynb
-   notebooks/pts/example2_workstation.ipynb
-   notebooks/pts/example3_workstation.ipynb
 
 .. toctree::
    :maxdepth: 1

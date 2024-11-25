@@ -34,7 +34,7 @@ class clumapp:
     """
 
     def __init__(self, 
-                 pwd = "wokdir",
+                 pwd = os.path.join(os.getcwd(), 'workdir'),
                  input_path: str = "inputfolder",
                  output_path: str = "outputfolder",
                  log_path: str = "logfolder",
@@ -44,7 +44,7 @@ class clumapp:
         """
         
         Args:
-            pwd (str): The path to the working directory. The default is "wokdir".
+            pwd (str): The path to the working directory. The default is pwd+"workdir".
             input_path (str): The path to the folder for the input of CLMU-App.
             output_path (str): The path to the folder for the output of CLMU-App.
             log_path (str): The path to the folder for the log of CLMU-App.
@@ -56,12 +56,12 @@ class clumapp:
         #self.log_path = pwd + "/" +  self.create_folder(log_path)
         #self.scripts_path = pwd + "/" + self.create_folder(scripts_path)
         if pwd is not None:
-            if not os.path.exists(pwd):
-                os.makedirs(pwd)
-            self.input_path = os.path.join(pwd, self.create_folder(input_path))
-            self.output_path = os.path.join(pwd, self.create_folder(output_path))
-            self.log_path = os.path.join(pwd, self.create_folder(log_path))
-            self.scripts_path = os.path.join(pwd, self.create_folder(scripts_path))
+            os.makedirs(pwd, exist_ok=True)
+            self.pwd = pwd
+            self.input_path = os.path.join(pwd, self.create_folder(os.path.join(pwd, input_path)))
+            self.output_path = os.path.join(pwd, self.create_folder(os.path.join(pwd, output_path)))
+            self.log_path = os.path.join(pwd, self.create_folder(os.path.join(pwd, log_path)))
+            self.scripts_path = os.path.join(pwd, self.create_folder(os.path.join(pwd, scripts_path)))
         else:
             self.input_path = input_path
             self.output_path = output_path
@@ -102,12 +102,13 @@ class clumapp:
         Returns:
             folder_path (str): The path to the folder created.
         """
+        os.makedirs(folder_path, exist_ok=True)
 
-        try:
-            os.makedirs(folder_path) 
-            print(f"Folder '{folder_path}' created successfully!")
-        except FileExistsError:
-            print(f"Folder '{folder_path}' already exists.")
+        #try:
+        #    os.makedirs(folder_path) 
+        #    #print(f"Folder '{folder_path}' created successfully!")
+        #except FileExistsError:
+        #    print(f"Folder '{folder_path}' already exists.")
 
         return folder_path
 
@@ -116,7 +117,7 @@ class clumapp:
                cmd: str = "run",
                iflog : bool = True,
                password: str = "None",
-               cmdlogfile: str = "dockercmd.log",
+               cmdlogfile: str = None,
                dockersript: str = "docker.sh",
                ) -> None:
 
@@ -135,6 +136,8 @@ class clumapp:
             dockersript (str, optional): The name of the docker script. The default is "docker.sh".
         """
         
+        if cmdlogfile is None:
+            cmdlogfile = os.path.join(self.pwd, "dockercmd.log")
 
         if self.container_type == "docker":
             if self.image_name == "envdes/clmu-app:1.1":
@@ -161,6 +164,9 @@ class clumapp:
                 command = "sudo -S " + config[cmd]
             else:
                 command = config[cmd]
+                
+            if os.name == 'nt':
+                command = command.replace("'", '"')
 
             command = command.format(
                 image_name=self.image_name,
@@ -171,6 +177,7 @@ class clumapp:
                 scripts_path=self.scripts_path,
                 command=dockersript
             )
+            
             #print(f"Running the docker command: '{command}'")
             run_command(command=command,
                         password=password,
@@ -216,6 +223,7 @@ class clumapp:
             from pyclmuapp.config.scripts2 import scripts_cmd
         else:
             from pyclmuapp.config.scripts import scripts_cmd
+            
         self.command=scripts_cmd[mode]
 
     def case_clean(self, case_name : str = None) -> None:

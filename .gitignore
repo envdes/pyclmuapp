@@ -1,5 +1,6 @@
 # junjie
 -build/
+workdir/
 inputfolder/
 outputfolder/
 logfolder/

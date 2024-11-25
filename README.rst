@@ -1,6 +1,6 @@
-pyclmuapp: A Python Package for Integration and Execution of the Urban Climate Model in a Containerized Environment
+pyclmuapp: A Python Package for Integration and Execution of Community Land Model Urban (CLMU) in a Containerized Environment
 --------------------------------------------------
-|doi| |docs| |GitHub| |license| 
+|doi| |docs| |GitHub| |license| |pepy|
 
 .. |DOI| image:: https://zenodo.org/badge/750479733.svg
   :target: https://zenodo.org/doi/10.5281/zenodo.10710695
@@ -9,12 +9,15 @@ pyclmuapp: A Python Package for Integration and Execution of the Urban Climate M
    :target: https://github.com/envdes/pyclmuapp
 
 .. |Docs| image:: https://img.shields.io/badge/docs-pyclmuapp-brightgreen.svg
-   :target: https://envdes.github.io/pyclmuapp/
+   :target: https://junjieyu-uom.github.io/pyclmuapp/
 
 .. |license| image:: https://img.shields.io/badge/License-MIT-blue.svg
    :target: https://github.com/envdes/pyclmuapp/blob/main/LICENSE
+   
+.. |pepy| image:: https://static.pepy.tech/personalized-badge/pmcpy?period=total&units=international_system&left_color=black&right_color=orange&left_text=Downloads
+   :target: https://pepy.tech/project/pmcpy
 
-pyclmuapp: A Python Package for Integration and Execution of the Urban Climate Model in a Containerized Environment.
+pyclmuapp: A Python Package for Integration and Execution of Community Land Model Urban (CLMU) in a Containerized Environment.
 
 Contributors: `Junjie Yu <https://junjieyu-uom.github.io>`_, `Keith Oleson <https://staff.ucar.edu/users/oleson>`_, `Yuan Sun <https://github.com/YuanSun-UoM>`_, `David Topping <https://research.manchester.ac.uk/en/persons/david.topping>`_, `Zhonghua Zheng <https://zhonghuazheng.com>`_ (zhonghua.zheng@manchester.ac.uk)
 
@@ -191,8 +194,8 @@ Optional
 - **start_month/START_MONT**: Param for get_forcing. Start month, default is 1.
 - **end_month/END_MONTH**: Param for get_forcing. End month, default is 12.
 
-Please check `online documentation <https://envdes.github.io/pyclmuapp/>`_ for more information.
+Please check `online documentation <https://junjieyu-uom.github.io/pyclmuapp/>`_ for more information.
 
 How to ask for help
 -------------------
-The `GitHub issue tracker <https://envdes.github.io/pyclmuapp/issues>`_ is the primary place for bug reports. 
+The `GitHub issue tracker <https://junjieyu-uom.github.io/pyclmuapp/issues>`_ is the primary place for bug reports. 

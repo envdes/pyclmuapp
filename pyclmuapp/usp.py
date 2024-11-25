@@ -12,14 +12,16 @@ from pyclmuapp.container import clumapp
 class usp_clmu(clumapp):
 
     def __init__(self,
-                 pwd = "wokdir",
+                 pwd = os.path.join(os.getcwd(), 'workdir'),
                  input_path: str = "inputfolder",
                  output_path: str = "outputfolder",
                  log_path: str = "logfolder",
                  scripts_path: str = "scriptsfolder",
                  container_type: str = "docker") -> None:
         
-        super().__init__(pwd, input_path, output_path, log_path, scripts_path, container_type)
+        super().__init__(pwd=pwd, input_path=input_path, 
+                         output_path=output_path, log_path=log_path, scripts_path=scripts_path, 
+                         container_type=container_type)
 
         if container_type == "singularity":
             shutil.copytree(os.path.join(os.path.dirname(__file__), 'config', 'cime_config'), 
@@ -43,6 +45,8 @@ class usp_clmu(clumapp):
         self.create_folder(os.path.join(self.input_path, 'usp'))
         # get the default surface data --> UK King's College London
         self.check_surf()
+        
+        self.domain = None
         #os.mkdir(os.path.join(self.input_path, 'usp'))
 
         #if os.path.exists(os.path.join(self.input_path, 'usp')):
@@ -376,12 +380,12 @@ class usp_clmu(clumapp):
             RUN_REFTOD: str = "00000",
             password: str = "None",
             iflog: bool = True,
-            logfile: str = "log.log",
+            logfile: str = None,
             hist_type: str = "GRID",
             hist_nhtfrq: int = 1,
             hist_mfilt: int = 1000000000,
             urban_hac: str = "ON_WASTEHEAT",
-            run_tyep : str = "usp-exec") -> list:
+            crun_type : str = "usp") -> list:
 
         """
         The function to run the CLMU-App for the urban single point.
@@ -402,9 +406,9 @@ class usp_clmu(clumapp):
             RUN_REFTOD (str): The reference time of the day. The default is "00000". Need to be provided when the RUN_TYPE is "branch".
             password (str): The password for the docker. The default is "None". Need to be provided when server is needed.
             iflog (bool): The flag to log the output. The default is True.
-            logfile (str): The log file name. The default is "log.log".
+            logfile (str): The log file name. The default is pwd+"log.log".
             urban_hac (str): The flag to turn on the urban HAC. The default is "ON_WASTEHEAT". valid_values="OFF","ON","ON_WASTEHEAT".
-            run_tyep (str): The type of the run. The default is "run". use "usp-execp" to run the sup mode.
+            crun_type (str): The type of the run. The default is "usp". 
 
         Returns:
             list: The list of the output files names.
@@ -428,18 +432,8 @@ class usp_clmu(clumapp):
         #        raise ValueError("The stop option is not provided.")
 
         self.case_name = case_name
-        #case_name = f'/p/scripts/{case_name}'
-        case_name = os.path.join('/p/scripts', case_name)
-
-        if ATM_DOM is not None:
-            #self.domain = ATM_DOM
-            self.check_domain(usr_domain=ATM_DOM)
-        else:
-            if self.domain is None:
-                print("Generating the domain data.")
-                self.check_domain()
-            else:
-                self.domain = self.domain
+        case_name = f'/p/scripts/{case_name}'
+        #case_name = os.path.join('/' 'p' 'scripts', case_name)
 
         if SURF is not None:
             #self.surfdata = SURF
@@ -458,16 +452,26 @@ class usp_clmu(clumapp):
                 raise ValueError("The forcing data is not provided.")
             else:
                 self.usr_forcing_file = self.usr_forcing_file
+                
+        if ATM_DOM is not None:
+            #self.domain = ATM_DOM
+            self.check_domain(usr_domain=ATM_DOM)
+        else:
+            if self.domain is None:
+                #print("Generating the domain data.")
+                self.check_domain()
+            else:
+                self.domain = self.domain
 
         self.case_scripts(mode="usp")
 
         # Copy the SourceMods folder to the input folder
-        self.sourcemod = os.path.join(self.input_path, 'usp/SourceMods')
+        self.sourcemod = os.path.join(self.input_path, 'usp', 'SourceMods')
         if os.path.exists(self.sourcemod):
             pass
             #print(f"The {self.sourcemod} already exists.")
         else:
-            shutil.copytree(os.path.join(os.path.dirname(__file__), 'usp/SourceMods'), 
+            shutil.copytree(os.path.join(os.path.dirname(__file__), 'usp', 'SourceMods'), 
                     self.sourcemod)
 #        # Copy the user_single_point.sh to the input folder
 #        self.usr_single_point = os.path.join(self.input_path, 'usp/usp.sh')
@@ -529,18 +533,22 @@ class usp_clmu(clumapp):
                                         hist_mfilt=hist_mfilt,
                                         urban_hac=urban_hac)
 
-        self.docker(cmd=run_tyep, iflog=iflog, 
+        if logfile is None:
+            logfile = os.path.join(self.pwd, 'pyclmuapprun.log')
+
+        self.docker(cmd=crun_type, iflog=iflog, 
                     password=password, cmdlogfile=logfile,
                     dockersript=command)
 
         savename_list = []
         i=0
-        op_path = os.path.join(self.output_path, 'lnd/hist')
+        op_path = os.path.join(self.output_path, 'lnd', 'hist')
         
         if output_prefix is not None:
         
             for filename in os.listdir(op_path):
-                if (f'{os.path.split(case_name)[-1]}.clm2' in filename):
+                if ((f'{os.path.split(case_name)[-1]}.clm2' in filename) and\
+                    f'{RUN_STARTDATE}' in filename):
                     #savename = op_path + '/' \
                     #                + case_name.split('/')[-1] \
                     #                + f'_clm{i}_'+datetime.now().strftime("%Y-%m-%d_%H-%M-%S") \
@@ -548,9 +556,14 @@ class usp_clmu(clumapp):
                     savename = os.path.join(op_path, (os.path.split(case_name)[-1] 
                                             + f'_clm{i}_'+datetime.now().strftime("%Y-%m-%d_%H-%M-%S") 
                                             + output_prefix))
-                    os.rename(op_path + '/' +filename, savename)
-                    savename_list.append(savename)
-                    self.save_name = savename
+                    try :
+                        os.rename(op_path + '/' +filename, savename)
+                        savename_list.append(savename)
+                        self.save_name = savename
+                    except PermissionError:
+                        savename_list.append(op_path + '/' +filename)
+                        self.save_name = op_path + '/' +filename
+                    
                     i += 1
 
         return savename_list

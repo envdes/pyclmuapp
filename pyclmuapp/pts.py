@@ -8,14 +8,16 @@ from pyclmuapp.container import clumapp
 class pts_clmu(clumapp):
     
     def __init__(self,
-                    pwd = "wokdir",
+                 pwd = os.path.join(os.getcwd(), "workdir"),
                  input_path: str = "inputfolder",
                  output_path: str = "outputfolder",
                  log_path: str = "logfolder",
                  scripts_path: str = "scriptsfolder",
                  container_type: str = "docker") -> None:
         
-        super().__init__(pwd, input_path, output_path, log_path, scripts_path, container_type)
+        super().__init__(pwd=pwd, input_path=input_path, 
+                         output_path=output_path, log_path=log_path, scripts_path=scripts_path, 
+                         container_type=container_type)
 
         with open(os.path.join(os.path.dirname(__file__), "config/config_man.json"), 'r') as f:
             self.caseconfig = json.load(f)

@@ -332,6 +332,7 @@ def run_command(command, password="None", logname="None", iflog=True) -> None:
     
     try:
         if password == "None":
+            
             result = subprocess.run(command, text=True, check=True, shell=True, stdout=subprocess.PIPE, stderr=subprocess.PIPE)
         else:    
             result = subprocess.run(command, input=password, text=True, check=True, shell=True, stdout=subprocess.PIPE, stderr=subprocess.PIPE)
@@ -602,9 +603,9 @@ def copy_file_if_not_exists2(source_path, destination_path, lon, lat, res="1.25*
 
 def get_urban_params(urban_ds: Union[xr.Dataset, str],
                      soil_ds: Union[xr.Dataset, str],
-                     template: Union[xr.Dataset, str],
                      lat: float, 
                      lon: float,
+                     template: Union[xr.Dataset, str] = os.path.join(os.path.dirname(__file__), "usp", "surfdata.nc"),
                      PTC_URBAN: list = [0,0,100],
                      outputname: str = "surfdata.nc"
                      ) -> xr.Dataset:
