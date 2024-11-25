@@ -51,24 +51,24 @@
 <li class="toctree-l1"><a class="reference internal" href="../overview/overview.html">About</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../overview/installation.html">Installation</a></li>
 </ul>
-<p class="caption" role="heading"><span class="caption-text">Basic usage</span></p>
+<p class="caption" role="heading"><span class="caption-text">Python: warmup</span></p>
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="../basic/basic_usage_inter.html">Basic usage: Web interface</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../basic/basic_usage_cli.html">Basic usage: Command line</a></li>
+<li class="toctree-l1"><a class="reference internal" href="warmup.html">Warmup</a></li>
 </ul>
-<p class="caption" role="heading"><span class="caption-text">Python: usp mode</span></p>
+<p class="caption" role="heading"><span class="caption-text">Python: examples</span></p>
 <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="example1_usp_basic.html">Example 1: Basic usage</a></li>
 <li class="toctree-l1 current"><a class="current reference internal" href="#">Example 2: How does global warming will affect urban climates?</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="#usp-mode:-user-forcing-mode">usp mode: user forcing mode</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="#1-initial-case">1 initial case</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#2-modify-the-forcing-data">2 modify the forcing data</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#3-Plotting">3 Plotting</a></li>
-</ul>
-</li>
+<li class="toctree-l2"><a class="reference internal" href="#2-modify-the-forcing-data">2 modify the forcing data</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#3-Plotting">3 Plotting</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="example3_usp_adaptation.html">Example 3: Urban climate adaption</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Other usage</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../basic/basic_usage_inter.html">Basic usage: Web interface</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../basic/basic_usage_cli.html">Basic usage: Command line</a></li>
 </ul>
 <p class="caption" role="heading"><span class="caption-text">Python: created input files</span></p>
 <ul>
@@ -78,22 +78,15 @@
 <p class="caption" role="heading"><span class="caption-text">Spinup</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="usp_spinup_mode.html">Spinup in USP mode</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../spinup/spinup_workstation.html">Spinup of PST mode</a></li>
 </ul>
 <p class="caption" role="heading"><span class="caption-text">HPC</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../hpc/HPC.html">pyclmuapp on HPC: Command line</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../hpc/singularity.html">pyclmuapp on HPC: Python</a></li>
 </ul>
-<p class="caption" role="heading"><span class="caption-text">Validation</span></p>
+<p class="caption" role="heading"><span class="caption-text">Evaluation</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../val/urban_plumber_usp.html">Urban-Plumber2: UK-Kin site CLMU5 simulation</a></li>
-</ul>
-<p class="caption" role="heading"><span class="caption-text">Python: pts mode</span></p>
-<ul>
-<li class="toctree-l1"><a class="reference internal" href="../pts/example1_workstation.html">Example 1: Run a simple simulation with a single case</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../pts/example2_workstation.html">Example 2: How does global warming will affect urban climates?</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../pts/example3_workstation.html">Example 3: Urban climate adaption</a></li>
 </ul>
 <p class="caption" role="heading"><span class="caption-text">API Reference</span></p>
 <ul>
@@ -132,39 +125,20 @@
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">pyclmuapp</span> <span class="kn">import</span> <span class="n">usp_clmu</span>
 <span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
-<span class="kn">import</span> <span class="nn">os</span>
 </pre></div>
 </div>
 </div>
-<section id="usp-mode:-user-forcing-mode">
-<h2>usp mode: user forcing mode<a class="headerlink" href="#usp-mode:-user-forcing-mode" title="Permalink to this heading"></a></h2>
-<p>workflow 1. initialize</p>
-<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>note: the docker container (named **myclmu**) should be running and bind the input_path, output_path, log_path and scripts_path
-if not use the `usp.docker(cmd=&#39;run&#39;)` to start the container, this will help to bind above paths automatically.
-</pre></div>
-</div>
-<ol class="arabic" start="2">
-<li><p>check domian</p></li>
-<li><p>check forcing</p>
-<p>must define the forcing file</p>
-</li>
-<li><p>run case</p></li>
-</ol>
-<section id="1-initial-case">
-<h3>1 initial case<a class="headerlink" href="#1-initial-case" title="Permalink to this heading"></a></h3>
 <p>Here we use the <code class="docutils literal notranslate"><span class="pre">RUN_TYPE=</span> <span class="pre">&quot;branch&quot;</span></code> to avoid the repeated spinup phases.</p>
 <p>The case (<code class="docutils literal notranslate"><span class="pre">usp_spinup</span></code>) is run for 10 years to spinup the model.</p>
 <p>How to get <code class="docutils literal notranslate"><span class="pre">usp_spinup</span></code> ?</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">usp_spinup</span> <span class="o">=</span> <span class="n">usp</span><span class="o">.</span><span class="n">run</span><span class="p">(</span>
-            <span class="n">output_prefix</span><span class="o">=</span> <span class="s2">&quot;_clm.nc&quot;</span><span class="p">,</span>
             <span class="n">case_name</span> <span class="o">=</span> <span class="s2">&quot;usp_spinup&quot;</span><span class="p">,</span>
+            <span class="n">SURF</span><span class="o">=</span><span class="s2">&quot;surfdata.nc&quot;</span><span class="p">,</span>
+            <span class="n">FORCING</span><span class="o">=</span><span class="s2">&quot;forcing.nc&quot;</span><span class="p">,</span>
             <span class="n">RUN_STARTDATE</span> <span class="o">=</span> <span class="s2">&quot;2002-01-01&quot;</span><span class="p">,</span>
             <span class="n">STOP_OPTION</span> <span class="o">=</span> <span class="s2">&quot;nyears&quot;</span><span class="p">,</span>
             <span class="n">STOP_N</span> <span class="o">=</span> <span class="s2">&quot;10&quot;</span><span class="p">,</span>
             <span class="n">RUN_TYPE</span><span class="o">=</span> <span class="s2">&quot;coldstart&quot;</span><span class="p">,</span>
-            <span class="n">iflog</span> <span class="o">=</span> <span class="kc">True</span><span class="p">,</span>
-            <span class="n">logfile</span> <span class="o">=</span> <span class="s2">&quot;log.log&quot;</span><span class="p">,</span>
-            <span class="n">run_tyep</span><span class="o">=</span><span class="s2">&quot;usp-exec&quot;</span><span class="c1">#&quot;case&quot;, when docker container is not start)</span>
         <span class="p">)</span>
 <span class="n">usp_spinup</span>
 </pre></div>
@@ -173,65 +147,21 @@ if not use the `usp.docker(cmd=&#39;run&#39;)` to start the container, this will
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[2]:
 </pre></div>
 </div>
-<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># initialize</span>
-<span class="n">usp</span> <span class="o">=</span> <span class="n">usp_clmu</span><span class="p">(</span>
-    <span class="n">pwd</span><span class="o">=</span><span class="n">os</span><span class="o">.</span><span class="n">getcwd</span><span class="p">(),</span>
-    <span class="n">container_type</span><span class="o">=</span><span class="s1">&#39;docker&#39;</span><span class="p">)</span>
-
-<span class="c1"># before running container, you need the image</span>
-<span class="c1"># usp.docker(&quot;pull&quot;) # to pull the docker image if you don&#39;t have it</span>
-
-<span class="n">usp</span><span class="o">.</span><span class="n">docker</span><span class="p">(</span><span class="s2">&quot;run&quot;</span><span class="p">)</span> <span class="c1"># run the docker container</span>
-</pre></div>
-</div>
-</div>
-<div class="nboutput nblast docutils container">
-<div class="prompt empty docutils container">
-</div>
-<div class="output_area docutils container">
-<div class="highlight"><pre>
-Folder &#39;inputfolder&#39; already exists.
-Folder &#39;outputfolder&#39; already exists.
-Folder &#39;logfolder&#39; already exists.
-Folder &#39;scriptsfolder&#39; already exists.
-Folder &#39;/Users/user/Documents/GitHub/pyclmuapp/docs/notebooks/usp/inputfolder/usp&#39; created successfully!
-</pre></div></div>
-</div>
-<div class="nbinput docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[3]:
-</pre></div>
-</div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%%time</span>
+<span class="c1"># initialize</span>
+<span class="n">usp</span> <span class="o">=</span> <span class="n">usp_clmu</span><span class="p">()</span>
 
-<span class="c1"># check surface</span>
-<span class="n">usp</span><span class="o">.</span><span class="n">check_surf</span><span class="p">()</span> <span class="c1"># use the default surface data of London</span>
-<span class="c1"># use usp.check_surf(usr_surf=&quot;sufdata.nc&quot;) to use the user provided surface data</span>
-
-
-<span class="c1"># check the domain</span>
-<span class="c1"># the domain file will be revised according to the surface data if usr_domain is not provided</span>
-<span class="c1"># do this after check_surf</span>
-<span class="c1"># because the surfdata should be provided to read the domain file</span>
-<span class="n">usp</span><span class="o">.</span><span class="n">check_domain</span><span class="p">()</span>
-
-
-<span class="c1"># check the forcing</span>
-<span class="c1"># this forcing derived from urban-plumber forcing data</span>
-<span class="n">usp</span><span class="o">.</span><span class="n">check_forcing</span><span class="p">(</span>
-    <span class="n">usr_forcing</span><span class="o">=</span><span class="s2">&quot;forcing.nc&quot;</span><span class="p">)</span>
-
+<span class="c1"># create a new case amd run it</span>
 <span class="n">usp_or</span> <span class="o">=</span> <span class="n">usp</span><span class="o">.</span><span class="n">run</span><span class="p">(</span>
-            <span class="n">output_prefix</span><span class="o">=</span> <span class="s2">&quot;_clm.nc&quot;</span><span class="p">,</span>
             <span class="n">case_name</span> <span class="o">=</span> <span class="s2">&quot;example2&quot;</span><span class="p">,</span>
+            <span class="n">SURF</span><span class="o">=</span><span class="s2">&quot;surfdata.nc&quot;</span><span class="p">,</span>
+            <span class="n">FORCING</span><span class="o">=</span><span class="s2">&quot;forcing.nc&quot;</span><span class="p">,</span>
             <span class="n">RUN_STARTDATE</span> <span class="o">=</span> <span class="s2">&quot;2012-01-01&quot;</span><span class="p">,</span>
             <span class="n">STOP_OPTION</span> <span class="o">=</span> <span class="s2">&quot;nyears&quot;</span><span class="p">,</span>
             <span class="n">STOP_N</span> <span class="o">=</span> <span class="s2">&quot;2&quot;</span><span class="p">,</span>
             <span class="n">RUN_TYPE</span><span class="o">=</span> <span class="s2">&quot;branch&quot;</span><span class="p">,</span>
             <span class="n">RUN_REFCASE</span><span class="o">=</span> <span class="s2">&quot;usp_spinup&quot;</span><span class="p">,</span> <span class="c1"># the case name of the spinup run</span>
             <span class="n">RUN_REFDATE</span><span class="o">=</span> <span class="s2">&quot;2012-01-01&quot;</span><span class="p">,</span>
-            <span class="n">iflog</span> <span class="o">=</span> <span class="kc">True</span><span class="p">,</span>
-            <span class="n">logfile</span> <span class="o">=</span> <span class="s2">&quot;log.log&quot;</span><span class="p">,</span>
-            <span class="n">run_tyep</span><span class="o">=</span><span class="s2">&quot;usp-exec&quot;</span><span class="c1">#&quot;case&quot;, when docker container is not start)</span>
         <span class="p">)</span>
 <span class="n">usp_or</span>
 </pre></div>
@@ -242,36 +172,44 @@ Folder &#39;/Users/user/Documents/GitHub/pyclmuapp/docs/notebooks/usp/inputfolde
 </div>
 <div class="output_area docutils container">
 <div class="highlight"><pre>
-Copying the file forcing.nc to the /Users/user/Documents/GitHub/pyclmuapp/docs/notebooks/usp/inputfolder/usp
-CPU times: user 226 ms, sys: 54.4 ms, total: 280 ms
-Wall time: 2min
+Copying the file forcing.nc to the /Users/user/Documents/GitHub/pyclmuapp/docs/notebooks/usp/workdir/inputfolder/usp
+CPU times: user 1.12 s, sys: 375 ms, total: 1.5 s
+Wall time: 2min 42s
 </pre></div></div>
 </div>
 <div class="nboutput nblast docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[3]:
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[2]:
 </pre></div>
 </div>
 <div class="output_area docutils container">
 <div class="highlight"><pre>
-[&#39;/Users/user/Documents/GitHub/pyclmuapp/docs/notebooks/usp/outputfolder/lnd/hist/example2_clm0_2024-09-24_14-05-16_clm.nc&#39;]
+[&#39;/Users/user/Documents/GitHub/pyclmuapp/docs/notebooks/usp/workdir/outputfolder/lnd/hist/example2_clm0_2024-11-23_15-21-24_clm.nc&#39;]
 </pre></div></div>
 </div>
-</section>
 <section id="2-modify-the-forcing-data">
-<h3>2 modify the forcing data<a class="headerlink" href="#2-modify-the-forcing-data" title="Permalink to this heading"></a></h3>
+<h2>2 modify the forcing data<a class="headerlink" href="#2-modify-the-forcing-data" title="Permalink to this heading"></a></h2>
 <p>using <code class="docutils literal notranslate"><span class="pre">action={&quot;Tair&quot;:</span> <span class="pre">1}</span></code>, <code class="docutils literal notranslate"><span class="pre">mode=&quot;add&quot;</span></code></p>
 <p>Here, we can use the same case_name <code class="docutils literal notranslate"><span class="pre">example2</span></code>, so that we will not need to build the case (compile CTSM code) again.</p>
 <p>run time will be save</p>
 <div class="nbinput docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[4]:
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[3]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%%time</span>
+
+<span class="c1"># we have run a simulation using the `usp` object,</span>
+<span class="c1"># the forcing data path is stored in the `usp.usr_forcing_file` attribute</span>
+<span class="c1"># the surface data path is stored in the `usp.surfdata` attribute</span>
+<span class="c1"># we can modify the forcing data by calling the `usp.modify_forcing` method</span>
+<span class="c1"># and run the simulation again using the `usp.run` method</span>
+
+<span class="c1"># if there is no forcing data path provided or have not run a simulation using the `usp` object,</span>
+<span class="c1"># check the forcing, by calling `usp.check_forcing(usr_forcing=&quot;forcing.nc&quot;)` method</span>
+
 <span class="n">usp</span><span class="o">.</span><span class="n">modify_forcing</span><span class="p">(</span><span class="n">action</span><span class="o">=</span><span class="p">{</span><span class="s2">&quot;Tair&quot;</span><span class="p">:</span> <span class="mi">1</span><span class="p">},</span> <span class="c1"># dict</span>
                    <span class="n">mode</span><span class="o">=</span><span class="s2">&quot;add&quot;</span><span class="p">,</span> <span class="c1"># optional; the default is &quot;replace&quot;</span>
                    <span class="n">forcing_name</span><span class="o">=</span><span class="s2">&quot;forcing_replaced.nc&quot;</span><span class="p">)</span> <span class="c1"># optional; the default is &quot;forcing.nc&quot; provided by pyclmuapp</span>
 <span class="n">usp_warming</span> <span class="o">=</span> <span class="n">usp</span><span class="o">.</span><span class="n">run</span><span class="p">(</span>
-            <span class="n">output_prefix</span><span class="o">=</span> <span class="s2">&quot;_clm.nc&quot;</span><span class="p">,</span>
             <span class="n">case_name</span> <span class="o">=</span> <span class="s2">&quot;example2&quot;</span><span class="p">,</span>
             <span class="n">RUN_STARTDATE</span> <span class="o">=</span> <span class="s2">&quot;2012-01-01&quot;</span><span class="p">,</span>
             <span class="n">STOP_OPTION</span> <span class="o">=</span> <span class="s2">&quot;nyears&quot;</span><span class="p">,</span>
@@ -279,9 +217,6 @@ Wall time: 2min
             <span class="n">RUN_TYPE</span><span class="o">=</span> <span class="s2">&quot;branch&quot;</span><span class="p">,</span>
             <span class="n">RUN_REFCASE</span><span class="o">=</span> <span class="s2">&quot;usp_spinup&quot;</span><span class="p">,</span> <span class="c1"># the case name of the spinup run</span>
             <span class="n">RUN_REFDATE</span><span class="o">=</span> <span class="s2">&quot;2012-01-01&quot;</span><span class="p">,</span>
-            <span class="n">iflog</span> <span class="o">=</span> <span class="kc">True</span><span class="p">,</span>
-            <span class="n">logfile</span> <span class="o">=</span> <span class="s2">&quot;log.log&quot;</span><span class="p">,</span>
-            <span class="n">run_tyep</span><span class="o">=</span><span class="s2">&quot;usp-exec&quot;</span><span class="c1">#&quot;case&quot;, when docker container is not start)</span>
         <span class="p">)</span>
 <span class="n">usp</span><span class="o">.</span><span class="n">modify_forcing</span><span class="p">(</span><span class="n">action</span><span class="o">=</span><span class="p">{</span><span class="s2">&quot;Tair&quot;</span><span class="p">:</span> <span class="o">-</span><span class="mi">1</span><span class="p">},</span><span class="c1"># dict</span>
                    <span class="n">mode</span><span class="o">=</span><span class="s2">&quot;add&quot;</span><span class="p">,</span> <span class="c1"># optional; the default is &quot;replace&quot;</span>
@@ -295,21 +230,21 @@ Wall time: 2min
 </div>
 <div class="output_area docutils container">
 <div class="highlight"><pre>
-CPU times: user 476 ms, sys: 87.5 ms, total: 564 ms
-Wall time: 1min 12s
+CPU times: user 650 ms, sys: 125 ms, total: 776 ms
+Wall time: 1min 33s
 </pre></div></div>
 </div>
 <div class="nboutput nblast docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[4]:
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[3]:
 </pre></div>
 </div>
 <div class="output_area docutils container">
 <div class="highlight"><pre>
-[&#39;/Users/user/Documents/GitHub/pyclmuapp/docs/notebooks/usp/outputfolder/lnd/hist/example2_clm0_2024-09-24_14-06-27_clm.nc&#39;]
+[&#39;/Users/user/Documents/GitHub/pyclmuapp/docs/notebooks/usp/workdir/outputfolder/lnd/hist/example2_clm0_2024-11-23_15-22-57_clm.nc&#39;]
 </pre></div></div>
 </div>
 <div class="nbinput nblast docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[5]:
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[4]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">ds_or_usp</span> <span class="o">=</span> <span class="n">usp</span><span class="o">.</span><span class="n">nc_view</span><span class="p">(</span><span class="n">usp_or</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
@@ -319,10 +254,10 @@ Wall time: 1min 12s
 </div>
 </section>
 <section id="3-Plotting">
-<h3>3 Plotting<a class="headerlink" href="#3-Plotting" title="Permalink to this heading"></a></h3>
+<h2>3 Plotting<a class="headerlink" href="#3-Plotting" title="Permalink to this heading"></a></h2>
 <p>Note: ploting with time will need the <code class="docutils literal notranslate"><span class="pre">nc-time-axis</span></code> package, which can be installed by <code class="docutils literal notranslate"><span class="pre">pip</span> <span class="pre">install</span> <span class="pre">nc-time-axis</span></code> or <code class="docutils literal notranslate"><span class="pre">conda</span> <span class="pre">install</span> <span class="pre">nc-time-axis</span></code></p>
 <div class="nbinput docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[6]:
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[5]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">fig</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">12</span><span class="p">,</span> <span class="mi">6</span><span class="p">))</span>
@@ -354,7 +289,7 @@ Wall time: 1min 12s
 <span class="n">mean</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">ax</span><span class="o">=</span><span class="n">ax</span><span class="p">)</span>
 
 <span class="c1"># set labels</span>
-<span class="n">xlabels</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;&#39;</span><span class="p">,</span> <span class="s1">&#39;&#39;</span><span class="p">,</span> <span class="s1">&#39;Time&#39;</span><span class="p">,</span> <span class="s1">&#39;Hour of day&#39;</span><span class="p">]</span>
+<span class="n">xlabels</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;&#39;</span><span class="p">,</span> <span class="s1">&#39;&#39;</span><span class="p">,</span> <span class="s1">&#39;Time&#39;</span><span class="p">,</span> <span class="s1">&#39;Local hour of day&#39;</span><span class="p">]</span>
 <span class="n">ylabels</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;Air temperature [K]&#39;</span><span class="p">,</span> <span class="s1">&#39;Air temperature [K]&#39;</span><span class="p">,</span> <span class="s1">&#39;Temperature difference [K]&#39;</span><span class="p">,</span> <span class="s1">&#39;Temperature difference [K]&#39;</span><span class="p">]</span>
 <span class="n">titles</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;a&#39;</span><span class="p">,</span> <span class="s1">&#39;b&#39;</span><span class="p">,</span> <span class="s1">&#39;c&#39;</span><span class="p">,</span> <span class="s1">&#39;d&#39;</span><span class="p">]</span>
 <span class="k">for</span> <span class="n">ax</span> <span class="ow">in</span> <span class="n">fig</span><span class="o">.</span><span class="n">axes</span><span class="p">:</span>
@@ -373,28 +308,18 @@ Wall time: 1min 12s
 <div class="prompt empty docutils container">
 </div>
 <div class="output_area docutils container">
-<img alt="../../_images/notebooks_usp_example2_usp_global_warming_11_0.png" src="../../_images/notebooks_usp_example2_usp_global_warming_11_0.png" />
+<img alt="../../_images/notebooks_usp_example2_usp_global_warming_8_0.png" src="../../_images/notebooks_usp_example2_usp_global_warming_8_0.png" />
 </div>
 </div>
+<p><strong>clean up the case files</strong></p>
 <div class="nbinput nblast docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[7]:
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[6]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">usp</span><span class="o">.</span><span class="n">case_clean</span><span class="p">(</span><span class="n">case_name</span><span class="o">=</span><span class="s2">&quot;example2&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
-<p><strong>stop and remove the container</strong></p>
-<div class="nbinput nblast docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[8]:
-</pre></div>
-</div>
-<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">usp</span><span class="o">.</span><span class="n">docker</span><span class="p">(</span><span class="s2">&quot;stop&quot;</span><span class="p">)</span>
-<span class="n">usp</span><span class="o">.</span><span class="n">docker</span><span class="p">(</span><span class="s2">&quot;rm&quot;</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-</section>
 </section>
 </section>
 

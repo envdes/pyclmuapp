@@ -22,9 +22,7 @@
       <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <script src="../../_static/js/theme.js"></script>
     <link rel="index" title="Index" href="../../genindex.html" />
-    <link rel="search" title="Search" href="../../search.html" />
-    <link rel="next" title="pyclmuapp on HPC: Command line" href="../hpc/HPC.html" />
-    <link rel="prev" title="Spinup in USP mode" href="../usp/usp_spinup_mode.html" /> 
+    <link rel="search" title="Search" href="../../search.html" /> 
 </head>
 
 <body class="wy-body-for-nav"> 
@@ -51,16 +49,20 @@
 <li class="toctree-l1"><a class="reference internal" href="../overview/overview.html">About</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../overview/installation.html">Installation</a></li>
 </ul>
-<p class="caption" role="heading"><span class="caption-text">Basic usage</span></p>
+<p class="caption" role="heading"><span class="caption-text">Python: warmup</span></p>
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="../basic/basic_usage_inter.html">Basic usage: Web interface</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../basic/basic_usage_cli.html">Basic usage: Command line</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../usp/warmup.html">Warmup</a></li>
 </ul>
-<p class="caption" role="heading"><span class="caption-text">Python: usp mode</span></p>
+<p class="caption" role="heading"><span class="caption-text">Python: examples</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../usp/example1_usp_basic.html">Example 1: Basic usage</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../usp/example2_usp_global_warming.html">Example 2: How does global warming will affect urban climates?</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../usp/example3_usp_adaptation.html">Example 3: Urban climate adaption</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Other usage</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../basic/basic_usage_inter.html">Basic usage: Web interface</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../basic/basic_usage_cli.html">Basic usage: Command line</a></li>
 </ul>
 <p class="caption" role="heading"><span class="caption-text">Python: created input files</span></p>
 <ul>
@@ -68,33 +70,17 @@
 <li class="toctree-l1"><a class="reference internal" href="../own/prepare_urbansurf_10evlurb.html">Make your own surface data</a></li>
 </ul>
 <p class="caption" role="heading"><span class="caption-text">Spinup</span></p>
-<ul class="current">
+<ul>
 <li class="toctree-l1"><a class="reference internal" href="../usp/usp_spinup_mode.html">Spinup in USP mode</a></li>
-<li class="toctree-l1 current"><a class="current reference internal" href="#">Spinup of PST mode</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="#1-PTS-mode:-using-the-CESM-provide-global-data">1 PTS mode: using the CESM provide global data</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="#1.1-Get-the-urban-grid-location">1.1 Get the urban grid location</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#1.2-revise-the-caseconfig-and-run-case">1.2 revise the caseconfig and run case</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#1.3-clean-up-the-case-if-needed">1.3 clean up the case if needed</a></li>
-</ul>
-</li>
-<li class="toctree-l2"><a class="reference internal" href="#2-usp-mode">2 usp mode</a></li>
-</ul>
-</li>
 </ul>
 <p class="caption" role="heading"><span class="caption-text">HPC</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../hpc/HPC.html">pyclmuapp on HPC: Command line</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../hpc/singularity.html">pyclmuapp on HPC: Python</a></li>
 </ul>
-<p class="caption" role="heading"><span class="caption-text">Validation</span></p>
+<p class="caption" role="heading"><span class="caption-text">Evaluation</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../val/urban_plumber_usp.html">Urban-Plumber2: UK-Kin site CLMU5 simulation</a></li>
-</ul>
-<p class="caption" role="heading"><span class="caption-text">Python: pts mode</span></p>
-<ul>
-<li class="toctree-l1"><a class="reference internal" href="../pts/example1_workstation.html">Example 1: Run a simple simulation with a single case</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../pts/example2_workstation.html">Example 2: How does global warming will affect urban climates?</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../pts/example3_workstation.html">Example 3: Urban climate adaption</a></li>
 </ul>
 <p class="caption" role="heading"><span class="caption-text">API Reference</span></p>
 <ul>
@@ -356,7 +342,7 @@ if not use the `usp.docker(cmd=&#39;run&#39;)` to start the container, this will
             <span class="n">iflog</span> <span class="o">=</span> <span class="kc">True</span><span class="p">,</span>
             <span class="n">logfile</span> <span class="o">=</span> <span class="s2">&quot;log.log&quot;</span><span class="p">,</span>
             <span class="c1">#var_add= &quot;&#39;Qle&#39;,&#39;Qh&#39;,&#39;Qtau&#39;,&#39;Qstor&#39;,&#39;Rnet&#39;,&#39;SWup&#39;,&#39;LWup&#39;&quot;,</span>
-            <span class="n">run_tyep</span><span class="o">=</span><span class="s2">&quot;usp-exec&quot;</span><span class="c1">#&quot;case&quot;, when docker container is not start)</span>
+            <span class="n">crun_type</span><span class="o">=</span><span class="s2">&quot;usp-exec&quot;</span><span class="c1">#&quot;case&quot;, when docker container is not start)</span>
         <span class="p">)</span>
 <span class="n">nospinup</span>
 </pre></div>
@@ -411,7 +397,7 @@ Copying the file CTSM_DATM_UK-Kin_2002-2014.nc to the /home/zhonghua/p/scratch/C
             <span class="n">iflog</span> <span class="o">=</span> <span class="kc">True</span><span class="p">,</span>
             <span class="n">logfile</span> <span class="o">=</span> <span class="s2">&quot;log.log&quot;</span><span class="p">,</span>
             <span class="c1">#var_add= &quot;&#39;Qle&#39;,&#39;Qh&#39;,&#39;Qtau&#39;,&#39;Qstor&#39;,&#39;Rnet&#39;,&#39;SWup&#39;,&#39;LWup&#39;&quot;,</span>
-            <span class="n">run_tyep</span><span class="o">=</span><span class="s2">&quot;usp-exec&quot;</span><span class="c1">#&quot;case&quot;, when docker container is not start)</span>
+            <span class="n">crun_type</span><span class="o">=</span><span class="s2">&quot;usp-exec&quot;</span><span class="c1">#&quot;case&quot;, when docker container is not start)</span>
         <span class="p">)</span>
 <span class="n">spinup_usp</span>
 </pre></div>
@@ -577,10 +563,7 @@ The /home/zhonghua/p/scratch/CESMDATAROOT/inputdata/usp/SourceMods already exist
 
            </div>
           </div>
-          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
-        <a href="../usp/usp_spinup_mode.html" class="btn btn-neutral float-left" title="Spinup in USP mode" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
-        <a href="../hpc/HPC.html" class="btn btn-neutral float-right" title="pyclmuapp on HPC: Command line" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
-    </div>
+          <footer>
 
   <hr/>
 

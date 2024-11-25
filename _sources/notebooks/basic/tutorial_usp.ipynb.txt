@@ -713,7 +713,7 @@
     "            #passward = \"None\",\n",
     "            iflog = True,\n",
     "            logfile = \"log.log\",\n",
-    "            run_tyep=\"usp-exec\"#\"case\", when docker container is not start)\n",
+    "            crun_type=\"usp-exec\"#\"case\", when docker container is not start)\n",
     "        )\n",
     "original"
    ]
@@ -1506,7 +1506,7 @@
     "            #passward = \"None\",\n",
     "            iflog = True,\n",
     "            logfile = \"log.log\",\n",
-    "            run_tyep=\"usp-exec\"#\"case\", when docker container is not start)\n",
+    "            crun_type=\"usp-exec\"#\"case\", when docker container is not start)\n",
     "        )\n",
     "replace"
    ]
@@ -1708,7 +1708,7 @@
     "            #passward = \"None\",\n",
     "            iflog = True,\n",
     "            logfile = \"logAUPre.log\",\n",
-    "            run_tyep=\"usp-exec\"#\"case\", when docker container is not start)\n",
+    "            crun_type=\"usp-exec\"#\"case\", when docker container is not start)\n",
     "        )\n",
     "replace"
    ]

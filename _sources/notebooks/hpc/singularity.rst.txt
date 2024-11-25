@@ -36,7 +36,7 @@ A quick look for python scripts of pyclmuapp ``singularity`` mode
         STOP_N="10",
         iflog=True,
         logfile="log.log",
-        run_tyep="usp-exec"  #
+        crun_type="usp-exec"  #
     )
     print(original)
 

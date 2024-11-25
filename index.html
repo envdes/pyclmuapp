@@ -6,7 +6,7 @@
   <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>pyclmuapp: A Python Package for Integration and Execution of the Urban Climate Model in a Containerized Environment &mdash; pyclmuapp v0.0.0 documentation</title>
+  <title>pyclmuapp: A Python Package for Integration and Execution of Community Land Model Urban (CLMU) in a Containerized Environment &mdash; pyclmuapp v0.0.0 documentation</title>
       <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=80d5e7a1" />
       <link rel="stylesheet" type="text/css" href="_static/css/theme.css?v=e59714d7" />
 
@@ -47,16 +47,20 @@
 <li class="toctree-l1"><a class="reference internal" href="notebooks/overview/overview.html">About</a></li>
 <li class="toctree-l1"><a class="reference internal" href="notebooks/overview/installation.html">Installation</a></li>
 </ul>
-<p class="caption" role="heading"><span class="caption-text">Basic usage</span></p>
+<p class="caption" role="heading"><span class="caption-text">Python: warmup</span></p>
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="notebooks/basic/basic_usage_inter.html">Basic usage: Web interface</a></li>
-<li class="toctree-l1"><a class="reference internal" href="notebooks/basic/basic_usage_cli.html">Basic usage: Command line</a></li>
+<li class="toctree-l1"><a class="reference internal" href="notebooks/usp/warmup.html">Warmup</a></li>
 </ul>
-<p class="caption" role="heading"><span class="caption-text">Python: usp mode</span></p>
+<p class="caption" role="heading"><span class="caption-text">Python: examples</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="notebooks/usp/example1_usp_basic.html">Example 1: Basic usage</a></li>
 <li class="toctree-l1"><a class="reference internal" href="notebooks/usp/example2_usp_global_warming.html">Example 2: How does global warming will affect urban climates?</a></li>
 <li class="toctree-l1"><a class="reference internal" href="notebooks/usp/example3_usp_adaptation.html">Example 3: Urban climate adaption</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Other usage</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="notebooks/basic/basic_usage_inter.html">Basic usage: Web interface</a></li>
+<li class="toctree-l1"><a class="reference internal" href="notebooks/basic/basic_usage_cli.html">Basic usage: Command line</a></li>
 </ul>
 <p class="caption" role="heading"><span class="caption-text">Python: created input files</span></p>
 <ul>
@@ -66,22 +70,15 @@
 <p class="caption" role="heading"><span class="caption-text">Spinup</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="notebooks/usp/usp_spinup_mode.html">Spinup in USP mode</a></li>
-<li class="toctree-l1"><a class="reference internal" href="notebooks/spinup/spinup_workstation.html">Spinup of PST mode</a></li>
 </ul>
 <p class="caption" role="heading"><span class="caption-text">HPC</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="notebooks/hpc/HPC.html">pyclmuapp on HPC: Command line</a></li>
 <li class="toctree-l1"><a class="reference internal" href="notebooks/hpc/singularity.html">pyclmuapp on HPC: Python</a></li>
 </ul>
-<p class="caption" role="heading"><span class="caption-text">Validation</span></p>
+<p class="caption" role="heading"><span class="caption-text">Evaluation</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="notebooks/val/urban_plumber_usp.html">Urban-Plumber2: UK-Kin site CLMU5 simulation</a></li>
-</ul>
-<p class="caption" role="heading"><span class="caption-text">Python: pts mode</span></p>
-<ul>
-<li class="toctree-l1"><a class="reference internal" href="notebooks/pts/example1_workstation.html">Example 1: Run a simple simulation with a single case</a></li>
-<li class="toctree-l1"><a class="reference internal" href="notebooks/pts/example2_workstation.html">Example 2: How does global warming will affect urban climates?</a></li>
-<li class="toctree-l1"><a class="reference internal" href="notebooks/pts/example3_workstation.html">Example 3: Urban climate adaption</a></li>
 </ul>
 <p class="caption" role="heading"><span class="caption-text">API Reference</span></p>
 <ul>
@@ -102,7 +99,7 @@
           <div role="navigation" aria-label="Page navigation">
   <ul class="wy-breadcrumbs">
       <li><a href="#" class="icon icon-home" aria-label="Home"></a></li>
-      <li class="breadcrumb-item active">pyclmuapp: A Python Package for Integration and Execution of the Urban Climate Model in a Containerized Environment</li>
+      <li class="breadcrumb-item active">pyclmuapp: A Python Package for Integration and Execution of Community Land Model Urban (CLMU) in a Containerized Environment</li>
       <li class="wy-breadcrumbs-aside">
             <a href="_sources/index.rst.txt" rel="nofollow"> View page source</a>
       </li>
@@ -112,10 +109,10 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
              
-  <section id="pyclmuapp-a-python-package-for-integration-and-execution-of-the-urban-climate-model-in-a-containerized-environment">
-<h1>pyclmuapp: A Python Package for Integration and Execution of the Urban Climate Model in a Containerized Environment<a class="headerlink" href="#pyclmuapp-a-python-package-for-integration-and-execution-of-the-urban-climate-model-in-a-containerized-environment" title="Permalink to this heading"></a></h1>
-<p><a class="reference external" href="https://zenodo.org/doi/10.5281/zenodo.10710695"><img alt="DOI" src="https://zenodo.org/badge/750479733.svg" /></a> <a class="reference external" href="https://github.com/envdes/pyclmuapp"><img alt="GitHub" src="https://img.shields.io/badge/GitHub-pyclmuapp-brightgreen.svg" /></a> <a class="reference external" href="https://envdes.github.io/pyclmuapp/index.html"><img alt="Docs" src="https://img.shields.io/badge/docs-pyclmuapp-brightgreen.svg" /></a> <a class="reference external" href="https://github.com/envdes/pyclmuapp/blob/main/LICENSE"><img alt="license" src="https://img.shields.io/badge/License-MIT-blue.svg" /></a></p>
-<p>pyclmuapp: A Python Package for Integration and Execution of the Urban Climate Model in a Containerized Environment</p>
+  <section id="pyclmuapp-a-python-package-for-integration-and-execution-of-community-land-model-urban-clmu-in-a-containerized-environment">
+<h1>pyclmuapp: A Python Package for Integration and Execution of Community Land Model Urban (CLMU) in a Containerized Environment<a class="headerlink" href="#pyclmuapp-a-python-package-for-integration-and-execution-of-community-land-model-urban-clmu-in-a-containerized-environment" title="Permalink to this heading"></a></h1>
+<p><a class="reference external" href="https://zenodo.org/doi/10.5281/zenodo.10710695"><img alt="DOI" src="https://zenodo.org/badge/750479733.svg" /></a> <a class="reference external" href="https://github.com/envdes/pyclmuapp"><img alt="GitHub" src="https://img.shields.io/badge/GitHub-pyclmuapp-brightgreen.svg" /></a> <a class="reference external" href="https://junjieyu-uom.github.io/pyclmuapp/"><img alt="Docs" src="https://img.shields.io/badge/docs-pyclmuapp-brightgreen.svg" /></a> <a class="reference external" href="https://github.com/envdes/pyclmuapp/blob/main/LICENSE"><img alt="license" src="https://img.shields.io/badge/License-MIT-blue.svg" /></a></p>
+<p>pyclmuapp: A Python Package for Integration and Execution of Community Land Model Urban (CLMU) in a Containerized Environment</p>
 <p>Contributors: <a class="reference external" href="https://junjieyu-uom.github.io">Junjie Yu</a>, <a class="reference external" href="https://staff.ucar.edu/users/oleson">Keith Oleson</a>, <a class="reference external" href="https://github.com/YuanSun-UoM">Yuan Sun</a>, <a class="reference external" href="https://research.manchester.ac.uk/en/persons/david.topping">David Topping</a>, <a class="reference external" href="https://zhonghuazheng.com">Zhonghua Zheng</a> (<a class="reference external" href="mailto:zhonghua&#46;zheng&#37;&#52;&#48;manchester&#46;ac&#46;uk">zhonghua<span>&#46;</span>zheng<span>&#64;</span>manchester<span>&#46;</span>ac<span>&#46;</span>uk</a>)</p>
 <div class="toctree-wrapper compound">
 <p class="caption" role="heading"><span class="caption-text">Overview</span></p>
@@ -125,18 +122,37 @@
 </ul>
 </div>
 <div class="toctree-wrapper compound">
-<p class="caption" role="heading"><span class="caption-text">Basic usage</span></p>
+<p class="caption" role="heading"><span class="caption-text">Python: warmup</span></p>
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="notebooks/basic/basic_usage_inter.html">Basic usage: Web interface</a></li>
-<li class="toctree-l1"><a class="reference internal" href="notebooks/basic/basic_usage_cli.html">Basic usage: Command line</a></li>
+<li class="toctree-l1"><a class="reference internal" href="notebooks/usp/warmup.html">Warmup</a></li>
 </ul>
 </div>
 <div class="toctree-wrapper compound">
-<p class="caption" role="heading"><span class="caption-text">Python: usp mode</span></p>
+<p class="caption" role="heading"><span class="caption-text">Python: examples</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="notebooks/usp/example1_usp_basic.html">Example 1: Basic usage</a></li>
 <li class="toctree-l1"><a class="reference internal" href="notebooks/usp/example2_usp_global_warming.html">Example 2: How does global warming will affect urban climates?</a></li>
 <li class="toctree-l1"><a class="reference internal" href="notebooks/usp/example3_usp_adaptation.html">Example 3: Urban climate adaption</a></li>
+</ul>
+</div>
+<div class="toctree-wrapper compound">
+<p class="caption" role="heading"><span class="caption-text">Other usage</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="notebooks/basic/basic_usage_inter.html">Basic usage: Web interface</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="notebooks/basic/basic_usage_inter.html#usp">1 USP</a></li>
+<li class="toctree-l2"><a class="reference internal" href="notebooks/basic/basic_usage_inter.html#create-forcing-from-era5">2 Create forcing from ERA5</a></li>
+<li class="toctree-l2"><a class="reference internal" href="notebooks/basic/basic_usage_inter.html#create-surfdata">3 Create surfdata</a></li>
+<li class="toctree-l2"><a class="reference internal" href="notebooks/basic/basic_usage_inter.html#create-fake-forcing">4 Create fake forcing</a></li>
+<li class="toctree-l2"><a class="reference internal" href="notebooks/basic/basic_usage_inter.html#input-parameters">Input Parameters</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="notebooks/basic/basic_usage_cli.html">Basic usage: Command line</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="notebooks/basic/basic_usage_cli.html#check-the-version">1 check the version</a></li>
+<li class="toctree-l2"><a class="reference internal" href="notebooks/basic/basic_usage_cli.html#example-for-running-your-case">2 example for running your case</a></li>
+<li class="toctree-l2"><a class="reference internal" href="notebooks/basic/basic_usage_cli.html#help">3 help</a></li>
+<li class="toctree-l2"><a class="reference internal" href="notebooks/basic/basic_usage_cli.html#pyclmuapp-input-parameters">4 pyclmuapp Input Parameters</a></li>
+</ul>
+</li>
 </ul>
 </div>
 <div class="toctree-wrapper compound">
@@ -150,7 +166,6 @@
 <p class="caption" role="heading"><span class="caption-text">Spinup</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="notebooks/usp/usp_spinup_mode.html">Spinup in USP mode</a></li>
-<li class="toctree-l1"><a class="reference internal" href="notebooks/spinup/spinup_workstation.html">Spinup of PST mode</a></li>
 </ul>
 </div>
 <div class="toctree-wrapper compound">
@@ -161,17 +176,9 @@
 </ul>
 </div>
 <div class="toctree-wrapper compound">
-<p class="caption" role="heading"><span class="caption-text">Validation</span></p>
+<p class="caption" role="heading"><span class="caption-text">Evaluation</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="notebooks/val/urban_plumber_usp.html">Urban-Plumber2: UK-Kin site CLMU5 simulation</a></li>
-</ul>
-</div>
-<div class="toctree-wrapper compound">
-<p class="caption" role="heading"><span class="caption-text">Python: pts mode</span></p>
-<ul>
-<li class="toctree-l1"><a class="reference internal" href="notebooks/pts/example1_workstation.html">Example 1: Run a simple simulation with a single case</a></li>
-<li class="toctree-l1"><a class="reference internal" href="notebooks/pts/example2_workstation.html">Example 2: How does global warming will affect urban climates?</a></li>
-<li class="toctree-l1"><a class="reference internal" href="notebooks/pts/example3_workstation.html">Example 3: Urban climate adaption</a></li>
 </ul>
 </div>
 <div class="toctree-wrapper compound">

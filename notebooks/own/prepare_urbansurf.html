@@ -49,16 +49,20 @@
 <li class="toctree-l1"><a class="reference internal" href="../overview/overview.html">About</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../overview/installation.html">Installation</a></li>
 </ul>
-<p class="caption" role="heading"><span class="caption-text">Basic usage</span></p>
+<p class="caption" role="heading"><span class="caption-text">Python: warmup</span></p>
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="../basic/basic_usage_inter.html">Basic usage: Web interface</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../basic/basic_usage_cli.html">Basic usage: Command line</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../usp/warmup.html">Warmup</a></li>
 </ul>
-<p class="caption" role="heading"><span class="caption-text">Python: usp mode</span></p>
+<p class="caption" role="heading"><span class="caption-text">Python: examples</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../usp/example1_usp_basic.html">Example 1: Basic usage</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../usp/example2_usp_global_warming.html">Example 2: How does global warming will affect urban climates?</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../usp/example3_usp_adaptation.html">Example 3: Urban climate adaption</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Other usage</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../basic/basic_usage_inter.html">Basic usage: Web interface</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../basic/basic_usage_cli.html">Basic usage: Command line</a></li>
 </ul>
 <p class="caption" role="heading"><span class="caption-text">Python: created input files</span></p>
 <ul>
@@ -68,22 +72,15 @@
 <p class="caption" role="heading"><span class="caption-text">Spinup</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../usp/usp_spinup_mode.html">Spinup in USP mode</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../spinup/spinup_workstation.html">Spinup of PST mode</a></li>
 </ul>
 <p class="caption" role="heading"><span class="caption-text">HPC</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../hpc/HPC.html">pyclmuapp on HPC: Command line</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../hpc/singularity.html">pyclmuapp on HPC: Python</a></li>
 </ul>
-<p class="caption" role="heading"><span class="caption-text">Validation</span></p>
+<p class="caption" role="heading"><span class="caption-text">Evaluation</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../val/urban_plumber_usp.html">Urban-Plumber2: UK-Kin site CLMU5 simulation</a></li>
-</ul>
-<p class="caption" role="heading"><span class="caption-text">Python: pts mode</span></p>
-<ul>
-<li class="toctree-l1"><a class="reference internal" href="../pts/example1_workstation.html">Example 1: Run a simple simulation with a single case</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../pts/example2_workstation.html">Example 2: How does global warming will affect urban climates?</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../pts/example3_workstation.html">Example 3: Urban climate adaption</a></li>
 </ul>
 <p class="caption" role="heading"><span class="caption-text">API Reference</span></p>
 <ul>
@@ -146,7 +143,7 @@
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[2]:
 </pre></div>
 </div>
-<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">usp</span> <span class="o">=</span> <span class="n">usp_clmu</span><span class="p">(</span><span class="n">pwd</span><span class="o">=</span><span class="n">os</span><span class="o">.</span><span class="n">getcwd</span><span class="p">())</span>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">usp</span> <span class="o">=</span> <span class="n">usp_clmu</span><span class="p">()</span>
 <span class="c1"># the default surfdata.nc will be in inputfolder/usp</span>
 <span class="n">default</span> <span class="o">=</span> <span class="n">usp</span><span class="o">.</span><span class="n">nc_view</span><span class="p">(</span><span class="n">ds</span><span class="o">=</span><span class="n">usp</span><span class="o">.</span><span class="n">input_path</span> <span class="o">+</span> <span class="s1">&#39;/usp/surfdata.nc&#39;</span><span class="p">)</span>
 <span class="n">default</span>

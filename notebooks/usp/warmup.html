@@ -1,0 +1,574 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Warmup &mdash; pyclmuapp v0.0.0 documentation</title>
+      <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=80d5e7a1" />
+      <link rel="stylesheet" type="text/css" href="../../_static/css/theme.css?v=e59714d7" />
+      <link rel="stylesheet" type="text/css" href="../../_static/nbsphinx-code-cells.css?v=2aa19091" />
+
+  
+      <script src="../../_static/jquery.js?v=5d32c60e"></script>
+      <script src="../../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+      <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js?v=f3b75425"></script>
+      <script src="../../_static/doctools.js?v=888ff710"></script>
+      <script src="../../_static/sphinx_highlight.js?v=4825356b"></script>
+      <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+      <script>window.MathJax = {"tex": {"inlineMath": [["$", "$"], ["\\(", "\\)"]], "processEscapes": true}, "options": {"ignoreHtmlClass": "tex2jax_ignore|mathjax_ignore|document", "processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+      <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script src="../../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="Example 1: Basic usage" href="example1_usp_basic.html" />
+    <link rel="prev" title="Installation" href="../overview/installation.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="../../index.html" class="icon icon-home">
+            pyclmuapp
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Overview</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../overview/overview.html">About</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../overview/installation.html">Installation</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Python: warmup</span></p>
+<ul class="current">
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Warmup</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#workflow">workflow</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#1-Initailize">1 Initailize</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#2-Run-a-simulation">2 Run a simulation</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#3-How-to-get-your-own-input-files?">3 How to get your own input files?</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#3-How-to-change-the-surface-and-forcing-data?">3 How to change the surface and forcing data?</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#Optional-input-method">Optional input method</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#Optional-run-way">Optional run way</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Python: examples</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="example1_usp_basic.html">Example 1: Basic usage</a></li>
+<li class="toctree-l1"><a class="reference internal" href="example2_usp_global_warming.html">Example 2: How does global warming will affect urban climates?</a></li>
+<li class="toctree-l1"><a class="reference internal" href="example3_usp_adaptation.html">Example 3: Urban climate adaption</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Other usage</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../basic/basic_usage_inter.html">Basic usage: Web interface</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../basic/basic_usage_cli.html">Basic usage: Command line</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Python: created input files</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../own/prepare_forcing_from_era5.html">Make your own forcing data from ERA5</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../own/prepare_urbansurf_10evlurb.html">Make your own surface data</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Spinup</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="usp_spinup_mode.html">Spinup in USP mode</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">HPC</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../hpc/HPC.html">pyclmuapp on HPC: Command line</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../hpc/singularity.html">pyclmuapp on HPC: Python</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Evaluation</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../val/urban_plumber_usp.html">Urban-Plumber2: UK-Kin site CLMU5 simulation</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">API Reference</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../modules.html">pyclmuapp</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">pyclmuapp</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../../index.html" class="icon icon-home" aria-label="Home"></a></li>
+      <li class="breadcrumb-item active">Warmup</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../../_sources/notebooks/usp/warmup.ipynb.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="Warmup">
+<h1>Warmup<a class="headerlink" href="#Warmup" title="Permalink to this heading"></a></h1>
+<p>Fisrt of all, we need to install Docker/Docker Desktop.</p>
+<ul class="simple">
+<li><p><a class="reference external" href="https://envdes.github.io/clmu-app/container/install_docker.html">How to install Docker on Linux?</a></p></li>
+<li><p><a class="reference external" href="https://www.docker.com/products/docker-desktop/">How to install Docker Desktop</a></p></li>
+</ul>
+<p>Platform: arm64/amd64</p>
+<section id="workflow">
+<h2>workflow<a class="headerlink" href="#workflow" title="Permalink to this heading"></a></h2>
+<p><img alt="workflow" src="../../_images/wp.png" /></p>
+<section id="1-Initailize">
+<h3>1 Initailize<a class="headerlink" href="#1-Initailize" title="Permalink to this heading"></a></h3>
+<p>Before initialization, we need to pull the docker image.</p>
+<p><strong>for Linux and MacOS</strong> : use <code class="docutils literal notranslate"><span class="pre">docker</span> <span class="pre">pull</span> <span class="pre">envdes/clmu-app:1.1</span></code> in command line or <code class="docutils literal notranslate"><span class="pre">usp.docker(&quot;pull&quot;)</span></code> in Python</p>
+<p><strong>for Windows</strong>: pull the image <code class="docutils literal notranslate"><span class="pre">envdes/clmu-app:1.1</span></code> manually from Docker Desktop</p>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[1]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">pyclmuapp</span> <span class="kn">import</span> <span class="n">usp_clmu</span>
+
+<span class="c1"># initialize</span>
+<span class="n">usp</span> <span class="o">=</span> <span class="n">usp_clmu</span><span class="p">()</span> <span class="c1"># will create a temporary working directory workdir</span>
+<span class="c1"># can use pwd to specify the working directory</span>
+<span class="c1">#, e.g. usp_clmu(pwd=&quot;/path/to/working/directory&quot;), default is the current working directory</span>
+</pre></div>
+</div>
+</div>
+<p>Using <code class="docutils literal notranslate"><span class="pre">ups_clmu()</span></code> will initiate the usp_clmu class. The class will take the following parameters:</p>
+<ul class="simple">
+<li><p>The inputfolder, outputfolder, logfolder, and scriptfolder will be checked in the current working directory.</p></li>
+<li><p>If the folder does not exist, it will be created.</p></li>
+<li><p>User can specify the folders by using the inputfolder, outputfolder, logfolder, and scriptfolder parameters.</p></li>
+<li><p>Inputfolder, outputfolder, logfolder, and scriptfolder parameters are optional.</p></li>
+</ul>
+</section>
+<section id="2-Run-a-simulation">
+<h3>2 Run a simulation<a class="headerlink" href="#2-Run-a-simulation" title="Permalink to this heading"></a></h3>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[ ]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">usp_res</span> <span class="o">=</span> <span class="n">usp</span><span class="o">.</span><span class="n">run</span><span class="p">(</span>
+            <span class="n">case_name</span> <span class="o">=</span> <span class="s2">&quot;usp_spinup&quot;</span><span class="p">,</span>
+            <span class="n">SURF</span><span class="o">=</span><span class="s2">&quot;surfdata.nc&quot;</span><span class="p">,</span>
+            <span class="n">FORCING</span><span class="o">=</span><span class="s2">&quot;forcing.nc&quot;</span><span class="p">,</span>
+            <span class="n">RUN_STARTDATE</span> <span class="o">=</span> <span class="s2">&quot;2002-01-01&quot;</span><span class="p">,</span> <span class="c1"># the start date of the simulation, must include in the forcing file time range</span>
+            <span class="n">STOP_OPTION</span> <span class="o">=</span> <span class="s2">&quot;nyears&quot;</span><span class="p">,</span> <span class="c1"># can be &#39;ndays&#39;, &#39;nmonths&#39;, &#39;nyears&#39;, &#39;nsteps&#39;; nsteps means 1800s</span>
+            <span class="n">STOP_N</span> <span class="o">=</span> <span class="s2">&quot;10&quot;</span><span class="p">,</span> <span class="c1"># run for 10 years</span>
+            <span class="c1">#RUN_TYPE= &quot;coldstart&quot;, # coldstart is the default option</span>
+        <span class="p">)</span>
+<span class="n">usp_res</span>
+</pre></div>
+</div>
+</div>
+<p>parameters of <code class="docutils literal notranslate"><span class="pre">usp.run</span></code></p>
+<ul class="simple">
+<li><p>output_prefix (str) – The output file name. The default is “_clm.nc”. if the output_prefix is none, the output file name will not be changed.</p></li>
+<li><p>case_name (str) – The case name. The default is “usp_case”.</p></li>
+<li><p>RUN_STARTDATE (str) – The start date of the run. The default is “2012-08-08”.</p></li>
+<li><p>START_TOD (str) – The start time of the day. The default is “00000”.</p></li>
+<li><p>STOP_OPTION (str) – The stop option. The default is “ndays”.</p></li>
+<li><p>STOP_N (str) – The number of days to run. The default is “10”.</p></li>
+<li><p>ATM_DOM (str) – The path to the domain data file. Will use the domain data provided by the user. The default is None.</p></li>
+<li><p>SURF (str) – The path to the surface data file. Will use the surface data provided by the user. The default is None.</p></li>
+<li><p>FORCING (str) – The path to the forcing data file. Will use the forcing data provided by the user. The default is None.</p></li>
+<li><p>RUN_TYPE (str) – The type of the run. The default is “coldstart”. The other option is “branch”.</p></li>
+<li><p>RUN_REFCASE (str) – The reference case. The default is “None”. Need to be provided when the RUN_TYPE is “branch”.</p></li>
+<li><p>RUN_REFDATE (str) – The reference date. The default is “None”. Need to be provided when the RUN_TYPE is “branch”.</p></li>
+<li><p>RUN_REFTOD (str) – The reference time of the day. The default is “00000”. Need to be provided when the RUN_TYPE is “branch”.</p></li>
+<li><p>password (str) – The password for the docker. The default is “None”. Need to be provided when server is needed.</p></li>
+<li><p>iflog (bool) – The flag to log the output. The default is True.</p></li>
+<li><p>logfile (str) – The log file name. The default is pwd+”log.log”.</p></li>
+<li><p>urban_hac (str) – The flag to turn on the urban HAC. The default is “ON_WASTEHEAT”. valid_values=”OFF”,”ON”,”ON_WASTEHEAT”.</p></li>
+<li><p>run_tyep (str) – The type of the run. The default is “run”. use “usp-execp” to run the sup mode.</p></li>
+</ul>
+</section>
+<section id="3-How-to-get-your-own-input-files?">
+<h3>3 How to get your own input files?<a class="headerlink" href="#3-How-to-get-your-own-input-files?" title="Permalink to this heading"></a></h3>
+<p>For surface data: <a class="reference external" href="https://junjieyu-uom.github.io/pyclmuapp/notebooks/own/prepare_urbansurf_10evlurb.html">Make your own surface data</a>.</p>
+<p>For forcing data: <a class="reference external" href="https://junjieyu-uom.github.io/pyclmuapp/notebooks/own/prepare_forcing_from_era5.html">Make your own forcing data from ERA5</a>.publish_display_data</p>
+</section>
+<section id="3-How-to-change-the-surface-and-forcing-data?">
+<h3>3 How to change the surface and forcing data?<a class="headerlink" href="#3-How-to-change-the-surface-and-forcing-data?" title="Permalink to this heading"></a></h3>
+<ul class="simple">
+<li><p>If we have run a simulation using the <code class="docutils literal notranslate"><span class="pre">usp</span></code> object, the forcing data path is stored in the <code class="docutils literal notranslate"><span class="pre">usp.usr_forcing_file</span></code> attribute, the surface data path is stored in the <code class="docutils literal notranslate"><span class="pre">usp.surfdata</span></code> attribute, we can modify the forcing data by calling the <code class="docutils literal notranslate"><span class="pre">usp.modify_forcing</span></code> method and modify the surface data by calling the <code class="docutils literal notranslate"><span class="pre">usp.modify_surf</span></code> method, and run the simulation again using the <code class="docutils literal notranslate"><span class="pre">usp.run</span></code> method.</p></li>
+<li><p>If there is no forcing data path provided or have not run a simulation using the <code class="docutils literal notranslate"><span class="pre">usp</span></code> object, check the forcing, by calling <code class="docutils literal notranslate"><span class="pre">usp.check_forcing(usr_forcing=&quot;forcing.nc&quot;)</span></code> method</p></li>
+<li><p>If there is no surface data path provided or have not run a simulation using the <code class="docutils literal notranslate"><span class="pre">usp</span></code> object, check the surface, by calling <code class="docutils literal notranslate"><span class="pre">usp.check_surf(usr_surf=&quot;sufdata.nc&quot;)</span></code> method</p></li>
+</ul>
+<p>For example,</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># for modifying the surface data with adding 0.2 to ALB_ROOF_DIR</span>
+<span class="n">usp</span><span class="o">.</span><span class="n">modify_surf</span><span class="p">(</span><span class="n">action</span><span class="o">=</span><span class="p">{</span><span class="s2">&quot;ALB_ROOF_DIR&quot;</span><span class="p">:</span><span class="mf">0.2</span><span class="p">},</span> <span class="n">surfata_name</span><span class="o">=</span><span class="s2">&quot;surface_modfied.nc&quot;</span><span class="p">,</span> <span class="n">mode</span><span class="o">=</span><span class="s2">&quot;add&quot;</span><span class="p">)</span>
+
+<span class="c1"># for modifying the forcing data with adding 1.0 to Tair</span>
+<span class="n">usp</span><span class="o">.</span><span class="n">modify_forcing</span><span class="p">(</span><span class="n">action</span><span class="o">=</span><span class="p">{</span><span class="s2">&quot;Tair&quot;</span><span class="p">:</span> <span class="mi">1</span><span class="p">},</span> <span class="n">mode</span><span class="o">=</span><span class="s2">&quot;add&quot;</span><span class="p">,</span> <span class="n">forcing_name</span><span class="o">=</span><span class="s2">&quot;forcing_replaced.nc&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p><strong>Variables of surface data can be directly modified by ``usp.modify_surf()``</strong></p>
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>Variables</p></th>
+<th class="head"><p>Long name</p></th>
+<th class="head"><p>Type</p></th>
+<th class="head"><p>Unit</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>CANYON_HWR</p></td>
+<td><p>Canyon height to width ratio</p></td>
+<td><p>Morphological</p></td>
+<td><p>Unitless</p></td>
+</tr>
+<tr class="row-odd"><td><p>HT_ROOF</p></td>
+<td><p>Height of roof</p></td>
+<td><p>Morphological</p></td>
+<td><p>Meters</p></td>
+</tr>
+<tr class="row-even"><td><p>THICK_ROOF</p></td>
+<td><p>Thickness of roof</p></td>
+<td><p>Morphological</p></td>
+<td><p>Meters</p></td>
+</tr>
+<tr class="row-odd"><td><p>THICK_WALL</p></td>
+<td><p>Thickness of wall</p></td>
+<td><p>Morphological</p></td>
+<td><p>Meters</p></td>
+</tr>
+<tr class="row-even"><td><p>WTLUNIT_ROOF</p></td>
+<td><p>Fraction of roof</p></td>
+<td><p>Morphological</p></td>
+<td><p>Unitless</p></td>
+</tr>
+<tr class="row-odd"><td><p>WTROAD_PERV</p></td>
+<td><p>Fraction of pervious road</p></td>
+<td><p>Morphological</p></td>
+<td><p>Unitless</p></td>
+</tr>
+<tr class="row-even"><td><p>WALL_TO_PLAN_AREA_RATIO</p></td>
+<td><p>Ratio of wall area to plan area</p></td>
+<td><p>Morphological</p></td>
+<td><p>Unitless</p></td>
+</tr>
+<tr class="row-odd"><td><p>WIND_HGT_CANYON</p></td>
+<td><p>Height of wind in canyon</p></td>
+<td><p>Morphological</p></td>
+<td><p>Meters</p></td>
+</tr>
+<tr class="row-even"><td><p>NLEV_IMPROAD</p></td>
+<td><p>Number of impervious road layers</p></td>
+<td><p>Morphological</p></td>
+<td><p>Unitless</p></td>
+</tr>
+<tr class="row-odd"><td><p>TK_ROOF</p></td>
+<td><p>Thermal conductivity of roof</p></td>
+<td><p>Thermal</p></td>
+<td><p>W/m*k</p></td>
+</tr>
+<tr class="row-even"><td><p>TK_WALL</p></td>
+<td><p>Thermal conductivity of wall</p></td>
+<td><p>Thermal</p></td>
+<td><p>W/m*k</p></td>
+</tr>
+<tr class="row-odd"><td><p>TK_IMPROAD</p></td>
+<td><p>Thermal conductivity of impervious road</p></td>
+<td><p>Thermal</p></td>
+<td><p>W/m*k</p></td>
+</tr>
+<tr class="row-even"><td><p>CV_ROOF</p></td>
+<td><p>Volumetric heat capacity of roof</p></td>
+<td><p>Thermal</p></td>
+<td><p>J/m^3*k</p></td>
+</tr>
+<tr class="row-odd"><td><p>CV_WALL</p></td>
+<td><p>Volumetric heat capacity of wall</p></td>
+<td><p>Thermal</p></td>
+<td><p>J/m^3*k</p></td>
+</tr>
+<tr class="row-even"><td><p>CV_IMPROAD</p></td>
+<td><p>Volumetric heat capacity of impervious road</p></td>
+<td><p>Thermal</p></td>
+<td><p>J/m^3*k</p></td>
+</tr>
+<tr class="row-odd"><td><p>EM_IMPROAD</p></td>
+<td><p>Emissivity of impervious road</p></td>
+<td><p>Radiative</p></td>
+<td><p>Unitless</p></td>
+</tr>
+<tr class="row-even"><td><p>EM_PERROAD</p></td>
+<td><p>Emissivity of pervious road</p></td>
+<td><p>Radiative</p></td>
+<td><p>Unitless</p></td>
+</tr>
+<tr class="row-odd"><td><p>EM_ROOF</p></td>
+<td><p>Emissivity of roof</p></td>
+<td><p>Radiative</p></td>
+<td><p>Unitless</p></td>
+</tr>
+<tr class="row-even"><td><p>EM_WALL</p></td>
+<td><p>Emissivity of wall</p></td>
+<td><p>Radiative</p></td>
+<td><p>Unitless</p></td>
+</tr>
+<tr class="row-odd"><td><p>ALB_IMPROAD_DIR</p></td>
+<td><p>Direct albedo of impervious road</p></td>
+<td><p>Radiative</p></td>
+<td><p>Unitless</p></td>
+</tr>
+<tr class="row-even"><td><p>ALB_IMPROAD_DIF</p></td>
+<td><p>Diffuse albedo of impervious road</p></td>
+<td><p>Radiative</p></td>
+<td><p>Unitless</p></td>
+</tr>
+<tr class="row-odd"><td><p>ALB_PERROAD_DIR</p></td>
+<td><p>Direct albedo of pervious road</p></td>
+<td><p>Radiative</p></td>
+<td><p>Unitless</p></td>
+</tr>
+<tr class="row-even"><td><p>ALB_PERROAD_DIF</p></td>
+<td><p>Diffuse albedo of pervious road</p></td>
+<td><p>Radiative</p></td>
+<td><p>Unitless</p></td>
+</tr>
+<tr class="row-odd"><td><p>ALB_ROOF_DIR</p></td>
+<td><p>Direct albedo of roof</p></td>
+<td><p>Radiative</p></td>
+<td><p>Unitless</p></td>
+</tr>
+<tr class="row-even"><td><p>ALB_ROOF_DIF</p></td>
+<td><p>Diffuse albedo of roof</p></td>
+<td><p>Radiative</p></td>
+<td><p>Unitless</p></td>
+</tr>
+<tr class="row-odd"><td><p>ALB_WALL_DIR</p></td>
+<td><p>Direct albedo of wall</p></td>
+<td><p>Radiative</p></td>
+<td><p>Unitless</p></td>
+</tr>
+<tr class="row-even"><td><p>ALB_WALL_DIF</p></td>
+<td><p>Diffuse albedo of wall</p></td>
+<td><p>Radiative</p></td>
+<td><p>Unitless</p></td>
+</tr>
+<tr class="row-odd"><td><p>T_BUILDING_MIN</p></td>
+<td><p>Minimum interior building temperature</p></td>
+<td><p>Indoor</p></td>
+<td><p>K</p></td>
+</tr>
+</tbody>
+</table>
+<p><strong>Variables of forcing data can be directly modified by ``usp.modify_ forcing()``</strong></p>
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>Variable</p></th>
+<th class="head"><p>Long name</p></th>
+<th class="head"><p>Unit</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>Zbot</p></td>
+<td><p>Measurement height above ground</p></td>
+<td><p>Meters</p></td>
+</tr>
+<tr class="row-odd"><td><p>Prectmms</p></td>
+<td><p>Precipitation rate</p></td>
+<td><p>kg/m²/s</p></td>
+</tr>
+<tr class="row-even"><td><p>Wind</p></td>
+<td><p>Wind speed</p></td>
+<td><p>m/s</p></td>
+</tr>
+<tr class="row-odd"><td><p>LWdown</p></td>
+<td><p>Downward longwave radiation at measurement height</p></td>
+<td><p>W/m²</p></td>
+</tr>
+<tr class="row-even"><td><p>PSurf</p></td>
+<td><p>Air pressure at measurement height</p></td>
+<td><p>Pa</p></td>
+</tr>
+<tr class="row-odd"><td><p>Qair</p></td>
+<td><p>Specific humidity at measurement height</p></td>
+<td><p>kg/kg</p></td>
+</tr>
+<tr class="row-even"><td><p>Tair</p></td>
+<td><p>Air temperature at measurement height</p></td>
+<td><p>K</p></td>
+</tr>
+<tr class="row-odd"><td><p>SWdown</p></td>
+<td><p>Downward shortwave radiation at measurement height</p></td>
+<td><p>W/m²</p></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="Optional-input-method">
+<h3>Optional input method<a class="headerlink" href="#Optional-input-method" title="Permalink to this heading"></a></h3>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[ ]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%%time</span>
+<span class="c1"># check surface</span>
+<span class="n">usp</span><span class="o">.</span><span class="n">check_surf</span><span class="p">(</span><span class="n">usr_surf</span><span class="o">=</span><span class="s2">&quot;sufdata.nc&quot;</span><span class="p">)</span> <span class="c1"># use the default surface data of London</span>
+<span class="c1"># check the domain</span>
+<span class="n">usp</span><span class="o">.</span><span class="n">check_domain</span><span class="p">()</span>
+<span class="c1"># check the forcing</span>
+<span class="c1"># this forcing derived from urban-plumber forcing data</span>
+<span class="n">usp</span><span class="o">.</span><span class="n">check_forcing</span><span class="p">(</span><span class="n">usr_forcing</span><span class="o">=</span><span class="s2">&quot;forcing.nc&quot;</span><span class="p">)</span>
+<span class="n">usp_res</span> <span class="o">=</span> <span class="n">usp</span><span class="o">.</span><span class="n">run</span><span class="p">(</span>
+            <span class="n">case_name</span> <span class="o">=</span> <span class="s2">&quot;usp_spinup&quot;</span><span class="p">,</span>
+            <span class="n">RUN_STARTDATE</span> <span class="o">=</span> <span class="s2">&quot;2002-01-01&quot;</span><span class="p">,</span>
+            <span class="n">STOP_OPTION</span> <span class="o">=</span> <span class="s2">&quot;nyears&quot;</span><span class="p">,</span>
+            <span class="n">STOP_N</span> <span class="o">=</span> <span class="s2">&quot;10&quot;</span><span class="p">,</span>
+            <span class="c1">#RUN_TYPE= &quot;coldstart&quot;, # coldstart is the default option</span>
+        <span class="p">)</span>
+<span class="n">usp_res</span>
+</pre></div>
+</div>
+</div>
+</section>
+<section id="Optional-run-way">
+<h3>Optional run way<a class="headerlink" href="#Optional-run-way" title="Permalink to this heading"></a></h3>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[ ]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">pyclmuapp</span> <span class="kn">import</span> <span class="n">usp_clmu</span>
+
+<span class="c1"># initialize</span>
+<span class="n">usp</span> <span class="o">=</span> <span class="n">usp_clmu</span><span class="p">()</span>
+
+<span class="c1"># run the docker image</span>
+<span class="n">usp</span><span class="o">.</span><span class="n">docker</span><span class="p">(</span><span class="s2">&quot;run&quot;</span><span class="p">)</span>
+
+<span class="n">usp_res</span> <span class="o">=</span> <span class="n">usp</span><span class="o">.</span><span class="n">run</span><span class="p">(</span>
+            <span class="n">case_name</span> <span class="o">=</span> <span class="s2">&quot;usp_spinup&quot;</span><span class="p">,</span>
+            <span class="n">SURF</span><span class="o">=</span><span class="s2">&quot;surfdata.nc&quot;</span><span class="p">,</span>
+            <span class="n">FORCING</span><span class="o">=</span><span class="s2">&quot;forcing.nc&quot;</span><span class="p">,</span>
+            <span class="n">RUN_STARTDATE</span> <span class="o">=</span> <span class="s2">&quot;2002-01-01&quot;</span><span class="p">,</span>
+            <span class="n">STOP_OPTION</span> <span class="o">=</span> <span class="s2">&quot;nyears&quot;</span><span class="p">,</span>
+            <span class="n">STOP_N</span> <span class="o">=</span> <span class="s2">&quot;10&quot;</span><span class="p">,</span>
+            <span class="c1">#RUN_TYPE= &quot;coldstart&quot;, # coldstart is the default option</span>
+            <span class="n">crun_type</span><span class="o">=</span><span class="s2">&quot;usp-exec&quot;</span> <span class="c1"># this is to run the container when the docker image is used</span>
+        <span class="p">)</span>
+
+<span class="c1"># stop the docker image and remove it</span>
+<span class="n">usp</span><span class="o">.</span><span class="n">docker</span><span class="p">(</span><span class="s2">&quot;stop&quot;</span><span class="p">)</span>
+<span class="n">usp</span><span class="o">.</span><span class="n">docker</span><span class="p">(</span><span class="s2">&quot;rm&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<hr class="docutils" />
+<p><strong>additonal information</strong></p>
+<p><code class="docutils literal notranslate"><span class="pre">usp.check_surf()</span></code> will show what is available in the surfdata_dict.</p>
+<p>to see what care mainly contained in surfdata.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">surf</span> <span class="o">=</span> <span class="n">usp</span><span class="o">.</span><span class="n">check_surf</span><span class="p">()</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">surf</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Args:</p>
+<ul class="simple">
+<li><p>usr_surfdata (str): The path to the user-defined surface data file. The default is None.</p></li>
+<li><p>surfata_name (str): The name of the surface data file. The default is “surfdata.nc”.</p></li>
+</ul>
+<p>Please check below output to see:</p>
+<ol class="arabic simple">
+<li><p>what kind of urban parameter will need to run the single point model</p></li>
+<li><p>The values list indicates different paramter in different level</p>
+<ul class="simple">
+<li><p>list of albedo indicate the albedo of visable and invisable solar bands (VIS,NIR)</p></li>
+<li><p>list of thermal paramters indicates the layer</p></li>
+</ul>
+</li>
+</ol>
+<hr class="docutils" />
+<p><code class="docutils literal notranslate"><span class="pre">usp.check_domain()</span></code></p>
+<p>if you have your domain file, use <code class="docutils literal notranslate"><span class="pre">usp.check_domain(usr_domain=your-filepath)</span></code></p>
+<p>other parameters:</p>
+<ul class="simple">
+<li><p>usr_domain (str): The path to the user-defined domain data file. The default is None,which - means using the default domain data (UK-Kin site).</p></li>
+<li><p>lat (float): The latitude of the domain. The default is None. Provide it to change to your interest point.</p></li>
+<li><p>lon (float): The longitude of the domain. The default is None. Provide it to change to your interest point.</p></li>
+</ul>
+<hr class="docutils" />
+<p><strong>check the forcing file</strong></p>
+<p><code class="docutils literal notranslate"><span class="pre">usp.check_forcing</span></code></p>
+<p>we need to provdie our own forcing data</p>
+<p>if the forcing file is not in inputfolder/usp, then it will be copied to the inputfolder/usp</p>
+<p>Args:</p>
+<ul class="simple">
+<li><p>usr_forcing (str): The path to the user-defined forcing data file. The default is None.</p></li>
+<li><p>action (dict): The dictionary of the revised forcing data for the urban surface parameters. The default is None, which means no action.</p></li>
+<li><p>mode (str): The mode for the revision. The default is “add”.</p></li>
+<li><p>forcing_name (str): The name of the revised forcing data file. The default is “forcing.nc”.</p></li>
+</ul>
+<p>the forcing should be included:</p>
+<ol class="arabic simple">
+<li><p>Zbot : Measurement height above ground m</p></li>
+<li><p>Prectmms : Precip_rate kg/m2/s</p></li>
+<li><p>Wind : Wind m/s</p></li>
+<li><p>LWdown : Downward longwave radiation at measurement height W/m2</p></li>
+<li><p>PSurf : Air pressure at measurement height Pa</p></li>
+<li><p>Qair : Specific humidity at measurement height, Kg/Kg</p></li>
+<li><p>Tair : Air temperature at measurement height K</p></li>
+<li><p>SWdown : Downward shortwave radiation at measurement height W/m2</p></li>
+</ol>
+<p>Note:</p>
+<ul class="simple">
+<li><p>Wind=sqrt(Wind_N^2 + Wind_E^2 )</p></li>
+<li><p>Prectmms=Snow+Rain</p></li>
+</ul>
+<p>Make sure the forcing file is same as the protocols of CLM</p>
+</section>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="../overview/installation.html" class="btn btn-neutral float-left" title="Installation" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="example1_usp_basic.html" class="btn btn-neutral float-right" title="Example 1: Basic usage" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2024, Junjie Yu, Zhonghua Zheng.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

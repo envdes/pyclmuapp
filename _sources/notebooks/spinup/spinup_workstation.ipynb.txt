@@ -318,7 +318,7 @@
     "            iflog = True,\n",
     "            logfile = \"log.log\",\n",
     "            #var_add= \"'Qle','Qh','Qtau','Qstor','Rnet','SWup','LWup'\",\n",
-    "            run_tyep=\"usp-exec\"#\"case\", when docker container is not start)\n",
+    "            crun_type=\"usp-exec\"#\"case\", when docker container is not start)\n",
     "        )\n",
     "nospinup"
    ]
@@ -377,7 +377,7 @@
     "            iflog = True,\n",
     "            logfile = \"log.log\",\n",
     "            #var_add= \"'Qle','Qh','Qtau','Qstor','Rnet','SWup','LWup'\",\n",
-    "            run_tyep=\"usp-exec\"#\"case\", when docker container is not start)\n",
+    "            crun_type=\"usp-exec\"#\"case\", when docker container is not start)\n",
     "        )\n",
     "spinup_usp"
    ]
