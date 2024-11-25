@@ -15,7 +15,7 @@ pyclmuapp: A Python Package for Integration and Execution of Community Land Mode
    :target: https://github.com/envdes/pyclmuapp
 
 .. |Docs| image:: https://img.shields.io/badge/docs-pyclmuapp-brightgreen.svg
-   :target: https://junjieyu-uom.github.io/pyclmuapp/
+   :target: https://envdes.github.io/pyclmuapp/
 
 .. |license| image:: https://img.shields.io/badge/License-MIT-blue.svg
    :target: https://github.com/envdes/pyclmuapp/blob/main/LICENSE
