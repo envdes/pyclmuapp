@@ -30,18 +30,6 @@ $ --CASE_NAME "basic_test" \
 $ --RUN_STARTDATE "2012-01-01" \
 $ --STOP_OPTION "ndays" \
 $ --STOP_N "15" 
-
-Namespace(pwd='/Users/user/Documents/GitHub/pyclmuapp', container_type='docker', input_path=None, output_path=None, log_path=None, scripts_path=None, pyclmuapp_mode='usp', has_container=True, usr_domain=None, usr_forcing='inputfolder/usp/CTSM_forcing_London_ERA5_2002_2014.nc', usr_surfdata=None, output_prefix='_clm.nc', case_name='basic_test', run_startdate='2012-01-01', stop_option='ndays', stop_n='15', run_type='coldstart', run_refcase='None', run_refdate='None', iflog=True, logfile='pyclmuapp.log', var_add='Qle', claen=False, script=None)
-Folder 'inputfolder' already exists.
-Folder 'outputfolder' already exists.
-Folder 'logfolder' already exists.
-Folder 'scriptsfolder' already exists.
-Folder '/Users/user/Documents/GitHub/pyclmuapp/inputfolder/usp' already exists.
-The file CTSM_forcing_London_ERA5_2002_2014.nc already exists.
-The /Users/user/Documents/GitHub/pyclmuapp/inputfolder/usp/usp.sh already exists.
-The case is:  basic_test
-The log file is:  pyclmuapp.log
-The output file is:  ['/Users/user/Documents/GitHub/pyclmuapp/outputfolder/lnd/hist/basic_test_clm0_2024-05-18_19-46-33_clm.nc']
 ```
 
 If you are using **Docker**, stop and remove the running container by
