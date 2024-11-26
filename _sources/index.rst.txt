@@ -6,14 +6,17 @@
 pyclmuapp: A Python Package for Integration and Execution of Community Land Model Urban (CLMU) in a Containerized Environment
 ========================================
 
-|GitHub| |Docs| |License|
+|doi| |docs| |GitHub| |license| 
+
+.. |doi| image:: https://zenodo.org/badge/DOI/10.5281/zenodo.14224043.svg
+  :target: https://doi.org/10.5281/zenodo.14224043
+
+.. |docs| image:: https://img.shields.io/badge/docs-pyclmuapp-brightgreen.svg
+   :target: https://envdes.github.io/pyclmuapp/
 
 .. |GitHub| image:: https://img.shields.io/badge/GitHub-pyclmuapp-brightgreen.svg
    :target: https://github.com/envdes/pyclmuapp
-
-.. |Docs| image:: https://img.shields.io/badge/docs-pyclmuapp-brightgreen.svg
-   :target: https://envdes.github.io/pyclmuapp/
-
+   
 .. |license| image:: https://img.shields.io/badge/License-MIT-blue.svg
    :target: https://github.com/envdes/pyclmuapp/blob/main/LICENSE
 
