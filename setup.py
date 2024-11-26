@@ -2,7 +2,7 @@ from setuptools import setup, find_packages, Extension
 import os
 
 classifiers = [
-    "Development Status :: 1 - Pre-Alpha",
+    "Development Status :: 2 - Pre-Alpha",
     "Intended Audience :: Science/Research",
     "License :: OSI Approved :: MIT License",
     "Natural Language :: English",
