@@ -11,7 +11,7 @@ classifiers = [
     "Topic :: Scientific/Engineering :: Atmospheric Science",
     ]
 
-with open("README.rst", "r") as fp:
+with open("README.rst", "r", encoding="utf-8") as fp:
     long_description = fp.read()
 
 setup(
@@ -20,7 +20,7 @@ setup(
     author="Junjie Yu",
     author_email="yjj1997@live.cn",
     url="https://github.com/envdes/pyclmuapp",
-    description="Python package for CLMU-App",
+    description="A Python Package for Integration and Execution of Community Land Model Urban (CLMU) in a Containerized Environment",
     long_description=long_description,
     long_description_content_type="text/x-rst",
     license="MIT",
