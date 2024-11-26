@@ -1,5 +1,5 @@
 pyclmuapp: A Python Package for Integration and Execution of Community Land Model Urban (CLMU) in a Containerized Environment
---------------------------------------------------
+-----------------------------------------------------------------------------------------------------------------------------
 |docs| |GitHub| |license| 
 
 .. |GitHub| image:: https://img.shields.io/badge/GitHub-pyclmuapp-brightgreen.svg
@@ -16,16 +16,7 @@ pyclmuapp: A Python Package for Integration and Execution of Community Land Mode
 Contributors: `Junjie Yu <https://junjieyu-uom.github.io>`_, `Keith Oleson <https://staff.ucar.edu/users/oleson>`_, `Yuan Sun <https://github.com/YuanSun-UoM>`_, `David Topping <https://research.manchester.ac.uk/en/persons/david.topping>`_, `Zhonghua Zheng <https://zhonghuazheng.com>`_ (zhonghua.zheng@manchester.ac.uk)
 
 
-**Web interface of pyclmuapp**
-
-.. code-block:: bash
-
-   $ docker pull envdes/pyclmuapp:1.0
-   $ docker run --hostname clmu-app -p 8080:7860 envdes/pyclmuapp:1.0
-   $ #then open the browser and input the address: http://localhost:8080/
-
-
-**Python/CLI interface of pyclmuapp**
+**Python interface of pyclmuapp**
 
 Installation
 ------------
