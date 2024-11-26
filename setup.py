@@ -8,7 +8,7 @@ classifiers = [
     "Natural Language :: English",
     "Operating System :: OS Independent",
     "Programming Language :: Python :: 3",
-    "Topic :: Scientific/Engineering :: Atmospheric Science"å
+    "Topic :: Scientific/Engineering :: Atmospheric Science",
     ]
 
 with open("README.rst", "r") as fp:
