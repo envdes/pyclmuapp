@@ -145,7 +145,7 @@ Optional
 - **hist_mfilt/HIST_MFILT**: Param for usp. each history file will include mfilt time steps, default is 1000000000
 - **var_add/VAR_ADD**: Additional variables of urban, default is ``TSA_U``.
 - **claen/CLAEN**: Clean, default is ``False``. If ``True``, will clean the case files.
-- **surf_var/SURF_VAR**: Param for usp. Surface variable, default is None. Can be one/some (use ','(withou space to seperate each)) of 'CANYON_HWR', 'HT_ROOF','THICK_ROOF','THICK_WALL',' WTLUNIT_ROOF','WTROAD_PERV','WIND_HGT_CANYON','NLEV_IM PROAD','TK_ROOF','TK_WALL','TK_IMPROAD','CV_ROOF','CV_ WALL','CV_IMPROAD','EM_IMPROAD','EM_PERROAD','EM_ROOF' ,'EM_WALL','ALB_IMPROAD_DIR','ALB_IMPROAD_DIF','ALB_PERROAD_DIR','ALB_PERROAD_DIF','ALB_ROOF_DIR','ALB_ROOF_DIF','ALB_WALL_DIR','ALB_WALL_DIF','T_BUILDING_MIN'.
+- **surf_var/SURF_VAR**: Param for usp. Surface variable, default is None. Can be one/some (use ','(withou space to seperate each)) of 'CANYON_HWR', 'HT_ROOF','THICK_ROOF','THICK_WALL',' WTLUNIT_ROOF','WTROAD_PERV','WIND_HGT_CANYON','NLEV_IM PROAD','TK_ROOF','TK_WALL','TK_IMPROAD','CV_ROOF','CV_WALL','CV_IMPROAD','EM_IMPROAD','EM_PERROAD','EM_ROOF' ,'EM_WALL','ALB_IMPROAD_DIR','ALB_IMPROAD_DIF','ALB_PERROAD_DIR','ALB_PERROAD_DIF','ALB_ROOF_DIR','ALB_ROOF_DIF','ALB_WALL_DIR','ALB_WALL_DIF','T_BUILDING_MIN'.
 - **surf_action/SURF_ACTION**: Param for usp. Surface action, default is None. The number is same as surf_var with "," seperated (not ", ").
 - **forcing_var/FORCING_VAR**: Param for usp. Forcing variable, default is None. Can be one/some (use ','(withou space to seperate each)) of 'Prectmms','Wind','LWdown','PSurf','Qair','Tair','S Wdown'.
 - **forcing_action/FORCING_ACTION**: Param for usp. Forcing action, default is None. The number is same as forcing_var with "," seperated (not ", ").
@@ -180,4 +180,4 @@ Please check `online documentation <https://envdes.github.io/pyclmuapp/>`_ for m
 
 How to ask for help
 -------------------
-The `GitHub issue tracker <https://envdes.github.io/pyclmuapp/issues>`_ is the primary place for bug reports. 
+The `GitHub issue tracker <https://github.com/envdes/pyclmuapp/issues>`_ is the primary place for bug reports. 
