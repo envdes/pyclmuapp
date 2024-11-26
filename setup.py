@@ -22,6 +22,7 @@ setup(
     url="https://github.com/envdes/pyclmuapp",
     description="Python package for CLMU-App",
     long_description=long_description,
+    long_description_content_type="text/x-rst",
     license="MIT",
     classifiers=classifiers,
     install_requires=['numpy', 'pandas', 'xarray', 'haversine', 'netcdf4', 'nc-time-axis', 'cdsapi'],
