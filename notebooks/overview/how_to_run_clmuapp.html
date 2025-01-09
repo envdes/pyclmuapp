@@ -1,21 +1,21 @@
 
 
 <!DOCTYPE html>
-<html class="writer-html5" lang="en">
+<html class="writer-html5" lang="en" data-content_root="../../">
 <head>
   <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Run CLMU-App &mdash; pyclmuapp v0.0.0 documentation</title>
-      <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=80d5e7a1" />
+      <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=b86133f3" />
       <link rel="stylesheet" type="text/css" href="../../_static/css/theme.css?v=e59714d7" />
 
   
       <script src="../../_static/jquery.js?v=5d32c60e"></script>
       <script src="../../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
-      <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js?v=f3b75425"></script>
-      <script src="../../_static/doctools.js?v=888ff710"></script>
-      <script src="../../_static/sphinx_highlight.js?v=4825356b"></script>
+      <script src="../../_static/documentation_options.js?v=8b92e751"></script>
+      <script src="../../_static/doctools.js?v=9a2dae69"></script>
+      <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
       <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
     <script src="../../_static/js/theme.js"></script>
     <link rel="index" title="Index" href="../../genindex.html" />
@@ -109,11 +109,11 @@
            <div itemprop="articleBody">
              
   <section id="run-clmu-app">
-<h1>Run CLMU-App<a class="headerlink" href="#run-clmu-app" title="Permalink to this heading"></a></h1>
+<h1>Run CLMU-App<a class="headerlink" href="#run-clmu-app" title="Link to this heading"></a></h1>
 <hr class="docutils" />
 <p>There are three ways to run the container. (If you have <a class="reference external" href="https://apptainer.org/">Apptainer</a>/<a class="reference external" href="https://docs.sylabs.io/guides/3.7/user-guide/">Singularity</a>, no need to do follows)</p>
 <section id="pyclmuapp">
-<h2>1 pyclmuapp<a class="headerlink" href="#pyclmuapp" title="Permalink to this heading"></a></h2>
+<h2>1 pyclmuapp<a class="headerlink" href="#pyclmuapp" title="Link to this heading"></a></h2>
 <hr class="docutils" />
 <p><strong>Note</strong>: install docker before using pyclmuapp</p>
 <p><a class="reference external" href="https://envdes.github.io/clmu-app/container/install_docker.html">How to install Docker on Linux?</a>
@@ -130,8 +130,8 @@
 </pre></div>
 </div>
 <p>2 Python</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">pyclmuapp</span> <span class="kn">import</span> <span class="n">container</span> <span class="k">as</span> <span class="n">c</span>
-<span class="kn">import</span> <span class="nn">os</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">pyclmuapp</span><span class="w"> </span><span class="kn">import</span> <span class="n">container</span> <span class="k">as</span> <span class="n">c</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">os</span>
 <span class="n">o</span> <span class="o">=</span> <span class="n">c</span><span class="o">.</span><span class="n">clumapp</span><span class="p">(</span><span class="n">pwd</span><span class="o">=</span><span class="n">os</span><span class="o">.</span><span class="n">getcwd</span><span class="p">())</span>
 
 <span class="c1"># this will pull the image to local</span>
@@ -142,7 +142,7 @@
 </pre></div>
 </div>
 <p>if you have had the inputfolder, outputfolder, logfolder, and scriptfolder, then use</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">pyclmuapp</span> <span class="kn">import</span> <span class="n">container</span> <span class="k">as</span> <span class="n">c</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">pyclmuapp</span><span class="w"> </span><span class="kn">import</span> <span class="n">container</span> <span class="k">as</span> <span class="n">c</span>
 <span class="n">o</span> <span class="o">=</span> <span class="n">c</span><span class="o">.</span><span class="n">clumapp</span><span class="p">(</span>
         <span class="n">pwd</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
         <span class="n">input_path</span><span class="o">=</span><span class="s2">&quot;your input_path&quot;</span><span class="p">,</span>
@@ -159,7 +159,7 @@
 </div>
 </section>
 <section id="docker-desktop">
-<h2>2 Docker Desktop<a class="headerlink" href="#docker-desktop" title="Permalink to this heading"></a></h2>
+<h2>2 Docker Desktop<a class="headerlink" href="#docker-desktop" title="Link to this heading"></a></h2>
 <p><strong>2.1 Pull clmu-app imgae</strong></p>
 <p><img alt="pull image" src="../../_images/dd1.png" /></p>
 <p><strong>2.2 Run clmu-app</strong></p>
@@ -178,7 +178,7 @@
 <p><img alt="check container 2" src="../../_images/dd5.png" /></p>
 </section>
 <section id="command-line">
-<h2>3 Command line<a class="headerlink" href="#command-line" title="Permalink to this heading"></a></h2>
+<h2>3 Command line<a class="headerlink" href="#command-line" title="Link to this heading"></a></h2>
 <hr class="docutils" />
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span>docker pull envdes/clmu-app:1.0
 

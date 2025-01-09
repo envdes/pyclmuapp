@@ -1,22 +1,22 @@
 
 
 <!DOCTYPE html>
-<html class="writer-html5" lang="en">
+<html class="writer-html5" lang="en" data-content_root="../../">
 <head>
   <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Warmup &mdash; pyclmuapp v0.0.0 documentation</title>
-      <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=80d5e7a1" />
+      <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=b86133f3" />
       <link rel="stylesheet" type="text/css" href="../../_static/css/theme.css?v=e59714d7" />
       <link rel="stylesheet" type="text/css" href="../../_static/nbsphinx-code-cells.css?v=2aa19091" />
 
   
       <script src="../../_static/jquery.js?v=5d32c60e"></script>
       <script src="../../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
-      <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js?v=f3b75425"></script>
-      <script src="../../_static/doctools.js?v=888ff710"></script>
-      <script src="../../_static/sphinx_highlight.js?v=4825356b"></script>
+      <script src="../../_static/documentation_options.js?v=8b92e751"></script>
+      <script src="../../_static/doctools.js?v=9a2dae69"></script>
+      <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
       <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
       <script>window.MathJax = {"tex": {"inlineMath": [["$", "$"], ["\\(", "\\)"]], "processEscapes": true}, "options": {"ignoreHtmlClass": "tex2jax_ignore|mathjax_ignore|document", "processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
       <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
@@ -125,7 +125,7 @@
            <div itemprop="articleBody">
              
   <section id="Warmup">
-<h1>Warmup<a class="headerlink" href="#Warmup" title="Permalink to this heading"></a></h1>
+<h1>Warmup<a class="headerlink" href="#Warmup" title="Link to this heading"></a></h1>
 <p>Fisrt of all, we need to install Docker/Docker Desktop.</p>
 <ul class="simple">
 <li><p><a class="reference external" href="https://envdes.github.io/clmu-app/container/install_docker.html">How to install Docker on Linux?</a></p></li>
@@ -133,10 +133,10 @@
 </ul>
 <p>Platform: arm64/amd64</p>
 <section id="workflow">
-<h2>workflow<a class="headerlink" href="#workflow" title="Permalink to this heading"></a></h2>
-<p><img alt="workflow" src="../../_images/wp.png" /></p>
+<h2>workflow<a class="headerlink" href="#workflow" title="Link to this heading"></a></h2>
+<img alt="workflow" src="../../_images/wp.png" />
 <section id="1-Initailize">
-<h3>1 Initailize<a class="headerlink" href="#1-Initailize" title="Permalink to this heading"></a></h3>
+<h3>1 Initailize<a class="headerlink" href="#1-Initailize" title="Link to this heading"></a></h3>
 <p>Before initialization, we need to pull the docker image.</p>
 <p><strong>for Linux and MacOS</strong> : use <code class="docutils literal notranslate"><span class="pre">docker</span> <span class="pre">pull</span> <span class="pre">envdes/clmu-app:1.1</span></code> in command line or <code class="docutils literal notranslate"><span class="pre">usp.docker(&quot;pull&quot;)</span></code> in Python</p>
 <p><strong>for Windows</strong>: pull the image <code class="docutils literal notranslate"><span class="pre">envdes/clmu-app:1.1</span></code> manually from Docker Desktop</p>
@@ -144,7 +144,7 @@
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[1]:
 </pre></div>
 </div>
-<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">pyclmuapp</span> <span class="kn">import</span> <span class="n">usp_clmu</span>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">pyclmuapp</span><span class="w"> </span><span class="kn">import</span> <span class="n">usp_clmu</span>
 
 <span class="c1"># initialize</span>
 <span class="n">usp</span> <span class="o">=</span> <span class="n">usp_clmu</span><span class="p">()</span> <span class="c1"># will create a temporary working directory workdir</span>
@@ -162,7 +162,7 @@
 </ul>
 </section>
 <section id="2-Run-a-simulation">
-<h3>2 Run a simulation<a class="headerlink" href="#2-Run-a-simulation" title="Permalink to this heading"></a></h3>
+<h3>2 Run a simulation<a class="headerlink" href="#2-Run-a-simulation" title="Link to this heading"></a></h3>
 <div class="nbinput nblast docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[ ]:
 </pre></div>
@@ -203,12 +203,12 @@
 </ul>
 </section>
 <section id="3-How-to-get-your-own-input-files?">
-<h3>3 How to get your own input files?<a class="headerlink" href="#3-How-to-get-your-own-input-files?" title="Permalink to this heading"></a></h3>
+<h3>3 How to get your own input files?<a class="headerlink" href="#3-How-to-get-your-own-input-files?" title="Link to this heading"></a></h3>
 <p>For surface data: <a class="reference external" href="https://junjieyu-uom.github.io/pyclmuapp/notebooks/own/prepare_urbansurf_10evlurb.html">Make your own surface data</a>.</p>
 <p>For forcing data: <a class="reference external" href="https://junjieyu-uom.github.io/pyclmuapp/notebooks/own/prepare_forcing_from_era5.html">Make your own forcing data from ERA5</a>.publish_display_data</p>
 </section>
 <section id="3-How-to-change-the-surface-and-forcing-data?">
-<h3>3 How to change the surface and forcing data?<a class="headerlink" href="#3-How-to-change-the-surface-and-forcing-data?" title="Permalink to this heading"></a></h3>
+<h3>3 How to change the surface and forcing data?<a class="headerlink" href="#3-How-to-change-the-surface-and-forcing-data?" title="Link to this heading"></a></h3>
 <ul class="simple">
 <li><p>If we have run a simulation using the <code class="docutils literal notranslate"><span class="pre">usp</span></code> object, the forcing data path is stored in the <code class="docutils literal notranslate"><span class="pre">usp.usr_forcing_file</span></code> attribute, the surface data path is stored in the <code class="docutils literal notranslate"><span class="pre">usp.surfdata</span></code> attribute, we can modify the forcing data by calling the <code class="docutils literal notranslate"><span class="pre">usp.modify_forcing</span></code> method and modify the surface data by calling the <code class="docutils literal notranslate"><span class="pre">usp.modify_surf</span></code> method, and run the simulation again using the <code class="docutils literal notranslate"><span class="pre">usp.run</span></code> method.</p></li>
 <li><p>If there is no forcing data path provided or have not run a simulation using the <code class="docutils literal notranslate"><span class="pre">usp</span></code> object, check the forcing, by calling <code class="docutils literal notranslate"><span class="pre">usp.check_forcing(usr_forcing=&quot;forcing.nc&quot;)</span></code> method</p></li>
@@ -419,7 +419,7 @@
 </table>
 </section>
 <section id="Optional-input-method">
-<h3>Optional input method<a class="headerlink" href="#Optional-input-method" title="Permalink to this heading"></a></h3>
+<h3>Optional input method<a class="headerlink" href="#Optional-input-method" title="Link to this heading"></a></h3>
 <div class="nbinput nblast docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[ ]:
 </pre></div>
@@ -445,12 +445,12 @@
 </div>
 </section>
 <section id="Optional-run-way">
-<h3>Optional run way<a class="headerlink" href="#Optional-run-way" title="Permalink to this heading"></a></h3>
+<h3>Optional run way<a class="headerlink" href="#Optional-run-way" title="Link to this heading"></a></h3>
 <div class="nbinput nblast docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[ ]:
 </pre></div>
 </div>
-<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">pyclmuapp</span> <span class="kn">import</span> <span class="n">usp_clmu</span>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">pyclmuapp</span><span class="w"> </span><span class="kn">import</span> <span class="n">usp_clmu</span>
 
 <span class="c1"># initialize</span>
 <span class="n">usp</span> <span class="o">=</span> <span class="n">usp_clmu</span><span class="p">()</span>

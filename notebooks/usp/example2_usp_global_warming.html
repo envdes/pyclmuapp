@@ -1,22 +1,22 @@
 
 
 <!DOCTYPE html>
-<html class="writer-html5" lang="en">
+<html class="writer-html5" lang="en" data-content_root="../../">
 <head>
   <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Example 2: How does global warming will affect urban climates? &mdash; pyclmuapp v0.0.0 documentation</title>
-      <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=80d5e7a1" />
+      <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=b86133f3" />
       <link rel="stylesheet" type="text/css" href="../../_static/css/theme.css?v=e59714d7" />
       <link rel="stylesheet" type="text/css" href="../../_static/nbsphinx-code-cells.css?v=2aa19091" />
 
   
       <script src="../../_static/jquery.js?v=5d32c60e"></script>
       <script src="../../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
-      <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js?v=f3b75425"></script>
-      <script src="../../_static/doctools.js?v=888ff710"></script>
-      <script src="../../_static/sphinx_highlight.js?v=4825356b"></script>
+      <script src="../../_static/documentation_options.js?v=8b92e751"></script>
+      <script src="../../_static/doctools.js?v=9a2dae69"></script>
+      <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
       <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
       <script>window.MathJax = {"tex": {"inlineMath": [["$", "$"], ["\\(", "\\)"]], "processEscapes": true}, "options": {"ignoreHtmlClass": "tex2jax_ignore|mathjax_ignore|document", "processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
       <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
@@ -118,13 +118,13 @@
            <div itemprop="articleBody">
              
   <section id="Example-2:-How-does-global-warming-will-affect-urban-climates?">
-<h1>Example 2: How does global warming will affect urban climates?<a class="headerlink" href="#Example-2:-How-does-global-warming-will-affect-urban-climates?" title="Permalink to this heading"></a></h1>
+<h1>Example 2: How does global warming will affect urban climates?<a class="headerlink" href="#Example-2:-How-does-global-warming-will-affect-urban-climates?" title="Link to this heading"></a></h1>
 <div class="nbinput nblast docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[1]:
 </pre></div>
 </div>
-<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">pyclmuapp</span> <span class="kn">import</span> <span class="n">usp_clmu</span>
-<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">pyclmuapp</span><span class="w"> </span><span class="kn">import</span> <span class="n">usp_clmu</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">matplotlib.pyplot</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">plt</span>
 </pre></div>
 </div>
 </div>
@@ -187,7 +187,7 @@ Wall time: 2min 42s
 </pre></div></div>
 </div>
 <section id="2-modify-the-forcing-data">
-<h2>2 modify the forcing data<a class="headerlink" href="#2-modify-the-forcing-data" title="Permalink to this heading"></a></h2>
+<h2>2 modify the forcing data<a class="headerlink" href="#2-modify-the-forcing-data" title="Link to this heading"></a></h2>
 <p>using <code class="docutils literal notranslate"><span class="pre">action={&quot;Tair&quot;:</span> <span class="pre">1}</span></code>, <code class="docutils literal notranslate"><span class="pre">mode=&quot;add&quot;</span></code></p>
 <p>Here, we can use the same case_name <code class="docutils literal notranslate"><span class="pre">example2</span></code>, so that we will not need to build the case (compile CTSM code) again.</p>
 <p>run time will be save</p>
@@ -254,7 +254,7 @@ Wall time: 1min 33s
 </div>
 </section>
 <section id="3-Plotting">
-<h2>3 Plotting<a class="headerlink" href="#3-Plotting" title="Permalink to this heading"></a></h2>
+<h2>3 Plotting<a class="headerlink" href="#3-Plotting" title="Link to this heading"></a></h2>
 <p>Note: ploting with time will need the <code class="docutils literal notranslate"><span class="pre">nc-time-axis</span></code> package, which can be installed by <code class="docutils literal notranslate"><span class="pre">pip</span> <span class="pre">install</span> <span class="pre">nc-time-axis</span></code> or <code class="docutils literal notranslate"><span class="pre">conda</span> <span class="pre">install</span> <span class="pre">nc-time-axis</span></code></p>
 <div class="nbinput docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[5]:
@@ -270,7 +270,7 @@ Wall time: 1min 33s
 
 <span class="c1"># plot the original and warming surface temperature hourly</span>
 <span class="n">ax</span> <span class="o">=</span> <span class="n">fig</span><span class="o">.</span><span class="n">add_subplot</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span>
-<span class="k">def</span> <span class="nf">plot_hourly</span><span class="p">(</span><span class="n">ds</span><span class="p">,</span> <span class="n">ax</span><span class="p">,</span> <span class="n">title</span><span class="p">,</span> <span class="n">color</span><span class="p">):</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">plot_hourly</span><span class="p">(</span><span class="n">ds</span><span class="p">,</span> <span class="n">ax</span><span class="p">,</span> <span class="n">title</span><span class="p">,</span> <span class="n">color</span><span class="p">):</span>
     <span class="n">ds</span><span class="p">[</span><span class="s1">&#39;TSA&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">groupby</span><span class="p">(</span><span class="s1">&#39;time.hour&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">mean</span><span class="p">()</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">ax</span><span class="o">=</span><span class="n">ax</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="n">title</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="n">color</span><span class="p">)</span>
 
 <span class="n">plot_hourly</span><span class="p">(</span><span class="n">ds_or_usp</span><span class="p">,</span> <span class="n">ax</span><span class="p">,</span> <span class="s2">&quot;Original&quot;</span><span class="p">,</span> <span class="s1">&#39;#3964DF&#39;</span><span class="p">)</span>

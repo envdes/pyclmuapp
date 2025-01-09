@@ -1,21 +1,21 @@
 
 
 <!DOCTYPE html>
-<html class="writer-html5" lang="en">
+<html class="writer-html5" lang="en" data-content_root="../../">
 <head>
   <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>pyclmuapp on HPC: Python &mdash; pyclmuapp v0.0.0 documentation</title>
-      <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=80d5e7a1" />
+      <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=b86133f3" />
       <link rel="stylesheet" type="text/css" href="../../_static/css/theme.css?v=e59714d7" />
 
   
       <script src="../../_static/jquery.js?v=5d32c60e"></script>
       <script src="../../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
-      <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js?v=f3b75425"></script>
-      <script src="../../_static/doctools.js?v=888ff710"></script>
-      <script src="../../_static/sphinx_highlight.js?v=4825356b"></script>
+      <script src="../../_static/documentation_options.js?v=8b92e751"></script>
+      <script src="../../_static/doctools.js?v=9a2dae69"></script>
+      <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
       <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
     <script src="../../_static/js/theme.js"></script>
     <link rel="index" title="Index" href="../../genindex.html" />
@@ -114,10 +114,10 @@
            <div itemprop="articleBody">
              
   <section id="pyclmuapp-on-hpc-python">
-<h1>pyclmuapp on HPC: Python<a class="headerlink" href="#pyclmuapp-on-hpc-python" title="Permalink to this heading"></a></h1>
+<h1>pyclmuapp on HPC: Python<a class="headerlink" href="#pyclmuapp-on-hpc-python" title="Link to this heading"></a></h1>
 <p>Docker are not always available on HPC. Singularity is a container software usually employed in <strong>HPC</strong> (High performance computer). It provides a mechanism to run containers where containers can be used to package entire scientific workflows, software and libraries, and even data. Ref: <a class="reference external" href="https://ri.itservices.manchester.ac.uk/csf3/software/applications/singularity/">https://ri.itservices.manchester.ac.uk/csf3/software/applications/singularity/</a></p>
 <p>A quick look for python scripts of pyclmuapp <code class="docutils literal notranslate"><span class="pre">singularity</span></code> mode</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">pyclmuapp</span> <span class="kn">import</span> <span class="n">usp_clmu</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">pyclmuapp</span><span class="w"> </span><span class="kn">import</span> <span class="n">usp_clmu</span>
 
 <span class="c1"># initialize</span>
 <span class="n">o</span> <span class="o">=</span> <span class="n">usp_clmu</span><span class="p">(</span>
@@ -153,7 +153,7 @@
 </pre></div>
 </div>
 <section id="how-to-run-the-python-in-hpc">
-<h2>How to run the python in HPC?<a class="headerlink" href="#how-to-run-the-python-in-hpc" title="Permalink to this heading"></a></h2>
+<h2>How to run the python in HPC?<a class="headerlink" href="#how-to-run-the-python-in-hpc" title="Link to this heading"></a></h2>
 <p>HPC usually uses batch system like
 - Manchester csf3 (The Computational Shared Facility 3) : <a class="reference external" href="https://ri.itservices.manchester.ac.uk/csf3/batch/">https://ri.itservices.manchester.ac.uk/csf3/batch/</a>
 - UK ARHCER2 : <a class="reference external" href="https://docs.archer2.ac.uk/user-guide/scheduler/">https://docs.archer2.ac.uk/user-guide/scheduler/</a></p>

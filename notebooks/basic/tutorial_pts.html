@@ -1,22 +1,22 @@
 
 
 <!DOCTYPE html>
-<html class="writer-html5" lang="en">
+<html class="writer-html5" lang="en" data-content_root="../../">
 <head>
   <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Tutorial: PTS mode &mdash; pyclmuapp v0.0.0 documentation</title>
-      <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=80d5e7a1" />
+      <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=b86133f3" />
       <link rel="stylesheet" type="text/css" href="../../_static/css/theme.css?v=e59714d7" />
       <link rel="stylesheet" type="text/css" href="../../_static/nbsphinx-code-cells.css?v=2aa19091" />
 
   
       <script src="../../_static/jquery.js?v=5d32c60e"></script>
       <script src="../../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
-      <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js?v=f3b75425"></script>
-      <script src="../../_static/doctools.js?v=888ff710"></script>
-      <script src="../../_static/sphinx_highlight.js?v=4825356b"></script>
+      <script src="../../_static/documentation_options.js?v=8b92e751"></script>
+      <script src="../../_static/doctools.js?v=9a2dae69"></script>
+      <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
       <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
       <script>window.MathJax = {"tex": {"inlineMath": [["$", "$"], ["\\(", "\\)"]], "processEscapes": true}, "options": {"ignoreHtmlClass": "tex2jax_ignore|mathjax_ignore|document", "processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
       <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
@@ -112,7 +112,7 @@
            <div itemprop="articleBody">
              
   <section id="Tutorial:-PTS-mode">
-<h1>Tutorial: PTS mode<a class="headerlink" href="#Tutorial:-PTS-mode" title="Permalink to this heading"></a></h1>
+<h1>Tutorial: PTS mode<a class="headerlink" href="#Tutorial:-PTS-mode" title="Link to this heading"></a></h1>
 <p>Junjie Yu, Manchsster, 2024-03-10</p>
 <p>Fisrt of all, we need to install Docker/Docker Desktop.</p>
 <ul class="simple">
@@ -121,7 +121,7 @@
 </ul>
 <p>Platform: arm64/amd64</p>
 <section id="0-Install-pyclmuapp">
-<h2>0 Install pyclmuapp<a class="headerlink" href="#0-Install-pyclmuapp" title="Permalink to this heading"></a></h2>
+<h2>0 Install pyclmuapp<a class="headerlink" href="#0-Install-pyclmuapp" title="Link to this heading"></a></h2>
 <p>if not install pyclmuapp</p>
 <div class="nbinput nblast docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[ ]:
@@ -133,7 +133,7 @@
 </div>
 </section>
 <section id="1-Initialize-pyclmuapp">
-<h2>1 Initialize pyclmuapp<a class="headerlink" href="#1-Initialize-pyclmuapp" title="Permalink to this heading"></a></h2>
+<h2>1 Initialize pyclmuapp<a class="headerlink" href="#1-Initialize-pyclmuapp" title="Link to this heading"></a></h2>
 <ul class="simple">
 <li><p>The inputfolder, outputfolder, logfolder, and scriptfolder will be checked in the current working directory.</p></li>
 <li><p>If the folder does not exist, it will be created.</p></li>
@@ -144,8 +144,8 @@
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[1]:
 </pre></div>
 </div>
-<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">pyclmuapp</span> <span class="kn">import</span> <span class="n">pts_clmu</span>
-<span class="kn">import</span> <span class="nn">os</span>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">pyclmuapp</span><span class="w"> </span><span class="kn">import</span> <span class="n">pts_clmu</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">os</span>
 
 <span class="n">o</span> <span class="o">=</span> <span class="n">pts_clmu</span><span class="p">(</span>
     <span class="n">pwd</span><span class="o">=</span><span class="n">os</span><span class="o">.</span><span class="n">getcwd</span><span class="p">(),)</span>
@@ -165,7 +165,7 @@ Folder &#39;scriptsfolder&#39; already exists.
 </div>
 </section>
 <section id="2-Pull-and-run-the-clmu-app-image">
-<h2>2 Pull and run the clmu-app image<a class="headerlink" href="#2-Pull-and-run-the-clmu-app-image" title="Permalink to this heading"></a></h2>
+<h2>2 Pull and run the clmu-app image<a class="headerlink" href="#2-Pull-and-run-the-clmu-app-image" title="Link to this heading"></a></h2>
 <p>check what image will be used</p>
 <div class="nbinput docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[28]:
@@ -298,7 +298,7 @@ docker.io/envdes/clmu-app:1.0
 <p><img alt="Folder and container" class="no-scaled-link" src="../../_images/folder.png" style="width: 500px;" /></p>
 </section>
 <section id="3-check-the-default-case-configuration-and-revise">
-<h2>3 check the default case configuration and revise<a class="headerlink" href="#3-check-the-default-case-configuration-and-revise" title="Permalink to this heading"></a></h2>
+<h2>3 check the default case configuration and revise<a class="headerlink" href="#3-check-the-default-case-configuration-and-revise" title="Link to this heading"></a></h2>
 <p>we use the single point case <a class="reference external" href="https://escomp.github.io/ctsm-docs/versions/master/html/users_guide/running-single-points/running-pts_mode-configurations.html">PTS model</a> as the default case. The default case with the following configuration:</p>
 <div class="nbinput docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[2]:
@@ -332,7 +332,7 @@ docker.io/envdes/clmu-app:1.0
 </pre></div></div>
 </div>
 <p><strong>How to revise the config?</strong></p>
-<p>o.caseconfig[‘**’] = “**”</p>
+<p>o.caseconfig[’**’] = “**”</p>
 <p>Note: all the config must be string</p>
 <div class="nbinput docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[3]:
@@ -387,7 +387,7 @@ docker.io/envdes/clmu-app:1.0
 <p>To learn more? –&gt; <a class="reference external" href="https://escomp.github.io/ctsm-docs/versions/master/html/users_guide/index.html">CTSM docs</a>.</p>
 </section>
 <section id="4-run-a-case-with-o.caseconfig">
-<h2>4 run a case with o.caseconfig<a class="headerlink" href="#4-run-a-case-with-o.caseconfig" title="Permalink to this heading"></a></h2>
+<h2>4 run a case with o.caseconfig<a class="headerlink" href="#4-run-a-case-with-o.caseconfig" title="Link to this heading"></a></h2>
 <p>the ouput file name will be return after <code class="docutils literal notranslate"><span class="pre">o.run()</span></code></p>
 <p><strong>Note!</strong>: PTS model using the global data to drive single point simulation, so the first time you run it, you need to download a lot of input data, which will consume a lot of time. This data is downloaded automatically according to the config.</p>
 <div class="nbinput docutils container">
@@ -891,7 +891,7 @@ Attributes: (12/38)
 </div>
 </section>
 <section id="5-Change-the-surface-data">
-<h2>5 Change the surface data<a class="headerlink" href="#5-Change-the-surface-data" title="Permalink to this heading"></a></h2>
+<h2>5 Change the surface data<a class="headerlink" href="#5-Change-the-surface-data" title="Link to this heading"></a></h2>
 <p>fsurdat will be read when run o.work()</p>
 <div class="nbinput docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[7]:
@@ -1599,9 +1599,9 @@ Attributes: (12/38)
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[12]:
 </pre></div>
 </div>
-<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">matplotlib.pyplot</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">plt</span>
 
-<span class="k">def</span> <span class="nf">plot</span><span class="p">(</span><span class="n">ds</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">plot</span><span class="p">(</span><span class="n">ds</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
     <span class="n">dd</span> <span class="o">=</span> <span class="n">ds</span><span class="p">[</span><span class="s1">&#39;TSA_U&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">isel</span><span class="p">(</span><span class="n">lat</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span><span class="n">lon</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span><span class="o">.</span><span class="n">groupby</span><span class="p">(</span><span class="s1">&#39;time.hour&#39;</span><span class="p">)</span>
     <span class="n">mean</span> <span class="o">=</span> <span class="n">dd</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="s1">&#39;time&#39;</span><span class="p">)</span>
     <span class="n">var</span> <span class="o">=</span> <span class="n">dd</span><span class="o">.</span><span class="n">var</span><span class="p">(</span><span class="s1">&#39;time&#39;</span><span class="p">)</span>
@@ -1628,11 +1628,11 @@ Attributes: (12/38)
 <p>The cases of original and modified surface albedo are shown in the figure. The modified surface albedo is 0.2 lower than the original one. The modified surface albedo leads to a lower air temperature. Espacially, the air temperature is lower in the afternoon.</p>
 </section>
 <section id="6-change-the-forcing-data">
-<h2>6 change the forcing data<a class="headerlink" href="#6-change-the-forcing-data" title="Permalink to this heading"></a></h2>
+<h2>6 change the forcing data<a class="headerlink" href="#6-change-the-forcing-data" title="Link to this heading"></a></h2>
 <p>This is a dirty method to change the forcing, as we will change the whole file.</p>
 <p>Warning! <strong>Backup</strong> the file or recover the forcing file after case ran</p>
 <section id="6.1-Firtst,-we-need-to-check-what-forcing-will-be-used-in-the-simulation">
-<h3>6.1 Firtst, we need to check what forcing will be used in the simulation<a class="headerlink" href="#6.1-Firtst,-we-need-to-check-what-forcing-will-be-used-in-the-simulation" title="Permalink to this heading"></a></h3>
+<h3>6.1 Firtst, we need to check what forcing will be used in the simulation<a class="headerlink" href="#6.1-Firtst,-we-need-to-check-what-forcing-will-be-used-in-the-simulation" title="Link to this heading"></a></h3>
 <p><a class="reference external" href="https://escomp.github.io/ctsm-docs/versions/release-clm5.0/html/users_guide/setting-up-and-running-a-case/customizing-the-datm-namelist.html">CLM5.0 User‘s Guide » 1.2. Setting Up and Running a Case</a></p>
 <p>The forcing file used in previous cases is in</p>
 <p>inputfolder/atm/datm7/atm_forcing.datm7.cruncep_qianFill.0.5d.v7.c160715</p>
@@ -1660,7 +1660,7 @@ Attributes: (12/38)
 </div>
 </section>
 <section id="6.2-Change-the-Precip6Hrly">
-<h3>6.2 Change the Precip6Hrly<a class="headerlink" href="#6.2-Change-the-Precip6Hrly" title="Permalink to this heading"></a></h3>
+<h3>6.2 Change the Precip6Hrly<a class="headerlink" href="#6.2-Change-the-Precip6Hrly" title="Link to this heading"></a></h3>
 <p>We will change the forcing in TPHWL6Hrly, lest check the original forcing first.</p>
 <div class="nbinput docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[30]:
@@ -2743,9 +2743,9 @@ The surface input file has been modified. The modified file is /p/scratch/CESMDA
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[41]:
 </pre></div>
 </div>
-<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">matplotlib.pyplot</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">plt</span>
 
-<span class="k">def</span> <span class="nf">plot</span><span class="p">(</span><span class="n">ds</span><span class="p">,</span> <span class="n">label</span><span class="p">,</span> <span class="n">ax</span><span class="p">):</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">plot</span><span class="p">(</span><span class="n">ds</span><span class="p">,</span> <span class="n">label</span><span class="p">,</span> <span class="n">ax</span><span class="p">):</span>
     <span class="n">dd</span> <span class="o">=</span> <span class="n">ds</span><span class="o">.</span><span class="n">isel</span><span class="p">(</span><span class="n">lat</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span><span class="n">lon</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span><span class="o">.</span><span class="n">groupby</span><span class="p">(</span><span class="s1">&#39;time.hour&#39;</span><span class="p">)</span>
     <span class="n">mean</span> <span class="o">=</span> <span class="n">dd</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="s1">&#39;time&#39;</span><span class="p">)</span>
     <span class="n">var</span> <span class="o">=</span> <span class="n">dd</span><span class="o">.</span><span class="n">var</span><span class="p">(</span><span class="s1">&#39;time&#39;</span><span class="p">)</span>
@@ -2812,9 +2812,9 @@ The surface input file has been modified. The modified file is /p/scratch/CESMDA
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[45]:
 </pre></div>
 </div>
-<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">matplotlib.pyplot</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">plt</span>
 
-<span class="k">def</span> <span class="nf">plot</span><span class="p">(</span><span class="n">ds</span><span class="p">,</span> <span class="n">label</span><span class="p">,</span> <span class="n">ax</span><span class="p">):</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">plot</span><span class="p">(</span><span class="n">ds</span><span class="p">,</span> <span class="n">label</span><span class="p">,</span> <span class="n">ax</span><span class="p">):</span>
     <span class="n">dd</span> <span class="o">=</span> <span class="n">ds</span><span class="o">.</span><span class="n">isel</span><span class="p">(</span><span class="n">lat</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span><span class="n">lon</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span><span class="o">.</span><span class="n">groupby</span><span class="p">(</span><span class="s1">&#39;time.hour&#39;</span><span class="p">)</span>
     <span class="n">mean</span> <span class="o">=</span> <span class="n">dd</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="s1">&#39;time&#39;</span><span class="p">)</span>
     <span class="n">var</span> <span class="o">=</span> <span class="n">dd</span><span class="o">.</span><span class="n">var</span><span class="p">(</span><span class="s1">&#39;time&#39;</span><span class="p">)</span>

@@ -1,22 +1,22 @@
 
 
 <!DOCTYPE html>
-<html class="writer-html5" lang="en">
+<html class="writer-html5" lang="en" data-content_root="../../">
 <head>
   <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Example 3: Urban climate adaption &mdash; pyclmuapp v0.0.0 documentation</title>
-      <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=80d5e7a1" />
+      <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=b86133f3" />
       <link rel="stylesheet" type="text/css" href="../../_static/css/theme.css?v=e59714d7" />
       <link rel="stylesheet" type="text/css" href="../../_static/nbsphinx-code-cells.css?v=2aa19091" />
 
   
       <script src="../../_static/jquery.js?v=5d32c60e"></script>
       <script src="../../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
-      <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js?v=f3b75425"></script>
-      <script src="../../_static/doctools.js?v=888ff710"></script>
-      <script src="../../_static/sphinx_highlight.js?v=4825356b"></script>
+      <script src="../../_static/documentation_options.js?v=8b92e751"></script>
+      <script src="../../_static/doctools.js?v=9a2dae69"></script>
+      <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
       <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
       <script>window.MathJax = {"tex": {"inlineMath": [["$", "$"], ["\\(", "\\)"]], "processEscapes": true}, "options": {"ignoreHtmlClass": "tex2jax_ignore|mathjax_ignore|document", "processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
       <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
@@ -118,13 +118,13 @@
            <div itemprop="articleBody">
              
   <section id="Example-3:-Urban-climate-adaption">
-<h1>Example 3: Urban climate adaption<a class="headerlink" href="#Example-3:-Urban-climate-adaption" title="Permalink to this heading"></a></h1>
+<h1>Example 3: Urban climate adaption<a class="headerlink" href="#Example-3:-Urban-climate-adaption" title="Link to this heading"></a></h1>
 <div class="nbinput nblast docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[1]:
 </pre></div>
 </div>
-<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">pyclmuapp</span> <span class="kn">import</span> <span class="n">usp_clmu</span>
-<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">pyclmuapp</span><span class="w"> </span><span class="kn">import</span> <span class="n">usp_clmu</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">matplotlib.pyplot</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">plt</span>
 </pre></div>
 </div>
 </div>
@@ -185,7 +185,7 @@ Wall time: 2min 37s
 </pre></div></div>
 </div>
 <section id="2-explore-the-urban-adaptation-to-urban-climate">
-<h2>2 explore the urban adaptation to urban climate<a class="headerlink" href="#2-explore-the-urban-adaptation-to-urban-climate" title="Permalink to this heading"></a></h2>
+<h2>2 explore the urban adaptation to urban climate<a class="headerlink" href="#2-explore-the-urban-adaptation-to-urban-climate" title="Link to this heading"></a></h2>
 <p>workflow:</p>
 <ol class="arabic simple">
 <li><p>case2: modify the urban roof albedo –&gt; simulate the white/cooling roof for urban adaptation</p></li>
@@ -205,8 +205,14 @@ Wall time: 2min 37s
 <span class="p">)</span>
 </pre></div>
 </div>
-<p>Args: - usr_surfdata (str): The path to the user-defined surface data file. The default is None. - action (dict): The dictionary of the revised surface data for the urban surface parameters. The default is None, which means no action. - mode (str): The mode for the revision. The default is “replace”. - surfata_name (str): The name of the revised surface data file. The default is “surfdata.nc”. - urban_type (int): The type of the urban surface. The default is 2. 0 is for TBD urban, 1 is for HD
-urban, and 2 is for MD urban.</p>
+<p>Args:</p>
+<ul class="simple">
+<li><p>usr_surfdata (str): The path to the user-defined surface data file. The default is None.</p></li>
+<li><p>action (dict): The dictionary of the revised surface data for the urban surface parameters. The default is None, which means no action.</p></li>
+<li><p>mode (str): The mode for the revision. The default is “replace”.</p></li>
+<li><p>surfata_name (str): The name of the revised surface data file. The default is “surfdata.nc”.</p></li>
+<li><p>urban_type (int): The type of the urban surface. The default is 2. 0 is for TBD urban, 1 is for HD urban, and 2 is for MD urban.</p></li>
+</ul>
 <div class="nbinput docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[3]:
 </pre></div>
@@ -312,7 +318,7 @@ Wall time: 4min 38s
 </div>
 </section>
 <section id="3-Plotting">
-<h2>3 Plotting<a class="headerlink" href="#3-Plotting" title="Permalink to this heading"></a></h2>
+<h2>3 Plotting<a class="headerlink" href="#3-Plotting" title="Link to this heading"></a></h2>
 <p>Note: ploting with time will need the <code class="docutils literal notranslate"><span class="pre">nc-time-axis</span></code> package, which can be installed by <code class="docutils literal notranslate"><span class="pre">pip</span> <span class="pre">install</span> <span class="pre">nc-time-axis</span></code> or <code class="docutils literal notranslate"><span class="pre">conda</span> <span class="pre">install</span> <span class="pre">nc-time-axis</span></code></p>
 <div class="nbinput docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[6]:

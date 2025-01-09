@@ -1,22 +1,22 @@
 
 
 <!DOCTYPE html>
-<html class="writer-html5" lang="en">
+<html class="writer-html5" lang="en" data-content_root="../../">
 <head>
   <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Make your own surface data &mdash; pyclmuapp v0.0.0 documentation</title>
-      <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=80d5e7a1" />
+      <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=b86133f3" />
       <link rel="stylesheet" type="text/css" href="../../_static/css/theme.css?v=e59714d7" />
       <link rel="stylesheet" type="text/css" href="../../_static/nbsphinx-code-cells.css?v=2aa19091" />
 
   
       <script src="../../_static/jquery.js?v=5d32c60e"></script>
       <script src="../../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
-      <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js?v=f3b75425"></script>
-      <script src="../../_static/doctools.js?v=888ff710"></script>
-      <script src="../../_static/sphinx_highlight.js?v=4825356b"></script>
+      <script src="../../_static/documentation_options.js?v=8b92e751"></script>
+      <script src="../../_static/doctools.js?v=9a2dae69"></script>
+      <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
       <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
       <script>window.MathJax = {"tex": {"inlineMath": [["$", "$"], ["\\(", "\\)"]], "processEscapes": true}, "options": {"ignoreHtmlClass": "tex2jax_ignore|mathjax_ignore|document", "processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
       <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
@@ -121,19 +121,20 @@
            <div itemprop="articleBody">
              
   <section id="Make-your-own-surface-data">
-<h1>Make your own surface data<a class="headerlink" href="#Make-your-own-surface-data" title="Permalink to this heading"></a></h1>
+<h1>Make your own surface data<a class="headerlink" href="#Make-your-own-surface-data" title="Link to this heading"></a></h1>
 <p>CTSM needs lots of surface variables to run.</p>
 <p>CTSM technical notes has the official tutorial for creating surface datasets.</p>
 <p><a class="reference external" href="https://escomp.github.io/ctsm-docs/versions/release-clm5.0/html/users_guide/using-clm-tools/creating-surface-datasets.html">CTSM technical notes 1.3.5 Creating Surface data</a></p>
 <p>However, it is difficult to use the tool for users that are not familiar to CESM/CTSM. Because in pyclmuapp, we mainly focus on urban climate and the percentage of urban is set to 100%, which means the output are only urban related. Hence, we can easily over-write the urban surface data in the default <code class="docutils literal notranslate"><span class="pre">surfdata.nc</span></code> provided by pyclmuapp, this avoids the complex steps of using the mksurfdata_map tools.</p>
 <hr class="docutils" />
 <p><strong>How to get our own urban surface data of the interest point from CESM provided file</strong></p>
-<p>Ref: - <a class="reference external" href="https://www.researchgate.net/publication/261062625_Technical_Description_of_an_Urban_Parameterization_for_the_Community_Land_Model_CLMU">Technical Description of an Urban Parameterization for the Community Land Model (CLMU)</a></p>
+<p>Ref:</p>
 <ul class="simple">
+<li><p><a class="reference external" href="https://www.researchgate.net/publication/261062625_Technical_Description_of_an_Urban_Parameterization_for_the_Community_Land_Model_CLMU">Technical Description of an Urban Parameterization for the Community Land Model (CLMU)</a></p></li>
 <li><p><a class="reference external" href="https://www.researchgate.net/figure/3-Input-data-required-for-the-urban-model_tbl1_261062625">Table 3 Input data required for the urban model</a></p></li>
 </ul>
 <section id="Workflow">
-<h2>Workflow<a class="headerlink" href="#Workflow" title="Permalink to this heading"></a></h2>
+<h2>Workflow<a class="headerlink" href="#Workflow" title="Link to this heading"></a></h2>
 <ul class="simple">
 <li><p>get the urban surface input from <code class="docutils literal notranslate"><span class="pre">`mksrf_urban_0.05x0.05_simyr2000.c170724.nc</span></code> &lt;<a class="reference external" href="https://svn-ccsm-inputdata.cgd.ucar.edu/trunk/inputdata/lnd/clm2/rawdata/">https://svn-ccsm-inputdata.cgd.ucar.edu/trunk/inputdata/lnd/clm2/rawdata/</a>&gt;`__</p></li>
 <li><p>get the soil parameter for the pervious road in urban from <code class="docutils literal notranslate"><span class="pre">`mksrf_soitex.10level.c010119.nc</span></code> &lt;<a class="reference external" href="https://svn-ccsm-inputdata.cgd.ucar.edu/trunk/inputdata/lnd/clm2/rawdata/">https://svn-ccsm-inputdata.cgd.ucar.edu/trunk/inputdata/lnd/clm2/rawdata/</a>&gt;`__</p></li>
@@ -144,7 +145,7 @@
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%</span><span class="k">time</span>
-<span class="kn">from</span> <span class="nn">pyclmuapp</span> <span class="kn">import</span> <span class="n">get_urban_params</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">pyclmuapp</span><span class="w"> </span><span class="kn">import</span> <span class="n">get_urban_params</span>
 <span class="n">urban</span> <span class="o">=</span> <span class="n">get_urban_params</span><span class="p">(</span><span class="n">urban_ds</span><span class="o">=</span><span class="s1">&#39;data/mksrf_urban_0.05x0.05_simyr2000.c170724.nc&#39;</span><span class="p">,</span> <span class="c1"># can be a xarray dataset or a path to a netcdf file</span>
                  <span class="n">soil_ds</span><span class="o">=</span><span class="s1">&#39;data/mksrf_soitex.10level.c010119.nc&#39;</span><span class="p">,</span> <span class="c1"># can be a xarray dataset or a path to a netcdf file</span>
                  <span class="c1"># here we use the default vancouverCAN dataset provided by CLM5.0 as template</span>
@@ -1033,14 +1034,14 @@ Thu Dec 14 12:20:18 2017: ncks -A -v CANYON_HWR,EM_IMPROAD,EM_PERROAD,EM_ROOF,EM
 </pre></div></div>
 </div>
 <section id="(optional)-more-to-know-about-the-urban-parameters">
-<h3>(optional) more to know about the urban parameters<a class="headerlink" href="#(optional)-more-to-know-about-the-urban-parameters" title="Permalink to this heading"></a></h3>
+<h3>(optional) more to know about the urban parameters<a class="headerlink" href="#(optional)-more-to-know-about-the-urban-parameters" title="Link to this heading"></a></h3>
 <p><strong>fist, let’s check the mksrf_urban_0.05x0.05_simyr2000.c170724.nc</strong></p>
 <div class="nbinput nblast docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[3]:
 </pre></div>
 </div>
-<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">matplotlib</span> <span class="kn">import</span> <span class="n">pyplot</span> <span class="k">as</span> <span class="n">plt</span>
-<span class="kn">import</span> <span class="nn">xarray</span> <span class="k">as</span> <span class="nn">xr</span>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">matplotlib</span><span class="w"> </span><span class="kn">import</span> <span class="n">pyplot</span> <span class="k">as</span> <span class="n">plt</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">xarray</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">xr</span>
 </pre></div>
 </div>
 </div>
@@ -1101,7 +1102,7 @@ Region 2: 278922 grid cells
 </div>
 </section>
 <section id="(Optional)-here-is-the-step-for-generate-a-template.">
-<h3>(Optional) here is the step for generate a template.<a class="headerlink" href="#(Optional)-here-is-the-step-for-generate-a-template." title="Permalink to this heading"></a></h3>
+<h3>(Optional) here is the step for generate a template.<a class="headerlink" href="#(Optional)-here-is-the-step-for-generate-a-template." title="Link to this heading"></a></h3>
 <p>This just helps you know how to generate a <code class="docutils literal notranslate"><span class="pre">surfdata.nc</span></code> template with 10 urban layers.</p>
 <p>Refer to Section: Create your urban parameters for creating your <code class="docutils literal notranslate"><span class="pre">surfdata.nc</span></code>.</p>
 <p>Here we use the Vancouver city urban surface input file privdied by CTSM default case to generate the default surface data.</p>
@@ -1535,7 +1536,7 @@ Attributes:
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[8]:
 </pre></div>
 </div>
-<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
 <span class="n">ds</span> <span class="o">=</span> <span class="n">xr</span><span class="o">.</span><span class="n">open_dataset</span><span class="p">(</span><span class="s1">&#39;data/surfdata_1x1_vancouverCAN_hist_16pfts_Irrig_CMIP6_simyr2000_c190214.nc&#39;</span><span class="p">)</span>
 <span class="k">for</span> <span class="n">var</span> <span class="ow">in</span> <span class="p">[</span><span class="s1">&#39;TK_IMPROAD&#39;</span><span class="p">,</span> <span class="s1">&#39;TK_ROOF&#39;</span><span class="p">,</span> <span class="s1">&#39;TK_WALL&#39;</span><span class="p">,</span> <span class="s1">&#39;CV_IMPROAD&#39;</span><span class="p">,</span> <span class="s1">&#39;CV_ROOF&#39;</span><span class="p">,</span> <span class="s1">&#39;CV_WALL&#39;</span><span class="p">]:</span>
     <span class="k">del</span> <span class="n">ds</span><span class="p">[</span><span class="n">var</span><span class="p">]</span>

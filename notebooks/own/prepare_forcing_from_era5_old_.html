@@ -1,22 +1,22 @@
 
 
 <!DOCTYPE html>
-<html class="writer-html5" lang="en">
+<html class="writer-html5" lang="en" data-content_root="../../">
 <head>
   <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Make your own forcing data from ERA5 &mdash; pyclmuapp v0.0.0 documentation</title>
-      <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=80d5e7a1" />
+      <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=b86133f3" />
       <link rel="stylesheet" type="text/css" href="../../_static/css/theme.css?v=e59714d7" />
       <link rel="stylesheet" type="text/css" href="../../_static/nbsphinx-code-cells.css?v=2aa19091" />
 
   
       <script src="../../_static/jquery.js?v=5d32c60e"></script>
       <script src="../../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
-      <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js?v=f3b75425"></script>
-      <script src="../../_static/doctools.js?v=888ff710"></script>
-      <script src="../../_static/sphinx_highlight.js?v=4825356b"></script>
+      <script src="../../_static/documentation_options.js?v=8b92e751"></script>
+      <script src="../../_static/doctools.js?v=9a2dae69"></script>
+      <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
       <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
       <script>window.MathJax = {"tex": {"inlineMath": [["$", "$"], ["\\(", "\\)"]], "processEscapes": true}, "options": {"ignoreHtmlClass": "tex2jax_ignore|mathjax_ignore|document", "processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
       <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
@@ -112,10 +112,10 @@
            <div itemprop="articleBody">
              
   <section id="Make-your-own-forcing-data-from-ERA5">
-<h1>Make your own forcing data from ERA5<a class="headerlink" href="#Make-your-own-forcing-data-from-ERA5" title="Permalink to this heading"></a></h1>
+<h1>Make your own forcing data from ERA5<a class="headerlink" href="#Make-your-own-forcing-data-from-ERA5" title="Link to this heading"></a></h1>
 <p>Introduction: There are lots of forcing data can be used to drive the model, such as ERA5, NCEP (<a class="reference external" href="https://psl.noaa.gov/data/gridded/data.ncep.reanalysis.html">https://psl.noaa.gov/data/gridded/data.ncep.reanalysis.html</a>), etc. Here, we recommend ERA5 to make your own single point forcing as the NCEP and others are too big to download. The ERA5 data can be obtained in a small scale, which usually light weight to download and store.</p>
 <section id="Step-1:-Download-the-required-variables-from-the-cdsapi">
-<h2>Step 1: Download the required variables from the cdsapi<a class="headerlink" href="#Step-1:-Download-the-required-variables-from-the-cdsapi" title="Permalink to this heading"></a></h2>
+<h2>Step 1: Download the required variables from the cdsapi<a class="headerlink" href="#Step-1:-Download-the-required-variables-from-the-cdsapi" title="Link to this heading"></a></h2>
 <p>First, we will use the <code class="docutils literal notranslate"><span class="pre">cdsapi</span></code> package to download the data. If you don’t have the package installed, you can install it using the following command:</p>
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span>pip install cdsapi
 
@@ -132,7 +132,7 @@ EOF
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[1]:
 </pre></div>
 </div>
-<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">pyclmuapp</span> <span class="kn">import</span> <span class="n">era5_download</span><span class="p">,</span> <span class="n">era5_to_forcing</span>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">pyclmuapp</span><span class="w"> </span><span class="kn">import</span> <span class="n">era5_download</span><span class="p">,</span> <span class="n">era5_to_forcing</span>
 </pre></div>
 </div>
 </div>
@@ -920,12 +920,12 @@ Attributes:
               dtype=&#x27;datetime64[ns]&#x27;, name=&#x27;time&#x27;, length=744, freq=None))</pre></div></li><li class='xr-var-item'><div class='xr-index-name'><div>x</div></div><div class='xr-index-preview'>PandasIndex</div><div></div><input id='index-0267bc12-76ff-473c-93aa-18971d0e9fdf' class='xr-index-data-in' type='checkbox'/><label for='index-0267bc12-76ff-473c-93aa-18971d0e9fdf' title='Show/Hide index repr'><svg class='icon xr-icon-database'><use xlink:href='#icon-database'></use></svg></label><div class='xr-index-data'><pre>PandasIndex(Index([1], dtype=&#x27;int64&#x27;, name=&#x27;x&#x27;))</pre></div></li><li class='xr-var-item'><div class='xr-index-name'><div>y</div></div><div class='xr-index-preview'>PandasIndex</div><div></div><input id='index-3eb2e38d-a422-4bf3-9be1-b6cbc8617a4c' class='xr-index-data-in' type='checkbox'/><label for='index-3eb2e38d-a422-4bf3-9be1-b6cbc8617a4c' title='Show/Hide index repr'><svg class='icon xr-icon-database'><use xlink:href='#icon-database'></use></svg></label><div class='xr-index-data'><pre>PandasIndex(Index([1], dtype=&#x27;int64&#x27;, name=&#x27;y&#x27;))</pre></div></li></ul></div></li><li class='xr-section-item'><input id='section-78fa7f58-7cda-47d3-981d-5faa0c97269d' class='xr-section-summary-in' type='checkbox'  checked><label for='section-78fa7f58-7cda-47d3-981d-5faa0c97269d' class='xr-section-summary' >Attributes: <span>(2)</span></label><div class='xr-section-inline-details'></div><div class='xr-section-details'><dl class='xr-attrs'><dt><span>Conventions :</span></dt><dd>CF-1.6</dd><dt><span>history :</span></dt><dd>2024-06-19 13:54:45 GMT by grib_to_netcdf-2.28.1: /opt/ecmwf/mars-client/bin/grib_to_netcdf -S param -o /cache/data2/adaptor.mars.internal-1718805274.044251-27464-9-e3bb1d14-cc8b-4e38-a6df-43b5e7fcb04e.nc /cache/tmp/e3bb1d14-cc8b-4e38-a6df-43b5e7fcb04e-adaptor.mars.internal-1718804955.9005425-27464-6-tmp.grib</dd></dl></div></li></ul></div></div></div>
 </div>
 <section id="how-to-combine-multiple-months?">
-<h3>how to combine multiple months?<a class="headerlink" href="#how-to-combine-multiple-months?" title="Permalink to this heading"></a></h3>
+<h3>how to combine multiple months?<a class="headerlink" href="#how-to-combine-multiple-months?" title="Link to this heading"></a></h3>
 <div class="nbinput docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[5]:
 </pre></div>
 </div>
-<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">xarray</span> <span class="k">as</span> <span class="nn">xr</span>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">xarray</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">xr</span>
 <span class="n">era5_list</span> <span class="o">=</span> <span class="p">[]</span>
 <span class="c1"># from 2002 to 2014</span>
 <span class="n">years</span> <span class="o">=</span> <span class="p">[</span><span class="mi">2012</span><span class="p">]</span>
@@ -1687,7 +1687,7 @@ Attributes:
 </div>
 </section>
 <section id="command-line">
-<h3>command line<a class="headerlink" href="#command-line" title="Permalink to this heading"></a></h3>
+<h3>command line<a class="headerlink" href="#command-line" title="Link to this heading"></a></h3>
 <div class="nbinput docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[7]:
 </pre></div>

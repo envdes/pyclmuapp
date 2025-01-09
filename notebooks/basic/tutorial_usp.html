@@ -1,22 +1,22 @@
 
 
 <!DOCTYPE html>
-<html class="writer-html5" lang="en">
+<html class="writer-html5" lang="en" data-content_root="../../">
 <head>
   <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Tutorial: Running your own urban data &mdash; pyclmuapp v0.0.0 documentation</title>
-      <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=80d5e7a1" />
+      <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=b86133f3" />
       <link rel="stylesheet" type="text/css" href="../../_static/css/theme.css?v=e59714d7" />
       <link rel="stylesheet" type="text/css" href="../../_static/nbsphinx-code-cells.css?v=2aa19091" />
 
   
       <script src="../../_static/jquery.js?v=5d32c60e"></script>
       <script src="../../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
-      <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js?v=f3b75425"></script>
-      <script src="../../_static/doctools.js?v=888ff710"></script>
-      <script src="../../_static/sphinx_highlight.js?v=4825356b"></script>
+      <script src="../../_static/documentation_options.js?v=8b92e751"></script>
+      <script src="../../_static/doctools.js?v=9a2dae69"></script>
+      <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
       <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
       <script>window.MathJax = {"tex": {"inlineMath": [["$", "$"], ["\\(", "\\)"]], "processEscapes": true}, "options": {"ignoreHtmlClass": "tex2jax_ignore|mathjax_ignore|document", "processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
       <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
@@ -112,7 +112,7 @@
            <div itemprop="articleBody">
              
   <section id="Tutorial:-Running-your-own-urban-data">
-<h1>Tutorial: Running your own urban data<a class="headerlink" href="#Tutorial:-Running-your-own-urban-data" title="Permalink to this heading"></a></h1>
+<h1>Tutorial: Running your own urban data<a class="headerlink" href="#Tutorial:-Running-your-own-urban-data" title="Link to this heading"></a></h1>
 <p>Junjie Yu, Manchsster, 2024-05-08</p>
 <p>Fisrt of all, we need to install Docker/Docker Desktop.</p>
 <ul class="simple">
@@ -121,7 +121,7 @@
 </ul>
 <p>Platform: arm64/amd64</p>
 <section id="1-Initialize-pyclmuapp">
-<h2>1 Initialize pyclmuapp<a class="headerlink" href="#1-Initialize-pyclmuapp" title="Permalink to this heading"></a></h2>
+<h2>1 Initialize pyclmuapp<a class="headerlink" href="#1-Initialize-pyclmuapp" title="Link to this heading"></a></h2>
 <ul class="simple">
 <li><p>The inputfolder, outputfolder, logfolder, and scriptfolder will be checked in the current working directory.</p></li>
 <li><p>If the folder does not exist, it will be created.</p></li>
@@ -132,8 +132,8 @@
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[1]:
 </pre></div>
 </div>
-<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">pyclmuapp</span> <span class="kn">import</span> <span class="n">usp_clmu</span>
-<span class="kn">import</span> <span class="nn">os</span>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">pyclmuapp</span><span class="w"> </span><span class="kn">import</span> <span class="n">usp_clmu</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">os</span>
 </pre></div>
 </div>
 </div>
@@ -329,7 +329,7 @@ Folder &#39;scriptsfolder&#39; already exists.
 </div>
 </section>
 <section id="2-Pull-and-run-the-clmu-app-image">
-<h2>2 Pull and run the clmu-app image<a class="headerlink" href="#2-Pull-and-run-the-clmu-app-image" title="Permalink to this heading"></a></h2>
+<h2>2 Pull and run the clmu-app image<a class="headerlink" href="#2-Pull-and-run-the-clmu-app-image" title="Link to this heading"></a></h2>
 <p>check what image will be used</p>
 <div class="nbinput docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[4]:
@@ -443,9 +443,18 @@ myclmu
 <p><img alt="Folder and container" class="no-scaled-link" src="../../_images/folder.png" style="width: 500px;" /></p>
 </section>
 <section id="3-check-the-default-configuration">
-<h2>3 check the default configuration<a class="headerlink" href="#3-check-the-default-configuration" title="Permalink to this heading"></a></h2>
+<h2>3 check the default configuration<a class="headerlink" href="#3-check-the-default-configuration" title="Link to this heading"></a></h2>
 <p><code class="docutils literal notranslate"><span class="pre">o.check_surf_data()</span></code> will show what is available in the surfdata_dict.</p>
-<p>Please check below output to see: 1. what kind of urban parameter will need to run the single point model 2. The values list indicates different paramter in different level 1. list of albedo indicate the albedo of visable and invisable solar bands (VIS,NIR) 2. list of thermal paramters indicates the layer</p>
+<p>Please check below output to see:</p>
+<ol class="arabic simple">
+<li><p>what kind of urban parameter will need to run the single point model</p></li>
+<li><p>The values list indicates different paramter in different level</p>
+<ol class="arabic simple">
+<li><p>list of albedo indicate the albedo of visable and invisable solar bands (VIS,NIR)</p></li>
+<li><p>list of thermal paramters indicates the layer</p></li>
+</ol>
+</li>
+</ol>
 <div class="nbinput docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[3]:
 </pre></div>
@@ -621,7 +630,12 @@ myclmu
 </div>
 <p>‘check domain’ <code class="docutils literal notranslate"><span class="pre">o.check_domain_data()</span></code></p>
 <p>if you have your domain file, use <code class="docutils literal notranslate"><span class="pre">o.check_domain_data(usr_domain=your-filepath)</span></code></p>
-<p>other parameters: - usr_domain (str): The path to the user-defined domain data file. The default is None,which - means using the default domain data (UK-Kin site). - lat (float): The latitude of the domain. The default is None. Provide it to change to your interest point. - lon (float): The longitude of the domain. The default is None. Provide it to change to your interest point.</p>
+<p>other parameters:</p>
+<ul class="simple">
+<li><p>usr_domain (str): The path to the user-defined domain data file. The default is None,which - means using the default domain data (UK-Kin site).</p></li>
+<li><p>lat (float): The latitude of the domain. The default is None. Provide it to change to your interest point.</p></li>
+<li><p>lon (float): The longitude of the domain. The default is None. Provide it to change to your interest point.</p></li>
+</ul>
 <div class="nbinput nblast docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[4]:
 </pre></div>
@@ -644,7 +658,11 @@ myclmu
 <li><p>Tair : Air temperature at measurement height K</p></li>
 <li><p>SWdown : Downward shortwave radiation at measurement height W/m2</p></li>
 </ol>
-<p>Note: - Wind=sqrt(Wind_N^2 + Wind_E^2 ) - Prectmms=Snow+Rain</p>
+<p>Note:</p>
+<ul class="simple">
+<li><p>Wind=sqrt(Wind_N^2 + Wind_E^2 )</p></li>
+<li><p>Prectmms=Snow+Rain</p></li>
+</ul>
 <p>Make sure the forcing file is same as the protocols of CLM</p>
 <div class="nbinput docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[5]:
@@ -666,7 +684,7 @@ The file CTSM_DATM_UK-Kin_2002-2014.nc already exists.
 <p>To learn more? –&gt; <a class="reference external" href="https://escomp.github.io/ctsm-docs/versions/master/html/users_guide/index.html">CTSM docs</a>.</p>
 </section>
 <section id="4-run-a-case-with-o.caseconfig">
-<h2>4 run a case with o.caseconfig<a class="headerlink" href="#4-run-a-case-with-o.caseconfig" title="Permalink to this heading"></a></h2>
+<h2>4 run a case with o.caseconfig<a class="headerlink" href="#4-run-a-case-with-o.caseconfig" title="Link to this heading"></a></h2>
 <p>the ouput file name will be return after <code class="docutils literal notranslate"><span class="pre">o.run()</span></code></p>
 <p><strong>Note!</strong>: the first time you run it, you need to download some input data, which will consume a lot of time, affected by the network.</p>
 <div class="nbinput docutils container">
@@ -1196,7 +1214,7 @@ Attributes: (12/38)
 </div>
 </section>
 <section id="5-Change-the-surface-data">
-<h2>5 Change the surface data<a class="headerlink" href="#5-Change-the-surface-data" title="Permalink to this heading"></a></h2>
+<h2>5 Change the surface data<a class="headerlink" href="#5-Change-the-surface-data" title="Link to this heading"></a></h2>
 <div class="nbinput nblast docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[9]:
 </pre></div>
@@ -1422,7 +1440,7 @@ The /Users/user/Documents/GitHub/pyclmuapp/inputfolder/usp/usp.sh already exists
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[16]:
 </pre></div>
 </div>
-<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">matplotlib.pyplot</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">plt</span>
 <span class="n">ds1</span> <span class="o">=</span> <span class="n">o</span><span class="o">.</span><span class="n">nc_view</span><span class="p">(</span><span class="n">replace</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
 <span class="n">ds1</span><span class="p">[</span><span class="s1">&#39;TG&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">label</span><span class="o">=</span><span class="s2">&quot;HWR=3.0&quot;</span><span class="p">)</span>
 <span class="n">ds0</span><span class="p">[</span><span class="s1">&#39;TG&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">label</span><span class="o">=</span><span class="s2">&quot;HWR=1.13&quot;</span><span class="p">)</span>
@@ -1448,9 +1466,13 @@ The /Users/user/Documents/GitHub/pyclmuapp/inputfolder/usp/usp.sh already exists
 </div>
 </section>
 <section id="6-run-case-with-our-forcing-data-and-surface-data">
-<h2>6 run case with our forcing data and surface data<a class="headerlink" href="#6-run-case-with-our-forcing-data-and-surface-data" title="Permalink to this heading"></a></h2>
+<h2>6 run case with our forcing data and surface data<a class="headerlink" href="#6-run-case-with-our-forcing-data-and-surface-data" title="Link to this heading"></a></h2>
 <p>here we used the data provdied by the Urban-PLUMBER project, the AU-Pre sites data</p>
-<p>ref: 1. <a class="reference external" href="https://urban-plumber.github.io/AU-Preston/plots/">https://urban-plumber.github.io/AU-Preston/plots/</a> 2. <a class="reference external" href="https://essd.copernicus.org/articles/14/5157/2022/">https://essd.copernicus.org/articles/14/5157/2022/</a></p>
+<p>ref:</p>
+<ol class="arabic simple">
+<li><p><a class="reference external" href="https://urban-plumber.github.io/AU-Preston/plots/">https://urban-plumber.github.io/AU-Preston/plots/</a></p></li>
+<li><p><a class="reference external" href="https://essd.copernicus.org/articles/14/5157/2022/">https://essd.copernicus.org/articles/14/5157/2022/</a></p></li>
+</ol>
 <p>How to adapt the Urban-PLUMBER data to the CLMU forcing input?</p>
 <p>Use <code class="docutils literal notranslate"><span class="pre">nc.sh</span></code> to convert</p>
 <p>Usage: <code class="docutils literal notranslate"><span class="pre">bash</span> <span class="pre">nc.sh</span> <span class="pre">--input</span> <span class="pre">&lt;inputfile&gt;</span> <span class="pre">--output</span> <span class="pre">&lt;outputfile&gt;</span></code></p>
@@ -1569,7 +1591,7 @@ The /Users/user/Documents/GitHub/pyclmuapp/inputfolder/usp/usp.sh already exists
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[14]:
 </pre></div>
 </div>
-<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">matplotlib.pyplot</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">plt</span>
 <span class="n">ds_au</span> <span class="o">=</span> <span class="n">o</span><span class="o">.</span><span class="n">nc_view</span><span class="p">(</span><span class="n">replace</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
 <span class="n">ds_au</span><span class="p">[</span><span class="s1">&#39;TG&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">plot</span><span class="p">()</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">(</span><span class="n">loc</span><span class="o">=</span><span class="s1">&#39;best&#39;</span><span class="p">,</span> <span class="n">frameon</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
