@@ -2,24 +2,19 @@ pyclmuapp on HPC: Python
 ================
 Docker are not always available on HPC. Singularity is a container software usually employed in **HPC** (High performance computer). It provides a mechanism to run containers where containers can be used to package entire scientific workflows, software and libraries, and even data. Ref: https://ri.itservices.manchester.ac.uk/csf3/software/applications/singularity/
 
-A quick look for python scripts of pyclmuapp ``singularity`` mode
+A quick look for python scripts of pyclmuapp ``singularity`` mode. 
+
+Note! We recommend to use the ``singularity`` mode on HPC, and install `pyclmuapp` from source code (There is some configuration changed, which is not upadted to Pypi).
 
 .. code-block:: python
 
     from pyclmuapp import usp_clmu
     
     # initialize
-    o = usp_clmu(
-        pwd=None,
-        input_path="your_inputdata_path",
-        output_path="your_ctsm_arhchive",
-        log_path="your_ctsm_caseoutputs",
-        scripts_path="your_ctsm_case_scripts_path",
-        container_type='singularity')  # important to define the container_type. The default is docker
+    o = usp_clmu(container_type='singularity')  # important to define the container_type. The default is docker
     
     # the clmu-app_1.0.sif image will be download from docker hub at the current work dir.
-    o.docker(cmd="pull",
-             cmdlogfile="None",)  # This will pull the image from the docker hub
+    o.docker(cmd="pull", cmdlogfile="None",)  # This will pull the image from the docker hub
     # other parameters are available, see the Python API documentation
     # no need to o.docker(cmd="run") for singularity
     # then same as usually
