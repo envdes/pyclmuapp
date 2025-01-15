@@ -188,7 +188,7 @@ export log_path=your_log_path
 export scripts_path=your_scripts_path
 
 docker run --hostname clmu-app \
--v ${input_path}:/p/scratch/CESMDATAROOT/inputdata \
+-v ${input_path}:/p/clmuapp \
 -v ${output_path}:/p/scratch/CESMDATAROOT/Archive \
 -v ${log_path}:/p/scratch/CESMDATAROOT/CaseOutputs \
 -v ${scripts_path}:/p/scripts -itd --name myclmu envdes/clum-app
