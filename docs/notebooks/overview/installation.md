@@ -17,15 +17,7 @@ $ conda activate pyclmuapp
 $ conda install -c conda-forge numpy pandas xarray haversine netcdf4 nc-time-axis
 ```
 
-Step 3: install using `pip`
-
----
-
-```bash
-$ pip install pyclmuapp
-```
-
-(optional) install from source
+Step 3: install from source
 
 ---
 
@@ -33,4 +25,12 @@ $ pip install pyclmuapp
 $ git clone https://github.com/envdes/pyclmuapp
 $ cd pyclmuapp
 $ python setup.py install
+```
+
+Step 3: install using `pip`
+
+---
+
+```bash
+$ pip install pyclmuapp
 ```
