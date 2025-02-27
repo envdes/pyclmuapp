@@ -878,7 +878,7 @@
   },
   {
    "cell_type": "code",
-   "execution_count": 8,
+   "execution_count": null,
    "metadata": {},
    "outputs": [
     {
@@ -893,7 +893,7 @@
     }
    ],
    "source": [
-    "ds_usp_col=usp.nc_view(usp_london[0]).isel(time=slice(2, None))\n",
+    "ds_usp_col=usp.nc_view(usp_london[0])\n",
     "ds_usp_col = ds_usp_col.assign_coords({'column':ds_usp_col['cols1d_itype_col']})\n",
     "fig = plt.figure(figsize=(12, 5))\n",
     "var_list = ['TSKIN','FGR','FSH','EFLX_LH_TOT']\n",
