@@ -43,6 +43,13 @@ Citation
 
 If you use pyclmuapp in your research, please cite the following paper:
 
+Yu, J., Sun, Y., Lindley, S., Jay, C., Topping, D. O., Oleson, K. W., & Zheng, Z. (2025). `Integration and execution of Community Land Model Urban (CLMU) in a containerized environment <https://doi.org/10.1016/j.envsoft.2025.106391>`_. Environmental Modelling & Software, 188, 106391. https://doi.org/10.1016/j.envsoft.2025.106391
+
+.. image:: docs/paper_overview.png
+   :alt: pyclmuapp
+   :width: 600px
+   :align: center
+
 .. code-block:: bibtex
 
       @article{YU2025pyclmuapp,
