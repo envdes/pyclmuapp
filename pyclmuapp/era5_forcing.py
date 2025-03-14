@@ -54,7 +54,7 @@ def era5_download(year, month,lat, lon,
         'reanalysis-era5-single-levels',
         {
             'product_type': 'reanalysis',
-            'format': 'netcdf',
+            'data_format': 'netcdf',
             'variable': variable,
             'year': str(year),
             'month': str(month).zfill(2),
