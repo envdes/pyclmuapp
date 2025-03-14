@@ -25,7 +25,7 @@ era5_var_dict = {
     'forecast_surface_roughness': 'fsr'
 }
 
-def era5_download(year, months,lat, lon, 
+def era5_download(year, month,lat, lon, 
                   outputfolder='./data'):
 
     """
@@ -35,7 +35,7 @@ def era5_download(year, months,lat, lon,
 
     Args:
         year (int): The year of the data to download.
-        months (list): The month of the data to download.
+        month (str): The month of the data to download.
         lat (float): The latitude of the data to download.
         lon (float): The longitude of the data to download.
         outputfolder (str): The folder to save the downloaded data to.
@@ -48,8 +48,8 @@ def era5_download(year, months,lat, lon,
     
     c = cdsapi.Client()
     
-    months_str = "-".join([str(i).zfill(2) for i in months])
-    
+    #months_str = "-".join([str(i).zfill(2) for i in months])
+    months_str = str(month).zfill(2)
     single = os.path.join(outputfolder, f'era5_single_{year}_{months_str}_{lat}_{lon}.zip')
     single_nc = os.path.join(outputfolder, f'era5_single_{year}_{months_str}_{lat}_{lon}.nc')
     if os.path.exists(single_nc):
@@ -64,8 +64,8 @@ def era5_download(year, months,lat, lon,
             'data_format': 'netcdf',
             'variable': variable,
             'year': [str(year)],
-            #'month': str(month).zfill(2),
-            'month': [str(i).zfill(2) for i in months],
+            'month': [str(month).zfill(2)],
+            #'month': [str(i).zfill(2) for i in months],
             'day': [str(i).zfill(2) for i in range(1, 32)],
             'time': [str(i).zfill(2)+':00' for i in range(24)],
             'area': [

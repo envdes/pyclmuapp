@@ -776,13 +776,13 @@ def get_forcing(start_year, end_year,
             else:
                 months = range(1, 13)
                 
-            #for month in months:
-            single = era5_download(year=year, months=months,
-                                        lat=lat, lon=lon, outputfolder='./era5_data/era5_single')
-            # Convert ERA5 data to CLM forcing
-            forcing = era5_to_forcing(single=single, 
-                                    lat=lat, lon=lon, zbot=zbot,)
-            era5_list.append(forcing)
+            for month in months:
+                single = era5_download(year=year, month=month,
+                                            lat=lat, lon=lon, outputfolder='./era5_data/era5_single')
+                # Convert ERA5 data to CLM forcing
+                forcing = era5_to_forcing(single=single, 
+                                        lat=lat, lon=lon, zbot=zbot,)
+                era5_list.append(forcing)
                 
             #for month in months:
             #    single = era5_download(year=year, month=month,
