@@ -61,7 +61,7 @@ def era5_download(year, month,lat, lon,
             'day': [str(i).zfill(2) for i in range(1, 32)],
             'time': [str(i).zfill(2)+':00' for i in range(24)],
             'area': [
-                lat-0.25, lon-0.25, lat+0.25, lon+0.25,
+                lat+0.25, lon-0.25, lat-0.25, lon+0.25,
             ],
         },
         single)
