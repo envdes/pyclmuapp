@@ -27,7 +27,7 @@ $ cd pyclmuapp
 $ python setup.py install
 ```
 
-Step 3: install using `pip`
+(Optional) install using `pip`
 
 ---
 
