@@ -4,6 +4,7 @@ import xarray as xr
 import numpy as np
 from typing import Union
 import tempfile
+import zipfile
 
 variable=[
             '10m_u_component_of_wind', '10m_v_component_of_wind', '2m_dewpoint_temperature',
@@ -23,9 +24,9 @@ era5_var_dict = {
     'forecast_surface_roughness': 'fsr'
 }
 
-def era5_download(year, month,lat, lon, 
+def era5_download(year, months,lat, lon, 
                   outputfolder='./data'):
-    
+
     """
     This function `era5_download` is designed to download ERA5 reanalysis data for 
     a specific year, month, pressure level, latitude, and longitude. 
@@ -33,7 +34,7 @@ def era5_download(year, month,lat, lon,
 
     Args:
         year (int): The year of the data to download.
-        month (int): The month of the data to download.
+        months (list): The month of the data to download.
         lat (float): The latitude of the data to download.
         lon (float): The longitude of the data to download.
         outputfolder (str): The folder to save the downloaded data to.
@@ -45,19 +46,25 @@ def era5_download(year, month,lat, lon,
     """
     
     c = cdsapi.Client()
-    single = os.path.join(outputfolder, f'era5_single_{year}_{str(month).zfill(2)}_{lat}_{lon}.nc')
-    if os.path.exists(single):
-        print(f'file exists: {single}')
+    
+    months_str = "-".join([str(i).zfill(2) for i in months])
+    
+    single = os.path.join(outputfolder, f'era5_single_{year}_{months_str}_{lat}_{lon}.zip')
+    single_nc = os.path.join(outputfolder, f'era5_single_{year}_{months_str}_{lat}_{lon}.nc')
+    if os.path.exists(single_nc):
+        print(f'file exists: {single_nc}')
     else:
         print(f'download: {single}')
         c.retrieve(
         'reanalysis-era5-single-levels',
         {
-            'product_type': 'reanalysis',
+            'product_type': ["reanalysis"],
+            "download_format": "zip",
             'data_format': 'netcdf',
             'variable': variable,
-            'year': str(year),
-            'month': str(month).zfill(2),
+            'year': [str(year)],
+            #'month': str(month).zfill(2),
+            'month': [str(i).zfill(2) for i in months],
             'day': [str(i).zfill(2) for i in range(1, 32)],
             'time': [str(i).zfill(2)+':00' for i in range(24)],
             'area': [
@@ -65,7 +72,29 @@ def era5_download(year, month,lat, lon,
             ],
         },
         single)
-    return single
+
+        with zipfile.ZipFile(single, 'r') as zip_ref:
+            os.makedirs(f'{outputfolder}/single_temp', exist_ok=True)
+            zip_ref.extractall(f'{outputfolder}/single_temp')
+            ds_ls = []
+            for file in zip_ref.namelist():
+                if file.endswith('.nc'):
+                    single = f'{outputfolder}/single_temp/{file}'
+                    ds = xr.open_dataset(single)
+                    ds_ls.append(ds)
+                    
+            single_ds = xr.merge(ds_ls)
+            
+            single_ds = single_ds.rename({'valid_time': 'time'})
+            single_ds = single_ds.drop_vars(['expver','number'])
+            single_ds.to_netcdf(single_nc)
+            
+        
+        os.remove(single)
+        os.system(f'rm -rf {outputfolder}/single_temp')
+        
+                
+    return os.path.join(outputfolder, f'era5_single_{year}_{months_str}_{lat}_{lon}.nc')
 
 
 def arco_era5_to_forcing(start_year, end_year, 
@@ -86,6 +115,7 @@ def arco_era5_to_forcing(start_year, end_year,
         outputfile (str): The name of the file where the output data will be saved or written to. This file will contain the processed data based on the input parameters provided to the function.
         lapse_rate (float, optional): Represents the lapse rate used for calculating temperature at different altitudes. The lapse rate is the rate at which atmospheric temperature decreases with an increase in altitude. Defaults to 0.
     """
+    
     ar_full_37_1h = xr.open_zarr(
                     'gs://gcp-public-data-arco-era5/ar/full_37-1h-0p25deg-chunk-1.zarr-v3',
                     chunks=None,
@@ -288,5 +318,5 @@ def era5_to_forcing(
         single['u10'], single['v10'], single['fsr'], \
         single['t2m'], single['es_water'], single['es_ice'], single['es']
     
-    single.to_netcdf(outputfile)
+    #single.to_netcdf(outputfile)
     return single

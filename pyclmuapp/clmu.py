@@ -775,19 +775,27 @@ def get_forcing(start_year, end_year,
             else:
                 months = range(1, 13)
                 
-            for month in months:
-                single = era5_download(year=year, month=month,
-                                            lat=lat, lon=lon, outputfolder='./era5_data')
-                # Convert ERA5 data to CLM forcing
-                forcing = era5_to_forcing(single=single, 
-                                        lat=lat, lon=lon, zbot=zbot,
-                                        outputfile=outputfile.format(lat=lat, lon=lon, 
-                                                                    zbot=zbot, year=year, 
-                                                                    month=str(month).zfill(2)))
-                ds = xr.open_dataset(outputfile.format(lat=lat, lon=lon, 
-                                                    zbot=zbot, year=year, 
-                                                    month=str(month).zfill(2)))
-                era5_list.append(ds)
+            #for month in months:
+            single = era5_download(year=year, months=months,
+                                        lat=lat, lon=lon, outputfolder='./era5_data')
+            # Convert ERA5 data to CLM forcing
+            forcing = era5_to_forcing(single=single, 
+                                    lat=lat, lon=lon, zbot=zbot,)
+            era5_list.append(forcing)
+                
+            #for month in months:
+            #    single = era5_download(year=year, month=month,
+            #                                lat=lat, lon=lon, outputfolder='./era5_data')
+            #    # Convert ERA5 data to CLM forcing
+            #    forcing = era5_to_forcing(single=single, 
+            #                            lat=lat, lon=lon, zbot=zbot,
+            #                            outputfile=outputfile.format(lat=lat, lon=lon, 
+            #                                                        zbot=zbot, year=year, 
+            #                                                        month=str(month).zfill(2)))
+            #    ds = xr.open_dataset(outputfile.format(lat=lat, lon=lon, 
+            #                                        zbot=zbot, year=year, 
+            #                                        month=str(month).zfill(2)))
+            #    era5_list.append(ds)
         era5 = xr.concat(era5_list, dim='time').sortby('time')
         outfile = f'era5_data/era5_forcing_{lat}_{lon}_{zbot}_{start_year}_{start_month}_{end_year}_{end_month}.nc'
         if os.path.exists(outfile):
