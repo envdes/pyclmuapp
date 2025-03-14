@@ -761,8 +761,9 @@ def get_forcing(start_year, end_year,
         years = range(start_year, end_year+1)
         # download data from January to December
         months = range(start_month, end_month+1)
-        if not os.path.exists(f'./era5_data'):
-            os.makedirs(f'./era5_data', exist_ok=True)
+        if not os.path.exists('./era5_data'):
+            os.makedirs('./era5_data', exist_ok=True)
+            os.makedirs('./era5_data/era5_single', exist_ok=True)
         outputfile='era5_data/era5_forcing_{lat}_{lon}_{zbot}_{year}_{month}.nc'
         for year in years:
             
@@ -777,7 +778,7 @@ def get_forcing(start_year, end_year,
                 
             #for month in months:
             single = era5_download(year=year, months=months,
-                                        lat=lat, lon=lon, outputfolder='./era5_data')
+                                        lat=lat, lon=lon, outputfolder='./era5_data/era5_single')
             # Convert ERA5 data to CLM forcing
             forcing = era5_to_forcing(single=single, 
                                     lat=lat, lon=lon, zbot=zbot,)
@@ -804,8 +805,8 @@ def get_forcing(start_year, end_year,
         result = os.path.join(os.getcwd(), outfile)
 
     if source == "arco-era5":
-        if not os.path.exists(f'./era5_data'):
-            os.makedirs(f'./era5_data', exist_ok=True)
+        if not os.path.exists('./era5_data'):
+            os.makedirs('./era5_data', exist_ok=True)
         outfile = f'era5_data/arco_era5_forcing_{lat}_{lon}_{zbot}_{start_year}_{start_month}_{end_year}_{end_month}.nc'
         from pyclmuapp.era5_forcing import arco_era5_to_forcing
         if os.path.exists(outfile):

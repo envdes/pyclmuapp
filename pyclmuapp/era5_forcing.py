@@ -5,6 +5,7 @@ import numpy as np
 from typing import Union
 import tempfile
 import zipfile
+import shutil
 
 variable=[
             '10m_u_component_of_wind', '10m_v_component_of_wind', '2m_dewpoint_temperature',
@@ -79,8 +80,8 @@ def era5_download(year, months,lat, lon,
             ds_ls = []
             for file in zip_ref.namelist():
                 if file.endswith('.nc'):
-                    single = f'{outputfolder}/single_temp/{file}'
-                    ds = xr.open_dataset(single)
+                    single_ds = f'{outputfolder}/single_temp/{file}'
+                    ds = xr.open_dataset(single_ds)
                     ds_ls.append(ds)
                     
             single_ds = xr.merge(ds_ls)
@@ -89,12 +90,10 @@ def era5_download(year, months,lat, lon,
             single_ds = single_ds.drop_vars(['expver','number'])
             single_ds.to_netcdf(single_nc)
             
-        
-        os.remove(single)
-        os.system(f'rm -rf {outputfolder}/single_temp')
-        
+        shutil.rmtree(f'{outputfolder}/single_temp')
+        os.remove(single)        
                 
-    return os.path.join(outputfolder, f'era5_single_{year}_{months_str}_{lat}_{lon}.nc')
+    return single_nc
 
 
 def arco_era5_to_forcing(start_year, end_year, 
