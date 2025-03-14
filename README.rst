@@ -14,7 +14,7 @@ pyclmuapp: A Python Package for Integration and Execution of Community Land Mode
 .. |license| image:: https://img.shields.io/badge/License-MIT-blue.svg
    :target: https://github.com/envdes/pyclmuapp/blob/main/LICENSE
 
-pyclmuapp: A Python Package for Integration and Execution of Community Land Model Urban (CLMU) in a Containerized Environment.
+pyclmuapp: Integration and Execution of Community Land Model Urban (CLMU) in a Containerized Environment.
 
 Contributors: `Junjie Yu <https://junjieyu-uom.github.io>`_, `Keith Oleson <https://staff.ucar.edu/users/oleson>`_, `Yuan Sun <https://github.com/YuanSun-UoM>`_, `David Topping <https://research.manchester.ac.uk/en/persons/david.topping>`_, `Zhonghua Zheng <https://zhonghuazheng.com>`_ (zhonghua.zheng@manchester.ac.uk)
 
