@@ -6,6 +6,13 @@ A quick look for python scripts of pyclmuapp ``singularity`` mode.
 
 Note! We recommend to use the ``singularity`` mode on HPC, and install `pyclmuapp` from source code (There is some configuration changed, which is not upadted to Pypi).
 
+**Note**: must download the image in current directory first before running the command.
+
+.. code-block:: bash
+
+    pyclmuapp --has_container False --container_type singularity --init True
+
+
 .. code-block:: python
 
     from pyclmuapp import usp_clmu
@@ -14,7 +21,8 @@ Note! We recommend to use the ``singularity`` mode on HPC, and install `pyclmuap
     o = usp_clmu(container_type='singularity')  # important to define the container_type. The default is docker
     
     # the clmu-app_1.0.sif image will be download from docker hub at the current work dir.
-    o.docker(cmd="pull", cmdlogfile="None",)  # This will pull the image from the docker hub
+    # o.docker(cmd="pull", cmdlogfile="None",)  # This will pull the image from the docker hub if you not have a local image
+
     # other parameters are available, see the Python API documentation
     # no need to o.docker(cmd="run") for singularity
     # then same as usually

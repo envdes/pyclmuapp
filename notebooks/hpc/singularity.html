@@ -118,13 +118,18 @@
 <p>Docker are not always available on HPC. Singularity is a container software usually employed in <strong>HPC</strong> (High performance computer). It provides a mechanism to run containers where containers can be used to package entire scientific workflows, software and libraries, and even data. Ref: <a class="reference external" href="https://ri.itservices.manchester.ac.uk/csf3/software/applications/singularity/">https://ri.itservices.manchester.ac.uk/csf3/software/applications/singularity/</a></p>
 <p>A quick look for python scripts of pyclmuapp <code class="docutils literal notranslate"><span class="pre">singularity</span></code> mode.</p>
 <p>Note! We recommend to use the <code class="docutils literal notranslate"><span class="pre">singularity</span></code> mode on HPC, and install <cite>pyclmuapp</cite> from source code (There is some configuration changed, which is not upadted to Pypi).</p>
+<p><strong>Note</strong>: must download the image in current directory first before running the command.</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>pyclmuapp<span class="w"> </span>--has_container<span class="w"> </span>False<span class="w"> </span>--container_type<span class="w"> </span>singularity<span class="w"> </span>--init<span class="w"> </span>True
+</pre></div>
+</div>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">pyclmuapp</span><span class="w"> </span><span class="kn">import</span> <span class="n">usp_clmu</span>
 
 <span class="c1"># initialize</span>
 <span class="n">o</span> <span class="o">=</span> <span class="n">usp_clmu</span><span class="p">(</span><span class="n">container_type</span><span class="o">=</span><span class="s1">&#39;singularity&#39;</span><span class="p">)</span>  <span class="c1"># important to define the container_type. The default is docker</span>
 
 <span class="c1"># the clmu-app_1.0.sif image will be download from docker hub at the current work dir.</span>
-<span class="n">o</span><span class="o">.</span><span class="n">docker</span><span class="p">(</span><span class="n">cmd</span><span class="o">=</span><span class="s2">&quot;pull&quot;</span><span class="p">,</span> <span class="n">cmdlogfile</span><span class="o">=</span><span class="s2">&quot;None&quot;</span><span class="p">,)</span>  <span class="c1"># This will pull the image from the docker hub</span>
+<span class="c1"># o.docker(cmd=&quot;pull&quot;, cmdlogfile=&quot;None&quot;,)  # This will pull the image from the docker hub if you not have a local image</span>
+
 <span class="c1"># other parameters are available, see the Python API documentation</span>
 <span class="c1"># no need to o.docker(cmd=&quot;run&quot;) for singularity</span>
 <span class="c1"># then same as usually</span>
