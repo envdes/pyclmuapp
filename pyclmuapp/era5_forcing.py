@@ -56,6 +56,7 @@ def era5_download(year, month,lat, lon,
         print(f'file exists: {single_nc}')
     else:
         print(f'download: {single}')
+        os.makedirs(outputfolder, exist_ok=True)
         c.retrieve(
         'reanalysis-era5-single-levels',
         {
@@ -269,7 +270,13 @@ def era5_to_forcing(
     # Reference:  Polynomial approximations from:
     #             Piotr J. Flatau, et al.,1992:  Polynomial fits to saturation
     #             vapor pressure.  Journal of Applied Meteorology, 31, 1507-1513.
-    single['d2m'] = single['d2m'] - 273.15 - lapse_rate * (zbot - 2.0)
+    lapse_rate_dew = 1.8/1000 # ref: https://commons.erau.edu/cgi/viewcontent.cgi?article=1374&context=ijaaa
+    # DPLR of moist air at temperature of 20oC (293 K) and dew point of 12oC(285 K) has RH of approximately 60%. 
+    # DP-depression D is 8oC (8 K). Using Eq. (38), whileneglecting specific humidity contribution, 
+    # DPLR yields about 0.546 K/1,000 ft (1.8 K/km). Thisis valid result as measured DPLRs are normally in the range 1.6-2.0 K/km or 0.50 to 0.6 K/1,000ft.
+    # for simple, we use lapse_rate_dew = 1.8/1000, which is the middle of the range.
+    # pdf is in src/CLMU_literatures/On Atmospheric Lapse Rates.pdf
+    single['d2m'] = single['d2m'] - 273.15 - lapse_rate_dew * (zbot - 2.0)
     # es_water
     single['es_water'] = a0 + single['d2m']*(a1 + single['d2m']*(a2 + single['d2m']*(a3 + single['d2m']*(a4 
             + single['d2m']*(a5 + single['d2m']*(a6 + single['d2m']*(a7 + single['d2m']*a8)))))))

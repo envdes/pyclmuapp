@@ -11,6 +11,7 @@ era5_data/
 temp.ipynb
 docs/notebooks/usp/*.nc
 docs/notebooks/val/*.nc
+docs/notebooks/own/*.nc
 # Byte-compiled / optimized / DLL files
 __pycache__/
 *.py[cod]

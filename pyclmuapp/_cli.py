@@ -338,16 +338,15 @@ def main():
             container_type=container_type)
 
         else:
-            pwd = args.pwd
-            check_file(pwd)
+            pwd = os.path.join(args.pwd, 'workdir')
             usp = usp_clmu(pwd=pwd, container_type=container_type)
 
         if args.has_container:
             usp.docker('pull', iflog=False)
             
-            if args.container_type == "docker":
-                usp.docker('run', iflog=False)
-
+            #if args.container_type == "docker":
+            #    usp.docker('run', iflog=False)
+            #
         else:
             print("Will use the existing container")
         

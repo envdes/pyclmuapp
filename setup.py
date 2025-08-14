@@ -16,7 +16,7 @@ with open("README.rst", "r", encoding="utf-8") as fp:
 
 setup(
     name="pyclmuapp",
-    version="0.0.1",
+    version="0.0.2",
     author="Junjie Yu",
     author_email="yjj1997@live.cn",
     url="https://github.com/envdes/pyclmuapp",

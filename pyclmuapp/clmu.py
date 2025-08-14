@@ -816,5 +816,22 @@ def get_forcing(start_year, end_year,
                                 start_year=start_year, end_year=end_year, 
                                 start_month=start_month, end_month=end_month, outputfile=outfile)
         result = os.path.join(os.getcwd(), outfile)
+        
+    if source == "era5-land-ts":
+        from pyclmuapp.era_forcing import workflow_era5s_to_forcing
+        if not os.path.exists('./era5_data'):
+            os.makedirs('./era5_data', exist_ok=True)
+        outfile = f'era5_data/era5_land_ts_forcing_{lat}_{lon}_{zbot}_{start_year}_{start_month}_{end_year}_{end_month}.nc'
+        if os.path.exists(outfile):
+            print(f"The forcing file {outfile} already exists.")
+        else:
+            start_date = f"{start_year}-{str(start_month).zfill(2)}-01"
+            if end_month == 12:
+                end_date = f"{end_year+1}-01-01"
+            else:
+                end_date = f"{end_year}-{str(end_month+1).zfill(2)}-01"
+            outputfile = f'era5_data/era5_land_ts_forcing_{lat}_{lon}_{zbot}_{start_year}_{start_month}_{end_year}_{end_month}.nc'
+            workflow_era5s_to_forcing(lat, lon, start_date, end_date, zbot=zbot, outputfile=outputfile)
+        result = os.path.join(os.getcwd(), outfile)
 
     return result
