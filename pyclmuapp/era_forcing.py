@@ -168,6 +168,10 @@ def era5s_to_forcing(
     # DPLR yields about 0.546 K/1,000 ft (1.8 K/km). Thisis valid result as measured DPLRs are normally in the range 1.6-2.0 K/km or 0.50 to 0.6 K/1,000ft.
     # for simple, we use lapse_rate_dew = 1.8/1000, which is the middle of the range.
     # pdf is in src/CLMU_literatures/On Atmospheric Lapse Rates.pdf
+    # also: Pilot’s Handbook of Aeronautical Knowledge : "When lifted, ... the dew point temperature decreases at a rate of 1 °F per 1,000 feet."
+    # ~ 0.555556 K/1000 ft or 1.8 K/km.
+    # ref: https://www.faa.gov/sites/faa.gov/files/14_phak_ch12.pdf
+    # pdf is in src/CLMU_literatures/14_phak_ch12.pdf
     single['d2m'] = single['d2m'] - 273.15 - lapse_rate_dew * (zbot - 2.0)
     # es_water
     single['es_water'] = a0 + single['d2m']*(a1 + single['d2m']*(a2 + single['d2m']*(a3 + single['d2m']*(a4 
