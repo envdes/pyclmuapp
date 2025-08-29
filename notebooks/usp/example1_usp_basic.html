@@ -130,7 +130,7 @@
 </pre></div>
 </div>
 </div>
-<p>Here we use the <code class="docutils literal notranslate"><span class="pre">RUN_TYPE=</span> <span class="pre">&quot;branch&quot;</span></code> to avoid the repeated spinup phases.</p>
+<p>Here we use the <code class="docutils literal notranslate"><span class="pre">RUN_TYPE=</span> <span class="pre">&quot;branch&quot;</span></code> to avoid the repeated spinup phases. This setting is not needed, where the initial part of the run can be discarded as spin-up, and only the remaining period is used for analysis.</p>
 <p>The case (<code class="docutils literal notranslate"><span class="pre">usp_spinup</span></code>) is run for 10 years to spinup the model.</p>
 <p>How to get <code class="docutils literal notranslate"><span class="pre">usp_spinup</span></code> ?</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">usp_spinup</span> <span class="o">=</span> <span class="n">usp</span><span class="o">.</span><span class="n">run</span><span class="p">(</span>

@@ -7,13 +7,11 @@
     "# Warmup\n",
     "\n",
     "\n",
-    "Fisrt of all, we need to install Docker/Docker Desktop.\n",
+    "Fisrt of all, make sure you have installed Docker.\n",
     "\n",
-    "- [How to install Docker on Linux?](https://envdes.github.io/clmu-app/container/install_docker.html)\n",
-    "\n",
-    "- [How to install Docker Desktop](https://www.docker.com/products/docker-desktop/)\n",
-    "  \n",
-    "Platform: arm64/amd64\n"
+    "- [Install Docker on Linux](https://docs.docker.com/desktop/setup/install/linux/)\n",
+    "- [Install Docker on Mac](https://docs.docker.com/desktop/setup/install/mac-install/)\n",
+    "- [Install Docker on Windows](https://docs.docker.com/desktop/setup/install/windows-install/)\n"
    ]
   },
   {
@@ -38,7 +36,7 @@
    "source": [
     "Before initialization, we need to pull the docker image.\n",
     "\n",
-    "**for Linux and MacOS** : use `docker pull envdes/clmu-app:1.1` in command line or `usp.docker(\"pull\")` in Python\n",
+    "**for Linux and MacOS** : use `docker pull envdes/clmu-app:1.1` or `pyclmuapp --has_container False --container_type docker --init True` in command line.\n",
     "\n",
     "**for Windows**: pull the image `envdes/clmu-app:1.1` manually from Docker Desktop"
    ]
@@ -130,7 +128,13 @@
     "\n",
     "- iflog (bool) – The flag to log the output. The default is True.\n",
     "\n",
-    "- logfile (str) – The log file name. The default is pwd+”log.log”.\n",
+    "- logfile (str) – The log file name. The default is pwd+”pyclmuapprun.log”.\n",
+    "\n",
+    "- hist_type (str): The type of the history file. The default is \"GRID\". valid_values=\"GRID\",\"LAND\",\"CLOS\".\n",
+    "\n",
+    "- hist_nhtfrq (int): The frequency of the history output. The default is 1.\n",
+    "\n",
+    "- hist_mfilt (int): The filter for the history output. The default is 1000000000.\n",
     "\n",
     "- urban_hac (str) – The flag to turn on the urban HAC. The default is “ON_WASTEHEAT”. valid_values=”OFF”,”ON”,”ON_WASTEHEAT”.\n",
     "\n",

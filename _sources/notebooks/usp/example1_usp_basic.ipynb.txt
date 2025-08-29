@@ -29,9 +29,8 @@
    "cell_type": "markdown",
    "metadata": {},
    "source": [
-    "\n",
-    "\n",
-    "Here we use the `RUN_TYPE= \"branch\"` to avoid the repeated spinup phases.\n",
+    "Here we use the `RUN_TYPE= \"branch\"` to avoid the repeated spinup phases. \n",
+    "This setting is not needed, where the initial part of the run can be discarded as spin-up, and only the remaining period is used for analysis.\n",
     "\n",
     "The case (`usp_spinup`) is run for 10 years to spinup the model.\n",
     "\n",
