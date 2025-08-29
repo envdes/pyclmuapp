@@ -406,7 +406,10 @@ class usp_clmu(clumapp):
             RUN_REFTOD (str): The reference time of the day. The default is "00000". Need to be provided when the RUN_TYPE is "branch".
             password (str): The password for the docker. The default is "None". Need to be provided when server is needed.
             iflog (bool): The flag to log the output. The default is True.
-            logfile (str): The log file name. The default is pwd+"log.log".
+            logfile (str): The log file name. The default is pwd+"pyclmuapprun.log".
+            hist_type (str): The type of the history file. The default is "GRID". valid_values="GRID","LAND","CLOS".
+            hist_nhtfrq (int): The frequency of the history output. The default is 1.
+            hist_mfilt (int): The filter for the history output. The default is 1000000000.
             urban_hac (str): The flag to turn on the urban HAC. The default is "ON_WASTEHEAT". valid_values="OFF","ON","ON_WASTEHEAT".
             crun_type (str): The type of the run. The default is "usp". 
 

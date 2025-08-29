@@ -10,8 +10,9 @@ There are three ways to run the container. (If you have [Apptainer](https://appt
 
 **Note**: install docker before using pyclmuapp
 
-[How to install Docker on Linux?](https://envdes.github.io/clmu-app/container/install_docker.html)
-[How to install Docker Desktop](https://www.docker.com/products/docker-desktop/)
+- [Install Docker on Linux](https://docs.docker.com/desktop/setup/install/linux/)
+- [Install Docker on Mac](https://docs.docker.com/desktop/setup/install/mac-install/)
+- [Install Docker on Windows](https://docs.docker.com/desktop/setup/install/windows-install/)
 
 - The inputfolder, outputfolder, logfolder, and scriptfolder will be checked in the current working directory.
 - If the folder does not exist, it will be created.
