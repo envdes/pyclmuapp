@@ -201,8 +201,11 @@ def era5s_to_forcing(
     single['SWdown'].attrs['long_name'] = 'Surface solar radiation downwards'
     
     # es == ea in this case, as we calculate the es using d2m
-    single['eair'] = 1.24 * (single['es']/100 / single['t2m']) ** (1/7) # ref: W Brutsaert - Water resources research, 1975
+    #single['eair'] = 1.24 * (single['es']/100 / single['t2m']) ** (1/7) # ref: W Brutsaert - Water resources research, 1975
+    single['eair'] = 0.70 + 5.95e-5 * (0.01 * single['es']) * np.exp(1500.0 / single['t2m'])  # eIdso, S.B. 1981. A set of equations for ...
+    # from https://escomp.github.io/CTSM/tech_note/References/CLM50_Tech_Note_References.html
     single['LWdown'] = single['eair'] * (single['t2m'] ** 4) * 5.67e-8 # ref : W Brutsaert - Water resources research, 1975
+    
     single['LWdown'] = single['LWdown'].where(single['LWdown'] > 0, 1e-16)
     single['LWdown'].attrs['units'] = 'W/m^2'
     single['LWdown'].attrs['long_name'] = 'Surface thermal radiation downwards'
