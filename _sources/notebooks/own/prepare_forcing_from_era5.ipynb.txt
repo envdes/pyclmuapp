@@ -13,7 +13,84 @@
    "cell_type": "markdown",
    "metadata": {},
    "source": [
-    "### Download the required variables from the cdsapi\n",
+    "**New updates**: The ERA5 source updated time-series data which is faster and more efficient and get forcing from the ERA5 (grided) source.\n",
+    "\n",
+    "We update the workflow to use the new ERA5 source, you can  use the `source='gee'` and `source='era5-land-ts'` for getting the forcing data efficiently.\n",
+    "\n",
+    "**Notes**: There are some differences in the calculation of source era5-land-ts and cds. This means you can use this dataset for experimenting with CLMU, but for prediction purposes, you will need to validate the output. Ideally, you should use your own forcing inputs for the best results."
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": [
+    "### 1 Download the required variables from the GEE"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": [
+    "Before running using `source='gee'`, make sure to install the Earth Engine API:\n",
+    "`pip install earthengine-api`"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 1,
+   "metadata": {},
+   "outputs": [
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "pyclmuapp version: 0.0.2\n",
+      "Get ERA5 data from 2018-07-01 to 2018-10-01 for (51.5, 0.12)\n",
+      "  - 2018-07-01 ~ 2018-08-01\n",
+      "  - 2018-08-01 ~ 2018-09-01\n",
+      "  - 2018-09-01 ~ 2018-10-01\n",
+      "CPU times: user 914 ms, sys: 296 ms, total: 1.21 s\n",
+      "Wall time: 11.1 s\n"
+     ]
+    },
+    {
+     "data": {
+      "text/plain": [
+       "'/Users/user/Documents/GitHub/pyclmuapp_env/docs/notebooks/own/era5_data/era5_gee_forcing_51.5_0.12_30_2018_7_2018_9.nc'"
+      ]
+     },
+     "execution_count": 1,
+     "metadata": {},
+     "output_type": "execute_result"
+    }
+   ],
+   "source": [
+    "%%time\n",
+    "\n",
+    "import pyclmuapp\n",
+    "from pyclmuapp import get_forcing\n",
+    "\n",
+    "print(f\"pyclmuapp version: {pyclmuapp.__version__}\")\n",
+    "\n",
+    "lat=51.5\n",
+    "lon=0.12\n",
+    "zbot=30\n",
+    "start_year=2018\n",
+    "end_year=2018\n",
+    "start_month=7\n",
+    "end_month=9\n",
+    "get_forcing(\n",
+    "    lat=lat, lon=lon, zbot=zbot, \n",
+    "    start_year=start_year, end_year=end_year, \n",
+    "    start_month=start_month, end_month=end_month,\n",
+    "    source='gee')"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": [
+    "### 2 Download the required variables from the cdsapi\n",
     "\n",
     "First, we will use the `cdsapi` package to download the data. If you don't have the package installed, you can install it using the following command:\n",
     "\n",
@@ -46,19 +123,8 @@
    ]
   },
   {
-   "cell_type": "markdown",
-   "metadata": {},
-   "source": [
-    "**New updates**: The ERA5 source updated time-series data which is faster and more efficient and get forcing from the ERA5 (grided) source.\n",
-    "\n",
-    "We update the workflow to use the new ERA5 source, you can  use the `source='era5-land-ts'` for getting the forcing data efficiently.\n",
-    "\n",
-    "**Notes**: There are some differences in the calculation of source era5-land-ts and cds. This means you can use this dataset for experimenting with CLMU, but for prediction purposes, you will need to validate the output. Ideally, you should use your own forcing inputs for the best results."
-   ]
-  },
-  {
    "cell_type": "code",
-   "execution_count": 1,
+   "execution_count": 2,
    "metadata": {},
    "outputs": [
     {
@@ -78,7 +144,7 @@
   },
   {
    "cell_type": "code",
-   "execution_count": 2,
+   "execution_count": 3,
    "metadata": {},
    "outputs": [
     {
@@ -92,15 +158,15 @@
      "name": "stderr",
      "output_type": "stream",
      "text": [
-      "2025-08-14 11:22:04,866 WARNING [2025-06-04T00:00:00] This dataset provides user-selected location timeseries of [ERA5 Land data](https://doi.org/10.24381/cds.e2161bac) for a limited set of variables. Its content may be undergo changes over time (e.g. file format, data file structure, deprecation etc) and is **not recommended for use in a production environment**. \n",
+      "2025-09-07 16:28:53,277 WARNING [2025-06-04T00:00:00] This dataset provides user-selected location timeseries of [ERA5 Land data](https://doi.org/10.24381/cds.e2161bac) for a limited set of variables. Its content may be undergo changes over time (e.g. file format, data file structure, deprecation etc) and is **not recommended for use in a production environment**. \n",
       "\n",
       "For users interested in large regions, the original ERA5 Land catalogue entry remains the more efficient option. \n",
       "We will make every effort to notify users of changes, either through this banner and/or the [Forum](https://forum.ecmwf.int/).\n",
-      "2025-08-14 11:22:04,866 WARNING [2025-08-14T10:22:04.868499] You are using a deprecated API endpoint. If you are using cdsapi, please upgrade to the latest version.\n",
-      "2025-08-14 11:22:04,867 INFO Request ID is 15f52bce-a779-460f-acbb-41b97ce361d4\n",
-      "2025-08-14 11:22:04,939 INFO status has been updated to accepted\n",
-      "2025-08-14 11:22:17,504 INFO status has been updated to running\n",
-      "2025-08-14 11:22:36,642 INFO status has been updated to successful\n",
+      "2025-09-07 16:28:53,278 WARNING [2025-09-07T15:28:53.255384] You are using a deprecated API endpoint. If you are using cdsapi, please upgrade to the latest version.\n",
+      "2025-09-07 16:28:53,279 INFO Request ID is b743ee3c-1455-4447-bf63-ddc21d2809bb\n",
+      "2025-09-07 16:28:53,356 INFO status has been updated to accepted\n",
+      "2025-09-07 16:29:00,766 INFO status has been updated to running\n",
+      "2025-09-07 16:29:13,598 INFO status has been updated to successful\n",
       "                                                                                       \r"
      ]
     },
@@ -108,8 +174,8 @@
      "name": "stdout",
      "output_type": "stream",
      "text": [
-      "CPU times: user 822 ms, sys: 276 ms, total: 1.1 s\n",
-      "Wall time: 34.7 s\n"
+      "CPU times: user 693 ms, sys: 242 ms, total: 935 ms\n",
+      "Wall time: 23.8 s\n"
      ]
     },
     {
@@ -118,7 +184,7 @@
        "'/Users/user/Documents/GitHub/pyclmuapp_env/docs/notebooks/own/era5_data/era5_land_ts_forcing_51.5_0.12_30_2018_7_2018_9.nc'"
       ]
      },
-     "execution_count": 2,
+     "execution_count": 3,
      "metadata": {},
      "output_type": "execute_result"
     }
@@ -142,7 +208,7 @@
   },
   {
    "cell_type": "code",
-   "execution_count": 3,
+   "execution_count": 4,
    "metadata": {},
    "outputs": [
     {
@@ -156,11 +222,11 @@
      "name": "stderr",
      "output_type": "stream",
      "text": [
-      "2025-08-14 11:22:39,401 WARNING [2025-08-14T10:22:39.404172] You are using a deprecated API endpoint. If you are using cdsapi, please upgrade to the latest version.\n",
-      "2025-08-14 11:22:39,401 INFO Request ID is d9e6e77b-a11d-4727-bde9-d17c5bd987f5\n",
-      "2025-08-14 11:22:39,483 INFO status has been updated to accepted\n",
-      "2025-08-14 11:23:11,086 INFO status has been updated to running\n",
-      "2025-08-14 11:30:57,431 INFO status has been updated to successful\n",
+      "2025-09-07 16:29:18,199 WARNING [2025-09-07T15:29:18.180357] You are using a deprecated API endpoint. If you are using cdsapi, please upgrade to the latest version.\n",
+      "2025-09-07 16:29:18,200 INFO Request ID is 10d5058b-44fb-43d4-b168-aef52f0ca94c\n",
+      "2025-09-07 16:29:18,262 INFO status has been updated to accepted\n",
+      "2025-09-07 16:29:30,737 INFO status has been updated to running\n",
+      "2025-09-07 16:37:37,299 INFO status has been updated to successful\n",
       "                                                                                       \r"
      ]
     },
@@ -175,14 +241,12 @@
      "name": "stderr",
      "output_type": "stream",
      "text": [
-      "2025-08-14 11:30:59,307 WARNING [2025-08-14T10:30:59.312720] You are using a deprecated API endpoint. If you are using cdsapi, please upgrade to the latest version.\n",
-      "2025-08-14 11:30:59,310 INFO Request ID is 0dcdf1ed-5a7b-491b-ba96-ff9e0ca0cd36\n",
-      "2025-08-14 11:30:59,379 INFO status has been updated to accepted\n",
-      "2025-08-14 11:31:11,910 INFO status has been updated to running\n",
-      "2025-08-14 11:31:19,575 INFO status has been updated to accepted\n",
-      "2025-08-14 11:31:31,020 INFO status has been updated to running\n",
-      "2025-08-14 11:37:17,175 INFO status has been updated to successful\n",
-      "                                                                                        \r"
+      "2025-09-07 16:37:39,234 WARNING [2025-09-07T15:37:39.214193] You are using a deprecated API endpoint. If you are using cdsapi, please upgrade to the latest version.\n",
+      "2025-09-07 16:37:39,234 INFO Request ID is 72f36502-15ca-4795-af8a-891e76c90535\n",
+      "2025-09-07 16:37:39,295 INFO status has been updated to accepted\n",
+      "2025-09-07 16:37:51,874 INFO status has been updated to running\n",
+      "2025-09-07 16:43:58,271 INFO status has been updated to successful\n",
+      "                                                                                       \r"
      ]
     },
     {
@@ -196,27 +260,20 @@
      "name": "stderr",
      "output_type": "stream",
      "text": [
-      "2025-08-14 11:37:18,802 WARNING [2025-08-14T10:37:18.741006] You are using a deprecated API endpoint. If you are using cdsapi, please upgrade to the latest version.\n",
-      "2025-08-14 11:37:18,803 INFO Request ID is bd7fc0b1-05b1-4dbe-a7dd-19ded3c669d5\n",
-      "2025-08-14 11:37:18,982 INFO status has been updated to accepted\n",
-      "2025-08-14 11:37:26,409 INFO status has been updated to running\n",
-      "2025-08-14 11:45:37,411 INFO status has been updated to successful\n",
-      "                                                                                       "
+      "2025-09-07 16:44:00,283 WARNING [2025-09-07T15:44:00.261522] You are using a deprecated API endpoint. If you are using cdsapi, please upgrade to the latest version.\n",
+      "2025-09-07 16:44:00,284 INFO Request ID is 3445edd0-4c41-4aea-a4cc-3de2a291396d\n",
+      "2025-09-07 16:44:00,387 INFO status has been updated to accepted\n",
+      "2025-09-07 16:44:12,881 INFO status has been updated to running\n",
+      "2025-09-07 16:52:19,252 INFO status has been updated to successful\n",
+      "                                                                                       \r"
      ]
     },
     {
      "name": "stdout",
      "output_type": "stream",
      "text": [
-      "CPU times: user 790 ms, sys: 407 ms, total: 1.2 s\n",
-      "Wall time: 22min 59s\n"
-     ]
-    },
-    {
-     "name": "stderr",
-     "output_type": "stream",
-     "text": [
-      "\r"
+      "CPU times: user 773 ms, sys: 607 ms, total: 1.38 s\n",
+      "Wall time: 23min 5s\n"
      ]
     },
     {
@@ -225,7 +282,7 @@
        "'/Users/user/Documents/GitHub/pyclmuapp_env/docs/notebooks/own/era5_data/era5_forcing_51.5_0.12_30_2018_7_2018_9.nc'"
       ]
      },
-     "execution_count": 3,
+     "execution_count": 4,
      "metadata": {},
      "output_type": "execute_result"
     }
@@ -257,7 +314,7 @@
   },
   {
    "cell_type": "code",
-   "execution_count": 4,
+   "execution_count": 5,
    "metadata": {},
    "outputs": [
     {
@@ -287,7 +344,40 @@
   },
   {
    "cell_type": "code",
-   "execution_count": 5,
+   "execution_count": 6,
+   "metadata": {},
+   "outputs": [
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "Namespace(init=False, pwd='/Users/user/Documents/GitHub/pyclmuapp_env/docs/notebooks/own', container_type='docker', input_path=None, output_path=None, log_path=None, scripts_path=None, pyclmuapp_mode='usp', has_container=True, usr_domain=None, usr_forcing='era5_data/era5_gee_forcing_51.5_0.12_30_2018_7_2018_9.nc', usr_surfdata='surfdata.nc', output_prefix='_clm.nc', case_name='pyclmuapp', run_startdate='2018-07-01', start_tod='00000', stop_option='ndays', stop_n='15', run_type='coldstart', run_refcase='None', run_refdate='None', run_reftod='00000', urban_hac='ON', iflog=True, logfile='pyclmuapp.log', hist_type='GRID', hist_nhtfrq=1, hist_mfilt=1000000000, clean='True', surf_var=None, surf_action=0, forcing_var=None, forcing_action=0, script=None, urbsurf=None, soildata=None, pct_urban=[0, 0, 100.0], lat=None, lon=None, outputname='surfdata.nc', zbot=30, start_year=2012, end_year=2012, start_month=1, end_month=12, source='cds')\n",
+      "Copying the file era5_gee_forcing_51.5_0.12_30_2018_7_2018_9.nc to the /Users/user/Documents/GitHub/pyclmuapp_env/docs/notebooks/own/workdir/inputfolder/usp\n",
+      "The domain file is not provided\n",
+      "The case is:  pyclmuapp\n",
+      "The log file is:  pyclmuapp.log\n",
+      "The output file is:  {'original': ['/Users/user/Documents/GitHub/pyclmuapp_env/docs/notebooks/own/workdir/outputfolder/lnd/hist/pyclmuapp_clm0_2025-09-07_16-52-52_clm.nc']}\n"
+     ]
+    }
+   ],
+   "source": [
+    "! pyclmuapp \\\n",
+    "    --container_type docker \\\n",
+    "    --iflog True \\\n",
+    "    --logfile \"pyclmuapp.log\" \\\n",
+    "    --usr_forcing \"era5_data/era5_gee_forcing_51.5_0.12_30_2018_7_2018_9.nc\" \\\n",
+    "    --usr_surfdata \"surfdata.nc\" \\\n",
+    "    --RUN_STARTDATE \"2018-07-01\" --STOP_OPTION \"ndays\" --STOP_N \"15\" \\\n",
+    "    --RUN_TYPE \"coldstart\" \\\n",
+    "    --hist_mfilt \"1000000000\" \\\n",
+    "    --output_prefix \"_clm.nc\" \\\n",
+    "    --CASE_NAME \"pyclmuapp\" \\\n",
+    "    --clean True"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 7,
    "metadata": {},
    "outputs": [
     {
@@ -299,7 +389,7 @@
       "The domain file is not provided\n",
       "The case is:  pyclmuapp\n",
       "The log file is:  pyclmuapp.log\n",
-      "The output file is:  {'original': ['/Users/user/Documents/GitHub/pyclmuapp_env/docs/notebooks/own/workdir/outputfolder/lnd/hist/pyclmuapp_clm0_2025-08-14_11-46-48_clm.nc']}\n"
+      "The output file is:  {'original': ['/Users/user/Documents/GitHub/pyclmuapp_env/docs/notebooks/own/workdir/outputfolder/lnd/hist/pyclmuapp_clm0_2025-09-07_16-53-08_clm.nc']}\n"
      ]
     }
    ],
@@ -320,19 +410,19 @@
   },
   {
    "cell_type": "code",
-   "execution_count": 6,
+   "execution_count": 8,
    "metadata": {},
    "outputs": [
     {
      "name": "stdout",
      "output_type": "stream",
      "text": [
-      "Namespace(init=False, pwd='/Users/user/Documents/GitHub/pyclmuapp_env/docs/notebooks/own', container_type='docker', input_path=None, output_path=None, log_path=None, scripts_path=None, pyclmuapp_mode='usp', has_container=True, usr_domain=None, usr_forcing='era5_data/era5_forcing_51.5_0.12_30_2018_7_2018_9.nc', usr_surfdata='surfdata.nc', output_prefix='_clm.nc', case_name='pyclmuapp_2', run_startdate='2018-07-01', start_tod='00000', stop_option='ndays', stop_n='15', run_type='coldstart', run_refcase='None', run_refdate='None', run_reftod='00000', urban_hac='ON', iflog=True, logfile='pyclmuapp.log', hist_type='GRID', hist_nhtfrq=1, hist_mfilt=1000000000, clean='True', surf_var=None, surf_action=0, forcing_var=None, forcing_action=0, script=None, urbsurf=None, soildata=None, pct_urban=[0, 0, 100.0], lat=None, lon=None, outputname='surfdata.nc', zbot=30, start_year=2012, end_year=2012, start_month=1, end_month=12, source='cds')\n",
+      "Namespace(init=False, pwd='/Users/user/Documents/GitHub/pyclmuapp_env/docs/notebooks/own', container_type='docker', input_path=None, output_path=None, log_path=None, scripts_path=None, pyclmuapp_mode='usp', has_container=True, usr_domain=None, usr_forcing='era5_data/era5_forcing_51.5_0.12_30_2018_7_2018_9.nc', usr_surfdata='surfdata.nc', output_prefix='_clm.nc', case_name='pyclmuapp', run_startdate='2018-07-01', start_tod='00000', stop_option='ndays', stop_n='15', run_type='coldstart', run_refcase='None', run_refdate='None', run_reftod='00000', urban_hac='ON', iflog=True, logfile='pyclmuapp.log', hist_type='GRID', hist_nhtfrq=1, hist_mfilt=1000000000, clean='True', surf_var=None, surf_action=0, forcing_var=None, forcing_action=0, script=None, urbsurf=None, soildata=None, pct_urban=[0, 0, 100.0], lat=None, lon=None, outputname='surfdata.nc', zbot=30, start_year=2012, end_year=2012, start_month=1, end_month=12, source='cds')\n",
       "Copying the file era5_forcing_51.5_0.12_30_2018_7_2018_9.nc to the /Users/user/Documents/GitHub/pyclmuapp_env/docs/notebooks/own/workdir/inputfolder/usp\n",
       "The domain file is not provided\n",
-      "The case is:  pyclmuapp_2\n",
+      "The case is:  pyclmuapp\n",
       "The log file is:  pyclmuapp.log\n",
-      "The output file is:  {'original': ['/Users/user/Documents/GitHub/pyclmuapp_env/docs/notebooks/own/workdir/outputfolder/lnd/hist/pyclmuapp_2_clm0_2025-08-14_11-48-21_clm.nc']}\n"
+      "The output file is:  {'original': ['/Users/user/Documents/GitHub/pyclmuapp_env/docs/notebooks/own/workdir/outputfolder/lnd/hist/pyclmuapp_clm0_2025-09-07_16-53-22_clm.nc']}\n"
      ]
     }
    ],
@@ -344,7 +434,7 @@
     "    --usr_forcing \"era5_data/era5_forcing_51.5_0.12_30_2018_7_2018_9.nc\" \\\n",
     "    --usr_surfdata \"surfdata.nc\" \\\n",
     "    --RUN_STARTDATE \"2018-07-01\" --STOP_OPTION \"ndays\" --STOP_N \"15\" \\\n",
-    "    --CASE_NAME \"pyclmuapp_2\" \\\n",
+    "    --CASE_NAME \"pyclmuapp\" \\\n",
     "    --clean True"
    ]
   }

@@ -432,7 +432,11 @@ numurbl 0 –&gt; TBD urban, numurbl 1 –&gt; HD urban, numurbl 2 –&gt; MD ur
 <li><p><strong>lat</strong> (<em>_type_</em>) – latitude of interest point</p></li>
 <li><p><strong>lon</strong> (<em>_type_</em>) – longitude of interest point</p></li>
 <li><p><strong>zbot</strong> (<em>_type_</em>) – the bottom level height</p></li>
-<li><p><strong>source</strong> (<em>_type_</em>) – the source of the data, cds or arco-era5</p></li>
+<li><p><strong>source</strong> (<em>_type_</em>) – the source of the data, can be “cds”, “arco-era5”, “era5-land-ts”, “gee”
+“cds”: download data from the Copernicus Climate Data Store (CDS) using the CDS API
+“arco-era5”: download data from the ARCO ERA5 dataset
+“era5-land-ts”: download data from the ERA5-Land Time Series dataset
+“gee”: download data from the Google Earth Engine (GEE) using the GEE API</p></li>
 </ul>
 </dd>
 <dt class="field-even">Returns<span class="colon">:</span></dt>
