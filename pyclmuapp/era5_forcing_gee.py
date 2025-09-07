@@ -247,9 +247,10 @@ def gee_era5s_to_forcing(ee, lat, lon, start_date, end_date, zbot=30, outputfile
     
     datasets = []
     for s, e in chunks:
-        print(f'  - {s} ~ {e}')
-        ds = get_era5_ee(ee, lat, lon, s, e)
-        datasets.append(ds)
+        if s != e:
+            print(f'  - {s} ~ {e}')
+            ds = get_era5_ee(ee, lat, lon, s, e)
+            datasets.append(ds)
     ds_all = xr.concat(datasets, dim='time')
     ds_all = ds_all.sortby('time')
     ds_forcing = era5_to_forcing(ds_all, zbot=zbot)

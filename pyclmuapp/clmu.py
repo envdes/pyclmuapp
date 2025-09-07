@@ -748,7 +748,11 @@ def get_forcing(start_year, end_year,
         lat (_type_): latitude of interest point
         lon (_type_): longitude of interest point
         zbot (_type_): the bottom level height
-        source (_type_): the source of the data, cds or arco-era5
+        source (_type_): the source of the data, can be "cds", "arco-era5", "era5-land-ts", "gee"
+            "cds": download data from the Copernicus Climate Data Store (CDS) using the CDS API
+            "arco-era5": download data from the ARCO ERA5 dataset
+            "era5-land-ts": download data from the ERA5-Land Time Series dataset
+            "gee": download data from the Google Earth Engine (GEE) using the GEE API
     Returns:
         _type_: the forcing dataset
     """
@@ -804,7 +808,7 @@ def get_forcing(start_year, end_year,
         era5.to_netcdf(outfile)
         result = os.path.join(os.getcwd(), outfile)
 
-    if source == "arco-era5":
+    elif source == "arco-era5":
         if not os.path.exists('./era5_data'):
             os.makedirs('./era5_data', exist_ok=True)
         outfile = f'era5_data/arco_era5_forcing_{lat}_{lon}_{zbot}_{start_year}_{start_month}_{end_year}_{end_month}.nc'
@@ -817,7 +821,7 @@ def get_forcing(start_year, end_year,
                                 start_month=start_month, end_month=end_month, outputfile=outfile)
         result = os.path.join(os.getcwd(), outfile)
         
-    if source == "era5-land-ts":
+    elif source == "era5-land-ts":
         from pyclmuapp.era_forcing import workflow_era5s_to_forcing
         if not os.path.exists('./era5_data'):
             os.makedirs('./era5_data', exist_ok=True)
@@ -833,5 +837,27 @@ def get_forcing(start_year, end_year,
             outputfile = f'era5_data/era5_land_ts_forcing_{lat}_{lon}_{zbot}_{start_year}_{start_month}_{end_year}_{end_month}.nc'
             workflow_era5s_to_forcing(lat, lon, start_date, end_date, zbot=zbot, outputfile=outputfile)
         result = os.path.join(os.getcwd(), outfile)
+        
+    elif source == "gee":
+        from pyclmuapp.era5_forcing_gee import gee_era5s_to_forcing
+        try:
+            import ee
+        except ImportError:
+            raise ImportError("The 'ee' module is required. Please install the Earth Engine Python API with 'pip install earthengine-api'.")
 
+        ee.Authenticate()   # 弹出授权
+        ee.Initialize()
+
+        start_date = f'{start_year}-{str(start_month).zfill(2)}-01'
+        if end_month == 12:
+            end_date = f'{end_year+1}-01-01'
+        else:
+            end_date = f'{end_year}-{str(end_month+1).zfill(2)}-01'
+        if not os.path.exists('./era5_data'):
+            os.makedirs('./era5_data', exist_ok=True)
+        outputfile = f'era5_data/era5_gee_forcing_{lat}_{lon}_{zbot}_{start_year}_{start_month}_{end_year}_{end_month}.nc'
+        ds_forcing = gee_era5s_to_forcing(ee, lat, lon, start_date, end_date, zbot=zbot, outputfile=outputfile)
+        result = os.path.join(os.getcwd(), outputfile)
+    else:
+        raise ValueError("The source is not supported. Please choose from 'cds', 'arco-era5', 'era5-land-ts', 'gee'.")
     return result
