@@ -388,30 +388,48 @@ class usp_clmu(clumapp):
             crun_type : str = "usp") -> list:
 
         """
-        The function to run the CLMU-App for the urban single point.
+        The function to run the CLMU-App for the urban single point simulation.
 
         Args:
-            output_prefix (str): The output file name. The default is "_clm.nc". if the output_prefix is `none`, the output file name will not be changed.
-            case_name (str): The case name. The default is "usp_case".
-            RUN_STARTDATE (str): The start date of the run. The default is "2012-08-08".
-            START_TOD (str): The start time of the day. The default is "00000".
-            STOP_OPTION (str): The stop option. The default is "ndays".
-            STOP_N (str): The number of days to run. The default is "10".
-            ATM_DOM (str): The path to the domain data file. Will use the domain data provided by the user. The default is None. 
-            SURF (str): The path to the surface data file. Will use the surface data provided by the user. The default is None.
-            FORCING (str): The path to the forcing data file. Will use the forcing data provided by the user. The default is None.
-            RUN_TYPE (str): The type of the run. The default is "coldstart". The other option is "branch".
-            RUN_REFCASE (str): The reference case. The default is "None". Need to be provided when the RUN_TYPE is "branch".
-            RUN_REFDATE (str): The reference date. The default is "None". Need to be provided when the RUN_TYPE is "branch".
-            RUN_REFTOD (str): The reference time of the day. The default is "00000". Need to be provided when the RUN_TYPE is "branch".
-            password (str): The password for the docker. The default is "None". Need to be provided when server is needed.
-            iflog (bool): The flag to log the output. The default is True.
-            logfile (str): The log file name. The default is pwd+"pyclmuapprun.log".
-            hist_type (str): The type of the history file. The default is "GRID". valid_values="GRID","LAND","CLOS".
-            hist_nhtfrq (int): The frequency of the history output. The default is 1.
-            hist_mfilt (int): The filter for the history output. The default is 1000000000.
-            urban_hac (str): The flag to turn on the urban HAC. The default is "ON_WASTEHEAT". valid_values="OFF","ON","ON_WASTEHEAT".
-            crun_type (str): The type of the run. The default is "usp". 
+            output_prefix (str):    The output file name. 
+                                    The default is "_clm.nc". 
+                                    if the output_prefix is `none`, the output file name will not be changed.
+            case_name (str):        The case name. The default is "usp_case".
+            RUN_STARTDATE (str):    The start date of the run. The default is "2012-08-08".
+            START_TOD (str):        The start time of the day. The default is "00000".
+            STOP_OPTION (str):      The stop option. The default is "ndays".
+            STOP_N (str):           The number of days to run. The default is "10".
+            ATM_DOM (str):          The path to the domain data file. Will use the domain data provided by the user. 
+                                    The default is None. 
+            SURF (str):             The path to the surface data file. 
+                                    Will use the surface data provided by the user. 
+                                    The default is None.
+            FORCING (str):          The path to the forcing data file. 
+                                    Will use the forcing data provided by the user. 
+                                    The default is None.
+            RUN_TYPE (str):         The type of the run. The default is "coldstart". 
+                                    The other option is "branch".
+            RUN_REFCASE (str):      The reference case. The default is "None". 
+                                    Need to be provided when the RUN_TYPE is "branch".
+            RUN_REFDATE (str):      The reference date. The default is "None". 
+                                    Need to be provided when the RUN_TYPE is "branch".
+            RUN_REFTOD (str):       The reference time of the day. The default is "00000". 
+                                    Need to be provided when the RUN_TYPE is "branch".
+            password (str):         The password for the docker. 
+                                    The default is "None". Need to be provided when server is needed.
+            iflog (bool):           The flag to log the output. 
+                                    The default is True.
+            logfile (str):          The log file name. 
+                                    The default is pwd+"pyclmuapprun.log".
+            hist_type (str):        The type of the history file. 
+                                    The default is "GRID". valid_values="GRID","LAND","CLOS".
+            hist_nhtfrq (int):      The frequency of the history output. 
+                                    The default is 1.
+            hist_mfilt (int):       The filter for the history output. The default is 1000000000.
+            urban_hac (str):        The flag to turn on the urban HAC. 
+                                    The default is "ON_WASTEHEAT". valid_values="OFF","ON","ON_WASTEHEAT".
+            crun_type (str):        The type of the run. The default is "usp". 
+                                    No need to change this parameter.
 
         Returns:
             list: The list of the output files names.
