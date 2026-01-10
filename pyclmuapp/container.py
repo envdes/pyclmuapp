@@ -39,7 +39,7 @@ class clumapp:
                  output_path: str = "outputfolder",
                  log_path: str = "logfolder",
                  scripts_path: str = "scriptsfolder",
-                 container_type: str = "docker"
+                 container_type: str = "udocker"
                  ):
         """
         
@@ -48,6 +48,14 @@ class clumapp:
             input_path (str): The path to the folder for the input of CLMU-App.
             output_path (str): The path to the folder for the output of CLMU-App.
             log_path (str): The path to the folder for the log of CLMU-App.
+            scripts_path (str): The path to the folder for the scripts of CLMU-App.
+            container_type (str): The type of the container for CLMU-App. Do not change the default value if you are not sure.
+                The supported types are:
+                - udocker: The udocker container. [default]
+                - docker: The docker container. [decprecating]
+                - singularity: The singularity container. [decprecating]
+                - docker_in: The docker-in-docker container.
+                
         
         """
         #self.input_path = pwd + "/" + self.create_folder(input_path)
@@ -69,7 +77,8 @@ class clumapp:
             self.scripts_path = scripts_path
         self.fsurdat_path = None
         # CLMU-App run
-        self.image_name = "envdes/clmu-app:1.1"
+        #self.image_name = "envdes/clmu-app:1.1"
+        self.image_name = "junjieyuuom/clmu-app:1.2"
         self.container_name = "myclmu"
         self.container_type = container_type
 
@@ -87,6 +96,8 @@ class clumapp:
                 shutil.copytree(os.path.join(os.path.dirname(__file__), 'config/cime_config'),
                             os.path.join(os.path.expanduser('~'), '.cime'))
         elif container_type == "docker_in":
+            self.container_name = "myclmu"
+        elif container_type == "udocker":
             self.container_name = "myclmu"
         else:
             raise ValueError(f"Container type '{container_type}' is not supported.")
@@ -156,6 +167,9 @@ class clumapp:
         elif self.container_type == "docker_in":
             with open(os.path.join(os.path.dirname(__file__),'./config/ini_docker_in.json')) as f:
                 config = json.load(f)
+        elif self.container_type == "udocker":
+            with open(os.path.join(os.path.dirname(__file__),'./config/ini_udocker.json')) as f:
+                config = json.load(f)
 
 
         if cmd in config.keys():
@@ -212,14 +226,14 @@ class clumapp:
             pass
             #print(f"The {self.script_path} already exists.")
         else:
-            if self.image_name == "envdes/clmu-app:1.1" and mode == "usp":
+            if (self.image_name == "envdes/clmu-app:1.1" or self.image_name == "junjieyuuom/clmu-app:1.2") and mode == "usp":
                 shutil.copy(os.path.join(os.path.dirname(__file__), f'scripts/{mode}_1.1.sh'), 
                     self.script_path)
             else:
                 shutil.copy(os.path.join(os.path.dirname(__file__), f'scripts/{mode}.sh'), 
                         self.script_path)
         # CMD used to run the CLMU-App
-        if self.image_name == "envdes/clmu-app:1.1":
+        if self.image_name == "envdes/clmu-app:1.1" or self.image_name == "junjieyuuom/clmu-app:1.2":
             from pyclmuapp.config.scripts2 import scripts_cmd
         else:
             from pyclmuapp.config.scripts import scripts_cmd

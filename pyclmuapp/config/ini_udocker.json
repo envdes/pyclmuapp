@@ -1,0 +1,6 @@
+{
+    "pull": "udocker --allow-root pull {image_name}",
+    "start": "udocker --allow-root create --name={container_name} {image_name}",
+    "rm": "udocker --allow-root  rm {container_name}",
+    "run": "udocker --allow-root  run -v={input_path}:/p/clmuapp -v={output_path}:/p/scratch/CESMDATAROOT/Archive -v={log_path}:/p/scratch/CESMDATAROOT/CaseOutputs -v={scripts_path}:/p/scripts {container_name} bash -lc '{command}'"
+}

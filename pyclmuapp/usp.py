@@ -17,7 +17,7 @@ class usp_clmu(clumapp):
                  output_path: str = "outputfolder",
                  log_path: str = "logfolder",
                  scripts_path: str = "scriptsfolder",
-                 container_type: str = "docker") -> None:
+                 container_type: str = "udocker") -> None:
         
         super().__init__(pwd=pwd, input_path=input_path, 
                          output_path=output_path, log_path=log_path, scripts_path=scripts_path, 
@@ -26,6 +26,10 @@ class usp_clmu(clumapp):
         if container_type == "singularity":
             shutil.copytree(os.path.join(os.path.dirname(__file__), 'config', 'cime_config'), 
                             os.path.expanduser('~/.cime'), dirs_exist_ok=True)
+
+        if container_type == "udocker":
+            self.docker(cmd='pull', iflog=False)
+            self.docker(cmd='start', iflog=False)
 
         self.urban_vars_dict = {
             "morphological": ["CANYON_HWR","HT_ROOF","THICK_ROOF","THICK_WALL",
@@ -290,8 +294,10 @@ class usp_clmu(clumapp):
             ]
 
             area = calculate_polygon_area(latitude_longitude_coords)
-            domian_nc['area'].values[0,0] = np.array([area], dtype=np.float64)
-
+            try:
+                domian_nc['area'].values[0,0] = np.array([area], dtype=np.float64)
+            except:
+                domian_nc['area'].values[0,0] = np.float64(np.asarray(area).item())
         ncfile = f"usp/{domain_name}"
         ncfile_path = os.path.join(self.input_path, ncfile)
         #self.domain = ncfile_path.split("/")[-1]
@@ -430,6 +436,7 @@ class usp_clmu(clumapp):
                                     The default is "ON_WASTEHEAT". valid_values="OFF","ON","ON_WASTEHEAT".
             crun_type (str):        The type of the run. The default is "usp". 
                                     No need to change this parameter.
+                                    Do not change this parameter if you are not sure.
 
         Returns:
             list: The list of the output files names.
@@ -557,6 +564,12 @@ class usp_clmu(clumapp):
         if logfile is None:
             logfile = os.path.join(self.pwd, 'pyclmuapprun.log')
 
+
+        #self.docker(cmd='run', iflog=iflog, 
+        #            password=password, cmdlogfile=logfile,
+        #            dockersript=command)
+        if self.container_type == "udocker":
+            crun_type = 'run'
         self.docker(cmd=crun_type, iflog=iflog, 
                     password=password, cmdlogfile=logfile,
                     dockersript=command)
@@ -621,4 +634,7 @@ class usp_clmu(clumapp):
         Clean the usp folder.
         """
         shutil.rmtree(os.path.join(self.input_path, 'usp'))
+        
+        if self.container_type == "udocker":
+            self.docker(cmd='rm', iflog=False)
         #os.rmdir(os.path.join(self.input_path, 'usp'))
