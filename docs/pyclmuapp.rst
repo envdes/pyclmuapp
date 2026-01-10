@@ -4,7 +4,7 @@ pyclmuapp package
 Submodules
 ----------
 
-pyclmuapp.usp module
+usp
 --------------------
 
 .. automodule:: pyclmuapp.usp
@@ -12,34 +12,26 @@ pyclmuapp.usp module
    :undoc-members:
    :show-inheritance:
 
-pyclmuapp.era5_forcing module
+get_urban_params
 --------------------
 
-.. automodule:: pyclmuapp.era5_forcing
+.. automodule:: pyclmuapp.input_data.get_urban_params
    :members:
    :undoc-members:
    :show-inheritance:
 
-pyclmuapp.era5_forcing_gee module
+get_soil_params
 --------------------
 
-.. automodule:: pyclmuapp.era5_forcing_gee
+.. automodule:: pyclmuapp.input_data.get_soil_params
    :members:
    :undoc-members:
    :show-inheritance:
 
-pyclmuapp.era_forcing module
+get_forcing
 --------------------
 
-.. automodule:: pyclmuapp.era_forcing
-   :members:
-   :undoc-members:
-   :show-inheritance:
-
-pyclmuapp.get_urban_params module
---------------------
-
-.. automodule:: pyclmuapp.get_urban_params
+.. automodule:: pyclmuapp.input_data.get_forcing
    :members:
    :undoc-members:
    :show-inheritance:
