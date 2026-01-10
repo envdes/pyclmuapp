@@ -227,7 +227,10 @@ def era5s_to_forcing(
         single['u10'], single['v10'], \
         single['t2m'], single['es_water'], single['es_ice'], single['es'], single['eair']
     
-    single.to_netcdf(outputfile)
+    try:
+        single.to_netcdf(outputfile)
+    except Exception as e:
+        single.to_netcdf(outputfile, format='h5netcdf')
     return single
 
 
