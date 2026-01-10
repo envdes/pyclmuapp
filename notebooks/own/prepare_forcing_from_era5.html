@@ -164,8 +164,8 @@ Get ERA5 data from 2018-07-01 to 2018-10-01 for (51.5, 0.12)
   - 2018-07-01 ~ 2018-08-01
   - 2018-08-01 ~ 2018-09-01
   - 2018-09-01 ~ 2018-10-01
-CPU times: user 914 ms, sys: 296 ms, total: 1.21 s
-Wall time: 11.1 s
+CPU times: user 730 ms, sys: 181 ms, total: 911 ms
+Wall time: 9.13 s
 </pre></div></div>
 </div>
 <div class="nboutput nblast docutils container">
@@ -174,7 +174,7 @@ Wall time: 11.1 s
 </div>
 <div class="output_area docutils container">
 <div class="highlight"><pre>
-&#39;/Users/user/Documents/GitHub/pyclmuapp_env/docs/notebooks/own/era5_data/era5_gee_forcing_51.5_0.12_30_2018_7_2018_9.nc&#39;
+&#39;/home/junjie/github/pyclmuapp/docs/notebooks/own/era5_data/era5_gee_forcing_51.5_0.12_30_2018_7_2018_9.nc&#39;
 </pre></div></div>
 </div>
 </section>
@@ -246,25 +246,39 @@ Downloading data for 51.5, 0.1, 2018-07-01 to 2018-10-01...
 </div>
 <div class="output_area stderr docutils container">
 <div class="highlight"><pre>
-2025-09-07 16:28:53,277 WARNING [2025-06-04T00:00:00] This dataset provides user-selected location timeseries of [ERA5 Land data](https://doi.org/10.24381/cds.e2161bac) for a limited set of variables. Its content may be undergo changes over time (e.g. file format, data file structure, deprecation etc) and is **not recommended for use in a production environment**.
+2026-01-10 23:17:06,727 WARNING [2025-06-04T00:00:00] This dataset provides user-selected location timeseries of [ERA5 Land data](https://doi.org/10.24381/cds.e2161bac) for a limited set of variables. Its content may be undergo changes over time (e.g. file format, data file structure, deprecation etc) and is **not recommended for use in a production environment**.
 
 For users interested in large regions, the original ERA5 Land catalogue entry remains the more efficient option.
 We will make every effort to notify users of changes, either through this banner and/or the [Forum](https://forum.ecmwf.int/).
-2025-09-07 16:28:53,278 WARNING [2025-09-07T15:28:53.255384] You are using a deprecated API endpoint. If you are using cdsapi, please upgrade to the latest version.
-2025-09-07 16:28:53,279 INFO Request ID is b743ee3c-1455-4447-bf63-ddc21d2809bb
-2025-09-07 16:28:53,356 INFO status has been updated to accepted
-2025-09-07 16:29:00,766 INFO status has been updated to running
-2025-09-07 16:29:13,598 INFO status has been updated to successful
-
+2026-01-10 23:17:06,727 INFO Request ID is cc48820b-f777-4f81-a0af-bca1178bb679
+2026-01-10 23:17:07,735 INFO status has been updated to accepted
+2026-01-10 23:17:22,599 INFO status has been updated to successful
 </pre></div></div>
 </div>
 <div class="nboutput docutils container">
 <div class="prompt empty docutils container">
 </div>
 <div class="output_area docutils container">
+<script type="application/vnd.jupyter.widget-view+json">{"model_id": "da7daea52a3d4befa0c56758820c279a", "version_major": 2, "version_minor": 0}</script></div>
+</div>
+<div class="nboutput docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
 <div class="highlight"><pre>
-CPU times: user 693 ms, sys: 242 ms, total: 935 ms
-Wall time: 23.8 s
+CPU times: user 122 ms, sys: 13.7 ms, total: 135 ms
+Wall time: 19.3 s
+</pre></div></div>
+</div>
+<div class="nboutput docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area stderr docutils container">
+<div class="highlight"><pre>
+/home/junjie/github/pyclmuapp/pyclmuapp/era_forcing.py:68: FutureWarning: In a future version of xarray the default value for compat will change from compat=&#39;no_conflicts&#39; to compat=&#39;override&#39;. This is likely to lead to different results when combining overlapping variables with the same name. To opt in to new defaults and get rid of these warnings now use `set_options(use_new_combine_kwarg_defaults=True) or set compat explicitly.
+  ds = xr.merge(xr_ls)
+/home/junjie/github/pyclmuapp/pyclmuapp/era_forcing.py:68: FutureWarning: In a future version of xarray the default value for compat will change from compat=&#39;no_conflicts&#39; to compat=&#39;override&#39;. This is likely to lead to different results when combining overlapping variables with the same name. To opt in to new defaults and get rid of these warnings now use `set_options(use_new_combine_kwarg_defaults=True) or set compat explicitly.
+  ds = xr.merge(xr_ls)
 </pre></div></div>
 </div>
 <div class="nboutput nblast docutils container">
@@ -273,7 +287,7 @@ Wall time: 23.8 s
 </div>
 <div class="output_area docutils container">
 <div class="highlight"><pre>
-&#39;/Users/user/Documents/GitHub/pyclmuapp_env/docs/notebooks/own/era5_data/era5_land_ts_forcing_51.5_0.12_30_2018_7_2018_9.nc&#39;
+&#39;/home/junjie/github/pyclmuapp/docs/notebooks/own/era5_data/era5_land_ts_forcing_51.5_0.12_30_2018_7_2018_9.nc&#39;
 </pre></div></div>
 </div>
 <div class="nbinput docutils container">
@@ -310,12 +324,27 @@ download: ./era5_data/era5_single/era5_single_2018_07_51.5_0.12.zip
 </div>
 <div class="output_area stderr docutils container">
 <div class="highlight"><pre>
-2025-09-07 16:29:18,199 WARNING [2025-09-07T15:29:18.180357] You are using a deprecated API endpoint. If you are using cdsapi, please upgrade to the latest version.
-2025-09-07 16:29:18,200 INFO Request ID is 10d5058b-44fb-43d4-b168-aef52f0ca94c
-2025-09-07 16:29:18,262 INFO status has been updated to accepted
-2025-09-07 16:29:30,737 INFO status has been updated to running
-2025-09-07 16:37:37,299 INFO status has been updated to successful
-
+2026-01-10 23:17:26,038 INFO [2025-12-11T00:00:00] Please note that a dedicated catalogue entry for this dataset, post-processed and stored in Analysis Ready Cloud Optimized (ARCO) format (Zarr), is available for optimised time-series retrievals (i.e. for retrieving data from selected variables for a single point over an extended period of time in an efficient way). You can discover it [here](https://cds.climate.copernicus.eu/datasets/reanalysis-era5-single-levels-timeseries?tab=overview)
+2026-01-10 23:17:26,039 INFO Request ID is 02fa3302-0fe9-4714-9c46-e1ca94b40160
+2026-01-10 23:17:27,086 INFO status has been updated to accepted
+2026-01-10 23:19:27,994 INFO status has been updated to successful
+</pre></div></div>
+</div>
+<div class="nboutput docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<script type="application/vnd.jupyter.widget-view+json">{"model_id": "707fe872301b44cfa545f3dce961251d", "version_major": 2, "version_minor": 0}</script></div>
+</div>
+<div class="nboutput docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area stderr docutils container">
+<div class="highlight"><pre>
+/home/junjie/github/pyclmuapp/pyclmuapp/era5_forcing.py:88: FutureWarning: In a future version of xarray the default value for compat will change from compat=&#39;no_conflicts&#39; to compat=&#39;override&#39;. This is likely to lead to different results when combining overlapping variables with the same name. To opt in to new defaults and get rid of these warnings now use `set_options(use_new_combine_kwarg_defaults=True) or set compat explicitly.
+  single_ds = xr.merge(ds_ls)
+/home/junjie/github/pyclmuapp/pyclmuapp/era5_forcing.py:88: FutureWarning: In a future version of xarray the default value for compat will change from compat=&#39;no_conflicts&#39; to compat=&#39;override&#39;. This is likely to lead to different results when combining overlapping variables with the same name. To opt in to new defaults and get rid of these warnings now use `set_options(use_new_combine_kwarg_defaults=True) or set compat explicitly.
+  single_ds = xr.merge(ds_ls)
 </pre></div></div>
 </div>
 <div class="nboutput docutils container">
@@ -331,12 +360,28 @@ download: ./era5_data/era5_single/era5_single_2018_08_51.5_0.12.zip
 </div>
 <div class="output_area stderr docutils container">
 <div class="highlight"><pre>
-2025-09-07 16:37:39,234 WARNING [2025-09-07T15:37:39.214193] You are using a deprecated API endpoint. If you are using cdsapi, please upgrade to the latest version.
-2025-09-07 16:37:39,234 INFO Request ID is 72f36502-15ca-4795-af8a-891e76c90535
-2025-09-07 16:37:39,295 INFO status has been updated to accepted
-2025-09-07 16:37:51,874 INFO status has been updated to running
-2025-09-07 16:43:58,271 INFO status has been updated to successful
-
+2026-01-10 23:19:29,600 INFO [2025-12-11T00:00:00] Please note that a dedicated catalogue entry for this dataset, post-processed and stored in Analysis Ready Cloud Optimized (ARCO) format (Zarr), is available for optimised time-series retrievals (i.e. for retrieving data from selected variables for a single point over an extended period of time in an efficient way). You can discover it [here](https://cds.climate.copernicus.eu/datasets/reanalysis-era5-single-levels-timeseries?tab=overview)
+2026-01-10 23:19:29,601 INFO Request ID is 0d8ffb15-92dd-41b0-ad90-d7f80af30db8
+2026-01-10 23:19:29,647 INFO status has been updated to accepted
+2026-01-10 23:19:40,724 INFO status has been updated to running
+2026-01-10 23:25:56,899 INFO status has been updated to successful
+</pre></div></div>
+</div>
+<div class="nboutput docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<script type="application/vnd.jupyter.widget-view+json">{"model_id": "1f2c7834d1b84b43bc2313a788f20bad", "version_major": 2, "version_minor": 0}</script></div>
+</div>
+<div class="nboutput docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area stderr docutils container">
+<div class="highlight"><pre>
+/home/junjie/github/pyclmuapp/pyclmuapp/era5_forcing.py:88: FutureWarning: In a future version of xarray the default value for compat will change from compat=&#39;no_conflicts&#39; to compat=&#39;override&#39;. This is likely to lead to different results when combining overlapping variables with the same name. To opt in to new defaults and get rid of these warnings now use `set_options(use_new_combine_kwarg_defaults=True) or set compat explicitly.
+  single_ds = xr.merge(ds_ls)
+/home/junjie/github/pyclmuapp/pyclmuapp/era5_forcing.py:88: FutureWarning: In a future version of xarray the default value for compat will change from compat=&#39;no_conflicts&#39; to compat=&#39;override&#39;. This is likely to lead to different results when combining overlapping variables with the same name. To opt in to new defaults and get rid of these warnings now use `set_options(use_new_combine_kwarg_defaults=True) or set compat explicitly.
+  single_ds = xr.merge(ds_ls)
 </pre></div></div>
 </div>
 <div class="nboutput docutils container">
@@ -352,21 +397,37 @@ download: ./era5_data/era5_single/era5_single_2018_09_51.5_0.12.zip
 </div>
 <div class="output_area stderr docutils container">
 <div class="highlight"><pre>
-2025-09-07 16:44:00,283 WARNING [2025-09-07T15:44:00.261522] You are using a deprecated API endpoint. If you are using cdsapi, please upgrade to the latest version.
-2025-09-07 16:44:00,284 INFO Request ID is 3445edd0-4c41-4aea-a4cc-3de2a291396d
-2025-09-07 16:44:00,387 INFO status has been updated to accepted
-2025-09-07 16:44:12,881 INFO status has been updated to running
-2025-09-07 16:52:19,252 INFO status has been updated to successful
-
+2026-01-10 23:25:59,335 INFO [2025-12-11T00:00:00] Please note that a dedicated catalogue entry for this dataset, post-processed and stored in Analysis Ready Cloud Optimized (ARCO) format (Zarr), is available for optimised time-series retrievals (i.e. for retrieving data from selected variables for a single point over an extended period of time in an efficient way). You can discover it [here](https://cds.climate.copernicus.eu/datasets/reanalysis-era5-single-levels-timeseries?tab=overview)
+2026-01-10 23:25:59,335 INFO Request ID is 935048d3-0a4e-4428-a733-f2acf2e46e01
+2026-01-10 23:25:59,391 INFO status has been updated to accepted
+2026-01-10 23:26:09,228 INFO status has been updated to running
+2026-01-10 23:32:20,975 INFO status has been updated to successful
 </pre></div></div>
 </div>
 <div class="nboutput docutils container">
 <div class="prompt empty docutils container">
 </div>
 <div class="output_area docutils container">
+<script type="application/vnd.jupyter.widget-view+json">{"model_id": "d237934131d64efba6798b2d8eab6af5", "version_major": 2, "version_minor": 0}</script></div>
+</div>
+<div class="nboutput docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
 <div class="highlight"><pre>
-CPU times: user 773 ms, sys: 607 ms, total: 1.38 s
-Wall time: 23min 5s
+CPU times: user 375 ms, sys: 30.2 ms, total: 405 ms
+Wall time: 14min 57s
+</pre></div></div>
+</div>
+<div class="nboutput docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area stderr docutils container">
+<div class="highlight"><pre>
+/home/junjie/github/pyclmuapp/pyclmuapp/era5_forcing.py:88: FutureWarning: In a future version of xarray the default value for compat will change from compat=&#39;no_conflicts&#39; to compat=&#39;override&#39;. This is likely to lead to different results when combining overlapping variables with the same name. To opt in to new defaults and get rid of these warnings now use `set_options(use_new_combine_kwarg_defaults=True) or set compat explicitly.
+  single_ds = xr.merge(ds_ls)
+/home/junjie/github/pyclmuapp/pyclmuapp/era5_forcing.py:88: FutureWarning: In a future version of xarray the default value for compat will change from compat=&#39;no_conflicts&#39; to compat=&#39;override&#39;. This is likely to lead to different results when combining overlapping variables with the same name. To opt in to new defaults and get rid of these warnings now use `set_options(use_new_combine_kwarg_defaults=True) or set compat explicitly.
+  single_ds = xr.merge(ds_ls)
 </pre></div></div>
 </div>
 <div class="nboutput nblast docutils container">
@@ -375,7 +436,7 @@ Wall time: 23min 5s
 </div>
 <div class="output_area docutils container">
 <div class="highlight"><pre>
-&#39;/Users/user/Documents/GitHub/pyclmuapp_env/docs/notebooks/own/era5_data/era5_forcing_51.5_0.12_30_2018_7_2018_9.nc&#39;
+&#39;/home/junjie/github/pyclmuapp/docs/notebooks/own/era5_data/era5_forcing_51.5_0.12_30_2018_7_2018_9.nc&#39;
 </pre></div></div>
 </div>
 </section>
@@ -400,7 +461,7 @@ Wall time: 23min 5s
 </div>
 <div class="output_area docutils container">
 <div class="highlight"><pre>
-Namespace(init=False, pwd=&#39;/Users/user/Documents/GitHub/pyclmuapp_env/docs/notebooks/own&#39;, container_type=&#39;docker&#39;, input_path=None, output_path=None, log_path=None, scripts_path=None, pyclmuapp_mode=&#39;get_forcing&#39;, has_container=True, usr_domain=None, usr_forcing=None, usr_surfdata=None, output_prefix=&#39;_clm.nc&#39;, case_name=&#39;usp_case&#39;, run_startdate=None, start_tod=&#39;00000&#39;, stop_option=&#39;ndays&#39;, stop_n=&#39;1&#39;, run_type=&#39;coldstart&#39;, run_refcase=&#39;None&#39;, run_refdate=&#39;None&#39;, run_reftod=&#39;00000&#39;, urban_hac=&#39;ON&#39;, iflog=True, logfile=&#39;pyclmuapp.log&#39;, hist_type=&#39;GRID&#39;, hist_nhtfrq=1, hist_mfilt=1000000000, clean=False, surf_var=None, surf_action=0, forcing_var=None, forcing_action=0, script=None, urbsurf=None, soildata=None, pct_urban=[0, 0, 100.0], lat=51.5, lon=0.12, outputname=&#39;surfdata.nc&#39;, zbot=30, start_year=2018, end_year=2018, start_month=7, end_month=9, source=&#39;era5-land-ts&#39;)
+Namespace(init=False, pwd=&#39;/home/junjie/github/pyclmuapp/docs/notebooks/own&#39;, container_type=&#39;docker&#39;, input_path=None, output_path=None, log_path=None, scripts_path=None, pyclmuapp_mode=&#39;get_forcing&#39;, has_container=True, usr_domain=None, usr_forcing=None, usr_surfdata=None, output_prefix=&#39;_clm.nc&#39;, case_name=&#39;usp_case&#39;, run_startdate=None, start_tod=&#39;00000&#39;, stop_option=&#39;ndays&#39;, stop_n=&#39;1&#39;, run_type=&#39;coldstart&#39;, run_refcase=&#39;None&#39;, run_refdate=&#39;None&#39;, run_reftod=&#39;00000&#39;, urban_hac=&#39;ON&#39;, iflog=True, logfile=&#39;pyclmuapp.log&#39;, hist_type=&#39;GRID&#39;, hist_nhtfrq=1, hist_mfilt=1000000000, clean=False, surf_var=None, surf_action=0, forcing_var=None, forcing_action=0, script=None, urbsurf=None, soildata=None, pct_urban=[0, 0, 100.0], lat=51.5, lon=0.12, outputname=&#39;surfdata.nc&#39;, zbot=30, start_year=2018, end_year=2018, start_month=7, end_month=9, source=&#39;era5-land-ts&#39;)
 The forcing file era5_data/era5_land_ts_forcing_51.5_0.12_30_2018_7_2018_9.nc already exists.
 </pre></div></div>
 </div>
@@ -429,12 +490,12 @@ The forcing file era5_data/era5_land_ts_forcing_51.5_0.12_30_2018_7_2018_9.nc al
 </div>
 <div class="output_area docutils container">
 <div class="highlight"><pre>
-Namespace(init=False, pwd=&#39;/Users/user/Documents/GitHub/pyclmuapp_env/docs/notebooks/own&#39;, container_type=&#39;docker&#39;, input_path=None, output_path=None, log_path=None, scripts_path=None, pyclmuapp_mode=&#39;usp&#39;, has_container=True, usr_domain=None, usr_forcing=&#39;era5_data/era5_gee_forcing_51.5_0.12_30_2018_7_2018_9.nc&#39;, usr_surfdata=&#39;surfdata.nc&#39;, output_prefix=&#39;_clm.nc&#39;, case_name=&#39;pyclmuapp&#39;, run_startdate=&#39;2018-07-01&#39;, start_tod=&#39;00000&#39;, stop_option=&#39;ndays&#39;, stop_n=&#39;15&#39;, run_type=&#39;coldstart&#39;, run_refcase=&#39;None&#39;, run_refdate=&#39;None&#39;, run_reftod=&#39;00000&#39;, urban_hac=&#39;ON&#39;, iflog=True, logfile=&#39;pyclmuapp.log&#39;, hist_type=&#39;GRID&#39;, hist_nhtfrq=1, hist_mfilt=1000000000, clean=&#39;True&#39;, surf_var=None, surf_action=0, forcing_var=None, forcing_action=0, script=None, urbsurf=None, soildata=None, pct_urban=[0, 0, 100.0], lat=None, lon=None, outputname=&#39;surfdata.nc&#39;, zbot=30, start_year=2012, end_year=2012, start_month=1, end_month=12, source=&#39;cds&#39;)
-Copying the file era5_gee_forcing_51.5_0.12_30_2018_7_2018_9.nc to the /Users/user/Documents/GitHub/pyclmuapp_env/docs/notebooks/own/workdir/inputfolder/usp
+Namespace(init=False, pwd=&#39;/home/junjie/github/pyclmuapp/docs/notebooks/own&#39;, container_type=&#39;docker&#39;, input_path=None, output_path=None, log_path=None, scripts_path=None, pyclmuapp_mode=&#39;usp&#39;, has_container=True, usr_domain=None, usr_forcing=&#39;era5_data/era5_gee_forcing_51.5_0.12_30_2018_7_2018_9.nc&#39;, usr_surfdata=&#39;surfdata.nc&#39;, output_prefix=&#39;_clm.nc&#39;, case_name=&#39;pyclmuapp&#39;, run_startdate=&#39;2018-07-01&#39;, start_tod=&#39;00000&#39;, stop_option=&#39;ndays&#39;, stop_n=&#39;15&#39;, run_type=&#39;coldstart&#39;, run_refcase=&#39;None&#39;, run_refdate=&#39;None&#39;, run_reftod=&#39;00000&#39;, urban_hac=&#39;ON&#39;, iflog=True, logfile=&#39;pyclmuapp.log&#39;, hist_type=&#39;GRID&#39;, hist_nhtfrq=1, hist_mfilt=1000000000, clean=&#39;True&#39;, surf_var=None, surf_action=0, forcing_var=None, forcing_action=0, script=None, urbsurf=None, soildata=None, pct_urban=[0, 0, 100.0], lat=None, lon=None, outputname=&#39;surfdata.nc&#39;, zbot=30, start_year=2012, end_year=2012, start_month=1, end_month=12, source=&#39;cds&#39;)
+Copying the file era5_gee_forcing_51.5_0.12_30_2018_7_2018_9.nc to the /home/junjie/github/pyclmuapp/docs/notebooks/own/workdir/inputfolder/usp
 The domain file is not provided
 The case is:  pyclmuapp
 The log file is:  pyclmuapp.log
-The output file is:  {&#39;original&#39;: [&#39;/Users/user/Documents/GitHub/pyclmuapp_env/docs/notebooks/own/workdir/outputfolder/lnd/hist/pyclmuapp_clm0_2025-09-07_16-52-52_clm.nc&#39;]}
+The output file is:  {&#39;original&#39;: [&#39;/home/junjie/github/pyclmuapp/docs/notebooks/own/workdir/outputfolder/lnd/hist/pyclmuapp.clm2.h0.2018-07-01-00000.nc&#39;]}
 </pre></div></div>
 </div>
 <div class="nbinput docutils container">
@@ -461,12 +522,12 @@ The output file is:  {&#39;original&#39;: [&#39;/Users/user/Documents/GitHub/pyc
 </div>
 <div class="output_area docutils container">
 <div class="highlight"><pre>
-Namespace(init=False, pwd=&#39;/Users/user/Documents/GitHub/pyclmuapp_env/docs/notebooks/own&#39;, container_type=&#39;docker&#39;, input_path=None, output_path=None, log_path=None, scripts_path=None, pyclmuapp_mode=&#39;usp&#39;, has_container=True, usr_domain=None, usr_forcing=&#39;era5_data/era5_land_ts_forcing_51.5_0.12_30_2018_7_2018_9.nc&#39;, usr_surfdata=&#39;surfdata.nc&#39;, output_prefix=&#39;_clm.nc&#39;, case_name=&#39;pyclmuapp&#39;, run_startdate=&#39;2018-07-01&#39;, start_tod=&#39;00000&#39;, stop_option=&#39;ndays&#39;, stop_n=&#39;15&#39;, run_type=&#39;coldstart&#39;, run_refcase=&#39;None&#39;, run_refdate=&#39;None&#39;, run_reftod=&#39;00000&#39;, urban_hac=&#39;ON&#39;, iflog=True, logfile=&#39;pyclmuapp.log&#39;, hist_type=&#39;GRID&#39;, hist_nhtfrq=1, hist_mfilt=1000000000, clean=&#39;True&#39;, surf_var=None, surf_action=0, forcing_var=None, forcing_action=0, script=None, urbsurf=None, soildata=None, pct_urban=[0, 0, 100.0], lat=None, lon=None, outputname=&#39;surfdata.nc&#39;, zbot=30, start_year=2012, end_year=2012, start_month=1, end_month=12, source=&#39;cds&#39;)
-Copying the file era5_land_ts_forcing_51.5_0.12_30_2018_7_2018_9.nc to the /Users/user/Documents/GitHub/pyclmuapp_env/docs/notebooks/own/workdir/inputfolder/usp
+Namespace(init=False, pwd=&#39;/home/junjie/github/pyclmuapp/docs/notebooks/own&#39;, container_type=&#39;docker&#39;, input_path=None, output_path=None, log_path=None, scripts_path=None, pyclmuapp_mode=&#39;usp&#39;, has_container=True, usr_domain=None, usr_forcing=&#39;era5_data/era5_land_ts_forcing_51.5_0.12_30_2018_7_2018_9.nc&#39;, usr_surfdata=&#39;surfdata.nc&#39;, output_prefix=&#39;_clm.nc&#39;, case_name=&#39;pyclmuapp&#39;, run_startdate=&#39;2018-07-01&#39;, start_tod=&#39;00000&#39;, stop_option=&#39;ndays&#39;, stop_n=&#39;15&#39;, run_type=&#39;coldstart&#39;, run_refcase=&#39;None&#39;, run_refdate=&#39;None&#39;, run_reftod=&#39;00000&#39;, urban_hac=&#39;ON&#39;, iflog=True, logfile=&#39;pyclmuapp.log&#39;, hist_type=&#39;GRID&#39;, hist_nhtfrq=1, hist_mfilt=1000000000, clean=&#39;True&#39;, surf_var=None, surf_action=0, forcing_var=None, forcing_action=0, script=None, urbsurf=None, soildata=None, pct_urban=[0, 0, 100.0], lat=None, lon=None, outputname=&#39;surfdata.nc&#39;, zbot=30, start_year=2012, end_year=2012, start_month=1, end_month=12, source=&#39;cds&#39;)
+Copying the file era5_land_ts_forcing_51.5_0.12_30_2018_7_2018_9.nc to the /home/junjie/github/pyclmuapp/docs/notebooks/own/workdir/inputfolder/usp
 The domain file is not provided
 The case is:  pyclmuapp
 The log file is:  pyclmuapp.log
-The output file is:  {&#39;original&#39;: [&#39;/Users/user/Documents/GitHub/pyclmuapp_env/docs/notebooks/own/workdir/outputfolder/lnd/hist/pyclmuapp_clm0_2025-09-07_16-53-08_clm.nc&#39;]}
+The output file is:  {&#39;original&#39;: [&#39;/home/junjie/github/pyclmuapp/docs/notebooks/own/workdir/outputfolder/lnd/hist/pyclmuapp.clm2.h0.2018-07-01-00000.nc&#39;]}
 </pre></div></div>
 </div>
 <div class="nbinput docutils container">
@@ -490,12 +551,12 @@ The output file is:  {&#39;original&#39;: [&#39;/Users/user/Documents/GitHub/pyc
 </div>
 <div class="output_area docutils container">
 <div class="highlight"><pre>
-Namespace(init=False, pwd=&#39;/Users/user/Documents/GitHub/pyclmuapp_env/docs/notebooks/own&#39;, container_type=&#39;docker&#39;, input_path=None, output_path=None, log_path=None, scripts_path=None, pyclmuapp_mode=&#39;usp&#39;, has_container=True, usr_domain=None, usr_forcing=&#39;era5_data/era5_forcing_51.5_0.12_30_2018_7_2018_9.nc&#39;, usr_surfdata=&#39;surfdata.nc&#39;, output_prefix=&#39;_clm.nc&#39;, case_name=&#39;pyclmuapp&#39;, run_startdate=&#39;2018-07-01&#39;, start_tod=&#39;00000&#39;, stop_option=&#39;ndays&#39;, stop_n=&#39;15&#39;, run_type=&#39;coldstart&#39;, run_refcase=&#39;None&#39;, run_refdate=&#39;None&#39;, run_reftod=&#39;00000&#39;, urban_hac=&#39;ON&#39;, iflog=True, logfile=&#39;pyclmuapp.log&#39;, hist_type=&#39;GRID&#39;, hist_nhtfrq=1, hist_mfilt=1000000000, clean=&#39;True&#39;, surf_var=None, surf_action=0, forcing_var=None, forcing_action=0, script=None, urbsurf=None, soildata=None, pct_urban=[0, 0, 100.0], lat=None, lon=None, outputname=&#39;surfdata.nc&#39;, zbot=30, start_year=2012, end_year=2012, start_month=1, end_month=12, source=&#39;cds&#39;)
-Copying the file era5_forcing_51.5_0.12_30_2018_7_2018_9.nc to the /Users/user/Documents/GitHub/pyclmuapp_env/docs/notebooks/own/workdir/inputfolder/usp
+Namespace(init=False, pwd=&#39;/home/junjie/github/pyclmuapp/docs/notebooks/own&#39;, container_type=&#39;docker&#39;, input_path=None, output_path=None, log_path=None, scripts_path=None, pyclmuapp_mode=&#39;usp&#39;, has_container=True, usr_domain=None, usr_forcing=&#39;era5_data/era5_forcing_51.5_0.12_30_2018_7_2018_9.nc&#39;, usr_surfdata=&#39;surfdata.nc&#39;, output_prefix=&#39;_clm.nc&#39;, case_name=&#39;pyclmuapp&#39;, run_startdate=&#39;2018-07-01&#39;, start_tod=&#39;00000&#39;, stop_option=&#39;ndays&#39;, stop_n=&#39;15&#39;, run_type=&#39;coldstart&#39;, run_refcase=&#39;None&#39;, run_refdate=&#39;None&#39;, run_reftod=&#39;00000&#39;, urban_hac=&#39;ON&#39;, iflog=True, logfile=&#39;pyclmuapp.log&#39;, hist_type=&#39;GRID&#39;, hist_nhtfrq=1, hist_mfilt=1000000000, clean=&#39;True&#39;, surf_var=None, surf_action=0, forcing_var=None, forcing_action=0, script=None, urbsurf=None, soildata=None, pct_urban=[0, 0, 100.0], lat=None, lon=None, outputname=&#39;surfdata.nc&#39;, zbot=30, start_year=2012, end_year=2012, start_month=1, end_month=12, source=&#39;cds&#39;)
+Copying the file era5_forcing_51.5_0.12_30_2018_7_2018_9.nc to the /home/junjie/github/pyclmuapp/docs/notebooks/own/workdir/inputfolder/usp
 The domain file is not provided
 The case is:  pyclmuapp
 The log file is:  pyclmuapp.log
-The output file is:  {&#39;original&#39;: [&#39;/Users/user/Documents/GitHub/pyclmuapp_env/docs/notebooks/own/workdir/outputfolder/lnd/hist/pyclmuapp_clm0_2025-09-07_16-53-22_clm.nc&#39;]}
+The output file is:  {&#39;original&#39;: [&#39;/home/junjie/github/pyclmuapp/docs/notebooks/own/workdir/outputfolder/lnd/hist/pyclmuapp.clm2.h0.2018-07-01-00000.nc&#39;]}
 </pre></div></div>
 </div>
 </section>
