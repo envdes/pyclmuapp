@@ -23,17 +23,17 @@ def get_urban_params(urban_ds: Union[xr.Dataset, str],
     Get the urban parameters.
     
     Args:
-        urban_ds (_type_): the urban dataset
-        soil_ds (_type_): the soil dataset
-        template (_type_): the template dataset
-        lat (_type_): latitude of interest point
-        lon (_type_): longitude of interest point
+        urban_ds (xr.Dataset or str): the urban dataset
+        soil_ds (xr.Dataset or str): the soil dataset
+        template (xr.Dataset or str, optional): the template dataset
+        lat (float): latitude of interest point
+        lon (float): longitude of interest point
         PTC_URBAN (list, optional): The percentage of urban. Defaults to [0,0,100].
             0. TBD urban, 1. HD urban, 2. MD urban
-        outputname (_type_, optional): the output file name. Defaults to "surfdata.nc".
+        outputname (str, optional): the output file name. Defaults to "surfdata.nc".
         
     Returns:
-        _type_: the modified template dataset
+        xr.Dataset: the modified template dataset
     """
     
     if lon > 180:
@@ -95,9 +95,9 @@ def get_soil_params(ds: Union [xr.Dataset, xr.DataArray, str],
     Get the soil parameters.
     
     Args:
-        ds (_type_): the soil dataset
-        lat (_type_): latitude of interest point
-        lon (_type_): longitude of interest point
+        ds (xr.Dataset or xr.DataArray or str): the soil dataset
+        lat (float): latitude of interest point
+        lon (float): longitude of interest point
     
     Returns:
         tuple: sand and clay content from the soil dataset
@@ -147,30 +147,31 @@ def get_soil_params(ds: Union [xr.Dataset, xr.DataArray, str],
     return sand, clay
 
 
-def get_forcing(start_year, end_year, 
-                start_month, end_month,
-                lat, lon, zbot,
-                source='cds'
+def get_forcing(start_year :int, 
+                end_year: int, 
+                start_month: int, end_month: int,
+                lat: float, lon: float, zbot: float,
+                source: str = 'cds'
                 ):
     
     """
     get the forcing data from the era5 dataset
     
     Args:
-        start_year (_type_): the start year
-        end_year (_type_): the end year
-        start_month (_type_): the start month
-        end_month (_type_): the end month
-        lat (_type_): latitude of interest point
-        lon (_type_): longitude of interest point
-        zbot (_type_): the bottom level height
-        source (_type_): the source of the data, can be "cds", "arco-era5", "era5-land-ts", "gee"
+        start_year (int): the start year
+        end_year (int): the end year
+        start_month (int): the start month
+        end_month (int): the end month
+        lat (float): latitude of interest point
+        lon (float): longitude of interest point
+        zbot (float): the bottom level height
+        source (str): the source of the data, can be "cds", "arco-era5", "era5-land-ts", "gee"
             "cds": download data from the Copernicus Climate Data Store (CDS) using the CDS API
             "arco-era5": download data from the ARCO ERA5 dataset
             "era5-land-ts": download data from the ERA5-Land Time Series dataset
             "gee": download data from the Google Earth Engine (GEE) using the GEE API
     Returns:
-        _type_: the forcing dataset
+        xr.Dataset: the forcing dataset
     """
     
     if source == "cds":
