@@ -5,3 +5,5 @@ haversine
 netcdf4
 nc-time-axis
 cdsapi
+cdsapi
+earthengine-api

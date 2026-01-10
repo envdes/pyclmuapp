@@ -7,3 +7,5 @@ sphinx-markdown-tables
 haversine
 xarray
 numpy
+cdsapi
+earthengine-api
