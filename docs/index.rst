@@ -108,7 +108,7 @@ Yu, J., Sun, Y., Lindley, S., Jay, C., Topping, D. O., Oleson, K. W., & Zheng, Z
    :maxdepth: 1
    :caption: API Reference
 
-   modules.rst
+   pyclmuapp.rst
 
 
 Indices and tables

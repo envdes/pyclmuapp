@@ -4,38 +4,6 @@ pyclmuapp package
 Submodules
 ----------
 
-pyclmuapp.clmu module
----------------------
-
-.. automodule:: pyclmuapp.clmu
-   :members:
-   :undoc-members:
-   :show-inheritance:
-
-pyclmuapp.container module
---------------------------
-
-.. automodule:: pyclmuapp.container
-   :members:
-   :undoc-members:
-   :show-inheritance:
-
-pyclmuapp.getcity module
-------------------------
-
-.. automodule:: pyclmuapp.getcity
-   :members:
-   :undoc-members:
-   :show-inheritance:
-
-pyclmuapp.pts module
---------------------
-
-.. automodule:: pyclmuapp.pts
-   :members:
-   :undoc-members:
-   :show-inheritance:
-
 pyclmuapp.usp module
 --------------------
 
@@ -44,10 +12,35 @@ pyclmuapp.usp module
    :undoc-members:
    :show-inheritance:
 
-Module contents
----------------
+pyclmuapp.era5_forcing module
+--------------------
 
-.. automodule:: pyclmuapp
+.. automodule:: pyclmuapp.era5_forcing
    :members:
    :undoc-members:
    :show-inheritance:
+
+pyclmuapp.era5_forcing_gee module
+--------------------
+
+.. automodule:: pyclmuapp.era5_forcing_gee
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+pyclmuapp.era_forcing module
+--------------------
+
+.. automodule:: pyclmuapp.era_forcing
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+pyclmuapp.get_urban_params module
+--------------------
+
+.. automodule:: pyclmuapp.get_urban_params
+   :members:
+   :undoc-members:
+   :show-inheritance:
+

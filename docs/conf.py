@@ -14,7 +14,7 @@ sys.path.insert(0, os.path.abspath('..'))
 project = 'pyclmuapp'
 copyright = '2024, Junjie Yu, Zhonghua Zheng'
 author = 'Junjie Yu, Zhonghua Zheng'
-release = 'v0.0.0'
+release = 'v0.0.2'
 
 ## -- General configuration ---------------------------------------------------
 autosummary_generate = True
