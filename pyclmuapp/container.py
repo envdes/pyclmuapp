@@ -39,7 +39,7 @@ class clumapp:
                  output_path: str = "outputfolder",
                  log_path: str = "logfolder",
                  scripts_path: str = "scriptsfolder",
-                 container_type: str = "udocker"
+                 container_type: str = "docker"
                  ):
         """
         
@@ -51,10 +51,10 @@ class clumapp:
             scripts_path (str): The path to the folder for the scripts of CLMU-App.
             container_type (str): The type of the container for CLMU-App. Do not change the default value if you are not sure.
                 The supported types are:
-                - udocker: The udocker container. [default]
-                - docker: The docker container. [decprecating]
-                - singularity: The singularity container. [decprecating]
+                - docker: The docker container. [default]
+                - singularity: The singularity container. [for HPC users]
                 - docker_in: The docker-in-docker container.
+                - udocker: The udocker container. [only for Linux users, if you using Linux OS, we recommend using this option]
                 
         
         """
@@ -254,12 +254,21 @@ class clumapp:
         #shutil.rmtree(os.path.join(self.scripts_path, case_name))
         #shutil.rmtree(os.path.join(self.log_path, case_name))
         
-        self.docker(cmd="usp-exec",
-                    dockersript=f"rm -rf /p/scripts/{case_name}",
-                    iflog=False)
-        self.docker(cmd="usp-exec",
-                    dockersript=f"rm -rf /p/scratch/CESMDATAROOT/CaseOutputs/{case_name}",
-                    iflog=False)
+        if self.container_type == "udocker":
+            cmd = 'run'
+        else:
+            cmd = 'usp'
+            
+        try:
+            shutil.rmtree(os.path.join(self.log_path, case_name))
+            shutil.rmtree(os.path.join(self.scripts_path, case_name))
+        except PermissionError:
+            self.docker(cmd=cmd,
+                        dockersript=f"rm -rf /p/scripts/{case_name}",
+                        iflog=False)
+            self.docker(cmd=cmd,
+                        dockersript=f"rm -rf /p/scratch/CESMDATAROOT/CaseOutputs/{case_name}",
+                        iflog=False)
         
         if os.path.exists(os.path.join(self.input_path, 'usp')):
             shutil.rmtree(os.path.join(self.input_path, 'usp'))

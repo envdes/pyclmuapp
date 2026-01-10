@@ -20,9 +20,19 @@ Contributors: `Junjie Yu <https://junjieyu-uom.github.io>`_, `Keith Oleson <http
 
 Installation
 ------------
+
+Step 1: install docker before using pyclmuapp::
+
+If you are the Linux OS user, we recommend you to use *udocker* and then you are no needed to install Docker. 
+
+Install Docker on `Linux <https://docs.docker.com/desktop/setup/install/linux/>`_,
+Install Docker on `Mac <https://docs.docker.com/desktop/setup/install/mac-install/>`_,
+Install Docker on `Windows <https://docs.docker.com/desktop/setup/install/windows-install/>`_, 
+
+
 Step 1: create an environment::
 
-    $ conda create -n pyclmuapp python=3.8
+    $ conda create -n pyclmuapp python=3.9
     $ conda activate pyclmuapp
     $ conda install -c conda-forge numpy pandas xarray haversine netcdf4 nc-time-axis
 
@@ -31,6 +41,11 @@ Step 2: install from source::
     $ git clone https://github.com/envdes/pyclmuapp.git
     $ cd pyclmuapp
     $ python setup.py pyclmuapp
+
+testing installation::
+
+    $ cd example_data
+    $ python test.py
 
 (optional) install using pip::
 

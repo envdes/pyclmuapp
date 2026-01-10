@@ -1,4 +1,5 @@
 import os
+import sys
 from typing import Union
 import shutil
 import pandas as pd
@@ -17,7 +18,7 @@ class usp_clmu(clumapp):
                  output_path: str = "outputfolder",
                  log_path: str = "logfolder",
                  scripts_path: str = "scriptsfolder",
-                 container_type: str = "udocker") -> None:
+                 container_type: str = "docker") -> None:
         
         super().__init__(pwd=pwd, input_path=input_path, 
                          output_path=output_path, log_path=log_path, scripts_path=scripts_path, 
@@ -84,7 +85,9 @@ class usp_clmu(clumapp):
         return ds
     
 
-    def check_surf(self, usr_surfdata: str = None, surfata_name: str = "surfdata.nc",
+    def check_surf(self, 
+                   usr_surfdata: str = None, 
+                   surfata_name: str = "surfdata.nc",
                    urban_type: int = 2) -> dict:
         """
         The function to get the surface data for the urban surface parameters.
@@ -160,11 +163,12 @@ class usp_clmu(clumapp):
         return output
         
 
-    def modify_surf(self, usr_surfdata: str = None,
-                        action: dict = None,
-                        mode: str = "replace",
-                        surfata_name: str = "surfdata.nc",
-                        urban_type: int = 2) -> dict:
+    def modify_surf(self, 
+                    usr_surfdata: str = None,
+                    action: dict = None,
+                    mode: str = "replace",
+                    surfata_name: str = "surfdata.nc",
+                    urban_type: int = 2) -> None:
 
         """
         The function to revise the surface data for the urban surface parameters.
@@ -176,7 +180,7 @@ class usp_clmu(clumapp):
             surfata_name (str): The name of the revised surface data file. The default is "surfdata.nc".
             urban_type (int): The type of the urban surface. The default is 2. 0 is for TBD urban, 1 is for HD urban, and 2 is for MD urban.
         Returns:
-            dict: The dictionary of the revised surface data for the urban surface parameters.
+            None
         """
 
         #surfdata = self._open_nc(usr_surfdata, "surfdata")
@@ -254,10 +258,9 @@ class usp_clmu(clumapp):
         del surfdata
         gc.collect()
 
-    def check_domain(self, usr_domain: str = None, 
-                          #lat : float = None, 
-                          #lon: float = None,
-                          domain_name: str = "domain.nc") -> None:
+    def check_domain(self,
+                    usr_domain: str = None, 
+                    domain_name: str = "domain.nc") -> None:
 
         """
         The function to get the domain data for the urban surface parameters.
@@ -267,7 +270,7 @@ class usp_clmu(clumapp):
             domain_name (str): The name of the domain data file. The default is "domain.nc".
             
         Returns:
-            dict: The dictionary of the domain data for the urban surface parameters.
+            None
         """
         
         domian_nc = self._open_nc(usr_domain, "domain")
@@ -332,10 +335,11 @@ class usp_clmu(clumapp):
         shutil.copy(usr_forcing, os.path.join(self.input_path, f'usp/{self.usr_forcing_file}'))
         self.forcing_file = os.path.join(self.input_path, f'usp/{self.usr_forcing_file}')
 
-    def modify_forcing(self, usr_forcing: str = None,
-                            action: dict = None,
-                            mode: str = "add",
-                            forcing_name: str = "forcing.nc") -> None:
+    def modify_forcing(self,
+                        usr_forcing: str = None,
+                        action: dict = None,
+                        mode: str = "add",
+                        forcing_name: str = "forcing.nc") -> None:
         """
         The function to revise the forcing data for the urban surface parameters.
 
@@ -442,29 +446,10 @@ class usp_clmu(clumapp):
             list: The list of the output files names.
         """
 
-
-        #def _check_command():
-        #    if self.domain is None:
-        #        raise ValueError("The domain data is not provided.")
-        #    if self.surfdata is None:
-        #        raise ValueError("The surface data is not provided.")
-        #    if self.usr_forcing_file is None:
-        #        raise ValueError("The forcing data is not provided.")
-        #    if self.caseconfig["case_name"] is None:
-        #        raise ValueError("The case name is not provided.")
-        #    if self.caseconfig["FORCING_DATE"] is None:
-        #        raise ValueError("The forcing date is not provided.")
-        #    if self.caseconfig["RUN_STARTDATE"] is None:
-        #        raise ValueError("The run start date is not provided.")
-        #    if self.caseconfig["STOP_OPTION"] is None:
-        #        raise ValueError("The stop option is not provided.")
-
         self.case_name = case_name
         case_name = f'/p/scripts/{case_name}'
-        #case_name = os.path.join('/' 'p' 'scripts', case_name)
 
         if SURF is not None:
-            #self.surfdata = SURF
             self.check_surf(usr_surfdata=SURF)
         else:
             if self.surfdata is None:
@@ -473,7 +458,6 @@ class usp_clmu(clumapp):
                 self.surfdata = self.surfdata
 
         if FORCING is not None:
-            #self.usr_forcing_file = FORCING
             self.check_forcing(usr_forcing=FORCING)
         else:
             if self.usr_forcing_file is None:
@@ -482,11 +466,9 @@ class usp_clmu(clumapp):
                 self.usr_forcing_file = self.usr_forcing_file
                 
         if ATM_DOM is not None:
-            #self.domain = ATM_DOM
             self.check_domain(usr_domain=ATM_DOM)
         else:
             if self.domain is None:
-                #print("Generating the domain data.")
                 self.check_domain()
             else:
                 self.domain = self.domain
@@ -501,33 +483,8 @@ class usp_clmu(clumapp):
         else:
             shutil.copytree(os.path.join(os.path.dirname(__file__), 'usp', 'SourceMods'), 
                     self.sourcemod)
-#        # Copy the user_single_point.sh to the input folder
-#        self.usr_single_point = os.path.join(self.input_path, 'usp/usp.sh')
-#        if os.path.exists(self.usr_single_point):
-#            print(f"The {self.usr_single_point} already exists.")
-#        else:
-#            shutil.copy(os.path.join(os.path.dirname(__file__), 'scripts/usp.sh'), 
-#                    self.usr_single_point)
 
-        # Run the CLMU-App
-
-#        self.command="""export CASESRPITS=/p/project/clm5.0/cime/scripts && \
-#export USER=root && \
-#export PROJECT=/p/project && \
-#export SCRATCH=/p/scratch && \
-#export CESMDATAROOT=/p/scratch/CESMDATAROOT && \
-#export CSMDATA=/p/scratch/CESMDATAROOT/inputdata && \
-#export CASESCRIPT=/p/project/clm5.0/cime/scripts && \
-#export OMPI_ALLOW_RUN_AS_ROOT_CONFIRM=1 && \
-#export OMPI_ALLOW_RUN_AS_ROOT=1 && \
-#cd $CSMDATA && \
-#bash usp/usp.sh --ATMDOM_FILE {ATMDOM_FILE} \
-#--SURF '{SURF}' \
-#--FORCING_FILE '{FORCING_FILE}' \
-#--case_name {case_name} \
-#--RUN_STARTDATE '{RUN_STARTDATE}' \
-#--STOP_OPTION {STOP_OPTION} --STOP_N {STOP_N} --START {START} --END {END}
-#"""
+        # Calculate the END year
         run_time_str = datetime.strptime(RUN_STARTDATE, "%Y-%m-%d")
         START = run_time_str.year
         if STOP_OPTION == "ndays":
@@ -542,6 +499,8 @@ class usp_clmu(clumapp):
             raise ValueError("The STOP_N is not correct. please use 'ndays', 'nmonths', or 'nyears'.")
 
         END = (run_time_str + pd.DateOffset(**dateparam)).year
+        
+        # Format the command
         command = self.command.format(ATMDOM_FILE=self.domain,
                                         SURF=self.surfdata,
                                         FORCING_FILE=self.usr_forcing_file,
@@ -561,15 +520,16 @@ class usp_clmu(clumapp):
                                         hist_mfilt=hist_mfilt,
                                         urban_hac=urban_hac)
 
+        # Set the logfile
         if logfile is None:
             logfile = os.path.join(self.pwd, 'pyclmuapprun.log')
 
-
-        #self.docker(cmd='run', iflog=iflog, 
-        #            password=password, cmdlogfile=logfile,
-        #            dockersript=command)
+        # Run the command
         if self.container_type == "udocker":
             crun_type = 'run'
+            if not sys.platform.startswith('linux'):
+                print("udocker is only supported on Linux OS. Please use docker or singularity container.")
+                
         self.docker(cmd=crun_type, iflog=iflog, 
                     password=password, cmdlogfile=logfile,
                     dockersript=command)
@@ -579,14 +539,10 @@ class usp_clmu(clumapp):
         op_path = os.path.join(self.output_path, 'lnd', 'hist')
         
         if output_prefix is not None:
-        
+            # Rename the output file
             for filename in os.listdir(op_path):
                 if ((f'{os.path.split(case_name)[-1]}.clm2' in filename) and\
                     f'{RUN_STARTDATE}' in filename):
-                    #savename = op_path + '/' \
-                    #                + case_name.split('/')[-1] \
-                    #                + f'_clm{i}_'+datetime.now().strftime("%Y-%m-%d_%H-%M-%S") \
-                    #                + output_prefix
                     savename = os.path.join(op_path, (os.path.split(case_name)[-1] 
                                             + f'_clm{i}_'+datetime.now().strftime("%Y-%m-%d_%H-%M-%S") 
                                             + output_prefix))
@@ -599,7 +555,7 @@ class usp_clmu(clumapp):
                         self.save_name = op_path + '/' +filename
                     
                     i += 1
-
+                    
         return savename_list
         
 

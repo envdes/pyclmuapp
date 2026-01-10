@@ -25,7 +25,7 @@ setup(
     long_description_content_type="text/x-rst",
     license="MIT",
     classifiers=classifiers,
-    install_requires=['numpy', 'pandas', 'xarray', 'haversine', 'netcdf4', 'nc-time-axis', 'cdsapi'],
+    install_requires=['numpy', 'pandas', 'xarray', 'haversine', 'netcdf4', 'nc-time-axis', 'cdsapi', 'udocker', 'earthengine-api'],
     packages=find_packages(),
     entry_points={
         'console_scripts': [
