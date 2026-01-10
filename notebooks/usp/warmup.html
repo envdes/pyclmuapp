@@ -60,7 +60,6 @@
 <li class="toctree-l3"><a class="reference internal" href="#3-How-to-get-your-own-input-files?">3 How to get your own input files?</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#3-How-to-change-the-surface-and-forcing-data?">3 How to change the surface and forcing data?</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#Optional-input-method">Optional input method</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#Optional-run-way">Optional run way</a></li>
 </ul>
 </li>
 </ul>
@@ -126,6 +125,7 @@
              
   <section id="Warmup">
 <h1>Warmup<a class="headerlink" href="#Warmup" title="Link to this heading"></a></h1>
+<p><strong>Ignore this you are using newest version of pyclmuapp</strong></p>
 <p>Fisrt of all, make sure you have installed Docker.</p>
 <ul class="simple">
 <li><p><a class="reference external" href="https://docs.docker.com/desktop/setup/install/linux/">Install Docker on Linux</a></p></li>
@@ -137,6 +137,7 @@
 <img alt="workflow" src="../../_images/wp.png" />
 <section id="1-Initailize">
 <h3>1 Initailize<a class="headerlink" href="#1-Initailize" title="Link to this heading"></a></h3>
+<p><strong>Ignore this you are using newest version of pyclmuapp</strong></p>
 <p>Before initialization, we need to pull the docker image.</p>
 <p><strong>for Linux and MacOS</strong> : use <code class="docutils literal notranslate"><span class="pre">docker</span> <span class="pre">pull</span> <span class="pre">envdes/clmu-app:1.1</span></code> or <code class="docutils literal notranslate"><span class="pre">pyclmuapp</span> <span class="pre">--has_container</span> <span class="pre">False</span> <span class="pre">--container_type</span> <span class="pre">docker</span> <span class="pre">--init</span> <span class="pre">True</span></code> in command line.</p>
 <p><strong>for Windows</strong>: pull the image <code class="docutils literal notranslate"><span class="pre">envdes/clmu-app:1.1</span></code> manually from Docker Desktop</p>
@@ -443,38 +444,6 @@
             <span class="c1">#RUN_TYPE= &quot;coldstart&quot;, # coldstart is the default option</span>
         <span class="p">)</span>
 <span class="n">usp_res</span>
-</pre></div>
-</div>
-</div>
-</section>
-<section id="Optional-run-way">
-<h3>Optional run way<a class="headerlink" href="#Optional-run-way" title="Link to this heading"></a></h3>
-<div class="nbinput nblast docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[ ]:
-</pre></div>
-</div>
-<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">pyclmuapp</span><span class="w"> </span><span class="kn">import</span> <span class="n">usp_clmu</span>
-
-<span class="c1"># initialize</span>
-<span class="n">usp</span> <span class="o">=</span> <span class="n">usp_clmu</span><span class="p">()</span>
-
-<span class="c1"># run the docker image</span>
-<span class="n">usp</span><span class="o">.</span><span class="n">docker</span><span class="p">(</span><span class="s2">&quot;run&quot;</span><span class="p">)</span>
-
-<span class="n">usp_res</span> <span class="o">=</span> <span class="n">usp</span><span class="o">.</span><span class="n">run</span><span class="p">(</span>
-            <span class="n">case_name</span> <span class="o">=</span> <span class="s2">&quot;usp_spinup&quot;</span><span class="p">,</span>
-            <span class="n">SURF</span><span class="o">=</span><span class="s2">&quot;surfdata.nc&quot;</span><span class="p">,</span>
-            <span class="n">FORCING</span><span class="o">=</span><span class="s2">&quot;forcing.nc&quot;</span><span class="p">,</span>
-            <span class="n">RUN_STARTDATE</span> <span class="o">=</span> <span class="s2">&quot;2002-01-01&quot;</span><span class="p">,</span>
-            <span class="n">STOP_OPTION</span> <span class="o">=</span> <span class="s2">&quot;nyears&quot;</span><span class="p">,</span>
-            <span class="n">STOP_N</span> <span class="o">=</span> <span class="s2">&quot;10&quot;</span><span class="p">,</span>
-            <span class="c1">#RUN_TYPE= &quot;coldstart&quot;, # coldstart is the default option</span>
-            <span class="n">crun_type</span><span class="o">=</span><span class="s2">&quot;usp-exec&quot;</span> <span class="c1"># this is to run the container when the docker image is used</span>
-        <span class="p">)</span>
-
-<span class="c1"># stop the docker image and remove it</span>
-<span class="n">usp</span><span class="o">.</span><span class="n">docker</span><span class="p">(</span><span class="s2">&quot;stop&quot;</span><span class="p">)</span>
-<span class="n">usp</span><span class="o">.</span><span class="n">docker</span><span class="p">(</span><span class="s2">&quot;rm&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>

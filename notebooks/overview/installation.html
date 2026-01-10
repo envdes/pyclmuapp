@@ -112,21 +112,14 @@
              
   <section id="installation">
 <h1>Installation<a class="headerlink" href="#installation" title="Link to this heading"></a></h1>
-<p>Step 1: install docker before using pyclmuapp</p>
-<ul class="simple">
-<li><p><a class="reference external" href="https://docs.docker.com/desktop/setup/install/linux/">Install Docker on Linux</a></p></li>
-<li><p><a class="reference external" href="https://docs.docker.com/desktop/setup/install/mac-install/">Install Docker on Mac</a></p></li>
-<li><p><a class="reference external" href="https://docs.docker.com/desktop/setup/install/windows-install/">Install Docker on Windows</a></p></li>
-</ul>
-<p><strong>If you would like to use the python package, then,</strong></p>
-<p>Step 2: create a conda environment</p>
+<p>Step 1: create a conda environment</p>
 <hr class="docutils" />
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>conda<span class="w"> </span>create<span class="w"> </span>-n<span class="w"> </span>pyclmuapp<span class="w"> </span><span class="nv">python</span><span class="o">=</span><span class="m">3</span>.9
 $<span class="w"> </span>conda<span class="w"> </span>activate<span class="w"> </span>pyclmuapp
-$<span class="w"> </span>conda<span class="w"> </span>install<span class="w"> </span>-c<span class="w"> </span>conda-forge<span class="w"> </span>numpy<span class="w"> </span>pandas<span class="w"> </span>xarray<span class="w"> </span>haversine<span class="w"> </span>netcdf4<span class="w"> </span>nc-time-axis
+$<span class="w"> </span>conda<span class="w"> </span>install<span class="w"> </span>-c<span class="w"> </span>conda-forge<span class="w"> </span>numpy<span class="w"> </span>pandas<span class="w"> </span>xarray<span class="w"> </span>haversine<span class="w"> </span>netcdf4<span class="w"> </span>nc-time-axis<span class="w"> </span>udocker<span class="w"> </span>earthengine-api
 </pre></div>
 </div>
-<p>Step 3: install from source</p>
+<p>(Optional) install from source</p>
 <hr class="docutils" />
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>git<span class="w"> </span>clone<span class="w"> </span>https://github.com/envdes/pyclmuapp
 $<span class="w"> </span><span class="nb">cd</span><span class="w"> </span>pyclmuapp
@@ -138,6 +131,13 @@ $<span class="w"> </span>python<span class="w"> </span>setup.py<span class="w"> 
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>pip<span class="w"> </span>install<span class="w"> </span>pyclmuapp
 </pre></div>
 </div>
+<p>Step 2: [Ignore this you are using newest version of pyclmuapp] install docker before using pyclmuapp</p>
+<ul class="simple">
+<li><p><a class="reference external" href="https://docs.docker.com/desktop/setup/install/linux/">Install Docker on Linux</a></p></li>
+<li><p><a class="reference external" href="https://docs.docker.com/desktop/setup/install/mac-install/">Install Docker on Mac</a></p></li>
+<li><p><a class="reference external" href="https://docs.docker.com/desktop/setup/install/windows-install/">Install Docker on Windows</a></p></li>
+</ul>
+<p><strong>If you would like to use the python package, then,</strong></p>
 </section>
 
 
