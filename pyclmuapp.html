@@ -85,7 +85,7 @@
 <ul class="current">
 <li class="toctree-l1 current"><a class="current reference internal" href="#">pyclmuapp package</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="#submodules">Submodules</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#module-pyclmuapp.usp">pyclmuapp.usp module</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#module-pyclmuapp.usp">usp</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="#pyclmuapp.usp.usp_clmu"><code class="docutils literal notranslate"><span class="pre">usp_clmu</span></code></a><ul>
 <li class="toctree-l4"><a class="reference internal" href="#pyclmuapp.usp.usp_clmu.check_domain"><code class="docutils literal notranslate"><span class="pre">usp_clmu.check_domain()</span></code></a></li>
 <li class="toctree-l4"><a class="reference internal" href="#pyclmuapp.usp.usp_clmu.check_forcing"><code class="docutils literal notranslate"><span class="pre">usp_clmu.check_forcing()</span></code></a></li>
@@ -99,29 +99,9 @@
 </li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="#pyclmuapp-era5-forcing-module">pyclmuapp.era5_forcing module</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="#pyclmuapp.era5_forcing.arco_era5_to_forcing"><code class="docutils literal notranslate"><span class="pre">arco_era5_to_forcing()</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="#pyclmuapp.era5_forcing.check_era5"><code class="docutils literal notranslate"><span class="pre">check_era5()</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="#pyclmuapp.era5_forcing.era5_download"><code class="docutils literal notranslate"><span class="pre">era5_download()</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="#pyclmuapp.era5_forcing.era5_to_forcing"><code class="docutils literal notranslate"><span class="pre">era5_to_forcing()</span></code></a></li>
-</ul>
-</li>
-<li class="toctree-l2"><a class="reference internal" href="#pyclmuapp-era5-forcing-gee-module">pyclmuapp.era5_forcing_gee module</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="#pyclmuapp.era5_forcing_gee.era5_to_forcing"><code class="docutils literal notranslate"><span class="pre">era5_to_forcing()</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="#pyclmuapp.era5_forcing_gee.gee_era5s_to_forcing"><code class="docutils literal notranslate"><span class="pre">gee_era5s_to_forcing()</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="#pyclmuapp.era5_forcing_gee.get_era5_ee"><code class="docutils literal notranslate"><span class="pre">get_era5_ee()</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="#pyclmuapp.era5_forcing_gee.month_chunks"><code class="docutils literal notranslate"><span class="pre">month_chunks()</span></code></a></li>
-</ul>
-</li>
-<li class="toctree-l2"><a class="reference internal" href="#pyclmuapp-era-forcing-module">pyclmuapp.era_forcing module</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="#pyclmuapp.era_forcing.download_era5_land_data"><code class="docutils literal notranslate"><span class="pre">download_era5_land_data()</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="#pyclmuapp.era_forcing.era5s_to_forcing"><code class="docutils literal notranslate"><span class="pre">era5s_to_forcing()</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="#pyclmuapp.era_forcing.get_nc_from_zip"><code class="docutils literal notranslate"><span class="pre">get_nc_from_zip()</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="#pyclmuapp.era_forcing.is_within"><code class="docutils literal notranslate"><span class="pre">is_within()</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="#pyclmuapp.era_forcing.workflow_era5s_to_forcing"><code class="docutils literal notranslate"><span class="pre">workflow_era5s_to_forcing()</span></code></a></li>
-</ul>
-</li>
-<li class="toctree-l2"><a class="reference internal" href="#pyclmuapp-get-urban-params-module">pyclmuapp.get_urban_params module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#module-pyclmuapp.input_data.get_urban_params">get_urban_params</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#module-pyclmuapp.input_data.get_soil_params">get_soil_params</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#module-pyclmuapp.input_data.get_forcing">get_forcing</a></li>
 </ul>
 </li>
 </ul>
@@ -156,7 +136,7 @@
 <h2>Submodules<a class="headerlink" href="#submodules" title="Link to this heading"></a></h2>
 </section>
 <section id="module-pyclmuapp.usp">
-<span id="pyclmuapp-usp-module"></span><h2>pyclmuapp.usp module<a class="headerlink" href="#module-pyclmuapp.usp" title="Link to this heading"></a></h2>
+<span id="usp"></span><h2>usp<a class="headerlink" href="#module-pyclmuapp.usp" title="Link to this heading"></a></h2>
 <dl class="py class">
 <dt class="sig sig-object py" id="pyclmuapp.usp.usp_clmu">
 <em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">pyclmuapp.usp.</span></span><span class="sig-name descname"><span class="pre">usp_clmu</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">pwd</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'/home/runner/work/pyclmuapp/pyclmuapp/docs/workdir'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">input_path</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">'inputfolder'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">output_path</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">'outputfolder'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">log_path</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">'logfolder'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">scripts_path</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">'scriptsfolder'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">container_type</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">'docker'</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pyclmuapp.usp.usp_clmu" title="Link to this definition"></a></dt>
@@ -371,253 +351,9 @@ Do not change this parameter if you are not sure.</p></li>
 </dd></dl>
 
 </section>
-<section id="pyclmuapp-era5-forcing-module">
-<h2>pyclmuapp.era5_forcing module<a class="headerlink" href="#pyclmuapp-era5-forcing-module" title="Link to this heading"></a></h2>
-<span class="target" id="module-pyclmuapp.era5_forcing"></span><dl class="py function">
-<dt class="sig sig-object py" id="pyclmuapp.era5_forcing.arco_era5_to_forcing">
-<span class="sig-prename descclassname"><span class="pre">pyclmuapp.era5_forcing.</span></span><span class="sig-name descname"><span class="pre">arco_era5_to_forcing</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">start_year</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">end_year</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">start_month</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">end_month</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">lat</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">lon</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">zbot</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">outputfile</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">lapse_rate</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0.006</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pyclmuapp.era5_forcing.arco_era5_to_forcing" title="Link to this definition"></a></dt>
-<dd><p>Converts ERA5 data to forcing data for a specified time period and location using a lapse rate.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Parameters<span class="colon">:</span></dt>
-<dd class="field-odd"><ul class="simple">
-<li><p><strong>start_year</strong> (<em>int</em>) – The beginning year for the data extraction process. Specifies the starting year for the time period from which data will be extracted.</p></li>
-<li><p><strong>end_year</strong> (<em>int</em>) – Specifies the ending year for the data range you want to process. Used to indicate the last year for which the data will be processed.</p></li>
-<li><p><strong>start_month</strong> (<em>int</em>) – Represents the starting month for which you want to retrieve data. Specifies the beginning month of the time period for which you want to extract ERA5 data.</p></li>
-<li><p><strong>end_month</strong> (<em>int</em>) – Represents the ending month for which you want to process data. Specifies the end month of the time period for which you are retrieving or processing data.</p></li>
-<li><p><strong>lat</strong> (<em>float</em>) – Latitude of the location for which the data is being processed.</p></li>
-<li><p><strong>lon</strong> (<em>float</em>) – Longitude of the location for which the ERA5 data will be extracted.</p></li>
-<li><p><strong>zbot</strong> (<em>float</em>) – Likely refers to the bottom level of the atmosphere or the height above the surface at which the atmospheric data is being extracted. Represents the altitude or depth at which the atmospheric variables are measured or calculated.</p></li>
-<li><p><strong>outputfile</strong> (<em>str</em>) – The name of the file where the output data will be saved or written to. This file will contain the processed data based on the input parameters provided to the function.</p></li>
-<li><p><strong>lapse_rate</strong> (<em>float</em><em>, </em><em>optional</em>) – Represents the lapse rate used for calculating temperature at different altitudes. The lapse rate is the rate at which atmospheric temperature decreases with an increase in altitude. Defaults to 0.</p></li>
-</ul>
-</dd>
-</dl>
-</dd></dl>
-
-<dl class="py function">
-<dt class="sig sig-object py" id="pyclmuapp.era5_forcing.check_era5">
-<span class="sig-prename descclassname"><span class="pre">pyclmuapp.era5_forcing.</span></span><span class="sig-name descname"><span class="pre">check_era5</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">era5</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">Dataset</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">lat</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">float</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">lon</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">float</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pyclmuapp.era5_forcing.check_era5" title="Link to this definition"></a></dt>
-<dd><p>The <cite>check_era5</cite> function is a helper function that takes in a variable <cite>era5</cite>,
-latitude <cite>lat</cite>, and longitude <cite>lon</cite>. It checks the type of the <cite>era5</cite> variable and based on its type,
-it opens the dataset if it’s a file path or uses it directly if it’s already an xarray Dataset.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Parameters<span class="colon">:</span></dt>
-<dd class="field-odd"><ul class="simple">
-<li><p><strong>era5</strong> (<em>Union</em><em>[</em><em>str</em><em>, </em><em>xr.Dataset</em><em>]</em>) – The ERA5 data.</p></li>
-<li><p><strong>lat</strong> (<em>float</em>) – The latitude of the location.</p></li>
-<li><p><strong>lon</strong> (<em>float</em>) – The longitude of the location.</p></li>
-</ul>
-</dd>
-<dt class="field-even">Returns<span class="colon">:</span></dt>
-<dd class="field-even"><p>The ERA5 data for the location.</p>
-</dd>
-<dt class="field-odd">Return type<span class="colon">:</span></dt>
-<dd class="field-odd"><p>xarray.Dataset</p>
-</dd>
-</dl>
-</dd></dl>
-
-<dl class="py function">
-<dt class="sig sig-object py" id="pyclmuapp.era5_forcing.era5_download">
-<span class="sig-prename descclassname"><span class="pre">pyclmuapp.era5_forcing.</span></span><span class="sig-name descname"><span class="pre">era5_download</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">year</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">month</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">lat</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">lon</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">outputfolder</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'./data'</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pyclmuapp.era5_forcing.era5_download" title="Link to this definition"></a></dt>
-<dd><p>This function <cite>era5_download</cite> is designed to download ERA5 reanalysis data for
-a specific year, month, pressure level, latitude, and longitude.
-It uses the <cite>cdsapi</cite> library to retrieve the data from the Copernicus Climate Data Store (CDS) API.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Parameters<span class="colon">:</span></dt>
-<dd class="field-odd"><ul class="simple">
-<li><p><strong>year</strong> (<em>int</em>) – The year of the data to download.</p></li>
-<li><p><strong>month</strong> (<em>str</em>) – The month of the data to download.</p></li>
-<li><p><strong>lat</strong> (<em>float</em>) – The latitude of the data to download.</p></li>
-<li><p><strong>lon</strong> (<em>float</em>) – The longitude of the data to download.</p></li>
-<li><p><strong>outputfolder</strong> (<em>str</em>) – The folder to save the downloaded data to.</p></li>
-</ul>
-</dd>
-<dt class="field-even">Returns<span class="colon">:</span></dt>
-<dd class="field-even"><p>The path to the downloaded pressure level data.
-single (str): The path to the downloaded single level data.</p>
-</dd>
-<dt class="field-odd">Return type<span class="colon">:</span></dt>
-<dd class="field-odd"><p>pres (str)</p>
-</dd>
-</dl>
-</dd></dl>
-
-<dl class="py function">
-<dt class="sig sig-object py" id="pyclmuapp.era5_forcing.era5_to_forcing">
-<span class="sig-prename descclassname"><span class="pre">pyclmuapp.era5_forcing.</span></span><span class="sig-name descname"><span class="pre">era5_to_forcing</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">single</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">Dataset</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">lat</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">float</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">lon</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">float</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">zbot</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">30</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">outputfile</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">'./forcing.nc'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">lapse_rate</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">0.006</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pyclmuapp.era5_forcing.era5_to_forcing" title="Link to this definition"></a></dt>
-<dd><p>“The function <cite>era5_to_forcing</cite> takes in two xarray Datasets <cite>pres</cite> and <cite>single</cite>, latitude <cite>lat</cite>, longitude <cite>lon</cite>,
-and an optional <cite>pressure</cite> parameter with a default value of 950.”</p>
-<dl class="field-list simple">
-<dt class="field-odd">Parameters<span class="colon">:</span></dt>
-<dd class="field-odd"><ul class="simple">
-<li><p><strong>single</strong> (<em>xarray.Dataset</em><em>, </em><em>str</em>) – The single level data.</p></li>
-<li><p><strong>lat</strong> (<em>float</em>) – The latitude of the location.</p></li>
-<li><p><strong>lon</strong> (<em>float</em>) – The longitude of the location.</p></li>
-<li><p><strong>zbot</strong> (<em>int</em><em>, </em><em>float</em>) – The bottom level of the forcing data.</p></li>
-<li><p><strong>outputfile</strong> (<em>str</em>) – The path to save the forcing data.</p></li>
-<li><p><strong>lapse_rate</strong> (<em>int</em><em>, </em><em>float</em>) – The lapse rate of the forcing data. default is 0.006, from Pritchard et al. (GRL, 35, 2008) of CTSM</p></li>
-</ul>
-</dd>
-<dt class="field-even">Returns<span class="colon">:</span></dt>
-<dd class="field-even"><p>The forcing data.</p>
-</dd>
-<dt class="field-odd">Return type<span class="colon">:</span></dt>
-<dd class="field-odd"><p>xarray.Dataset</p>
-</dd>
-</dl>
-</dd></dl>
-
-</section>
-<section id="pyclmuapp-era5-forcing-gee-module">
-<h2>pyclmuapp.era5_forcing_gee module<a class="headerlink" href="#pyclmuapp-era5-forcing-gee-module" title="Link to this heading"></a></h2>
-<span class="target" id="module-pyclmuapp.era5_forcing_gee"></span><dl class="py function">
-<dt class="sig sig-object py" id="pyclmuapp.era5_forcing_gee.era5_to_forcing">
-<span class="sig-prename descclassname"><span class="pre">pyclmuapp.era5_forcing_gee.</span></span><span class="sig-name descname"><span class="pre">era5_to_forcing</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">single</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">Dataset</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">zbot</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">30</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">lapse_rate</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">0.006</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pyclmuapp.era5_forcing_gee.era5_to_forcing" title="Link to this definition"></a></dt>
-<dd><p>“The function <cite>era5_to_forcing</cite> takes in two xarray Datasets <cite>pres</cite> and <cite>single</cite>, latitude <cite>lat</cite>, longitude <cite>lon</cite>,
-and an optional <cite>pressure</cite> parameter with a default value of 950.”</p>
-<dl class="field-list simple">
-<dt class="field-odd">Parameters<span class="colon">:</span></dt>
-<dd class="field-odd"><ul class="simple">
-<li><p><strong>single</strong> (<em>xarray.Dataset</em><em>, </em><em>str</em>) – The single level data.</p></li>
-<li><p><strong>lat</strong> (<em>float</em>) – The latitude of the location.</p></li>
-<li><p><strong>lon</strong> (<em>float</em>) – The longitude of the location.</p></li>
-<li><p><strong>zbot</strong> (<em>int</em><em>, </em><em>float</em>) – The bottom level of the forcing data.</p></li>
-<li><p><strong>outputfile</strong> (<em>str</em>) – The path to save the forcing data.</p></li>
-<li><p><strong>lapse_rate</strong> (<em>int</em><em>, </em><em>float</em>) – The lapse rate of the forcing data. default is 0.006, from Pritchard et al. (GRL, 35, 2008) of CTSM</p></li>
-</ul>
-</dd>
-<dt class="field-even">Returns<span class="colon">:</span></dt>
-<dd class="field-even"><p>The forcing data.</p>
-</dd>
-<dt class="field-odd">Return type<span class="colon">:</span></dt>
-<dd class="field-odd"><p>xarray.Dataset</p>
-</dd>
-</dl>
-</dd></dl>
-
-<dl class="py function">
-<dt class="sig sig-object py" id="pyclmuapp.era5_forcing_gee.gee_era5s_to_forcing">
-<span class="sig-prename descclassname"><span class="pre">pyclmuapp.era5_forcing_gee.</span></span><span class="sig-name descname"><span class="pre">gee_era5s_to_forcing</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">ee</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">lat</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">lon</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">start_date</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">end_date</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">zbot</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">30</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">outputfile</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'./forcing.nc'</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pyclmuapp.era5_forcing_gee.gee_era5s_to_forcing" title="Link to this definition"></a></dt>
-<dd></dd></dl>
-
-<dl class="py function">
-<dt class="sig sig-object py" id="pyclmuapp.era5_forcing_gee.get_era5_ee">
-<span class="sig-prename descclassname"><span class="pre">pyclmuapp.era5_forcing_gee.</span></span><span class="sig-name descname"><span class="pre">get_era5_ee</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">ee</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">lat</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">lon</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">start_YY_MM</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">end_YY_MM</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pyclmuapp.era5_forcing_gee.get_era5_ee" title="Link to this definition"></a></dt>
-<dd><p>“The function <cite>get_era5_ee</cite> retrieves ERA5 weather data for a specific location and time range using Google Earth Engine.”</p>
-<dl class="field-list simple">
-<dt class="field-odd">Parameters<span class="colon">:</span></dt>
-<dd class="field-odd"><ul class="simple">
-<li><p><strong>ee</strong> (<em>module</em>) – The Google Earth Engine module.</p></li>
-<li><p><strong>lat</strong> (<em>float</em>) – The latitude of the location.</p></li>
-<li><p><strong>lon</strong> (<em>float</em>) – The longitude of the location.</p></li>
-<li><p><strong>start_YY_MM</strong> (<em>str</em>) – The start date in ‘YYYY-MM-DD’ format.</p></li>
-<li><p><strong>end_YY_MM</strong> (<em>str</em>) – The end date in ‘YYYY-MM-DD’ format.</p></li>
-</ul>
-</dd>
-<dt class="field-even">Returns<span class="colon">:</span></dt>
-<dd class="field-even"><p>The ERA5 weather data.</p>
-</dd>
-<dt class="field-odd">Return type<span class="colon">:</span></dt>
-<dd class="field-odd"><p>xarray.Dataset</p>
-</dd>
-</dl>
-</dd></dl>
-
-<dl class="py function">
-<dt class="sig sig-object py" id="pyclmuapp.era5_forcing_gee.month_chunks">
-<span class="sig-prename descclassname"><span class="pre">pyclmuapp.era5_forcing_gee.</span></span><span class="sig-name descname"><span class="pre">month_chunks</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">start_date</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">end_date</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pyclmuapp.era5_forcing_gee.month_chunks" title="Link to this definition"></a></dt>
-<dd></dd></dl>
-
-</section>
-<section id="pyclmuapp-era-forcing-module">
-<h2>pyclmuapp.era_forcing module<a class="headerlink" href="#pyclmuapp-era-forcing-module" title="Link to this heading"></a></h2>
-<span class="target" id="module-pyclmuapp.era_forcing"></span><dl class="py function">
-<dt class="sig sig-object py" id="pyclmuapp.era_forcing.download_era5_land_data">
-<span class="sig-prename descclassname"><span class="pre">pyclmuapp.era_forcing.</span></span><span class="sig-name descname"><span class="pre">download_era5_land_data</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">lat</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">float</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">lon</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">float</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">start_date</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">end_date</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">output_file</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pyclmuapp.era_forcing.download_era5_land_data" title="Link to this definition"></a></dt>
-<dd><p>Downloads ERA5 land data for a specific latitude and longitude within a given date range.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Parameters<span class="colon">:</span></dt>
-<dd class="field-odd"><ul class="simple">
-<li><p><strong>lat</strong> (<em>float</em>) – Latitude of the location.</p></li>
-<li><p><strong>lon</strong> (<em>float</em>) – Longitude of the location.</p></li>
-<li><p><strong>start_date</strong> (<em>str</em>) – Start date for data retrieval in ‘YYYY-MM-DD’ format.</p></li>
-<li><p><strong>end_date</strong> (<em>str</em>) – End date for data retrieval in ‘YYYY-MM-DD’ format.</p></li>
-<li><p><strong>output_file</strong> (<em>str</em><em>, </em><em>optional</em>) – Path to save the downloaded data. If not provided,
-a default name will be generated based on the parameters.</p></li>
-</ul>
-</dd>
-</dl>
-</dd></dl>
-
-<dl class="py function">
-<dt class="sig sig-object py" id="pyclmuapp.era_forcing.era5s_to_forcing">
-<span class="sig-prename descclassname"><span class="pre">pyclmuapp.era_forcing.</span></span><span class="sig-name descname"><span class="pre">era5s_to_forcing</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">single</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">Dataset</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">zbot</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">30</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">outputfile</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">'./forcing.nc'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">lapse_rate</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">0.006</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pyclmuapp.era_forcing.era5s_to_forcing" title="Link to this definition"></a></dt>
-<dd><p>“The function <cite>era5s_to_forcing</cite> takes in two xarray Datasets <cite>pres</cite> and <cite>single</cite>, latitude <cite>lat</cite>, longitude <cite>lon</cite>,
-and an optional <cite>pressure</cite> parameter with a default value of 950.”</p>
-<dl class="field-list simple">
-<dt class="field-odd">Parameters<span class="colon">:</span></dt>
-<dd class="field-odd"><ul class="simple">
-<li><p><strong>single</strong> (<em>xarray.Dataset</em><em>, </em><em>str</em>) – The single level data.</p></li>
-<li><p><strong>lat</strong> (<em>float</em>) – The latitude of the location.</p></li>
-<li><p><strong>lon</strong> (<em>float</em>) – The longitude of the location.</p></li>
-<li><p><strong>zbot</strong> (<em>int</em><em>, </em><em>float</em>) – The bottom level of the forcing data.</p></li>
-<li><p><strong>outputfile</strong> (<em>str</em>) – The path to save the forcing data.</p></li>
-<li><p><strong>lapse_rate</strong> (<em>int</em><em>, </em><em>float</em>) – The lapse rate of the forcing data. default is 0.006, from Pritchard et al. (GRL, 35, 2008) of CTSM</p></li>
-</ul>
-</dd>
-<dt class="field-even">Returns<span class="colon">:</span></dt>
-<dd class="field-even"><p>The forcing data.</p>
-</dd>
-<dt class="field-odd">Return type<span class="colon">:</span></dt>
-<dd class="field-odd"><p>xarray.Dataset</p>
-</dd>
-</dl>
-</dd></dl>
-
-<dl class="py function">
-<dt class="sig sig-object py" id="pyclmuapp.era_forcing.get_nc_from_zip">
-<span class="sig-prename descclassname"><span class="pre">pyclmuapp.era_forcing.</span></span><span class="sig-name descname"><span class="pre">get_nc_from_zip</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">zip_path</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pyclmuapp.era_forcing.get_nc_from_zip" title="Link to this definition"></a></dt>
-<dd></dd></dl>
-
-<dl class="py function">
-<dt class="sig sig-object py" id="pyclmuapp.era_forcing.is_within">
-<span class="sig-prename descclassname"><span class="pre">pyclmuapp.era_forcing.</span></span><span class="sig-name descname"><span class="pre">is_within</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">existing_file</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">start_date</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">end_date</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pyclmuapp.era_forcing.is_within" title="Link to this definition"></a></dt>
-<dd></dd></dl>
-
-<dl class="py function">
-<dt class="sig sig-object py" id="pyclmuapp.era_forcing.workflow_era5s_to_forcing">
-<span class="sig-prename descclassname"><span class="pre">pyclmuapp.era_forcing.</span></span><span class="sig-name descname"><span class="pre">workflow_era5s_to_forcing</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">lat</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">float</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">lon</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">float</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">start_date</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">end_date</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">zbot</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">30</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">outputfile</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">'./forcing.nc'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">lapse_rate</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">0.006</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pyclmuapp.era_forcing.workflow_era5s_to_forcing" title="Link to this definition"></a></dt>
-<dd><p>A workflow function to download ERA5 land data and convert it to forcing data.
-:param lat: Latitude of the location.
-:type lat: float
-:param lon: Longitude of the location.
-:type lon: float
-:param start_date: Start date for data retrieval in ‘YYYY-MM-DD’ format.
-:type start_date: str
-:param end_date: End date for data retrieval in ‘YYYY-MM-DD’ format.
-:type end_date: str
-:param zbot: The bottom level of the forcing data.
-:type zbot: int, float
-:param outputfile: The path to save the forcing data.
-:type outputfile: str
-:param lapse_rate: The lapse rate of the forcing data. default is 0.006, from Pritchard et al. (GRL, 35, 2008) of CTSM
-:type lapse_rate: int, float</p>
-<dl class="field-list simple">
-<dt class="field-odd">Returns<span class="colon">:</span></dt>
-<dd class="field-odd"><p>The forcing data.
-ds (xarray.Dataset): The dataset containing the downloaded ERA5 land data.</p>
-</dd>
-<dt class="field-even">Return type<span class="colon">:</span></dt>
-<dd class="field-even"><p>xarray.Dataset</p>
-</dd>
-</dl>
-</dd></dl>
-
-</section>
-<section id="pyclmuapp-get-urban-params-module">
-<h2>pyclmuapp.get_urban_params module<a class="headerlink" href="#pyclmuapp-get-urban-params-module" title="Link to this heading"></a></h2>
-<p id="module-pyclmuapp.get_urban_params">Get the urban parameters.</p>
+<section id="module-pyclmuapp.input_data.get_urban_params">
+<span id="get-urban-params"></span><h2>get_urban_params<a class="headerlink" href="#module-pyclmuapp.input_data.get_urban_params" title="Link to this heading"></a></h2>
+<p>Get the urban parameters.</p>
 <dl class="field-list simple">
 <dt class="field-odd">param urban_ds<span class="colon">:</span></dt>
 <dd class="field-odd"><p>the urban dataset</p>
@@ -664,6 +400,100 @@ ds (xarray.Dataset): The dataset containing the downloaded ERA5 land data.</p>
 </dd>
 <dt class="field-odd">returns<span class="colon">:</span></dt>
 <dd class="field-odd"><p>the modified template dataset</p>
+</dd>
+<dt class="field-even">rtype<span class="colon">:</span></dt>
+<dd class="field-even"><p>_type_</p>
+</dd>
+</dl>
+</section>
+<section id="module-pyclmuapp.input_data.get_soil_params">
+<span id="get-soil-params"></span><h2>get_soil_params<a class="headerlink" href="#module-pyclmuapp.input_data.get_soil_params" title="Link to this heading"></a></h2>
+<p>Get the soil parameters.</p>
+<dl class="field-list simple">
+<dt class="field-odd">param ds<span class="colon">:</span></dt>
+<dd class="field-odd"><p>the soil dataset</p>
+</dd>
+<dt class="field-even">type ds<span class="colon">:</span></dt>
+<dd class="field-even"><p>_type_</p>
+</dd>
+<dt class="field-odd">param lat<span class="colon">:</span></dt>
+<dd class="field-odd"><p>latitude of interest point</p>
+</dd>
+<dt class="field-even">type lat<span class="colon">:</span></dt>
+<dd class="field-even"><p>_type_</p>
+</dd>
+<dt class="field-odd">param lon<span class="colon">:</span></dt>
+<dd class="field-odd"><p>longitude of interest point</p>
+</dd>
+<dt class="field-even">type lon<span class="colon">:</span></dt>
+<dd class="field-even"><p>_type_</p>
+</dd>
+<dt class="field-odd">returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>sand and clay content from the soil dataset</p>
+</dd>
+<dt class="field-even">rtype<span class="colon">:</span></dt>
+<dd class="field-even"><p>tuple</p>
+</dd>
+</dl>
+</section>
+<section id="module-pyclmuapp.input_data.get_forcing">
+<span id="get-forcing"></span><h2>get_forcing<a class="headerlink" href="#module-pyclmuapp.input_data.get_forcing" title="Link to this heading"></a></h2>
+<p>get the forcing data from the era5 dataset</p>
+<dl class="field-list simple">
+<dt class="field-odd">param start_year<span class="colon">:</span></dt>
+<dd class="field-odd"><p>the start year</p>
+</dd>
+<dt class="field-even">type start_year<span class="colon">:</span></dt>
+<dd class="field-even"><p>_type_</p>
+</dd>
+<dt class="field-odd">param end_year<span class="colon">:</span></dt>
+<dd class="field-odd"><p>the end year</p>
+</dd>
+<dt class="field-even">type end_year<span class="colon">:</span></dt>
+<dd class="field-even"><p>_type_</p>
+</dd>
+<dt class="field-odd">param start_month<span class="colon">:</span></dt>
+<dd class="field-odd"><p>the start month</p>
+</dd>
+<dt class="field-even">type start_month<span class="colon">:</span></dt>
+<dd class="field-even"><p>_type_</p>
+</dd>
+<dt class="field-odd">param end_month<span class="colon">:</span></dt>
+<dd class="field-odd"><p>the end month</p>
+</dd>
+<dt class="field-even">type end_month<span class="colon">:</span></dt>
+<dd class="field-even"><p>_type_</p>
+</dd>
+<dt class="field-odd">param lat<span class="colon">:</span></dt>
+<dd class="field-odd"><p>latitude of interest point</p>
+</dd>
+<dt class="field-even">type lat<span class="colon">:</span></dt>
+<dd class="field-even"><p>_type_</p>
+</dd>
+<dt class="field-odd">param lon<span class="colon">:</span></dt>
+<dd class="field-odd"><p>longitude of interest point</p>
+</dd>
+<dt class="field-even">type lon<span class="colon">:</span></dt>
+<dd class="field-even"><p>_type_</p>
+</dd>
+<dt class="field-odd">param zbot<span class="colon">:</span></dt>
+<dd class="field-odd"><p>the bottom level height</p>
+</dd>
+<dt class="field-even">type zbot<span class="colon">:</span></dt>
+<dd class="field-even"><p>_type_</p>
+</dd>
+<dt class="field-odd">param source<span class="colon">:</span></dt>
+<dd class="field-odd"><p>the source of the data, can be “cds”, “arco-era5”, “era5-land-ts”, “gee”
+“cds”: download data from the Copernicus Climate Data Store (CDS) using the CDS API
+“arco-era5”: download data from the ARCO ERA5 dataset
+“era5-land-ts”: download data from the ERA5-Land Time Series dataset
+“gee”: download data from the Google Earth Engine (GEE) using the GEE API</p>
+</dd>
+<dt class="field-even">type source<span class="colon">:</span></dt>
+<dd class="field-even"><p>_type_</p>
+</dd>
+<dt class="field-odd">returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>the forcing dataset</p>
 </dd>
 <dt class="field-even">rtype<span class="colon">:</span></dt>
 <dd class="field-even"><p>_type_</p>
