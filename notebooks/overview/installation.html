@@ -6,14 +6,14 @@
   <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Installation &mdash; pyclmuapp v0.0.0 documentation</title>
+  <title>Installation &mdash; pyclmuapp v0.0.2 documentation</title>
       <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=b86133f3" />
       <link rel="stylesheet" type="text/css" href="../../_static/css/theme.css?v=e59714d7" />
 
   
       <script src="../../_static/jquery.js?v=5d32c60e"></script>
       <script src="../../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
-      <script src="../../_static/documentation_options.js?v=8b92e751"></script>
+      <script src="../../_static/documentation_options.js?v=1812e922"></script>
       <script src="../../_static/doctools.js?v=9a2dae69"></script>
       <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
       <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
@@ -47,6 +47,7 @@
 <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="overview.html">About</a></li>
 <li class="toctree-l1 current"><a class="current reference internal" href="#">Installation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="#test">test</a></li>
 </ul>
 <p class="caption" role="heading"><span class="caption-text">Python: warmup</span></p>
 <ul>
@@ -83,7 +84,7 @@
 </ul>
 <p class="caption" role="heading"><span class="caption-text">API Reference</span></p>
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="../../modules.html">pyclmuapp</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../pyclmuapp.html">pyclmuapp package</a></li>
 </ul>
 
         </div>
@@ -112,18 +113,33 @@
              
   <section id="installation">
 <h1>Installation<a class="headerlink" href="#installation" title="Link to this heading"></a></h1>
-<p>Step 1: create a conda environment</p>
+<p>Step 1: install docker before using pyclmuapp</p>
+<p>If you are the Linux OS user, we recommend you to use <code class="docutils literal notranslate"><span class="pre">udocker</span></code> and then you are no needed to install Docker.</p>
+<ul class="simple">
+<li><p><a class="reference external" href="https://docs.docker.com/desktop/setup/install/linux/">Install Docker on Linux</a></p></li>
+<li><p><a class="reference external" href="https://docs.docker.com/desktop/setup/install/mac-install/">Install Docker on Mac</a></p></li>
+<li><p><a class="reference external" href="https://docs.docker.com/desktop/setup/install/windows-install/">Install Docker on Windows</a></p></li>
+</ul>
+<p>Step 2: create a conda environment</p>
 <hr class="docutils" />
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>conda<span class="w"> </span>create<span class="w"> </span>-n<span class="w"> </span>pyclmuapp<span class="w"> </span><span class="nv">python</span><span class="o">=</span><span class="m">3</span>.9
 $<span class="w"> </span>conda<span class="w"> </span>activate<span class="w"> </span>pyclmuapp
-$<span class="w"> </span>conda<span class="w"> </span>install<span class="w"> </span>-c<span class="w"> </span>conda-forge<span class="w"> </span>numpy<span class="w"> </span>pandas<span class="w"> </span>xarray<span class="w"> </span>haversine<span class="w"> </span>netcdf4<span class="w"> </span>nc-time-axis<span class="w"> </span>udocker<span class="w"> </span>earthengine-api
+$<span class="w"> </span>conda<span class="w"> </span>install<span class="w"> </span>-c<span class="w"> </span>conda-forge<span class="w"> </span>numpy<span class="w"> </span>pandas<span class="w"> </span>xarray<span class="w"> </span>haversine<span class="w"> </span>netcdf4<span class="w"> </span>nc-time-axis
 </pre></div>
 </div>
-<p>(Optional) install from source</p>
+<p>Step 3: install from source</p>
 <hr class="docutils" />
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>git<span class="w"> </span>clone<span class="w"> </span>https://github.com/envdes/pyclmuapp
 $<span class="w"> </span><span class="nb">cd</span><span class="w"> </span>pyclmuapp
 $<span class="w"> </span>python<span class="w"> </span>setup.py<span class="w"> </span>install
+</pre></div>
+</div>
+</section>
+<section id="test">
+<h1>test<a class="headerlink" href="#test" title="Link to this heading"></a></h1>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>git<span class="w"> </span>clone<span class="w"> </span>https://github.com/envdes/pyclmuapp
+$<span class="w"> </span><span class="nb">cd</span><span class="w"> </span>pyclmuapp/example_data
+$<span class="w"> </span>python<span class="w"> </span>test.py
 </pre></div>
 </div>
 <p>(Optional) install using <code class="docutils literal notranslate"><span class="pre">pip</span></code></p>
@@ -131,13 +147,6 @@ $<span class="w"> </span>python<span class="w"> </span>setup.py<span class="w"> 
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>pip<span class="w"> </span>install<span class="w"> </span>pyclmuapp
 </pre></div>
 </div>
-<p>Step 2: [Ignore this you are using newest version of pyclmuapp] install docker before using pyclmuapp</p>
-<ul class="simple">
-<li><p><a class="reference external" href="https://docs.docker.com/desktop/setup/install/linux/">Install Docker on Linux</a></p></li>
-<li><p><a class="reference external" href="https://docs.docker.com/desktop/setup/install/mac-install/">Install Docker on Mac</a></p></li>
-<li><p><a class="reference external" href="https://docs.docker.com/desktop/setup/install/windows-install/">Install Docker on Windows</a></p></li>
-</ul>
-<p><strong>If you would like to use the python package, then,</strong></p>
 </section>
 
 

@@ -6,7 +6,7 @@
   <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Example 1: Basic usage &mdash; pyclmuapp v0.0.0 documentation</title>
+  <title>Example 1: Basic usage &mdash; pyclmuapp v0.0.2 documentation</title>
       <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=b86133f3" />
       <link rel="stylesheet" type="text/css" href="../../_static/css/theme.css?v=e59714d7" />
       <link rel="stylesheet" type="text/css" href="../../_static/nbsphinx-code-cells.css?v=2aa19091" />
@@ -14,7 +14,7 @@
   
       <script src="../../_static/jquery.js?v=5d32c60e"></script>
       <script src="../../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
-      <script src="../../_static/documentation_options.js?v=8b92e751"></script>
+      <script src="../../_static/documentation_options.js?v=1812e922"></script>
       <script src="../../_static/doctools.js?v=9a2dae69"></script>
       <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
       <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
@@ -50,6 +50,7 @@
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../overview/overview.html">About</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../overview/installation.html">Installation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../overview/installation.html#test">test</a></li>
 </ul>
 <p class="caption" role="heading"><span class="caption-text">Python: warmup</span></p>
 <ul>
@@ -86,7 +87,7 @@
 </ul>
 <p class="caption" role="heading"><span class="caption-text">API Reference</span></p>
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="../../modules.html">pyclmuapp</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../pyclmuapp.html">pyclmuapp package</a></li>
 </ul>
 
         </div>
@@ -115,7 +116,7 @@
              
   <section id="Example-1:-Basic-usage">
 <h1>Example 1: Basic usage<a class="headerlink" href="#Example-1:-Basic-usage" title="Link to this heading"></a></h1>
-<p>Fisrt of all, we need to install Docker/Docker Desktop.</p>
+<p>Fisrt of all, we need to install Docker/Docker Desktop. <strong>If you are the Linux OS user, we recommend you to use ``udocker`` and then you are no needed to install Docker.</strong></p>
 <ul class="simple">
 <li><p><a class="reference external" href="https://envdes.github.io/clmu-app/container/install_docker.html">How to install Docker on Linux?</a></p></li>
 <li><p><a class="reference external" href="https://www.docker.com/products/docker-desktop/">How to install Docker Desktop</a></p></li>
@@ -146,12 +147,14 @@
 </pre></div>
 </div>
 <div class="nbinput docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[2]:
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[ ]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%%time</span>
 <span class="c1"># initialize</span>
 <span class="n">usp</span> <span class="o">=</span> <span class="n">usp_clmu</span><span class="p">()</span>
+<span class="c1"># If you are the Linux OS user, we recommend you to use `udocker` and then you are no needed to install Docker.</span>
+<span class="c1"># usp = usp_clmu(container_type=&quot;udocker&quot;)</span>
 <span class="n">usp_london</span> <span class="o">=</span> <span class="n">usp</span><span class="o">.</span><span class="n">run</span><span class="p">(</span>
             <span class="n">case_name</span> <span class="o">=</span> <span class="s2">&quot;example1&quot;</span><span class="p">,</span>
             <span class="n">SURF</span><span class="o">=</span><span class="s2">&quot;surfdata.nc&quot;</span><span class="p">,</span>
@@ -179,8 +182,7 @@ Wall time: 3min 36s
 </pre></div></div>
 </div>
 <div class="nboutput nblast docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[2]:
-</pre></div>
+<div class="prompt empty docutils container">
 </div>
 <div class="output_area docutils container">
 <div class="highlight"><pre>

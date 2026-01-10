@@ -43,7 +43,7 @@
   },
   {
    "cell_type": "code",
-   "execution_count": 2,
+   "execution_count": null,
    "metadata": {},
    "outputs": [
     {
@@ -70,6 +70,8 @@
     "%%time\n",
     "# initialize\n",
     "usp = usp_clmu()\n",
+    "# If you are the Linux OS user, we recommend you to use `udocker` and then you are no needed to install Docker. \n",
+    "# usp = usp_clmu(container_type=\"udocker\")\n",
     "\n",
     "# create a new case amd run it\n",
     "usp_or = usp.run(\n",

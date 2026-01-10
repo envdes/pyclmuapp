@@ -6,7 +6,7 @@
   <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Spinup in USP mode &mdash; pyclmuapp v0.0.0 documentation</title>
+  <title>Spinup in USP mode &mdash; pyclmuapp v0.0.2 documentation</title>
       <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=b86133f3" />
       <link rel="stylesheet" type="text/css" href="../../_static/css/theme.css?v=e59714d7" />
       <link rel="stylesheet" type="text/css" href="../../_static/nbsphinx-code-cells.css?v=2aa19091" />
@@ -14,7 +14,7 @@
   
       <script src="../../_static/jquery.js?v=5d32c60e"></script>
       <script src="../../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
-      <script src="../../_static/documentation_options.js?v=8b92e751"></script>
+      <script src="../../_static/documentation_options.js?v=1812e922"></script>
       <script src="../../_static/doctools.js?v=9a2dae69"></script>
       <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
       <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
@@ -50,6 +50,7 @@
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../overview/overview.html">About</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../overview/installation.html">Installation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../overview/installation.html#test">test</a></li>
 </ul>
 <p class="caption" role="heading"><span class="caption-text">Python: warmup</span></p>
 <ul>
@@ -91,7 +92,7 @@
 </ul>
 <p class="caption" role="heading"><span class="caption-text">API Reference</span></p>
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="../../modules.html">pyclmuapp</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../pyclmuapp.html">pyclmuapp package</a></li>
 </ul>
 
         </div>
@@ -133,13 +134,13 @@
 <p>Run 10 year for spinup</p>
 <p>The default SET <code class="docutils literal notranslate"><span class="pre">RUN_TYPE=&quot;coldstart&quot;</span></code>, the parameters will set to be in a cold state.</p>
 <div class="nbinput docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[2]:
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[ ]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">usp</span> <span class="o">=</span> <span class="n">usp_clmu</span><span class="p">()</span>
+<span class="c1"># If you are the Linux OS user, we recommend you to use `udocker` and then you are no needed to install Docker.</span>
+<span class="c1"># usp = usp_clmu(container_type=&quot;udocker&quot;)</span>
 
-<span class="c1"># before running container, you need the image</span>
-<span class="c1"># usp.docker(&quot;pull&quot;) # to pull the docker image if you don&#39;t have it</span>
 <span class="n">usp_spinup</span> <span class="o">=</span> <span class="n">usp</span><span class="o">.</span><span class="n">run</span><span class="p">(</span>
             <span class="n">case_name</span> <span class="o">=</span> <span class="s2">&quot;usp_spinup&quot;</span><span class="p">,</span>
             <span class="n">SURF</span><span class="o">=</span><span class="s2">&quot;surfdata.nc&quot;</span><span class="p">,</span> <span class="c1"># path to surfdata.nc</span>
@@ -162,8 +163,7 @@ Copying the file forcing.nc to the /Users/user/Documents/GitHub/pyclmuapp/docs/n
 </pre></div></div>
 </div>
 <div class="nboutput nblast docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[2]:
-</pre></div>
+<div class="prompt empty docutils container">
 </div>
 <div class="output_area docutils container">
 <div class="highlight"><pre>

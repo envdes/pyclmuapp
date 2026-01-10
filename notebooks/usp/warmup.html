@@ -6,7 +6,7 @@
   <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Warmup &mdash; pyclmuapp v0.0.0 documentation</title>
+  <title>Warmup &mdash; pyclmuapp v0.0.2 documentation</title>
       <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=b86133f3" />
       <link rel="stylesheet" type="text/css" href="../../_static/css/theme.css?v=e59714d7" />
       <link rel="stylesheet" type="text/css" href="../../_static/nbsphinx-code-cells.css?v=2aa19091" />
@@ -14,7 +14,7 @@
   
       <script src="../../_static/jquery.js?v=5d32c60e"></script>
       <script src="../../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
-      <script src="../../_static/documentation_options.js?v=8b92e751"></script>
+      <script src="../../_static/documentation_options.js?v=1812e922"></script>
       <script src="../../_static/doctools.js?v=9a2dae69"></script>
       <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
       <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
@@ -50,6 +50,7 @@
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../overview/overview.html">About</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../overview/installation.html">Installation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../overview/installation.html#test">test</a></li>
 </ul>
 <p class="caption" role="heading"><span class="caption-text">Python: warmup</span></p>
 <ul class="current">
@@ -60,6 +61,7 @@
 <li class="toctree-l3"><a class="reference internal" href="#3-How-to-get-your-own-input-files?">3 How to get your own input files?</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#3-How-to-change-the-surface-and-forcing-data?">3 How to change the surface and forcing data?</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#Optional-input-method">Optional input method</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#Optional-run-way">Optional run way</a></li>
 </ul>
 </li>
 </ul>
@@ -96,7 +98,7 @@
 </ul>
 <p class="caption" role="heading"><span class="caption-text">API Reference</span></p>
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="../../modules.html">pyclmuapp</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../pyclmuapp.html">pyclmuapp package</a></li>
 </ul>
 
         </div>
@@ -125,8 +127,8 @@
              
   <section id="Warmup">
 <h1>Warmup<a class="headerlink" href="#Warmup" title="Link to this heading"></a></h1>
-<p><strong>Ignore this you are using newest version of pyclmuapp</strong></p>
 <p>Fisrt of all, make sure you have installed Docker.</p>
+<p><strong>If you are the Linux OS user, we recommend you to use ``udocker`` and then you are no needed to install Docker.</strong></p>
 <ul class="simple">
 <li><p><a class="reference external" href="https://docs.docker.com/desktop/setup/install/linux/">Install Docker on Linux</a></p></li>
 <li><p><a class="reference external" href="https://docs.docker.com/desktop/setup/install/mac-install/">Install Docker on Mac</a></p></li>
@@ -137,7 +139,6 @@
 <img alt="workflow" src="../../_images/wp.png" />
 <section id="1-Initailize">
 <h3>1 Initailize<a class="headerlink" href="#1-Initailize" title="Link to this heading"></a></h3>
-<p><strong>Ignore this you are using newest version of pyclmuapp</strong></p>
 <p>Before initialization, we need to pull the docker image.</p>
 <p><strong>for Linux and MacOS</strong> : use <code class="docutils literal notranslate"><span class="pre">docker</span> <span class="pre">pull</span> <span class="pre">envdes/clmu-app:1.1</span></code> or <code class="docutils literal notranslate"><span class="pre">pyclmuapp</span> <span class="pre">--has_container</span> <span class="pre">False</span> <span class="pre">--container_type</span> <span class="pre">docker</span> <span class="pre">--init</span> <span class="pre">True</span></code> in command line.</p>
 <p><strong>for Windows</strong>: pull the image <code class="docutils literal notranslate"><span class="pre">envdes/clmu-app:1.1</span></code> manually from Docker Desktop</p>
@@ -149,6 +150,8 @@
 
 <span class="c1"># initialize</span>
 <span class="n">usp</span> <span class="o">=</span> <span class="n">usp_clmu</span><span class="p">()</span> <span class="c1"># will create a temporary working directory workdir</span>
+<span class="c1"># If you are the Linux OS user, we recommend you to use `udocker` and then you are no needed to install Docker.</span>
+<span class="c1"># usp = usp_clmu(container_type=&quot;udocker&quot;)</span>
 <span class="c1"># can use pwd to specify the working directory</span>
 <span class="c1">#, e.g. usp_clmu(pwd=&quot;/path/to/working/directory&quot;), default is the current working directory</span>
 </pre></div>
@@ -164,8 +167,8 @@
 </section>
 <section id="2-Run-a-simulation">
 <h3>2 Run a simulation<a class="headerlink" href="#2-Run-a-simulation" title="Link to this heading"></a></h3>
-<div class="nbinput nblast docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[ ]:
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[2]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">usp_res</span> <span class="o">=</span> <span class="n">usp</span><span class="o">.</span><span class="n">run</span><span class="p">(</span>
@@ -180,6 +183,23 @@
 <span class="n">usp_res</span>
 </pre></div>
 </div>
+</div>
+<div class="nboutput docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+Copying the file forcing.nc to the /home/junjie/github/pyclmuapp/docs/notebooks/usp/workdir/inputfolder/usp
+</pre></div></div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[2]:
+</pre></div>
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+[&#39;/home/junjie/github/pyclmuapp/docs/notebooks/usp/workdir/outputfolder/lnd/hist/usp_spinup.clm2.h0.2002-01-01-00000.nc&#39;]
+</pre></div></div>
 </div>
 <p>parameters of <code class="docutils literal notranslate"><span class="pre">usp.run</span></code></p>
 <ul class="simple">
@@ -424,13 +444,13 @@
 </section>
 <section id="Optional-input-method">
 <h3>Optional input method<a class="headerlink" href="#Optional-input-method" title="Link to this heading"></a></h3>
-<div class="nbinput nblast docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[ ]:
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[3]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%%time</span>
 <span class="c1"># check surface</span>
-<span class="n">usp</span><span class="o">.</span><span class="n">check_surf</span><span class="p">(</span><span class="n">usr_surf</span><span class="o">=</span><span class="s2">&quot;sufdata.nc&quot;</span><span class="p">)</span> <span class="c1"># use the default surface data of London</span>
+<span class="n">usp</span><span class="o">.</span><span class="n">check_surf</span><span class="p">(</span><span class="n">usr_surfdata</span><span class="o">=</span><span class="s2">&quot;surfdata.nc&quot;</span><span class="p">)</span> <span class="c1"># use the default surface data of London</span>
 <span class="c1"># check the domain</span>
 <span class="n">usp</span><span class="o">.</span><span class="n">check_domain</span><span class="p">()</span>
 <span class="c1"># check the forcing</span>
@@ -446,6 +466,65 @@
 <span class="n">usp_res</span>
 </pre></div>
 </div>
+</div>
+<div class="nboutput docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+Copying the file forcing.nc to the /home/junjie/github/pyclmuapp/docs/notebooks/usp/workdir/inputfolder/usp
+CPU times: user 163 ms, sys: 12.1 ms, total: 176 ms
+Wall time: 3min 10s
+</pre></div></div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[3]:
+</pre></div>
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+[&#39;/home/junjie/github/pyclmuapp/docs/notebooks/usp/workdir/outputfolder/lnd/hist/usp_spinup.clm2.h0.2002-01-01-00000.nc&#39;]
+</pre></div></div>
+</div>
+</section>
+<section id="Optional-run-way">
+<h3>Optional run way<a class="headerlink" href="#Optional-run-way" title="Link to this heading"></a></h3>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[4]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">pyclmuapp</span><span class="w"> </span><span class="kn">import</span> <span class="n">usp_clmu</span>
+
+<span class="c1"># initialize</span>
+<span class="n">usp</span> <span class="o">=</span> <span class="n">usp_clmu</span><span class="p">()</span>
+
+<span class="c1"># run the docker image</span>
+<span class="n">usp</span><span class="o">.</span><span class="n">docker</span><span class="p">(</span><span class="s2">&quot;run&quot;</span><span class="p">)</span>
+
+<span class="n">usp_res</span> <span class="o">=</span> <span class="n">usp</span><span class="o">.</span><span class="n">run</span><span class="p">(</span>
+            <span class="n">case_name</span> <span class="o">=</span> <span class="s2">&quot;usp_spinup&quot;</span><span class="p">,</span>
+            <span class="n">SURF</span><span class="o">=</span><span class="s2">&quot;surfdata.nc&quot;</span><span class="p">,</span>
+            <span class="n">FORCING</span><span class="o">=</span><span class="s2">&quot;forcing.nc&quot;</span><span class="p">,</span>
+            <span class="n">RUN_STARTDATE</span> <span class="o">=</span> <span class="s2">&quot;2002-01-01&quot;</span><span class="p">,</span>
+            <span class="n">STOP_OPTION</span> <span class="o">=</span> <span class="s2">&quot;nyears&quot;</span><span class="p">,</span>
+            <span class="n">STOP_N</span> <span class="o">=</span> <span class="s2">&quot;10&quot;</span><span class="p">,</span>
+            <span class="c1">#RUN_TYPE= &quot;coldstart&quot;, # coldstart is the default option</span>
+            <span class="n">crun_type</span><span class="o">=</span><span class="s2">&quot;usp-exec&quot;</span> <span class="c1"># this is to run the container when the docker image is used</span>
+        <span class="p">)</span>
+
+<span class="c1"># stop the docker image and remove it</span>
+<span class="n">usp</span><span class="o">.</span><span class="n">docker</span><span class="p">(</span><span class="s2">&quot;stop&quot;</span><span class="p">)</span>
+<span class="n">usp</span><span class="o">.</span><span class="n">docker</span><span class="p">(</span><span class="s2">&quot;rm&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+Copying the file forcing.nc to the /home/junjie/github/pyclmuapp/docs/notebooks/usp/workdir/inputfolder/usp
+</pre></div></div>
 </div>
 <hr class="docutils" />
 <p><strong>additonal information</strong></p>
