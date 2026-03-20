@@ -12,7 +12,7 @@ def test_usp_clmu_basic():
                 STOP_OPTION = "ndays", 
                 STOP_N = "2"
             )
-    print("Result from udocker container:")
+    print("Result from docker container:")
     print(usp_london)
     print("cleaning up case example1...")
     usp.case_clean(case_name="example1")
@@ -40,7 +40,11 @@ def test_usp_clmu_udocker():
         raise ImportError("You don't have udocker installed. Please install udocker if you want to use udocker container.")
     
 if __name__ == "__main__":
-    test_usp_clmu_basic()
+    
     import os
+    print("Recommended to use Linux operating system.")
     if os.name == 'posix':
         test_usp_clmu_udocker()
+    else:
+        print("You are using other operating system. Please use Linux if you want to use udocker container.")
+        test_usp_clmu_basic()
