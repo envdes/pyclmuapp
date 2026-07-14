@@ -33,8 +33,6 @@ Installation
 
 Step 1: install docker before using pyclmuapp::
 
-If you are the Linux OS user, we recommend you to use *udocker* and then you are no needed to install Docker. 
-
 Install Docker on `Linux <https://docs.docker.com/desktop/setup/install/linux/>`_,
 Install Docker on `Mac <https://docs.docker.com/desktop/setup/install/mac-install/>`_,
 Install Docker on `Windows <https://docs.docker.com/desktop/setup/install/windows-install/>`_, 
