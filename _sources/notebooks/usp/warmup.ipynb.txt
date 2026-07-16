@@ -38,9 +38,7 @@
    "source": [
     "Before initialization, we need to pull the docker image.\n",
     "\n",
-    "**for Linux and MacOS** : use `docker pull envdes/clmu-app:1.1` or `pyclmuapp --has_container False --container_type docker --init True` in command line.\n",
-    "\n",
-    "**for Windows**: pull the image `envdes/clmu-app:1.1` manually from Docker Desktop"
+    "`pyclmuapp --has_container False --container_type docker --init True` in command line."
    ]
   },
   {
