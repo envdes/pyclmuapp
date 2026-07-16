@@ -4,6 +4,13 @@ import matplotlib.pyplot as plt
 def test_usp_clmu_basic():
     usp = usp_clmu()
 
+    try:
+        usp.docker('pull')
+    except Exception as e:
+        print("Error pulling docker image. Please make sure you have docker installed and running.")
+        print(e)
+        return
+
     usp_london = usp.run(
                 case_name = "example1", 
                 SURF="surfdata.nc",
