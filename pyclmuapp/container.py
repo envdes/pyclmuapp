@@ -2,7 +2,6 @@ import os
 import json
 from pyclmuapp.clmu import *
 from datetime import datetime
-#from pyclmuapp.config.scripts import *
 from typing import Union
 class clumapp:
 
@@ -58,11 +57,7 @@ class clumapp:
                 
         
         """
-        #self.input_path = pwd + "/" + self.create_folder(input_path)
 
-        #self.output_path = pwd + "/" + self.create_folder(output_path)
-        #self.log_path = pwd + "/" +  self.create_folder(log_path)
-        #self.scripts_path = pwd + "/" + self.create_folder(scripts_path)
         if pwd is not None:
             os.makedirs(pwd, exist_ok=True)
             self.pwd = pwd
@@ -114,12 +109,6 @@ class clumapp:
             folder_path (str): The path to the folder created.
         """
         os.makedirs(folder_path, exist_ok=True)
-
-        #try:
-        #    os.makedirs(folder_path) 
-        #    #print(f"Folder '{folder_path}' created successfully!")
-        #except FileExistsError:
-        #    print(f"Folder '{folder_path}' already exists.")
 
         return folder_path
 

@@ -28,10 +28,6 @@ class CaseInsensitiveArgumentParser(argparse.ArgumentParser):
         return super()._get_option_tuples(option_string)
 
 def get_pypars(gr_l: dict = None):
-    #parser = argparse.ArgumentParser(description='A sample command line tool for pyclmuapp.',
-    #                                prog='pyclmuapp',
-    #                                prefix_chars='-',
-    #                                epilog='For any qusetion, contact yjj1997@live.cn',)
     parser = CaseInsensitiveArgumentParser(description='pyclmuapp command line tool.',
                                             prog='pyclmuapp',
                                             prefix_chars='-',

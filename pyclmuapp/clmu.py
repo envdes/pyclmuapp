@@ -204,17 +204,6 @@ class cesm_run():
 
         # Open the file
         ds = xr.open_dataset(self.config['local_fsurdat'])
-        # Modify the file
-        #if float(self.config['case_lon']) < 0:
-        #    case_lon = float(copy.deepcopy(self.config['case_lon'])) + 360
-        #else:
-        #    case_lon = float(copy.deepcopy(self.config['case_lon']))
-        #llat = int((float(copy.deepcopy(self.config['case_lat']))+90)/(180/192))
-        #llon = int(case_lon/1.25)
-        # * Set the location of the parameter, only one location is modified
-        # numurbl is the number of urban land units, here is 1, indicating HD urban
-        #param_location = dict(lsmlat=llat, lsmlon=llon, numurbl=1)
-        #param_location = dict(lsmlat=0, lsmlon=0, numurbl=1)
         if numurbl is None:
             param_location = dict(lsmlat=0, lsmlon=0)
         
@@ -447,160 +436,6 @@ def copy_file_if_not_exists2(source_path, destination_path, lon, lat, res="1.25*
         
         copy_file_if_not_exists(source_path, destination_path)
 
-# This function is not used in the current version
-# which is used to get the forcing data from the era5 land/single dataset
-# we moved to the module era5_forcing.py
-#def get_clmuapp_frocing(era5: Union[xr.Dataset, str],
-#                        lat : float,
-#                        lon : float,
-#                        outputname : str,
-#                        zbot: Union[float, int] = 2) -> xr.Dataset:
-#    """
-#    Args:
-#        era5 (_type_): the era5 dataset, or the path of the era5 dataset
-#        lat (_type_): latitude of interest point
-#        lon (_type_): longitude of interest point
-#        outputname (_type_): the output file name
-#
-#    Returns:
-#        _type_: the forcing dataset
-#    """
-#        
-#    if isinstance(era5, str):
-#        if os.path.isfile(era5):
-#            forcing = xr.open_dataset(era5)
-#            
-#        elif os.path.isdir(era5):
-#            for root, dirs, files in os.walk(era5):
-#                for file in files:
-#                    forcing_ls = []
-#                    if file.endswith(".nc"):
-#                        _forcing = xr.open_dataset(os.path.join(root, file))
-#                        forcing_ls.append(_forcing)
-#            forcing = xr.concat(forcing_ls, dim='time').sortby('time')
-#    
-#    elif isinstance(era5, xr.Dataset):
-#        forcing = era5
-#    else:
-#        raise ValueError("The era5 should be a xarray dataset or a file path.")
-#    
-#    if forcing.latitude.values.shape:
-#        
-#        if forcing.longitude.values.shape:
-#            forcing = forcing.sel(latitude=lat,longitude=lon,method='nearest')
-#        else:
-#            forcing = forcing.sel(latitude=lat,method='nearest')
-#    
-#    elif forcing.longitude.values.shape:
-#        forcing = forcing.sel(longitude=lon,method='nearest')
-#    
-#    
-#    Prectmms = forcing['tp'] * 1000 / 3600
-#    Prectmms = Prectmms.where(Prectmms > 0, 1e-16)
-#    #forcing['Prectmms'] = forcing['tp'] * 1000 / 3600
-#    forcing['Prectmms'] = Prectmms
-#    forcing['Prectmms'] = forcing['Prectmms'].assign_attrs(units='mm/s')
-#    forcing['Prectmms'] = forcing['Prectmms'].assign_attrs(long_name='Precipitation rate')
-#    forcing['Prectmms'] = forcing['Prectmms'].assign_attrs(_FillValue=1.e36)
-#
-#    #forcing['SWdown'] = forcing['ssrd'] / 3600
-#    SWdown = forcing['ssrd'] / 3600
-#    SWdown = SWdown.where(SWdown > 0, 1e-16)
-#    forcing['SWdown'] = SWdown
-#    forcing['SWdown'] = forcing['SWdown'].assign_attrs(units='W/m2')
-#    forcing['SWdown'] = forcing['SWdown'].assign_attrs(long_name='Downward shortwave radiation')
-#    forcing['SWdown'] = forcing['SWdown'].assign_attrs(_FillValue=1.e36)
-#
-#    forcing['LWdown'] = forcing['strd'] / 3600 
-#    forcing['LWdown'] = forcing['LWdown'].assign_attrs(units='W/m2')
-#    forcing['LWdown'] = forcing['LWdown'].assign_attrs(long_name='Downward longwave radiation')
-#
-#    forcing['Wind'] = (forcing['u10']**2 + forcing['v10']**2)**0.5
-#    # ref: https://doi.org/10.5194/essd-14-5157-2022
-#    #forcing['Wind'] = forcing['Wind'] * (np.log(2 / forcing['fsr']) / np.log(10 / forcing['fsr']))
-#    #forcing['Wind'] = forcing['Wind'] * (xr.ufuncs.log(2 / forcing['fsr']) / xr.ufuncs.log(10 / forcing['fsr']))
-#    forcing['Wind'] = forcing['Wind'].assign_attrs(units='m/s')
-#    forcing['Wind'] = forcing['Wind'].assign_attrs(long_name='Wind speed')
-#    forcing['Wind'] = forcing['Wind'].assign_attrs(_FillValue=1.e36)
-#
-#    forcing['PSurf'] = forcing['sp'] /1.0
-#    forcing['PSurf'] = forcing['PSurf'].assign_attrs(units='Pa')
-#    forcing['PSurf'] = forcing['PSurf'].assign_attrs(long_name='Surface pressure')
-#
-#    forcing['Zbot'] = forcing['sp'] /1.0
-#    forcing['Zbot'].values = np.ones(forcing['Zbot'].shape) * zbot
-#    forcing['Zbot'] = forcing['Zbot'].assign_attrs(long_name='Bottom level height')
-#    forcing['Zbot'] = forcing['Zbot'].assign_attrs(units='m')
-#
-#    forcing['Tair'] = forcing['t2m'] / 1.0
-#    forcing['Tair'] = forcing['Tair'].assign_attrs(units='K')
-#    forcing['Tair'] = forcing['Tair'].assign_attrs(long_name='Air temperature')
-#
-#    # ref1: https://github.com/ESCOMP/CTSM/blob/75b34d2d8770461e3e28cee973a39f1737de091d/doc/source/tech_note/Land-Only_Mode/CLM50_Tech_Note_Land-Only_Mode.rst#L113
-#    # ref2: https://journals.ametsoc.org/view/journals/apme/57/6/jamc-d-17-0334.1.xml
-#    # ref3: https://github.com/ESCOMP/CTSM/blob/75b34d2d8770461e3e28cee973a39f1737de091d/src/biogeophys/QSatMod.F90
-#    # Reference:  Polynomial approximations from:
-#    #             Piotr J. Flatau, et al.,1992:  Polynomial fits to saturation
-#    #             vapor pressure.  Journal of Applied Meteorology, 31, 1507-1513.
-#
-#    forcing['d2m'] = forcing['d2m'] - 273.15
-#    a0 =  6.11213476
-#    a1 =  0.444007856
-#    a2 =  0.143064234e-01
-#    a3 =  0.264461437e-03
-#    a4 =  0.305903558e-05
-#    a5 =  0.196237241e-07
-#    a6 =  0.892344772e-10
-#    a7 = -0.373208410e-12
-#    a8 =  0.209339997e-15
-#    forcing['es_water'] = a0 + forcing['d2m']*(a1 + forcing['d2m']*(a2 + forcing['d2m']*(a3 + forcing['d2m']*(a4 
-#            + forcing['d2m']*(a5 + forcing['d2m']*(a6 + forcing['d2m']*(a7 + forcing['d2m']*a8)))))))
-#    forcing['es_water'] = forcing['es_water'] * 100
-#    c0 =  6.11123516
-#    c1 =  0.503109514
-#    c2 =  0.188369801e-01
-#    c3 =  0.420547422e-03
-#    c4 =  0.614396778e-05
-#    c5 =  0.602780717e-07
-#    c6 =  0.387940929e-09
-#    c7 =  0.149436277e-11
-#    c8 =  0.262655803e-14
-#    forcing['es_ice'] = c0 + forcing['d2m']*(c1 + forcing['d2m']*(c2 + forcing['d2m']*(c3 + forcing['d2m']*(c4 
-#            + forcing['d2m']*(c5 + forcing['d2m']*(c6 + forcing['d2m']*(c7 + forcing['d2m']*c8)))))))
-#    forcing['es_ice'] = forcing['es_ice'] * 100
-#    forcing['es'] = xr.where(forcing['d2m'] >= 0, forcing['es_water'],forcing['es_ice'])
-#    forcing['Qair'] = 0.622 * forcing['es'] / (forcing['PSurf'] - (1 - 0.622) * forcing['es'])
-#    forcing['Qair'] = forcing['Qair'].assign_attrs(units='kg/kg')
-#
-#    del forcing['fsr']
-#    del forcing['es_water']
-#    del forcing['es_ice']
-#    del forcing['es']
-#    del forcing['ssrd']
-#    del forcing['strd']
-#    del forcing['tp']
-#    del forcing['u10']
-#    del forcing['v10']
-#    del forcing['sp']
-#    del forcing['t2m']
-#    del forcing['d2m']
-#    del forcing['longitude']
-#    del forcing['latitude']
-#    
-#    forcing['x'] = 1
-#    forcing['y'] = 1
-#    forcing = forcing.assign_coords(x=1,y=1)
-#    for var in forcing.data_vars:
-#        forcing[var] = forcing[var].expand_dims('x',axis=1).expand_dims('y',axis=1)
-#
-#    if os.path.exists(outputname):
-#        os.remove(outputname)
-#    forcing.to_netcdf(outputname)
-#    print(f"The forcing file has been saved as {outputname}")
-#    return forcing
-
-
-
 def get_urban_params(urban_ds: Union[xr.Dataset, str],
                      soil_ds: Union[xr.Dataset, str],
                      lat: float, 
@@ -788,19 +623,6 @@ def get_forcing(start_year, end_year,
                                         lat=lat, lon=lon, zbot=zbot,)
                 era5_list.append(forcing)
                 
-            #for month in months:
-            #    single = era5_download(year=year, month=month,
-            #                                lat=lat, lon=lon, outputfolder='./era5_data')
-            #    # Convert ERA5 data to CLM forcing
-            #    forcing = era5_to_forcing(single=single, 
-            #                            lat=lat, lon=lon, zbot=zbot,
-            #                            outputfile=outputfile.format(lat=lat, lon=lon, 
-            #                                                        zbot=zbot, year=year, 
-            #                                                        month=str(month).zfill(2)))
-            #    ds = xr.open_dataset(outputfile.format(lat=lat, lon=lon, 
-            #                                        zbot=zbot, year=year, 
-            #                                        month=str(month).zfill(2)))
-            #    era5_list.append(ds)
         era5 = xr.concat(era5_list, dim='time').sortby('time')
         outfile = f'era5_data/era5_forcing_{lat}_{lon}_{zbot}_{start_year}_{start_month}_{end_year}_{end_month}.nc'
         if os.path.exists(outfile):

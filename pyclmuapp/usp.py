@@ -54,11 +54,6 @@ class usp_clmu(clumapp):
         self.domain = None
         #os.mkdir(os.path.join(self.input_path, 'usp'))
 
-        #if os.path.exists(os.path.join(self.input_path, 'usp')):
-        #    print(f"The folder {os.path.join(self.input_path, 'usp')} already exists.")
-        #else:
-        #    os.makedirs(os.path.join(self.input_path, 'usp'), exist_ok=True)
-
     def _open_nc(self, path: str, nctype: str = "surfdata"
                  ) -> xr.Dataset:
         
