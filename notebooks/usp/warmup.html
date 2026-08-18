@@ -150,9 +150,9 @@
 <span class="c1"># initialize</span>
 <span class="n">usp</span> <span class="o">=</span> <span class="n">usp_clmu</span><span class="p">()</span> <span class="c1"># will create a temporary working directory workdir</span>
 <span class="c1"># If you are the Linux OS user, we recommend you to use `udocker` and then you are no needed to install Docker.</span>
-<span class="c1"># usp = usp_clmu(container_type=&quot;udocker&quot;)</span>
+<span class="c1"># usp = usp_clmu(container_type="udocker")</span>
 <span class="c1"># can use pwd to specify the working directory</span>
-<span class="c1">#, e.g. usp_clmu(pwd=&quot;/path/to/working/directory&quot;), default is the current working directory</span>
+<span class="c1">#, e.g. usp_clmu(pwd="/path/to/working/directory"), default is the current working directory</span>
 </pre></div>
 </div>
 </div>
@@ -171,13 +171,13 @@
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">usp_res</span> <span class="o">=</span> <span class="n">usp</span><span class="o">.</span><span class="n">run</span><span class="p">(</span>
-            <span class="n">case_name</span> <span class="o">=</span> <span class="s2">&quot;usp_spinup&quot;</span><span class="p">,</span>
-            <span class="n">SURF</span><span class="o">=</span><span class="s2">&quot;surfdata.nc&quot;</span><span class="p">,</span>
-            <span class="n">FORCING</span><span class="o">=</span><span class="s2">&quot;forcing.nc&quot;</span><span class="p">,</span>
-            <span class="n">RUN_STARTDATE</span> <span class="o">=</span> <span class="s2">&quot;2002-01-01&quot;</span><span class="p">,</span> <span class="c1"># the start date of the simulation, must include in the forcing file time range</span>
-            <span class="n">STOP_OPTION</span> <span class="o">=</span> <span class="s2">&quot;nyears&quot;</span><span class="p">,</span> <span class="c1"># can be &#39;ndays&#39;, &#39;nmonths&#39;, &#39;nyears&#39;, &#39;nsteps&#39;; nsteps means 1800s</span>
-            <span class="n">STOP_N</span> <span class="o">=</span> <span class="s2">&quot;10&quot;</span><span class="p">,</span> <span class="c1"># run for 10 years</span>
-            <span class="c1">#RUN_TYPE= &quot;coldstart&quot;, # coldstart is the default option</span>
+            <span class="n">case_name</span> <span class="o">=</span> <span class="s2">"usp_spinup"</span><span class="p">,</span>
+            <span class="n">SURF</span><span class="o">=</span><span class="s2">"surfdata.nc"</span><span class="p">,</span>
+            <span class="n">FORCING</span><span class="o">=</span><span class="s2">"forcing.nc"</span><span class="p">,</span>
+            <span class="n">RUN_STARTDATE</span> <span class="o">=</span> <span class="s2">"2002-01-01"</span><span class="p">,</span> <span class="c1"># the start date of the simulation, must include in the forcing file time range</span>
+            <span class="n">STOP_OPTION</span> <span class="o">=</span> <span class="s2">"nyears"</span><span class="p">,</span> <span class="c1"># can be 'ndays', 'nmonths', 'nyears', 'nsteps'; nsteps means 1800s</span>
+            <span class="n">STOP_N</span> <span class="o">=</span> <span class="s2">"10"</span><span class="p">,</span> <span class="c1"># run for 10 years</span>
+            <span class="c1">#RUN_TYPE= "coldstart", # coldstart is the default option</span>
         <span class="p">)</span>
 <span class="n">usp_res</span>
 </pre></div>
@@ -239,10 +239,10 @@ Copying the file forcing.nc to the /home/junjie/github/pyclmuapp/docs/notebooks/
 </ul>
 <p>For example,</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># for modifying the surface data with adding 0.2 to ALB_ROOF_DIR</span>
-<span class="n">usp</span><span class="o">.</span><span class="n">modify_surf</span><span class="p">(</span><span class="n">action</span><span class="o">=</span><span class="p">{</span><span class="s2">&quot;ALB_ROOF_DIR&quot;</span><span class="p">:</span><span class="mf">0.2</span><span class="p">},</span> <span class="n">surfata_name</span><span class="o">=</span><span class="s2">&quot;surface_modfied.nc&quot;</span><span class="p">,</span> <span class="n">mode</span><span class="o">=</span><span class="s2">&quot;add&quot;</span><span class="p">)</span>
+<span class="n">usp</span><span class="o">.</span><span class="n">modify_surf</span><span class="p">(</span><span class="n">action</span><span class="o">=</span><span class="p">{</span><span class="s2">"ALB_ROOF_DIR"</span><span class="p">:</span><span class="mf">0.2</span><span class="p">},</span> <span class="n">surfata_name</span><span class="o">=</span><span class="s2">"surface_modfied.nc"</span><span class="p">,</span> <span class="n">mode</span><span class="o">=</span><span class="s2">"add"</span><span class="p">)</span>
 
 <span class="c1"># for modifying the forcing data with adding 1.0 to Tair</span>
-<span class="n">usp</span><span class="o">.</span><span class="n">modify_forcing</span><span class="p">(</span><span class="n">action</span><span class="o">=</span><span class="p">{</span><span class="s2">&quot;Tair&quot;</span><span class="p">:</span> <span class="mi">1</span><span class="p">},</span> <span class="n">mode</span><span class="o">=</span><span class="s2">&quot;add&quot;</span><span class="p">,</span> <span class="n">forcing_name</span><span class="o">=</span><span class="s2">&quot;forcing_replaced.nc&quot;</span><span class="p">)</span>
+<span class="n">usp</span><span class="o">.</span><span class="n">modify_forcing</span><span class="p">(</span><span class="n">action</span><span class="o">=</span><span class="p">{</span><span class="s2">"Tair"</span><span class="p">:</span> <span class="mi">1</span><span class="p">},</span> <span class="n">mode</span><span class="o">=</span><span class="s2">"add"</span><span class="p">,</span> <span class="n">forcing_name</span><span class="o">=</span><span class="s2">"forcing_replaced.nc"</span><span class="p">)</span>
 </pre></div>
 </div>
 <p><strong>Variables of surface data can be directly modified by ``usp.modify_surf()``</strong></p>
@@ -449,18 +449,18 @@ Copying the file forcing.nc to the /home/junjie/github/pyclmuapp/docs/notebooks/
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%%time</span>
 <span class="c1"># check surface</span>
-<span class="n">usp</span><span class="o">.</span><span class="n">check_surf</span><span class="p">(</span><span class="n">usr_surfdata</span><span class="o">=</span><span class="s2">&quot;surfdata.nc&quot;</span><span class="p">)</span> <span class="c1"># use the default surface data of London</span>
+<span class="n">usp</span><span class="o">.</span><span class="n">check_surf</span><span class="p">(</span><span class="n">usr_surfdata</span><span class="o">=</span><span class="s2">"surfdata.nc"</span><span class="p">)</span> <span class="c1"># use the default surface data of London</span>
 <span class="c1"># check the domain</span>
 <span class="n">usp</span><span class="o">.</span><span class="n">check_domain</span><span class="p">()</span>
 <span class="c1"># check the forcing</span>
 <span class="c1"># this forcing derived from urban-plumber forcing data</span>
-<span class="n">usp</span><span class="o">.</span><span class="n">check_forcing</span><span class="p">(</span><span class="n">usr_forcing</span><span class="o">=</span><span class="s2">&quot;forcing.nc&quot;</span><span class="p">)</span>
+<span class="n">usp</span><span class="o">.</span><span class="n">check_forcing</span><span class="p">(</span><span class="n">usr_forcing</span><span class="o">=</span><span class="s2">"forcing.nc"</span><span class="p">)</span>
 <span class="n">usp_res</span> <span class="o">=</span> <span class="n">usp</span><span class="o">.</span><span class="n">run</span><span class="p">(</span>
-            <span class="n">case_name</span> <span class="o">=</span> <span class="s2">&quot;usp_spinup&quot;</span><span class="p">,</span>
-            <span class="n">RUN_STARTDATE</span> <span class="o">=</span> <span class="s2">&quot;2002-01-01&quot;</span><span class="p">,</span>
-            <span class="n">STOP_OPTION</span> <span class="o">=</span> <span class="s2">&quot;nyears&quot;</span><span class="p">,</span>
-            <span class="n">STOP_N</span> <span class="o">=</span> <span class="s2">&quot;10&quot;</span><span class="p">,</span>
-            <span class="c1">#RUN_TYPE= &quot;coldstart&quot;, # coldstart is the default option</span>
+            <span class="n">case_name</span> <span class="o">=</span> <span class="s2">"usp_spinup"</span><span class="p">,</span>
+            <span class="n">RUN_STARTDATE</span> <span class="o">=</span> <span class="s2">"2002-01-01"</span><span class="p">,</span>
+            <span class="n">STOP_OPTION</span> <span class="o">=</span> <span class="s2">"nyears"</span><span class="p">,</span>
+            <span class="n">STOP_N</span> <span class="o">=</span> <span class="s2">"10"</span><span class="p">,</span>
+            <span class="c1">#RUN_TYPE= "coldstart", # coldstart is the default option</span>
         <span class="p">)</span>
 <span class="n">usp_res</span>
 </pre></div>
@@ -498,22 +498,22 @@ Wall time: 3min 10s
 <span class="n">usp</span> <span class="o">=</span> <span class="n">usp_clmu</span><span class="p">()</span>
 
 <span class="c1"># run the docker image</span>
-<span class="n">usp</span><span class="o">.</span><span class="n">docker</span><span class="p">(</span><span class="s2">&quot;run&quot;</span><span class="p">)</span>
+<span class="n">usp</span><span class="o">.</span><span class="n">docker</span><span class="p">(</span><span class="s2">"run"</span><span class="p">)</span>
 
 <span class="n">usp_res</span> <span class="o">=</span> <span class="n">usp</span><span class="o">.</span><span class="n">run</span><span class="p">(</span>
-            <span class="n">case_name</span> <span class="o">=</span> <span class="s2">&quot;usp_spinup&quot;</span><span class="p">,</span>
-            <span class="n">SURF</span><span class="o">=</span><span class="s2">&quot;surfdata.nc&quot;</span><span class="p">,</span>
-            <span class="n">FORCING</span><span class="o">=</span><span class="s2">&quot;forcing.nc&quot;</span><span class="p">,</span>
-            <span class="n">RUN_STARTDATE</span> <span class="o">=</span> <span class="s2">&quot;2002-01-01&quot;</span><span class="p">,</span>
-            <span class="n">STOP_OPTION</span> <span class="o">=</span> <span class="s2">&quot;nyears&quot;</span><span class="p">,</span>
-            <span class="n">STOP_N</span> <span class="o">=</span> <span class="s2">&quot;10&quot;</span><span class="p">,</span>
-            <span class="c1">#RUN_TYPE= &quot;coldstart&quot;, # coldstart is the default option</span>
-            <span class="n">crun_type</span><span class="o">=</span><span class="s2">&quot;usp-exec&quot;</span> <span class="c1"># this is to run the container when the docker image is used</span>
+            <span class="n">case_name</span> <span class="o">=</span> <span class="s2">"usp_spinup"</span><span class="p">,</span>
+            <span class="n">SURF</span><span class="o">=</span><span class="s2">"surfdata.nc"</span><span class="p">,</span>
+            <span class="n">FORCING</span><span class="o">=</span><span class="s2">"forcing.nc"</span><span class="p">,</span>
+            <span class="n">RUN_STARTDATE</span> <span class="o">=</span> <span class="s2">"2002-01-01"</span><span class="p">,</span>
+            <span class="n">STOP_OPTION</span> <span class="o">=</span> <span class="s2">"nyears"</span><span class="p">,</span>
+            <span class="n">STOP_N</span> <span class="o">=</span> <span class="s2">"10"</span><span class="p">,</span>
+            <span class="c1">#RUN_TYPE= "coldstart", # coldstart is the default option</span>
+            <span class="n">crun_type</span><span class="o">=</span><span class="s2">"usp-exec"</span> <span class="c1"># this is to run the container when the docker image is used</span>
         <span class="p">)</span>
 
 <span class="c1"># stop the docker image and remove it</span>
-<span class="n">usp</span><span class="o">.</span><span class="n">docker</span><span class="p">(</span><span class="s2">&quot;stop&quot;</span><span class="p">)</span>
-<span class="n">usp</span><span class="o">.</span><span class="n">docker</span><span class="p">(</span><span class="s2">&quot;rm&quot;</span><span class="p">)</span>
+<span class="n">usp</span><span class="o">.</span><span class="n">docker</span><span class="p">(</span><span class="s2">"stop"</span><span class="p">)</span>
+<span class="n">usp</span><span class="o">.</span><span class="n">docker</span><span class="p">(</span><span class="s2">"rm"</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>

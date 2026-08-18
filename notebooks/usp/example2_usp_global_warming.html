@@ -133,13 +133,13 @@
 <p>The case (<code class="docutils literal notranslate"><span class="pre">usp_spinup</span></code>) is run for 10 years to spinup the model.</p>
 <p>How to get <code class="docutils literal notranslate"><span class="pre">usp_spinup</span></code> ?</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">usp_spinup</span> <span class="o">=</span> <span class="n">usp</span><span class="o">.</span><span class="n">run</span><span class="p">(</span>
-            <span class="n">case_name</span> <span class="o">=</span> <span class="s2">&quot;usp_spinup&quot;</span><span class="p">,</span>
-            <span class="n">SURF</span><span class="o">=</span><span class="s2">&quot;surfdata.nc&quot;</span><span class="p">,</span>
-            <span class="n">FORCING</span><span class="o">=</span><span class="s2">&quot;forcing.nc&quot;</span><span class="p">,</span>
-            <span class="n">RUN_STARTDATE</span> <span class="o">=</span> <span class="s2">&quot;2002-01-01&quot;</span><span class="p">,</span>
-            <span class="n">STOP_OPTION</span> <span class="o">=</span> <span class="s2">&quot;nyears&quot;</span><span class="p">,</span>
-            <span class="n">STOP_N</span> <span class="o">=</span> <span class="s2">&quot;10&quot;</span><span class="p">,</span>
-            <span class="n">RUN_TYPE</span><span class="o">=</span> <span class="s2">&quot;coldstart&quot;</span><span class="p">,</span>
+            <span class="n">case_name</span> <span class="o">=</span> <span class="s2">"usp_spinup"</span><span class="p">,</span>
+            <span class="n">SURF</span><span class="o">=</span><span class="s2">"surfdata.nc"</span><span class="p">,</span>
+            <span class="n">FORCING</span><span class="o">=</span><span class="s2">"forcing.nc"</span><span class="p">,</span>
+            <span class="n">RUN_STARTDATE</span> <span class="o">=</span> <span class="s2">"2002-01-01"</span><span class="p">,</span>
+            <span class="n">STOP_OPTION</span> <span class="o">=</span> <span class="s2">"nyears"</span><span class="p">,</span>
+            <span class="n">STOP_N</span> <span class="o">=</span> <span class="s2">"10"</span><span class="p">,</span>
+            <span class="n">RUN_TYPE</span><span class="o">=</span> <span class="s2">"coldstart"</span><span class="p">,</span>
         <span class="p">)</span>
 <span class="n">usp_spinup</span>
 </pre></div>
@@ -152,19 +152,19 @@
 <span class="c1"># initialize</span>
 <span class="n">usp</span> <span class="o">=</span> <span class="n">usp_clmu</span><span class="p">()</span>
 <span class="c1"># If you are the Linux OS user, we recommend you to use `udocker` and then you are no needed to install Docker.</span>
-<span class="c1"># usp = usp_clmu(container_type=&quot;udocker&quot;)</span>
+<span class="c1"># usp = usp_clmu(container_type="udocker")</span>
 
 <span class="c1"># create a new case amd run it</span>
 <span class="n">usp_or</span> <span class="o">=</span> <span class="n">usp</span><span class="o">.</span><span class="n">run</span><span class="p">(</span>
-            <span class="n">case_name</span> <span class="o">=</span> <span class="s2">&quot;example2&quot;</span><span class="p">,</span>
-            <span class="n">SURF</span><span class="o">=</span><span class="s2">&quot;surfdata.nc&quot;</span><span class="p">,</span>
-            <span class="n">FORCING</span><span class="o">=</span><span class="s2">&quot;forcing.nc&quot;</span><span class="p">,</span>
-            <span class="n">RUN_STARTDATE</span> <span class="o">=</span> <span class="s2">&quot;2012-01-01&quot;</span><span class="p">,</span>
-            <span class="n">STOP_OPTION</span> <span class="o">=</span> <span class="s2">&quot;nyears&quot;</span><span class="p">,</span>
-            <span class="n">STOP_N</span> <span class="o">=</span> <span class="s2">&quot;2&quot;</span><span class="p">,</span>
-            <span class="n">RUN_TYPE</span><span class="o">=</span> <span class="s2">&quot;branch&quot;</span><span class="p">,</span>
-            <span class="n">RUN_REFCASE</span><span class="o">=</span> <span class="s2">&quot;usp_spinup&quot;</span><span class="p">,</span> <span class="c1"># the case name of the spinup run</span>
-            <span class="n">RUN_REFDATE</span><span class="o">=</span> <span class="s2">&quot;2012-01-01&quot;</span><span class="p">,</span>
+            <span class="n">case_name</span> <span class="o">=</span> <span class="s2">"example2"</span><span class="p">,</span>
+            <span class="n">SURF</span><span class="o">=</span><span class="s2">"surfdata.nc"</span><span class="p">,</span>
+            <span class="n">FORCING</span><span class="o">=</span><span class="s2">"forcing.nc"</span><span class="p">,</span>
+            <span class="n">RUN_STARTDATE</span> <span class="o">=</span> <span class="s2">"2012-01-01"</span><span class="p">,</span>
+            <span class="n">STOP_OPTION</span> <span class="o">=</span> <span class="s2">"nyears"</span><span class="p">,</span>
+            <span class="n">STOP_N</span> <span class="o">=</span> <span class="s2">"2"</span><span class="p">,</span>
+            <span class="n">RUN_TYPE</span><span class="o">=</span> <span class="s2">"branch"</span><span class="p">,</span>
+            <span class="n">RUN_REFCASE</span><span class="o">=</span> <span class="s2">"usp_spinup"</span><span class="p">,</span> <span class="c1"># the case name of the spinup run</span>
+            <span class="n">RUN_REFDATE</span><span class="o">=</span> <span class="s2">"2012-01-01"</span><span class="p">,</span>
         <span class="p">)</span>
 <span class="n">usp_or</span>
 </pre></div>
@@ -206,23 +206,23 @@ Wall time: 2min 42s
 <span class="c1"># and run the simulation again using the `usp.run` method</span>
 
 <span class="c1"># if there is no forcing data path provided or have not run a simulation using the `usp` object,</span>
-<span class="c1"># check the forcing, by calling `usp.check_forcing(usr_forcing=&quot;forcing.nc&quot;)` method</span>
+<span class="c1"># check the forcing, by calling `usp.check_forcing(usr_forcing="forcing.nc")` method</span>
 
-<span class="n">usp</span><span class="o">.</span><span class="n">modify_forcing</span><span class="p">(</span><span class="n">action</span><span class="o">=</span><span class="p">{</span><span class="s2">&quot;Tair&quot;</span><span class="p">:</span> <span class="mi">1</span><span class="p">},</span> <span class="c1"># dict</span>
-                   <span class="n">mode</span><span class="o">=</span><span class="s2">&quot;add&quot;</span><span class="p">,</span> <span class="c1"># optional; the default is &quot;replace&quot;</span>
-                   <span class="n">forcing_name</span><span class="o">=</span><span class="s2">&quot;forcing_replaced.nc&quot;</span><span class="p">)</span> <span class="c1"># optional; the default is &quot;forcing.nc&quot; provided by pyclmuapp</span>
+<span class="n">usp</span><span class="o">.</span><span class="n">modify_forcing</span><span class="p">(</span><span class="n">action</span><span class="o">=</span><span class="p">{</span><span class="s2">"Tair"</span><span class="p">:</span> <span class="mi">1</span><span class="p">},</span> <span class="c1"># dict</span>
+                   <span class="n">mode</span><span class="o">=</span><span class="s2">"add"</span><span class="p">,</span> <span class="c1"># optional; the default is "replace"</span>
+                   <span class="n">forcing_name</span><span class="o">=</span><span class="s2">"forcing_replaced.nc"</span><span class="p">)</span> <span class="c1"># optional; the default is "forcing.nc" provided by pyclmuapp</span>
 <span class="n">usp_warming</span> <span class="o">=</span> <span class="n">usp</span><span class="o">.</span><span class="n">run</span><span class="p">(</span>
-            <span class="n">case_name</span> <span class="o">=</span> <span class="s2">&quot;example2&quot;</span><span class="p">,</span>
-            <span class="n">RUN_STARTDATE</span> <span class="o">=</span> <span class="s2">&quot;2012-01-01&quot;</span><span class="p">,</span>
-            <span class="n">STOP_OPTION</span> <span class="o">=</span> <span class="s2">&quot;nyears&quot;</span><span class="p">,</span>
-            <span class="n">STOP_N</span> <span class="o">=</span> <span class="s2">&quot;2&quot;</span><span class="p">,</span>
-            <span class="n">RUN_TYPE</span><span class="o">=</span> <span class="s2">&quot;branch&quot;</span><span class="p">,</span>
-            <span class="n">RUN_REFCASE</span><span class="o">=</span> <span class="s2">&quot;usp_spinup&quot;</span><span class="p">,</span> <span class="c1"># the case name of the spinup run</span>
-            <span class="n">RUN_REFDATE</span><span class="o">=</span> <span class="s2">&quot;2012-01-01&quot;</span><span class="p">,</span>
+            <span class="n">case_name</span> <span class="o">=</span> <span class="s2">"example2"</span><span class="p">,</span>
+            <span class="n">RUN_STARTDATE</span> <span class="o">=</span> <span class="s2">"2012-01-01"</span><span class="p">,</span>
+            <span class="n">STOP_OPTION</span> <span class="o">=</span> <span class="s2">"nyears"</span><span class="p">,</span>
+            <span class="n">STOP_N</span> <span class="o">=</span> <span class="s2">"2"</span><span class="p">,</span>
+            <span class="n">RUN_TYPE</span><span class="o">=</span> <span class="s2">"branch"</span><span class="p">,</span>
+            <span class="n">RUN_REFCASE</span><span class="o">=</span> <span class="s2">"usp_spinup"</span><span class="p">,</span> <span class="c1"># the case name of the spinup run</span>
+            <span class="n">RUN_REFDATE</span><span class="o">=</span> <span class="s2">"2012-01-01"</span><span class="p">,</span>
         <span class="p">)</span>
-<span class="n">usp</span><span class="o">.</span><span class="n">modify_forcing</span><span class="p">(</span><span class="n">action</span><span class="o">=</span><span class="p">{</span><span class="s2">&quot;Tair&quot;</span><span class="p">:</span> <span class="o">-</span><span class="mi">1</span><span class="p">},</span><span class="c1"># dict</span>
-                   <span class="n">mode</span><span class="o">=</span><span class="s2">&quot;add&quot;</span><span class="p">,</span> <span class="c1"># optional; the default is &quot;replace&quot;</span>
-                   <span class="n">forcing_name</span><span class="o">=</span><span class="s2">&quot;forcing_replaced.nc&quot;</span><span class="p">)</span> <span class="c1"># optional; the default is &quot;forcing.nc&quot; provided by pyclmuapp</span>
+<span class="n">usp</span><span class="o">.</span><span class="n">modify_forcing</span><span class="p">(</span><span class="n">action</span><span class="o">=</span><span class="p">{</span><span class="s2">"Tair"</span><span class="p">:</span> <span class="o">-</span><span class="mi">1</span><span class="p">},</span><span class="c1"># dict</span>
+                   <span class="n">mode</span><span class="o">=</span><span class="s2">"add"</span><span class="p">,</span> <span class="c1"># optional; the default is "replace"</span>
+                   <span class="n">forcing_name</span><span class="o">=</span><span class="s2">"forcing_replaced.nc"</span><span class="p">)</span> <span class="c1"># optional; the default is "forcing.nc" provided by pyclmuapp</span>
 <span class="n">usp_warming</span>
 </pre></div>
 </div>
@@ -266,42 +266,42 @@ Wall time: 1min 33s
 
 <span class="c1"># plot the original and warming surface temperature</span>
 <span class="n">ax</span> <span class="o">=</span> <span class="n">fig</span><span class="o">.</span><span class="n">add_subplot</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
-<span class="n">ds_or_usp</span><span class="p">[</span><span class="s1">&#39;TSA&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">isel</span><span class="p">(</span><span class="n">gridcell</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">ax</span><span class="o">=</span><span class="n">ax</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s2">&quot;Original&quot;</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;#3964DF&#39;</span><span class="p">)</span>
-<span class="n">ds_warming_usp</span><span class="p">[</span><span class="s1">&#39;TSA&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">isel</span><span class="p">(</span><span class="n">gridcell</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">ax</span><span class="o">=</span><span class="n">ax</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s2">&quot;Warming&quot;</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;#E02927&#39;</span><span class="p">)</span>
+<span class="n">ds_or_usp</span><span class="p">[</span><span class="s1">'TSA'</span><span class="p">]</span><span class="o">.</span><span class="n">isel</span><span class="p">(</span><span class="n">gridcell</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">ax</span><span class="o">=</span><span class="n">ax</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s2">"Original"</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">'#3964DF'</span><span class="p">)</span>
+<span class="n">ds_warming_usp</span><span class="p">[</span><span class="s1">'TSA'</span><span class="p">]</span><span class="o">.</span><span class="n">isel</span><span class="p">(</span><span class="n">gridcell</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">ax</span><span class="o">=</span><span class="n">ax</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s2">"Warming"</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">'#E02927'</span><span class="p">)</span>
 <span class="n">ax</span><span class="o">.</span><span class="n">legend</span><span class="p">(</span><span class="n">frameon</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">12</span><span class="p">)</span>
 
 <span class="c1"># plot the original and warming surface temperature hourly</span>
 <span class="n">ax</span> <span class="o">=</span> <span class="n">fig</span><span class="o">.</span><span class="n">add_subplot</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span>
 <span class="k">def</span><span class="w"> </span><span class="nf">plot_hourly</span><span class="p">(</span><span class="n">ds</span><span class="p">,</span> <span class="n">ax</span><span class="p">,</span> <span class="n">title</span><span class="p">,</span> <span class="n">color</span><span class="p">):</span>
-    <span class="n">ds</span><span class="p">[</span><span class="s1">&#39;TSA&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">groupby</span><span class="p">(</span><span class="s1">&#39;time.hour&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">mean</span><span class="p">()</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">ax</span><span class="o">=</span><span class="n">ax</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="n">title</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="n">color</span><span class="p">)</span>
+    <span class="n">ds</span><span class="p">[</span><span class="s1">'TSA'</span><span class="p">]</span><span class="o">.</span><span class="n">groupby</span><span class="p">(</span><span class="s1">'time.hour'</span><span class="p">)</span><span class="o">.</span><span class="n">mean</span><span class="p">()</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">ax</span><span class="o">=</span><span class="n">ax</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="n">title</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="n">color</span><span class="p">)</span>
 
-<span class="n">plot_hourly</span><span class="p">(</span><span class="n">ds_or_usp</span><span class="p">,</span> <span class="n">ax</span><span class="p">,</span> <span class="s2">&quot;Original&quot;</span><span class="p">,</span> <span class="s1">&#39;#3964DF&#39;</span><span class="p">)</span>
-<span class="n">plot_hourly</span><span class="p">(</span><span class="n">ds_warming_usp</span><span class="p">,</span> <span class="n">ax</span><span class="p">,</span> <span class="s2">&quot;Warming&quot;</span><span class="p">,</span> <span class="s1">&#39;#E02927&#39;</span><span class="p">)</span>
+<span class="n">plot_hourly</span><span class="p">(</span><span class="n">ds_or_usp</span><span class="p">,</span> <span class="n">ax</span><span class="p">,</span> <span class="s2">"Original"</span><span class="p">,</span> <span class="s1">'#3964DF'</span><span class="p">)</span>
+<span class="n">plot_hourly</span><span class="p">(</span><span class="n">ds_warming_usp</span><span class="p">,</span> <span class="n">ax</span><span class="p">,</span> <span class="s2">"Warming"</span><span class="p">,</span> <span class="s1">'#E02927'</span><span class="p">)</span>
 <span class="n">ax</span><span class="o">.</span><span class="n">legend</span><span class="p">(</span><span class="n">frameon</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">12</span><span class="p">)</span>
 
 <span class="c1"># plot the residual</span>
 <span class="n">ax</span> <span class="o">=</span> <span class="n">fig</span><span class="o">.</span><span class="n">add_subplot</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">)</span>
-<span class="n">dd</span> <span class="o">=</span> <span class="p">(</span><span class="n">ds_warming_usp</span><span class="p">[</span><span class="s1">&#39;TSA&#39;</span><span class="p">]</span><span class="o">-</span><span class="n">ds_or_usp</span><span class="p">[</span><span class="s1">&#39;TSA&#39;</span><span class="p">])</span><span class="o">.</span><span class="n">isel</span><span class="p">(</span><span class="n">gridcell</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span><span class="o">.</span><span class="n">plot</span><span class="p">()</span>
+<span class="n">dd</span> <span class="o">=</span> <span class="p">(</span><span class="n">ds_warming_usp</span><span class="p">[</span><span class="s1">'TSA'</span><span class="p">]</span><span class="o">-</span><span class="n">ds_or_usp</span><span class="p">[</span><span class="s1">'TSA'</span><span class="p">])</span><span class="o">.</span><span class="n">isel</span><span class="p">(</span><span class="n">gridcell</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span><span class="o">.</span><span class="n">plot</span><span class="p">()</span>
 
 <span class="c1"># plot the residual hourly</span>
 <span class="n">ax</span> <span class="o">=</span> <span class="n">fig</span><span class="o">.</span><span class="n">add_subplot</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">4</span><span class="p">)</span>
-<span class="n">dd</span> <span class="o">=</span> <span class="p">(</span><span class="n">ds_warming_usp</span><span class="p">[</span><span class="s1">&#39;TSA&#39;</span><span class="p">]</span><span class="o">-</span><span class="n">ds_or_usp</span><span class="p">[</span><span class="s1">&#39;TSA&#39;</span><span class="p">])</span><span class="o">.</span><span class="n">isel</span><span class="p">(</span><span class="n">gridcell</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span><span class="o">.</span><span class="n">groupby</span><span class="p">(</span><span class="s1">&#39;time.hour&#39;</span><span class="p">)</span>
-<span class="n">mean</span> <span class="o">=</span> <span class="n">dd</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="s1">&#39;time&#39;</span><span class="p">)</span>
-<span class="n">var</span> <span class="o">=</span> <span class="n">dd</span><span class="o">.</span><span class="n">var</span><span class="p">(</span><span class="s1">&#39;time&#39;</span><span class="p">)</span>
+<span class="n">dd</span> <span class="o">=</span> <span class="p">(</span><span class="n">ds_warming_usp</span><span class="p">[</span><span class="s1">'TSA'</span><span class="p">]</span><span class="o">-</span><span class="n">ds_or_usp</span><span class="p">[</span><span class="s1">'TSA'</span><span class="p">])</span><span class="o">.</span><span class="n">isel</span><span class="p">(</span><span class="n">gridcell</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span><span class="o">.</span><span class="n">groupby</span><span class="p">(</span><span class="s1">'time.hour'</span><span class="p">)</span>
+<span class="n">mean</span> <span class="o">=</span> <span class="n">dd</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="s1">'time'</span><span class="p">)</span>
+<span class="n">var</span> <span class="o">=</span> <span class="n">dd</span><span class="o">.</span><span class="n">var</span><span class="p">(</span><span class="s1">'time'</span><span class="p">)</span>
 <span class="n">mean</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">ax</span><span class="o">=</span><span class="n">ax</span><span class="p">)</span>
 
 <span class="c1"># set labels</span>
-<span class="n">xlabels</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;&#39;</span><span class="p">,</span> <span class="s1">&#39;&#39;</span><span class="p">,</span> <span class="s1">&#39;Time&#39;</span><span class="p">,</span> <span class="s1">&#39;Local hour of day&#39;</span><span class="p">]</span>
-<span class="n">ylabels</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;Air temperature [K]&#39;</span><span class="p">,</span> <span class="s1">&#39;Air temperature [K]&#39;</span><span class="p">,</span> <span class="s1">&#39;Temperature difference [K]&#39;</span><span class="p">,</span> <span class="s1">&#39;Temperature difference [K]&#39;</span><span class="p">]</span>
-<span class="n">titles</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;a&#39;</span><span class="p">,</span> <span class="s1">&#39;b&#39;</span><span class="p">,</span> <span class="s1">&#39;c&#39;</span><span class="p">,</span> <span class="s1">&#39;d&#39;</span><span class="p">]</span>
+<span class="n">xlabels</span> <span class="o">=</span> <span class="p">[</span><span class="s1">''</span><span class="p">,</span> <span class="s1">''</span><span class="p">,</span> <span class="s1">'Time'</span><span class="p">,</span> <span class="s1">'Local hour of day'</span><span class="p">]</span>
+<span class="n">ylabels</span> <span class="o">=</span> <span class="p">[</span><span class="s1">'Air temperature [K]'</span><span class="p">,</span> <span class="s1">'Air temperature [K]'</span><span class="p">,</span> <span class="s1">'Temperature difference [K]'</span><span class="p">,</span> <span class="s1">'Temperature difference [K]'</span><span class="p">]</span>
+<span class="n">titles</span> <span class="o">=</span> <span class="p">[</span><span class="s1">'a'</span><span class="p">,</span> <span class="s1">'b'</span><span class="p">,</span> <span class="s1">'c'</span><span class="p">,</span> <span class="s1">'d'</span><span class="p">]</span>
 <span class="k">for</span> <span class="n">ax</span> <span class="ow">in</span> <span class="n">fig</span><span class="o">.</span><span class="n">axes</span><span class="p">:</span>
     <span class="n">ax</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="n">xlabels</span><span class="o">.</span><span class="n">pop</span><span class="p">(</span><span class="mi">0</span><span class="p">),</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">14</span><span class="p">)</span>
     <span class="n">ax</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="n">ylabels</span><span class="o">.</span><span class="n">pop</span><span class="p">(</span><span class="mi">0</span><span class="p">),</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">14</span><span class="p">)</span>
-    <span class="n">ax</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="n">titles</span><span class="o">.</span><span class="n">pop</span><span class="p">(</span><span class="mi">0</span><span class="p">),</span> <span class="n">loc</span><span class="o">=</span><span class="s1">&#39;left&#39;</span><span class="p">,</span> <span class="n">fontweight</span><span class="o">=</span><span class="s1">&#39;bold&#39;</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">14</span><span class="p">)</span>
-    <span class="n">ax</span><span class="o">.</span><span class="n">tick_params</span><span class="p">(</span><span class="n">axis</span><span class="o">=</span><span class="s1">&#39;both&#39;</span><span class="p">,</span> <span class="n">which</span><span class="o">=</span><span class="s1">&#39;major&#39;</span><span class="p">,</span> <span class="n">labelsize</span><span class="o">=</span><span class="mi">12</span><span class="p">)</span>
+    <span class="n">ax</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="n">titles</span><span class="o">.</span><span class="n">pop</span><span class="p">(</span><span class="mi">0</span><span class="p">),</span> <span class="n">loc</span><span class="o">=</span><span class="s1">'left'</span><span class="p">,</span> <span class="n">fontweight</span><span class="o">=</span><span class="s1">'bold'</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">14</span><span class="p">)</span>
+    <span class="n">ax</span><span class="o">.</span><span class="n">tick_params</span><span class="p">(</span><span class="n">axis</span><span class="o">=</span><span class="s1">'both'</span><span class="p">,</span> <span class="n">which</span><span class="o">=</span><span class="s1">'major'</span><span class="p">,</span> <span class="n">labelsize</span><span class="o">=</span><span class="mi">12</span><span class="p">)</span>
 
 <span class="n">plt</span><span class="o">.</span><span class="n">tight_layout</span><span class="p">()</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">savefig</span><span class="p">(</span><span class="s1">&#39;figs/example2_usp.pdf&#39;</span><span class="p">,</span> <span class="n">dpi</span><span class="o">=</span><span class="mi">300</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">savefig</span><span class="p">(</span><span class="s1">'figs/example2_usp.pdf'</span><span class="p">,</span> <span class="n">dpi</span><span class="o">=</span><span class="mi">300</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
 </pre></div>
 </div>
@@ -318,13 +318,13 @@ Wall time: 1min 33s
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[6]:
 </pre></div>
 </div>
-<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">usp</span><span class="o">.</span><span class="n">case_clean</span><span class="p">(</span><span class="n">case_name</span><span class="o">=</span><span class="s2">&quot;example2&quot;</span><span class="p">)</span>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">usp</span><span class="o">.</span><span class="n">case_clean</span><span class="p">(</span><span class="n">case_name</span><span class="o">=</span><span class="s2">"example2"</span><span class="p">)</span>
 
-<span class="c1"># when you using ups.run(crun_type=&#39;usp-exec&#39;) --&gt; see warmup section</span>
+<span class="c1"># when you using ups.run(crun_type='usp-exec') --&gt; see warmup section</span>
 <span class="c1"># the case files in ./workdir/ouptutfolder/your_case, ./workdir/logfolder/your_case,</span>
 <span class="c1"># and ./workdir/inputfoler/usp will be removed.</span>
 
-<span class="c1"># when you using ups.run(crun_type=&#39;run&#39;) or ups.run(), the default crun_type is &#39;run&#39;</span>
+<span class="c1"># when you using ups.run(crun_type='run') or ups.run(), the default crun_type is 'run'</span>
 <span class="c1"># only ./workdir/inputfoler/usp will be removed.</span>
 </pre></div>
 </div>

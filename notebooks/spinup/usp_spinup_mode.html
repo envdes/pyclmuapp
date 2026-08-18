@@ -133,13 +133,13 @@
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">usp</span> <span class="o">=</span> <span class="n">usp_clmu</span><span class="p">()</span>
 
 <span class="n">usp</span><span class="o">.</span><span class="n">check_domain</span><span class="p">()</span>
-<span class="n">usp</span><span class="o">.</span><span class="n">check_forcing</span><span class="p">(</span><span class="n">usr_forcing</span><span class="o">=</span><span class="s2">&quot;inputfolder/Urban-PLUMBER/datm_files/UK-Kin/CLM1PT_data/forcing.nc&quot;</span><span class="p">)</span>
+<span class="n">usp</span><span class="o">.</span><span class="n">check_forcing</span><span class="p">(</span><span class="n">usr_forcing</span><span class="o">=</span><span class="s2">"inputfolder/Urban-PLUMBER/datm_files/UK-Kin/CLM1PT_data/forcing.nc"</span><span class="p">)</span>
 <span class="n">usp_spinup</span> <span class="o">=</span> <span class="n">usp</span><span class="o">.</span><span class="n">run</span><span class="p">(</span>
-            <span class="n">case_name</span> <span class="o">=</span> <span class="s2">&quot;usp_spinup&quot;</span><span class="p">,</span>
-            <span class="n">RUN_STARTDATE</span> <span class="o">=</span> <span class="s2">&quot;2002-01-01&quot;</span><span class="p">,</span>
-            <span class="n">STOP_OPTION</span> <span class="o">=</span> <span class="s2">&quot;nyears&quot;</span><span class="p">,</span>
-            <span class="n">STOP_N</span> <span class="o">=</span> <span class="s2">&quot;10&quot;</span><span class="p">,</span>
-            <span class="n">RUN_TYPE</span><span class="o">=</span> <span class="s2">&quot;coldstart&quot;</span><span class="p">,</span>
+            <span class="n">case_name</span> <span class="o">=</span> <span class="s2">"usp_spinup"</span><span class="p">,</span>
+            <span class="n">RUN_STARTDATE</span> <span class="o">=</span> <span class="s2">"2002-01-01"</span><span class="p">,</span>
+            <span class="n">STOP_OPTION</span> <span class="o">=</span> <span class="s2">"nyears"</span><span class="p">,</span>
+            <span class="n">STOP_N</span> <span class="o">=</span> <span class="s2">"10"</span><span class="p">,</span>
+            <span class="n">RUN_TYPE</span><span class="o">=</span> <span class="s2">"coldstart"</span><span class="p">,</span>
         <span class="p">)</span>
 <span class="n">usp_spinup</span>
 </pre></div>
@@ -626,15 +626,15 @@ Attributes: (12/38)
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">usp</span> <span class="o">=</span> <span class="n">usp_clmu</span><span class="p">()</span>
 
 <span class="n">usp</span><span class="o">.</span><span class="n">check_domain</span><span class="p">()</span>
-<span class="n">usp</span><span class="o">.</span><span class="n">check_forcing</span><span class="p">(</span><span class="n">usr_forcing</span><span class="o">=</span><span class="s2">&quot;inputfolder/Urban-PLUMBER/datm_files/UK-Kin/CLM1PT_data/forcing.nc&quot;</span><span class="p">)</span>
+<span class="n">usp</span><span class="o">.</span><span class="n">check_forcing</span><span class="p">(</span><span class="n">usr_forcing</span><span class="o">=</span><span class="s2">"inputfolder/Urban-PLUMBER/datm_files/UK-Kin/CLM1PT_data/forcing.nc"</span><span class="p">)</span>
 <span class="n">usp_london_start</span> <span class="o">=</span> <span class="n">usp</span><span class="o">.</span><span class="n">run</span><span class="p">(</span>
-            <span class="n">case_name</span> <span class="o">=</span> <span class="s2">&quot;usp_start&quot;</span><span class="p">,</span>
-            <span class="n">RUN_STARTDATE</span> <span class="o">=</span> <span class="s2">&quot;2012-01-01&quot;</span><span class="p">,</span>
-            <span class="n">STOP_OPTION</span> <span class="o">=</span> <span class="s2">&quot;nyears&quot;</span><span class="p">,</span>
-            <span class="n">STOP_N</span> <span class="o">=</span> <span class="s2">&quot;2&quot;</span><span class="p">,</span>
-            <span class="n">RUN_TYPE</span><span class="o">=</span> <span class="s2">&quot;branch&quot;</span><span class="p">,</span>
-            <span class="n">RUN_REFCASE</span><span class="o">=</span> <span class="s2">&quot;usp_spinup&quot;</span><span class="p">,</span>
-            <span class="n">RUN_REFDATE</span><span class="o">=</span> <span class="s2">&quot;2012-01-01&quot;</span><span class="p">,</span>
+            <span class="n">case_name</span> <span class="o">=</span> <span class="s2">"usp_start"</span><span class="p">,</span>
+            <span class="n">RUN_STARTDATE</span> <span class="o">=</span> <span class="s2">"2012-01-01"</span><span class="p">,</span>
+            <span class="n">STOP_OPTION</span> <span class="o">=</span> <span class="s2">"nyears"</span><span class="p">,</span>
+            <span class="n">STOP_N</span> <span class="o">=</span> <span class="s2">"2"</span><span class="p">,</span>
+            <span class="n">RUN_TYPE</span><span class="o">=</span> <span class="s2">"branch"</span><span class="p">,</span>
+            <span class="n">RUN_REFCASE</span><span class="o">=</span> <span class="s2">"usp_spinup"</span><span class="p">,</span>
+            <span class="n">RUN_REFDATE</span><span class="o">=</span> <span class="s2">"2012-01-01"</span><span class="p">,</span>
         <span class="p">)</span>
 <span class="n">usp_london_start</span>
 </pre></div>
@@ -672,15 +672,15 @@ Copying the file forcing.nc to the /Users/user/Documents/GitHub/pyclmuapp/inputf
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">usp</span> <span class="o">=</span> <span class="n">usp_clmu</span><span class="p">()</span>
 
 <span class="n">usp</span><span class="o">.</span><span class="n">check_domain</span><span class="p">()</span>
-<span class="n">usp</span><span class="o">.</span><span class="n">check_forcing</span><span class="p">(</span><span class="n">usr_forcing</span><span class="o">=</span><span class="s2">&quot;inputfolder/Urban-PLUMBER/datm_files/UK-Kin/CLM1PT_data/forcing.nc&quot;</span><span class="p">)</span>
+<span class="n">usp</span><span class="o">.</span><span class="n">check_forcing</span><span class="p">(</span><span class="n">usr_forcing</span><span class="o">=</span><span class="s2">"inputfolder/Urban-PLUMBER/datm_files/UK-Kin/CLM1PT_data/forcing.nc"</span><span class="p">)</span>
 <span class="n">usp_london_start_no</span> <span class="o">=</span> <span class="n">usp</span><span class="o">.</span><span class="n">run</span><span class="p">(</span>
-            <span class="n">case_name</span> <span class="o">=</span> <span class="s2">&quot;usp_start_no&quot;</span><span class="p">,</span>
-            <span class="n">RUN_STARTDATE</span> <span class="o">=</span> <span class="s2">&quot;2012-01-01&quot;</span><span class="p">,</span>
-            <span class="n">STOP_OPTION</span> <span class="o">=</span> <span class="s2">&quot;nyears&quot;</span><span class="p">,</span>
-            <span class="n">STOP_N</span> <span class="o">=</span> <span class="s2">&quot;2&quot;</span><span class="p">,</span>
-            <span class="n">RUN_TYPE</span><span class="o">=</span> <span class="s2">&quot;coldstart&quot;</span><span class="p">,</span>
-            <span class="n">RUN_REFCASE</span><span class="o">=</span> <span class="s2">&quot;usp_spinup&quot;</span><span class="p">,</span>
-            <span class="n">RUN_REFDATE</span><span class="o">=</span> <span class="s2">&quot;2012-01-01&quot;</span><span class="p">,</span>
+            <span class="n">case_name</span> <span class="o">=</span> <span class="s2">"usp_start_no"</span><span class="p">,</span>
+            <span class="n">RUN_STARTDATE</span> <span class="o">=</span> <span class="s2">"2012-01-01"</span><span class="p">,</span>
+            <span class="n">STOP_OPTION</span> <span class="o">=</span> <span class="s2">"nyears"</span><span class="p">,</span>
+            <span class="n">STOP_N</span> <span class="o">=</span> <span class="s2">"2"</span><span class="p">,</span>
+            <span class="n">RUN_TYPE</span><span class="o">=</span> <span class="s2">"coldstart"</span><span class="p">,</span>
+            <span class="n">RUN_REFCASE</span><span class="o">=</span> <span class="s2">"usp_spinup"</span><span class="p">,</span>
+            <span class="n">RUN_REFDATE</span><span class="o">=</span> <span class="s2">"2012-01-01"</span><span class="p">,</span>
         <span class="p">)</span>
 <span class="n">usp_london_start_no</span>
 </pre></div>
@@ -717,17 +717,17 @@ Copying the file forcing.nc to the /Users/user/Documents/GitHub/pyclmuapp/inputf
 <span class="n">ax</span> <span class="o">=</span> <span class="n">fig</span><span class="o">.</span><span class="n">add_subplot</span><span class="p">(</span><span class="mi">111</span><span class="p">)</span>
 <span class="n">usp_london_start_no_nc</span><span class="o">=</span><span class="n">usp</span><span class="o">.</span><span class="n">nc_view</span><span class="p">(</span><span class="n">usp_london_start</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
 <span class="n">usp_london_start_nc</span><span class="o">=</span><span class="n">usp</span><span class="o">.</span><span class="n">nc_view</span><span class="p">(</span><span class="n">usp_london_start_no</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
-<span class="c1">#usp_london_start_no_nc[&#39;TSA_U&#39;].plot()</span>
-<span class="c1">#usp_london_start_nc[&#39;TSA_U&#39;].plot()</span>
-<span class="n">diff</span> <span class="o">=</span> <span class="n">usp_london_start_no_nc</span><span class="p">[</span><span class="s1">&#39;TSA&#39;</span><span class="p">]</span><span class="o">-</span><span class="n">usp_london_start_nc</span><span class="p">[</span><span class="s1">&#39;TSA&#39;</span><span class="p">]</span>
+<span class="c1">#usp_london_start_no_nc['TSA_U'].plot()</span>
+<span class="c1">#usp_london_start_nc['TSA_U'].plot()</span>
+<span class="n">diff</span> <span class="o">=</span> <span class="n">usp_london_start_no_nc</span><span class="p">[</span><span class="s1">'TSA'</span><span class="p">]</span><span class="o">-</span><span class="n">usp_london_start_nc</span><span class="p">[</span><span class="s1">'TSA'</span><span class="p">]</span>
 <span class="n">diff</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">ax</span><span class="o">=</span><span class="n">ax</span><span class="p">)</span>
-<span class="n">ax</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="s1">&#39;Temperature difference [K]&#39;</span><span class="p">)</span>
-<span class="n">ax</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="s1">&#39;Time&#39;</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="s1">'Temperature difference [K]'</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="s1">'Time'</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">tight_layout</span><span class="p">()</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">savefig</span><span class="p">(</span><span class="s1">&#39;figs/usp_london_spinuptest.pdf&#39;</span><span class="p">,</span> <span class="n">dpi</span><span class="o">=</span><span class="mi">300</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">savefig</span><span class="p">(</span><span class="s1">'figs/usp_london_spinuptest.pdf'</span><span class="p">,</span> <span class="n">dpi</span><span class="o">=</span><span class="mi">300</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">usp_london_start_no_nc</span><span class="p">[</span><span class="s1">&#39;TSA&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">mean</span><span class="p">())</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">usp_london_start_nc</span><span class="p">[</span><span class="s1">&#39;TSA&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">mean</span><span class="p">())</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">usp_london_start_no_nc</span><span class="p">[</span><span class="s1">'TSA'</span><span class="p">]</span><span class="o">.</span><span class="n">mean</span><span class="p">())</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">usp_london_start_nc</span><span class="p">[</span><span class="s1">'TSA'</span><span class="p">]</span><span class="o">.</span><span class="n">mean</span><span class="p">())</span>
 </pre></div>
 </div>
 </div>

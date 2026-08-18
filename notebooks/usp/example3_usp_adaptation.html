@@ -133,13 +133,13 @@
 <p>The case (<code class="docutils literal notranslate"><span class="pre">usp_spinup</span></code>) is run for 10 years to spinup the model.</p>
 <p>How to get <code class="docutils literal notranslate"><span class="pre">usp_spinup</span></code> ?</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">usp_spinup</span> <span class="o">=</span> <span class="n">usp</span><span class="o">.</span><span class="n">run</span><span class="p">(</span>
-            <span class="n">case_name</span> <span class="o">=</span> <span class="s2">&quot;usp_spinup&quot;</span><span class="p">,</span>
-            <span class="n">SURF</span><span class="o">=</span><span class="s2">&quot;surfdata.nc&quot;</span><span class="p">,</span>
-            <span class="n">FORCING</span><span class="o">=</span><span class="s2">&quot;forcing.nc&quot;</span><span class="p">,</span>
-            <span class="n">RUN_STARTDATE</span> <span class="o">=</span> <span class="s2">&quot;2002-01-01&quot;</span><span class="p">,</span>
-            <span class="n">STOP_OPTION</span> <span class="o">=</span> <span class="s2">&quot;nyears&quot;</span><span class="p">,</span>
-            <span class="n">STOP_N</span> <span class="o">=</span> <span class="s2">&quot;10&quot;</span><span class="p">,</span>
-            <span class="n">RUN_TYPE</span><span class="o">=</span> <span class="s2">&quot;coldstart&quot;</span><span class="p">,</span>
+            <span class="n">case_name</span> <span class="o">=</span> <span class="s2">"usp_spinup"</span><span class="p">,</span>
+            <span class="n">SURF</span><span class="o">=</span><span class="s2">"surfdata.nc"</span><span class="p">,</span>
+            <span class="n">FORCING</span><span class="o">=</span><span class="s2">"forcing.nc"</span><span class="p">,</span>
+            <span class="n">RUN_STARTDATE</span> <span class="o">=</span> <span class="s2">"2002-01-01"</span><span class="p">,</span>
+            <span class="n">STOP_OPTION</span> <span class="o">=</span> <span class="s2">"nyears"</span><span class="p">,</span>
+            <span class="n">STOP_N</span> <span class="o">=</span> <span class="s2">"10"</span><span class="p">,</span>
+            <span class="n">RUN_TYPE</span><span class="o">=</span> <span class="s2">"coldstart"</span><span class="p">,</span>
         <span class="p">)</span>
 <span class="n">usp_spinup</span>
 </pre></div>
@@ -152,18 +152,18 @@
 <span class="c1"># initialize</span>
 <span class="n">usp</span> <span class="o">=</span> <span class="n">usp_clmu</span><span class="p">()</span>
 <span class="c1"># If you are the Linux OS user, we recommend you to use `udocker` and then you are no needed to install Docker.</span>
-<span class="c1"># usp = usp_clmu(container_type=&quot;udocker&quot;)</span>
+<span class="c1"># usp = usp_clmu(container_type="udocker")</span>
 
 <span class="n">usp_or</span> <span class="o">=</span> <span class="n">usp</span><span class="o">.</span><span class="n">run</span><span class="p">(</span>
-            <span class="n">case_name</span> <span class="o">=</span> <span class="s2">&quot;example3&quot;</span><span class="p">,</span>
-            <span class="n">SURF</span><span class="o">=</span><span class="s2">&quot;surfdata.nc&quot;</span><span class="p">,</span>
-            <span class="n">FORCING</span><span class="o">=</span><span class="s2">&quot;forcing.nc&quot;</span><span class="p">,</span>
-            <span class="n">RUN_STARTDATE</span> <span class="o">=</span> <span class="s2">&quot;2012-01-01&quot;</span><span class="p">,</span>
-            <span class="n">STOP_OPTION</span> <span class="o">=</span> <span class="s2">&quot;nyears&quot;</span><span class="p">,</span>
-            <span class="n">STOP_N</span> <span class="o">=</span> <span class="s2">&quot;2&quot;</span><span class="p">,</span>
-            <span class="n">RUN_TYPE</span><span class="o">=</span> <span class="s2">&quot;branch&quot;</span><span class="p">,</span>
-            <span class="n">RUN_REFCASE</span><span class="o">=</span> <span class="s2">&quot;usp_spinup&quot;</span><span class="p">,</span> <span class="c1"># the case name of the spinup run</span>
-            <span class="n">RUN_REFDATE</span><span class="o">=</span> <span class="s2">&quot;2012-01-01&quot;</span><span class="p">,</span>
+            <span class="n">case_name</span> <span class="o">=</span> <span class="s2">"example3"</span><span class="p">,</span>
+            <span class="n">SURF</span><span class="o">=</span><span class="s2">"surfdata.nc"</span><span class="p">,</span>
+            <span class="n">FORCING</span><span class="o">=</span><span class="s2">"forcing.nc"</span><span class="p">,</span>
+            <span class="n">RUN_STARTDATE</span> <span class="o">=</span> <span class="s2">"2012-01-01"</span><span class="p">,</span>
+            <span class="n">STOP_OPTION</span> <span class="o">=</span> <span class="s2">"nyears"</span><span class="p">,</span>
+            <span class="n">STOP_N</span> <span class="o">=</span> <span class="s2">"2"</span><span class="p">,</span>
+            <span class="n">RUN_TYPE</span><span class="o">=</span> <span class="s2">"branch"</span><span class="p">,</span>
+            <span class="n">RUN_REFCASE</span><span class="o">=</span> <span class="s2">"usp_spinup"</span><span class="p">,</span> <span class="c1"># the case name of the spinup run</span>
+            <span class="n">RUN_REFDATE</span><span class="o">=</span> <span class="s2">"2012-01-01"</span><span class="p">,</span>
         <span class="p">)</span>
 <span class="n">usp_or</span>
 </pre></div>
@@ -200,11 +200,11 @@ Wall time: 2min 37s
 <span class="n">usp_clmu</span><span class="o">.</span><span class="n">modify_surf</span><span class="p">(</span>
     <span class="n">action</span><span class="o">=</span><span class="n">action</span><span class="p">,</span>    <span class="c1"># dict like result of usp_clmu.check_surf_data()</span>
                       <span class="c1">#or usp_clmu.surfdata_dict</span>
-    <span class="n">mode</span><span class="o">=</span><span class="s2">&quot;replace&quot;</span><span class="p">,</span> <span class="c1"># optional; the default is &quot;replace&quot;</span>
+    <span class="n">mode</span><span class="o">=</span><span class="s2">"replace"</span><span class="p">,</span> <span class="c1"># optional; the default is "replace"</span>
     <span class="n">usr_surfdata</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="c1"># optional; the path to the new surfdata file,</span>
-                       <span class="c1">#the default is &quot;surfdata.nc&quot; provided by pyclmuapp</span>
-    <span class="n">surfata_name</span><span class="o">=</span><span class="s2">&quot;surface_replaced.nc&quot;</span> <span class="c1"># optional; output file name,</span>
-                                       <span class="c1"># the default is &quot;surfdata.nc&quot;</span>
+                       <span class="c1">#the default is "surfdata.nc" provided by pyclmuapp</span>
+    <span class="n">surfata_name</span><span class="o">=</span><span class="s2">"surface_replaced.nc"</span> <span class="c1"># optional; output file name,</span>
+                                       <span class="c1"># the default is "surfdata.nc"</span>
 <span class="p">)</span>
 </pre></div>
 </div>
@@ -229,50 +229,50 @@ Wall time: 2min 37s
 <span class="c1"># and run the simulation again using the `usp.run` method</span>
 
 <span class="c1"># if there is no forcing data path provided or have not run a simulation using the `usp` object,</span>
-<span class="c1"># check the forcing, by calling `usp.check_forcing(usr_forcing=&quot;forcing.nc&quot;)` method</span>
+<span class="c1"># check the forcing, by calling `usp.check_forcing(usr_forcing="forcing.nc")` method</span>
 
 <span class="c1"># if there is no surface data path provided or have not run a simulation using the `usp` object,</span>
-<span class="c1"># check the surface, by calling `usp.check_surf(usr_surf=&quot;sufdata.nc&quot;)` method</span>
+<span class="c1"># check the surface, by calling `usp.check_surf(usr_surf="sufdata.nc")` method</span>
 
 <span class="c1"># modify the surface</span>
-<span class="n">usp</span><span class="o">.</span><span class="n">modify_surf</span><span class="p">(</span><span class="n">action</span><span class="o">=</span><span class="p">{</span><span class="s2">&quot;ALB_ROOF_DIR&quot;</span><span class="p">:</span><span class="mf">0.2</span><span class="p">},</span> <span class="n">surfata_name</span><span class="o">=</span><span class="s2">&quot;surface_modfied.nc&quot;</span><span class="p">,</span> <span class="n">mode</span><span class="o">=</span><span class="s2">&quot;add&quot;</span><span class="p">)</span>
-<span class="n">usp</span><span class="o">.</span><span class="n">modify_surf</span><span class="p">(</span><span class="n">action</span><span class="o">=</span><span class="p">{</span><span class="s2">&quot;ALB_ROOF_DIF&quot;</span><span class="p">:</span><span class="mf">0.2</span><span class="p">},</span> <span class="n">surfata_name</span><span class="o">=</span><span class="s2">&quot;surface_modfied.nc&quot;</span><span class="p">,</span> <span class="n">mode</span><span class="o">=</span><span class="s2">&quot;add&quot;</span><span class="p">)</span>
+<span class="n">usp</span><span class="o">.</span><span class="n">modify_surf</span><span class="p">(</span><span class="n">action</span><span class="o">=</span><span class="p">{</span><span class="s2">"ALB_ROOF_DIR"</span><span class="p">:</span><span class="mf">0.2</span><span class="p">},</span> <span class="n">surfata_name</span><span class="o">=</span><span class="s2">"surface_modfied.nc"</span><span class="p">,</span> <span class="n">mode</span><span class="o">=</span><span class="s2">"add"</span><span class="p">)</span>
+<span class="n">usp</span><span class="o">.</span><span class="n">modify_surf</span><span class="p">(</span><span class="n">action</span><span class="o">=</span><span class="p">{</span><span class="s2">"ALB_ROOF_DIF"</span><span class="p">:</span><span class="mf">0.2</span><span class="p">},</span> <span class="n">surfata_name</span><span class="o">=</span><span class="s2">"surface_modfied.nc"</span><span class="p">,</span> <span class="n">mode</span><span class="o">=</span><span class="s2">"add"</span><span class="p">)</span>
 <span class="n">usp_surf</span> <span class="o">=</span> <span class="n">usp</span><span class="o">.</span><span class="n">run</span><span class="p">(</span>
-            <span class="n">case_name</span> <span class="o">=</span> <span class="s2">&quot;example3&quot;</span><span class="p">,</span>
-            <span class="n">RUN_STARTDATE</span> <span class="o">=</span> <span class="s2">&quot;2012-01-01&quot;</span><span class="p">,</span>
-            <span class="n">STOP_OPTION</span> <span class="o">=</span> <span class="s2">&quot;nyears&quot;</span><span class="p">,</span>
-            <span class="n">STOP_N</span> <span class="o">=</span> <span class="s2">&quot;2&quot;</span><span class="p">,</span>
-            <span class="n">RUN_TYPE</span><span class="o">=</span> <span class="s2">&quot;branch&quot;</span><span class="p">,</span>
-            <span class="n">RUN_REFCASE</span><span class="o">=</span> <span class="s2">&quot;usp_spinup&quot;</span><span class="p">,</span> <span class="c1"># the case name of the spinup run</span>
-            <span class="n">RUN_REFDATE</span><span class="o">=</span> <span class="s2">&quot;2012-01-01&quot;</span><span class="p">,</span>
+            <span class="n">case_name</span> <span class="o">=</span> <span class="s2">"example3"</span><span class="p">,</span>
+            <span class="n">RUN_STARTDATE</span> <span class="o">=</span> <span class="s2">"2012-01-01"</span><span class="p">,</span>
+            <span class="n">STOP_OPTION</span> <span class="o">=</span> <span class="s2">"nyears"</span><span class="p">,</span>
+            <span class="n">STOP_N</span> <span class="o">=</span> <span class="s2">"2"</span><span class="p">,</span>
+            <span class="n">RUN_TYPE</span><span class="o">=</span> <span class="s2">"branch"</span><span class="p">,</span>
+            <span class="n">RUN_REFCASE</span><span class="o">=</span> <span class="s2">"usp_spinup"</span><span class="p">,</span> <span class="c1"># the case name of the spinup run</span>
+            <span class="n">RUN_REFDATE</span><span class="o">=</span> <span class="s2">"2012-01-01"</span><span class="p">,</span>
         <span class="p">)</span>
 
 <span class="c1"># modify the forcing</span>
-<span class="n">usp</span><span class="o">.</span><span class="n">modify_forcing</span><span class="p">(</span><span class="n">action</span><span class="o">=</span><span class="p">{</span><span class="s2">&quot;Tair&quot;</span><span class="p">:</span> <span class="mi">1</span><span class="p">},</span> <span class="n">mode</span><span class="o">=</span><span class="s2">&quot;add&quot;</span><span class="p">,</span> <span class="n">forcing_name</span><span class="o">=</span><span class="s2">&quot;forcing_replaced.nc&quot;</span><span class="p">)</span>
+<span class="n">usp</span><span class="o">.</span><span class="n">modify_forcing</span><span class="p">(</span><span class="n">action</span><span class="o">=</span><span class="p">{</span><span class="s2">"Tair"</span><span class="p">:</span> <span class="mi">1</span><span class="p">},</span> <span class="n">mode</span><span class="o">=</span><span class="s2">"add"</span><span class="p">,</span> <span class="n">forcing_name</span><span class="o">=</span><span class="s2">"forcing_replaced.nc"</span><span class="p">)</span>
 <span class="n">usp_warming_surf</span> <span class="o">=</span> <span class="n">usp</span><span class="o">.</span><span class="n">run</span><span class="p">(</span>
-            <span class="n">case_name</span> <span class="o">=</span> <span class="s2">&quot;example3&quot;</span><span class="p">,</span>
-            <span class="n">RUN_STARTDATE</span> <span class="o">=</span> <span class="s2">&quot;2012-01-01&quot;</span><span class="p">,</span>
-            <span class="n">STOP_OPTION</span> <span class="o">=</span> <span class="s2">&quot;nyears&quot;</span><span class="p">,</span>
-            <span class="n">STOP_N</span> <span class="o">=</span> <span class="s2">&quot;2&quot;</span><span class="p">,</span>
-            <span class="n">RUN_TYPE</span><span class="o">=</span> <span class="s2">&quot;branch&quot;</span><span class="p">,</span>
-            <span class="n">RUN_REFCASE</span><span class="o">=</span> <span class="s2">&quot;usp_spinup&quot;</span><span class="p">,</span> <span class="c1"># the case name of the spinup run</span>
-            <span class="n">RUN_REFDATE</span><span class="o">=</span> <span class="s2">&quot;2012-01-01&quot;</span><span class="p">,</span>
+            <span class="n">case_name</span> <span class="o">=</span> <span class="s2">"example3"</span><span class="p">,</span>
+            <span class="n">RUN_STARTDATE</span> <span class="o">=</span> <span class="s2">"2012-01-01"</span><span class="p">,</span>
+            <span class="n">STOP_OPTION</span> <span class="o">=</span> <span class="s2">"nyears"</span><span class="p">,</span>
+            <span class="n">STOP_N</span> <span class="o">=</span> <span class="s2">"2"</span><span class="p">,</span>
+            <span class="n">RUN_TYPE</span><span class="o">=</span> <span class="s2">"branch"</span><span class="p">,</span>
+            <span class="n">RUN_REFCASE</span><span class="o">=</span> <span class="s2">"usp_spinup"</span><span class="p">,</span> <span class="c1"># the case name of the spinup run</span>
+            <span class="n">RUN_REFDATE</span><span class="o">=</span> <span class="s2">"2012-01-01"</span><span class="p">,</span>
         <span class="p">)</span>
 
 <span class="c1"># recover the surface</span>
-<span class="n">usp</span><span class="o">.</span><span class="n">modify_surf</span><span class="p">(</span><span class="n">action</span><span class="o">=</span><span class="p">{</span><span class="s2">&quot;ALB_ROOF_DIR&quot;</span><span class="p">:</span><span class="o">-</span><span class="mf">0.2</span><span class="p">},</span> <span class="n">surfata_name</span><span class="o">=</span><span class="s2">&quot;surface_modfied.nc&quot;</span><span class="p">,</span> <span class="n">mode</span><span class="o">=</span><span class="s2">&quot;add&quot;</span><span class="p">)</span>
-<span class="n">usp</span><span class="o">.</span><span class="n">modify_surf</span><span class="p">(</span><span class="n">action</span><span class="o">=</span><span class="p">{</span><span class="s2">&quot;ALB_ROOF_DIF&quot;</span><span class="p">:</span><span class="o">-</span><span class="mf">0.2</span><span class="p">},</span> <span class="n">surfata_name</span><span class="o">=</span><span class="s2">&quot;surface_modfied.nc&quot;</span><span class="p">,</span> <span class="n">mode</span><span class="o">=</span><span class="s2">&quot;add&quot;</span><span class="p">)</span>
+<span class="n">usp</span><span class="o">.</span><span class="n">modify_surf</span><span class="p">(</span><span class="n">action</span><span class="o">=</span><span class="p">{</span><span class="s2">"ALB_ROOF_DIR"</span><span class="p">:</span><span class="o">-</span><span class="mf">0.2</span><span class="p">},</span> <span class="n">surfata_name</span><span class="o">=</span><span class="s2">"surface_modfied.nc"</span><span class="p">,</span> <span class="n">mode</span><span class="o">=</span><span class="s2">"add"</span><span class="p">)</span>
+<span class="n">usp</span><span class="o">.</span><span class="n">modify_surf</span><span class="p">(</span><span class="n">action</span><span class="o">=</span><span class="p">{</span><span class="s2">"ALB_ROOF_DIF"</span><span class="p">:</span><span class="o">-</span><span class="mf">0.2</span><span class="p">},</span> <span class="n">surfata_name</span><span class="o">=</span><span class="s2">"surface_modfied.nc"</span><span class="p">,</span> <span class="n">mode</span><span class="o">=</span><span class="s2">"add"</span><span class="p">)</span>
 <span class="n">usp_warming</span> <span class="o">=</span> <span class="n">usp</span><span class="o">.</span><span class="n">run</span><span class="p">(</span>
-            <span class="n">case_name</span> <span class="o">=</span> <span class="s2">&quot;example3&quot;</span><span class="p">,</span>
-            <span class="n">RUN_STARTDATE</span> <span class="o">=</span> <span class="s2">&quot;2012-01-01&quot;</span><span class="p">,</span>
-            <span class="n">STOP_OPTION</span> <span class="o">=</span> <span class="s2">&quot;nyears&quot;</span><span class="p">,</span>
-            <span class="n">STOP_N</span> <span class="o">=</span> <span class="s2">&quot;2&quot;</span><span class="p">,</span>
-            <span class="n">RUN_TYPE</span><span class="o">=</span> <span class="s2">&quot;branch&quot;</span><span class="p">,</span>
-            <span class="n">RUN_REFCASE</span><span class="o">=</span> <span class="s2">&quot;usp_spinup&quot;</span><span class="p">,</span> <span class="c1"># the case name of the spinup run</span>
-            <span class="n">RUN_REFDATE</span><span class="o">=</span> <span class="s2">&quot;2012-01-01&quot;</span><span class="p">,</span>
+            <span class="n">case_name</span> <span class="o">=</span> <span class="s2">"example3"</span><span class="p">,</span>
+            <span class="n">RUN_STARTDATE</span> <span class="o">=</span> <span class="s2">"2012-01-01"</span><span class="p">,</span>
+            <span class="n">STOP_OPTION</span> <span class="o">=</span> <span class="s2">"nyears"</span><span class="p">,</span>
+            <span class="n">STOP_N</span> <span class="o">=</span> <span class="s2">"2"</span><span class="p">,</span>
+            <span class="n">RUN_TYPE</span><span class="o">=</span> <span class="s2">"branch"</span><span class="p">,</span>
+            <span class="n">RUN_REFCASE</span><span class="o">=</span> <span class="s2">"usp_spinup"</span><span class="p">,</span> <span class="c1"># the case name of the spinup run</span>
+            <span class="n">RUN_REFDATE</span><span class="o">=</span> <span class="s2">"2012-01-01"</span><span class="p">,</span>
         <span class="p">)</span>
 <span class="c1"># recover the forcing</span>
-<span class="n">usp</span><span class="o">.</span><span class="n">modify_forcing</span><span class="p">(</span><span class="n">action</span><span class="o">=</span><span class="p">{</span><span class="s2">&quot;Tair&quot;</span><span class="p">:</span> <span class="o">-</span><span class="mi">1</span><span class="p">},</span> <span class="n">mode</span><span class="o">=</span><span class="s2">&quot;add&quot;</span><span class="p">,</span> <span class="n">forcing_name</span><span class="o">=</span><span class="s2">&quot;forcing_replaced.nc&quot;</span><span class="p">)</span>
+<span class="n">usp</span><span class="o">.</span><span class="n">modify_forcing</span><span class="p">(</span><span class="n">action</span><span class="o">=</span><span class="p">{</span><span class="s2">"Tair"</span><span class="p">:</span> <span class="o">-</span><span class="mi">1</span><span class="p">},</span> <span class="n">mode</span><span class="o">=</span><span class="s2">"add"</span><span class="p">,</span> <span class="n">forcing_name</span><span class="o">=</span><span class="s2">"forcing_replaced.nc"</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -331,27 +331,27 @@ Wall time: 4min 38s
 <span class="n">ax</span> <span class="o">=</span> <span class="n">fig</span><span class="o">.</span><span class="n">add_subplot</span><span class="p">(</span><span class="mi">111</span><span class="p">)</span>
 
 <span class="c1"># plot the original</span>
-<span class="n">dd</span> <span class="o">=</span> <span class="p">(</span><span class="n">ds_surf_usp</span><span class="p">[</span><span class="s1">&#39;TSA&#39;</span><span class="p">]</span><span class="o">-</span><span class="n">ds_or_usp</span><span class="p">[</span><span class="s1">&#39;TSA&#39;</span><span class="p">])</span><span class="o">.</span><span class="n">isel</span><span class="p">(</span><span class="n">gridcell</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span><span class="o">.</span><span class="n">groupby</span><span class="p">(</span><span class="s1">&#39;time.hour&#39;</span><span class="p">)</span>
-<span class="n">mean</span> <span class="o">=</span> <span class="n">dd</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="s1">&#39;time&#39;</span><span class="p">)</span>
-<span class="n">var</span> <span class="o">=</span> <span class="n">dd</span><span class="o">.</span><span class="n">var</span><span class="p">(</span><span class="s1">&#39;time&#39;</span><span class="p">)</span>
-<span class="n">mean</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">ax</span><span class="o">=</span><span class="n">ax</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;Original&#39;</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;#3964DF&#39;</span><span class="p">)</span>
-<span class="n">ax</span><span class="o">.</span><span class="n">fill_between</span><span class="p">(</span><span class="n">mean</span><span class="p">[</span><span class="s1">&#39;hour&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">values</span><span class="p">,</span> <span class="n">mean</span> <span class="o">-</span> <span class="n">var</span><span class="p">,</span> <span class="n">mean</span> <span class="o">+</span> <span class="n">var</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="mf">0.3</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;#3964DF&#39;</span><span class="p">)</span>
+<span class="n">dd</span> <span class="o">=</span> <span class="p">(</span><span class="n">ds_surf_usp</span><span class="p">[</span><span class="s1">'TSA'</span><span class="p">]</span><span class="o">-</span><span class="n">ds_or_usp</span><span class="p">[</span><span class="s1">'TSA'</span><span class="p">])</span><span class="o">.</span><span class="n">isel</span><span class="p">(</span><span class="n">gridcell</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span><span class="o">.</span><span class="n">groupby</span><span class="p">(</span><span class="s1">'time.hour'</span><span class="p">)</span>
+<span class="n">mean</span> <span class="o">=</span> <span class="n">dd</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="s1">'time'</span><span class="p">)</span>
+<span class="n">var</span> <span class="o">=</span> <span class="n">dd</span><span class="o">.</span><span class="n">var</span><span class="p">(</span><span class="s1">'time'</span><span class="p">)</span>
+<span class="n">mean</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">ax</span><span class="o">=</span><span class="n">ax</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">'Original'</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">'#3964DF'</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">fill_between</span><span class="p">(</span><span class="n">mean</span><span class="p">[</span><span class="s1">'hour'</span><span class="p">]</span><span class="o">.</span><span class="n">values</span><span class="p">,</span> <span class="n">mean</span> <span class="o">-</span> <span class="n">var</span><span class="p">,</span> <span class="n">mean</span> <span class="o">+</span> <span class="n">var</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="mf">0.3</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">'#3964DF'</span><span class="p">)</span>
 
 <span class="c1"># plot the warming</span>
-<span class="n">dd</span> <span class="o">=</span> <span class="p">(</span><span class="n">ds_warming_surf_usp</span><span class="p">[</span><span class="s1">&#39;TSA&#39;</span><span class="p">]</span><span class="o">-</span><span class="n">ds_warming_usp</span><span class="p">[</span><span class="s1">&#39;TSA&#39;</span><span class="p">])</span><span class="o">.</span><span class="n">isel</span><span class="p">(</span><span class="n">gridcell</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span><span class="o">.</span><span class="n">groupby</span><span class="p">(</span><span class="s1">&#39;time.hour&#39;</span><span class="p">)</span>
-<span class="n">mean</span> <span class="o">=</span> <span class="n">dd</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="s1">&#39;time&#39;</span><span class="p">)</span>
-<span class="n">var</span> <span class="o">=</span> <span class="n">dd</span><span class="o">.</span><span class="n">var</span><span class="p">(</span><span class="s1">&#39;time&#39;</span><span class="p">)</span>
-<span class="n">mean</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">ax</span><span class="o">=</span><span class="n">ax</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;Warming 1 K&#39;</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;#E02927&#39;</span><span class="p">)</span>
-<span class="n">ax</span><span class="o">.</span><span class="n">fill_between</span><span class="p">(</span><span class="n">mean</span><span class="p">[</span><span class="s1">&#39;hour&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">values</span><span class="p">,</span> <span class="n">mean</span> <span class="o">-</span> <span class="n">var</span><span class="p">,</span> <span class="n">mean</span> <span class="o">+</span> <span class="n">var</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="mf">0.3</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;#E02927&#39;</span><span class="p">)</span>
+<span class="n">dd</span> <span class="o">=</span> <span class="p">(</span><span class="n">ds_warming_surf_usp</span><span class="p">[</span><span class="s1">'TSA'</span><span class="p">]</span><span class="o">-</span><span class="n">ds_warming_usp</span><span class="p">[</span><span class="s1">'TSA'</span><span class="p">])</span><span class="o">.</span><span class="n">isel</span><span class="p">(</span><span class="n">gridcell</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span><span class="o">.</span><span class="n">groupby</span><span class="p">(</span><span class="s1">'time.hour'</span><span class="p">)</span>
+<span class="n">mean</span> <span class="o">=</span> <span class="n">dd</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="s1">'time'</span><span class="p">)</span>
+<span class="n">var</span> <span class="o">=</span> <span class="n">dd</span><span class="o">.</span><span class="n">var</span><span class="p">(</span><span class="s1">'time'</span><span class="p">)</span>
+<span class="n">mean</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">ax</span><span class="o">=</span><span class="n">ax</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">'Warming 1 K'</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">'#E02927'</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">fill_between</span><span class="p">(</span><span class="n">mean</span><span class="p">[</span><span class="s1">'hour'</span><span class="p">]</span><span class="o">.</span><span class="n">values</span><span class="p">,</span> <span class="n">mean</span> <span class="o">-</span> <span class="n">var</span><span class="p">,</span> <span class="n">mean</span> <span class="o">+</span> <span class="n">var</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="mf">0.3</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">'#E02927'</span><span class="p">)</span>
 
-<span class="n">ax</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="s1">&#39;Local hour of day&#39;</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">14</span><span class="p">)</span>
-<span class="n">ax</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="s1">&#39;Temperature difference [K]&#39;</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">14</span><span class="p">)</span>
-<span class="n">ax</span><span class="o">.</span><span class="n">tick_params</span><span class="p">(</span><span class="n">axis</span><span class="o">=</span><span class="s1">&#39;both&#39;</span><span class="p">,</span> <span class="n">which</span><span class="o">=</span><span class="s1">&#39;major&#39;</span><span class="p">,</span> <span class="n">labelsize</span><span class="o">=</span><span class="mi">12</span><span class="p">)</span>
-<span class="n">ax</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="s1">&#39;&#39;</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="s1">'Local hour of day'</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">14</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="s1">'Temperature difference [K]'</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">14</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">tick_params</span><span class="p">(</span><span class="n">axis</span><span class="o">=</span><span class="s1">'both'</span><span class="p">,</span> <span class="n">which</span><span class="o">=</span><span class="s1">'major'</span><span class="p">,</span> <span class="n">labelsize</span><span class="o">=</span><span class="mi">12</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="s1">''</span><span class="p">)</span>
 <span class="n">ax</span><span class="o">.</span><span class="n">legend</span><span class="p">(</span><span class="n">frameon</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">12</span><span class="p">)</span>
 
 <span class="n">plt</span><span class="o">.</span><span class="n">tight_layout</span><span class="p">()</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">savefig</span><span class="p">(</span><span class="s1">&#39;figs/example3_usp.pdf&#39;</span><span class="p">,</span> <span class="n">dpi</span><span class="o">=</span><span class="mi">300</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">savefig</span><span class="p">(</span><span class="s1">'figs/example3_usp.pdf'</span><span class="p">,</span> <span class="n">dpi</span><span class="o">=</span><span class="mi">300</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
 </pre></div>
 </div>
@@ -368,13 +368,13 @@ Wall time: 4min 38s
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[7]:
 </pre></div>
 </div>
-<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">usp</span><span class="o">.</span><span class="n">case_clean</span><span class="p">(</span><span class="n">case_name</span><span class="o">=</span><span class="s2">&quot;example3&quot;</span><span class="p">)</span>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">usp</span><span class="o">.</span><span class="n">case_clean</span><span class="p">(</span><span class="n">case_name</span><span class="o">=</span><span class="s2">"example3"</span><span class="p">)</span>
 
-<span class="c1"># when you using ups.run(crun_type=&#39;usp-exec&#39;) --&gt; see warmup section</span>
+<span class="c1"># when you using ups.run(crun_type='usp-exec') --&gt; see warmup section</span>
 <span class="c1"># the case files in ./workdir/ouptutfolder/your_case, ./workdir/logfolder/your_case,</span>
 <span class="c1"># and ./workdir/inputfoler/usp will be removed.</span>
 
-<span class="c1"># when you using ups.run(crun_type=&#39;run&#39;) or ups.run(), the default crun_type is &#39;run&#39;</span>
+<span class="c1"># when you using ups.run(crun_type='run') or ups.run(), the default crun_type is 'run'</span>
 <span class="c1"># only ./workdir/inputfoler/usp will be removed.</span>
 </pre></div>
 </div>

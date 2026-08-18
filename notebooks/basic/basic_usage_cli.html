@@ -138,11 +138,11 @@
 </pre></div>
 </div>
 <p>Run the case with the user forcing file and start date. The output file will be saved in the output folder.</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>pyclmuapp<span class="w"> </span>--usr_forcing<span class="w"> </span><span class="s2">&quot;inputfolder/usp/CTSM_forcing_London_ERA5_2002_2014.nc&quot;</span><span class="w"> </span><span class="se">\</span>
-$<span class="w"> </span>--CASE_NAME<span class="w"> </span><span class="s2">&quot;basic_test&quot;</span><span class="w"> </span><span class="se">\</span>
-$<span class="w"> </span>--RUN_STARTDATE<span class="w"> </span><span class="s2">&quot;2012-01-01&quot;</span><span class="w"> </span><span class="se">\</span>
-$<span class="w"> </span>--STOP_OPTION<span class="w"> </span><span class="s2">&quot;ndays&quot;</span><span class="w"> </span><span class="se">\</span>
-$<span class="w"> </span>--STOP_N<span class="w"> </span><span class="s2">&quot;15&quot;</span><span class="w"> </span>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>pyclmuapp<span class="w"> </span>--usr_forcing<span class="w"> </span><span class="s2">"inputfolder/usp/CTSM_forcing_London_ERA5_2002_2014.nc"</span><span class="w"> </span><span class="se">\</span>
+$<span class="w"> </span>--CASE_NAME<span class="w"> </span><span class="s2">"basic_test"</span><span class="w"> </span><span class="se">\</span>
+$<span class="w"> </span>--RUN_STARTDATE<span class="w"> </span><span class="s2">"2012-01-01"</span><span class="w"> </span><span class="se">\</span>
+$<span class="w"> </span>--STOP_OPTION<span class="w"> </span><span class="s2">"ndays"</span><span class="w"> </span><span class="se">\</span>
+$<span class="w"> </span>--STOP_N<span class="w"> </span><span class="s2">"15"</span><span class="w"> </span>
 </pre></div>
 </div>
 <p>If you are using <strong>Docker</strong>, stop and remove the running container by</p>
@@ -153,10 +153,10 @@ $<span class="w"> </span>--STOP_N<span class="w"> </span><span class="s2">&quot;
 <p>Create your own surface data file.</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>pyclmuapp<span class="w"> </span>--pyclmuapp_mode<span class="w"> </span>get_surfdata<span class="w"> </span><span class="se">\</span>
 $<span class="w"> </span>--lat<span class="w"> </span><span class="m">51</span>.5074<span class="w"> </span>--lon<span class="w"> </span><span class="m">0</span>.1278<span class="w"> </span><span class="se">\</span>
-$<span class="w"> </span>--outputname<span class="w"> </span><span class="s2">&quot;surfdata.nc&quot;</span><span class="w"> </span><span class="se">\</span>
+$<span class="w"> </span>--outputname<span class="w"> </span><span class="s2">"surfdata.nc"</span><span class="w"> </span><span class="se">\</span>
 $<span class="w"> </span>--pct_urban<span class="w"> </span><span class="m">0</span>,0,100.0<span class="w"> </span><span class="se">\</span>
-$<span class="w"> </span>--urbsurf<span class="w"> </span><span class="s2">&quot;inputfolder/mksrf_urban_0.05x0.05_simyr2000.c120601.nc&quot;</span><span class="w"> </span><span class="se">\</span>
-$<span class="w"> </span>--soildata<span class="w"> </span><span class="s2">&quot;inputfolder/mksrf_soitex.10level.c010119.nc&quot;</span><span class="w"> </span>
+$<span class="w"> </span>--urbsurf<span class="w"> </span><span class="s2">"inputfolder/mksrf_urban_0.05x0.05_simyr2000.c120601.nc"</span><span class="w"> </span><span class="se">\</span>
+$<span class="w"> </span>--soildata<span class="w"> </span><span class="s2">"inputfolder/mksrf_soitex.10level.c010119.nc"</span><span class="w"> </span>
 </pre></div>
 </div>
 <p>Create your own forcing data file.</p>

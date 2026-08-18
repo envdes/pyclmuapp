@@ -149,12 +149,12 @@
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># the mask if from UrbanClimateExplorer/docs/notebooks/CESM1_get_urban_areas_mask.ipynb</span>
 <span class="c1"># https://github.com/zhonghua-zheng/UrbanClimateExplorer/blob/main/docs/notebooks/CESM1_get_urban_areas_mask.ipynb</span>
-<span class="n">mask</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s2">&quot;src/CESM1_urban_mask.csv&quot;</span><span class="p">,</span> <span class="n">index_col</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
+<span class="n">mask</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s2">"src/CESM1_urban_mask.csv"</span><span class="p">,</span> <span class="n">index_col</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
 <span class="n">citylist</span> <span class="o">=</span> <span class="n">get_mask_cities</span><span class="p">(</span><span class="n">mask</span><span class="p">)</span>
 
 
 <span class="c1"># set the location of London</span>
-<span class="n">London</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;lat&#39;</span><span class="p">:</span> <span class="mf">51.5</span><span class="p">,</span> <span class="s1">&#39;lon&#39;</span><span class="p">:</span> <span class="o">-</span><span class="mf">0.1</span><span class="p">}</span>
+<span class="n">London</span> <span class="o">=</span> <span class="p">{</span><span class="s1">'lat'</span><span class="p">:</span> <span class="mf">51.5</span><span class="p">,</span> <span class="s1">'lon'</span><span class="p">:</span> <span class="o">-</span><span class="mf">0.1</span><span class="p">}</span>
 
 <span class="c1"># find the closest city grid point to London (resolution is 1 degree, CESM nominal resolution)</span>
 <span class="n">closecity</span> <span class="o">=</span> <span class="n">closest</span><span class="p">(</span><span class="n">citylist</span><span class="p">,</span><span class="n">London</span><span class="p">)</span>
@@ -186,11 +186,11 @@
 
 <span class="n">pts</span> <span class="o">=</span> <span class="n">pts_clmu</span><span class="p">(</span>
     <span class="n">pwd</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
-    <span class="n">input_path</span><span class="o">=</span><span class="s2">&quot;/home/zhonghua/p/scratch/CESMDATAROOT/inputdata&quot;</span><span class="p">,</span>
-    <span class="n">output_path</span><span class="o">=</span><span class="s2">&quot;/home/zhonghua/p/scratch/CESMDATAROOT/Archive/lnd/hist&quot;</span><span class="p">,</span>
-    <span class="n">log_path</span><span class="o">=</span><span class="s2">&quot;/home/zhonghua/p/scratch/CESMDATAROOT/CaseOutputs&quot;</span><span class="p">,</span>
-    <span class="n">scripts_path</span> <span class="o">=</span> <span class="s2">&quot;/home/zhonghua/p/scripts&quot;</span><span class="p">,</span>
-    <span class="n">container_type</span><span class="o">=</span><span class="s1">&#39;docker&#39;</span><span class="p">)</span>
+    <span class="n">input_path</span><span class="o">=</span><span class="s2">"/home/zhonghua/p/scratch/CESMDATAROOT/inputdata"</span><span class="p">,</span>
+    <span class="n">output_path</span><span class="o">=</span><span class="s2">"/home/zhonghua/p/scratch/CESMDATAROOT/Archive/lnd/hist"</span><span class="p">,</span>
+    <span class="n">log_path</span><span class="o">=</span><span class="s2">"/home/zhonghua/p/scratch/CESMDATAROOT/CaseOutputs"</span><span class="p">,</span>
+    <span class="n">scripts_path</span> <span class="o">=</span> <span class="s2">"/home/zhonghua/p/scripts"</span><span class="p">,</span>
+    <span class="n">container_type</span><span class="o">=</span><span class="s1">'docker'</span><span class="p">)</span>
 
 <span class="c1"># check the default caseconfig</span>
 <span class="n">pts</span><span class="o">.</span><span class="n">caseconfig</span>
@@ -226,18 +226,18 @@
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># this example is to run a short simulation for London</span>
 <span class="c1"># which do not include the spin-up,</span>
 <span class="c1"># only as a demonstration of how to run the model</span>
-<span class="n">pts</span><span class="o">.</span><span class="n">caseconfig</span><span class="p">[</span><span class="s1">&#39;case_name&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="s1">&#39;London&#39;</span>
-<span class="n">pts</span><span class="o">.</span><span class="n">caseconfig</span><span class="p">[</span><span class="s1">&#39;case_length&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="s2">&quot;3&quot;</span>
-<span class="n">pts</span><span class="o">.</span><span class="n">caseconfig</span><span class="p">[</span><span class="s1">&#39;hist_nhtfrq&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="s1">&#39;-24&#39;</span>
-<span class="n">pts</span><span class="o">.</span><span class="n">caseconfig</span><span class="p">[</span><span class="s1">&#39;STOP_OPTION&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="s2">&quot;nmonths&quot;</span>
-<span class="n">pts</span><span class="o">.</span><span class="n">caseconfig</span><span class="p">[</span><span class="s1">&#39;hist_mfilt&#39;</span><span class="p">]</span><span class="o">=</span><span class="s1">&#39;240000&#39;</span>
-<span class="n">pts</span><span class="o">.</span><span class="n">caseconfig</span><span class="p">[</span><span class="s1">&#39;RUN_STARTDATE&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="s1">&#39;2012-06-01&#39;</span>
-<span class="n">pts</span><span class="o">.</span><span class="n">caseconfig</span><span class="p">[</span><span class="s1">&#39;hist_type1d_pertape&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="s2">&quot;&#39;LAND&#39;,&#39;COLS&#39;&quot;</span>
-<span class="n">pts</span><span class="o">.</span><span class="n">caseconfig</span><span class="p">[</span><span class="s1">&#39;DATM_CLMNCEP_YR_START&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="s1">&#39;2012&#39;</span>
-<span class="n">pts</span><span class="o">.</span><span class="n">caseconfig</span><span class="p">[</span><span class="s1">&#39;DATM_CLMNCEP_YR_END&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="s1">&#39;2012&#39;</span>
-<span class="n">pts</span><span class="o">.</span><span class="n">caseconfig</span><span class="p">[</span><span class="s1">&#39;case_lat&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="nb">str</span><span class="p">(</span><span class="n">closecity</span><span class="p">[</span><span class="s1">&#39;lat&#39;</span><span class="p">])</span>
-<span class="n">pts</span><span class="o">.</span><span class="n">caseconfig</span><span class="p">[</span><span class="s1">&#39;case_lon&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="nb">str</span><span class="p">(</span><span class="n">closecity</span><span class="p">[</span><span class="s1">&#39;lon&#39;</span><span class="p">])</span>
-<span class="n">pts_exp1</span> <span class="o">=</span> <span class="n">pts</span><span class="o">.</span><span class="n">run</span><span class="p">(</span><span class="n">iflog</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">cmdlogfile</span><span class="o">=</span><span class="s1">&#39;./pts_London.log&#39;</span><span class="p">)</span>
+<span class="n">pts</span><span class="o">.</span><span class="n">caseconfig</span><span class="p">[</span><span class="s1">'case_name'</span><span class="p">]</span> <span class="o">=</span> <span class="s1">'London'</span>
+<span class="n">pts</span><span class="o">.</span><span class="n">caseconfig</span><span class="p">[</span><span class="s1">'case_length'</span><span class="p">]</span> <span class="o">=</span> <span class="s2">"3"</span>
+<span class="n">pts</span><span class="o">.</span><span class="n">caseconfig</span><span class="p">[</span><span class="s1">'hist_nhtfrq'</span><span class="p">]</span> <span class="o">=</span> <span class="s1">'-24'</span>
+<span class="n">pts</span><span class="o">.</span><span class="n">caseconfig</span><span class="p">[</span><span class="s1">'STOP_OPTION'</span><span class="p">]</span> <span class="o">=</span> <span class="s2">"nmonths"</span>
+<span class="n">pts</span><span class="o">.</span><span class="n">caseconfig</span><span class="p">[</span><span class="s1">'hist_mfilt'</span><span class="p">]</span><span class="o">=</span><span class="s1">'240000'</span>
+<span class="n">pts</span><span class="o">.</span><span class="n">caseconfig</span><span class="p">[</span><span class="s1">'RUN_STARTDATE'</span><span class="p">]</span> <span class="o">=</span> <span class="s1">'2012-06-01'</span>
+<span class="n">pts</span><span class="o">.</span><span class="n">caseconfig</span><span class="p">[</span><span class="s1">'hist_type1d_pertape'</span><span class="p">]</span> <span class="o">=</span> <span class="s2">"'LAND','COLS'"</span>
+<span class="n">pts</span><span class="o">.</span><span class="n">caseconfig</span><span class="p">[</span><span class="s1">'DATM_CLMNCEP_YR_START'</span><span class="p">]</span> <span class="o">=</span> <span class="s1">'2012'</span>
+<span class="n">pts</span><span class="o">.</span><span class="n">caseconfig</span><span class="p">[</span><span class="s1">'DATM_CLMNCEP_YR_END'</span><span class="p">]</span> <span class="o">=</span> <span class="s1">'2012'</span>
+<span class="n">pts</span><span class="o">.</span><span class="n">caseconfig</span><span class="p">[</span><span class="s1">'case_lat'</span><span class="p">]</span> <span class="o">=</span> <span class="nb">str</span><span class="p">(</span><span class="n">closecity</span><span class="p">[</span><span class="s1">'lat'</span><span class="p">])</span>
+<span class="n">pts</span><span class="o">.</span><span class="n">caseconfig</span><span class="p">[</span><span class="s1">'case_lon'</span><span class="p">]</span> <span class="o">=</span> <span class="nb">str</span><span class="p">(</span><span class="n">closecity</span><span class="p">[</span><span class="s1">'lon'</span><span class="p">])</span>
+<span class="n">pts_exp1</span> <span class="o">=</span> <span class="n">pts</span><span class="o">.</span><span class="n">run</span><span class="p">(</span><span class="n">iflog</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">cmdlogfile</span><span class="o">=</span><span class="s1">'./pts_London.log'</span><span class="p">)</span>
 <span class="n">pts_exp1</span>
 </pre></div>
 </div>
@@ -1383,7 +1383,7 @@ Attributes: (12/38)
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[7]:
 </pre></div>
 </div>
-<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">pts</span><span class="o">.</span><span class="n">case_clean</span><span class="p">(</span><span class="n">case_name</span><span class="o">=</span><span class="s1">&#39;London&#39;</span><span class="p">)</span> <span class="c1"># clean the case</span>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">pts</span><span class="o">.</span><span class="n">case_clean</span><span class="p">(</span><span class="n">case_name</span><span class="o">=</span><span class="s1">'London'</span><span class="p">)</span> <span class="c1"># clean the case</span>
 </pre></div>
 </div>
 </div>

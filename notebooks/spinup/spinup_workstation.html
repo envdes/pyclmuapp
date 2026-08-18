@@ -153,12 +153,12 @@
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># the mask if from UrbanClimateExplorer/docs/notebooks/CESM1_get_urban_areas_mask.ipynb</span>
 <span class="c1"># https://github.com/zhonghua-zheng/UrbanClimateExplorer/blob/main/docs/notebooks/CESM1_get_urban_areas_mask.ipynb</span>
-<span class="n">mask</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s2">&quot;src/CESM1_urban_mask.csv&quot;</span><span class="p">,</span> <span class="n">index_col</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
+<span class="n">mask</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s2">"src/CESM1_urban_mask.csv"</span><span class="p">,</span> <span class="n">index_col</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
 <span class="n">citylist</span> <span class="o">=</span> <span class="n">get_mask_cities</span><span class="p">(</span><span class="n">mask</span><span class="p">)</span>
 
 
 <span class="c1"># set the location of London</span>
-<span class="n">London</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;lat&#39;</span><span class="p">:</span> <span class="mf">51.5</span><span class="p">,</span> <span class="s1">&#39;lon&#39;</span><span class="p">:</span> <span class="o">-</span><span class="mf">0.1</span><span class="p">}</span>
+<span class="n">London</span> <span class="o">=</span> <span class="p">{</span><span class="s1">'lat'</span><span class="p">:</span> <span class="mf">51.5</span><span class="p">,</span> <span class="s1">'lon'</span><span class="p">:</span> <span class="o">-</span><span class="mf">0.1</span><span class="p">}</span>
 
 <span class="c1"># find the closest city grid point to London (resolution is 1 degree, CESM nominal resolution)</span>
 <span class="n">closecity</span> <span class="o">=</span> <span class="n">closest</span><span class="p">(</span><span class="n">citylist</span><span class="p">,</span><span class="n">London</span><span class="p">)</span>
@@ -189,23 +189,23 @@
 
 <span class="n">pts</span> <span class="o">=</span> <span class="n">pts_clmu</span><span class="p">(</span>
     <span class="n">pwd</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
-    <span class="n">input_path</span><span class="o">=</span><span class="s2">&quot;/home/zhonghua/p/scratch/CESMDATAROOT/inputdata&quot;</span><span class="p">,</span>
-    <span class="n">output_path</span><span class="o">=</span><span class="s2">&quot;/home/zhonghua/p/scratch/CESMDATAROOT/Archive/lnd/hist&quot;</span><span class="p">,</span>
-    <span class="n">log_path</span><span class="o">=</span><span class="s2">&quot;/home/zhonghua/p/scratch/CESMDATAROOT/CaseOutputs&quot;</span><span class="p">,</span>
-    <span class="n">scripts_path</span> <span class="o">=</span> <span class="s2">&quot;/home/zhonghua/p/scripts&quot;</span><span class="p">,</span>
-    <span class="n">container_type</span><span class="o">=</span><span class="s1">&#39;docker&#39;</span><span class="p">)</span>
+    <span class="n">input_path</span><span class="o">=</span><span class="s2">"/home/zhonghua/p/scratch/CESMDATAROOT/inputdata"</span><span class="p">,</span>
+    <span class="n">output_path</span><span class="o">=</span><span class="s2">"/home/zhonghua/p/scratch/CESMDATAROOT/Archive/lnd/hist"</span><span class="p">,</span>
+    <span class="n">log_path</span><span class="o">=</span><span class="s2">"/home/zhonghua/p/scratch/CESMDATAROOT/CaseOutputs"</span><span class="p">,</span>
+    <span class="n">scripts_path</span> <span class="o">=</span> <span class="s2">"/home/zhonghua/p/scripts"</span><span class="p">,</span>
+    <span class="n">container_type</span><span class="o">=</span><span class="s1">'docker'</span><span class="p">)</span>
 
-<span class="n">pts</span><span class="o">.</span><span class="n">caseconfig</span><span class="p">[</span><span class="s1">&#39;case_name&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="s1">&#39;pst_no_spinup&#39;</span>
-<span class="n">pts</span><span class="o">.</span><span class="n">caseconfig</span><span class="p">[</span><span class="s1">&#39;case_length&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="s2">&quot;2&quot;</span>
-<span class="n">pts</span><span class="o">.</span><span class="n">caseconfig</span><span class="p">[</span><span class="s1">&#39;hist_nhtfrq&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="s1">&#39;1&#39;</span>
-<span class="n">pts</span><span class="o">.</span><span class="n">caseconfig</span><span class="p">[</span><span class="s1">&#39;STOP_OPTION&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="s2">&quot;nyears&quot;</span>
-<span class="n">pts</span><span class="o">.</span><span class="n">caseconfig</span><span class="p">[</span><span class="s1">&#39;hist_mfilt&#39;</span><span class="p">]</span><span class="o">=</span><span class="s1">&#39;240000&#39;</span>
-<span class="n">pts</span><span class="o">.</span><span class="n">caseconfig</span><span class="p">[</span><span class="s1">&#39;output_murban&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="s1">&#39;False&#39;</span> <span class="c1"># output the whole urban area weather (if True, the output the TBD, HD and MD urban)</span>
-<span class="n">pts</span><span class="o">.</span><span class="n">caseconfig</span><span class="p">[</span><span class="s1">&#39;mu_urban&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="s2">&quot;&#39;TSA_U&#39;&quot;</span> <span class="c1"># output the TBD urban area weather</span>
-<span class="n">pts</span><span class="o">.</span><span class="n">caseconfig</span><span class="p">[</span><span class="s1">&#39;RUN_STARTDATE&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="s1">&#39;2012-01-01&#39;</span>
-<span class="n">pts</span><span class="o">.</span><span class="n">caseconfig</span><span class="p">[</span><span class="s1">&#39;case_lat&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="nb">str</span><span class="p">(</span><span class="n">closecity</span><span class="p">[</span><span class="s1">&#39;lat&#39;</span><span class="p">])</span>
-<span class="n">pts</span><span class="o">.</span><span class="n">caseconfig</span><span class="p">[</span><span class="s1">&#39;case_lon&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="nb">str</span><span class="p">(</span><span class="n">closecity</span><span class="p">[</span><span class="s1">&#39;lon&#39;</span><span class="p">])</span>
-<span class="n">nospinup_pts</span> <span class="o">=</span> <span class="n">pts</span><span class="o">.</span><span class="n">run</span><span class="p">(</span><span class="n">iflog</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">cmdlogfile</span><span class="o">=</span><span class="s1">&#39;pts_London.log&#39;</span><span class="p">)</span>
+<span class="n">pts</span><span class="o">.</span><span class="n">caseconfig</span><span class="p">[</span><span class="s1">'case_name'</span><span class="p">]</span> <span class="o">=</span> <span class="s1">'pst_no_spinup'</span>
+<span class="n">pts</span><span class="o">.</span><span class="n">caseconfig</span><span class="p">[</span><span class="s1">'case_length'</span><span class="p">]</span> <span class="o">=</span> <span class="s2">"2"</span>
+<span class="n">pts</span><span class="o">.</span><span class="n">caseconfig</span><span class="p">[</span><span class="s1">'hist_nhtfrq'</span><span class="p">]</span> <span class="o">=</span> <span class="s1">'1'</span>
+<span class="n">pts</span><span class="o">.</span><span class="n">caseconfig</span><span class="p">[</span><span class="s1">'STOP_OPTION'</span><span class="p">]</span> <span class="o">=</span> <span class="s2">"nyears"</span>
+<span class="n">pts</span><span class="o">.</span><span class="n">caseconfig</span><span class="p">[</span><span class="s1">'hist_mfilt'</span><span class="p">]</span><span class="o">=</span><span class="s1">'240000'</span>
+<span class="n">pts</span><span class="o">.</span><span class="n">caseconfig</span><span class="p">[</span><span class="s1">'output_murban'</span><span class="p">]</span> <span class="o">=</span> <span class="s1">'False'</span> <span class="c1"># output the whole urban area weather (if True, the output the TBD, HD and MD urban)</span>
+<span class="n">pts</span><span class="o">.</span><span class="n">caseconfig</span><span class="p">[</span><span class="s1">'mu_urban'</span><span class="p">]</span> <span class="o">=</span> <span class="s2">"'TSA_U'"</span> <span class="c1"># output the TBD urban area weather</span>
+<span class="n">pts</span><span class="o">.</span><span class="n">caseconfig</span><span class="p">[</span><span class="s1">'RUN_STARTDATE'</span><span class="p">]</span> <span class="o">=</span> <span class="s1">'2012-01-01'</span>
+<span class="n">pts</span><span class="o">.</span><span class="n">caseconfig</span><span class="p">[</span><span class="s1">'case_lat'</span><span class="p">]</span> <span class="o">=</span> <span class="nb">str</span><span class="p">(</span><span class="n">closecity</span><span class="p">[</span><span class="s1">'lat'</span><span class="p">])</span>
+<span class="n">pts</span><span class="o">.</span><span class="n">caseconfig</span><span class="p">[</span><span class="s1">'case_lon'</span><span class="p">]</span> <span class="o">=</span> <span class="nb">str</span><span class="p">(</span><span class="n">closecity</span><span class="p">[</span><span class="s1">'lon'</span><span class="p">])</span>
+<span class="n">nospinup_pts</span> <span class="o">=</span> <span class="n">pts</span><span class="o">.</span><span class="n">run</span><span class="p">(</span><span class="n">iflog</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">cmdlogfile</span><span class="o">=</span><span class="s1">'pts_London.log'</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -215,24 +215,24 @@
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">pts</span> <span class="o">=</span> <span class="n">pts_clmu</span><span class="p">(</span>
     <span class="n">pwd</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
-    <span class="n">input_path</span><span class="o">=</span><span class="s2">&quot;/home/zhonghua/p/scratch/CESMDATAROOT/inputdata&quot;</span><span class="p">,</span>
-    <span class="n">output_path</span><span class="o">=</span><span class="s2">&quot;/home/zhonghua/p/scratch/CESMDATAROOT/Archive/lnd/hist&quot;</span><span class="p">,</span>
-    <span class="n">log_path</span><span class="o">=</span><span class="s2">&quot;/home/zhonghua/p/scratch/CESMDATAROOT/CaseOutputs&quot;</span><span class="p">,</span>
-    <span class="n">scripts_path</span> <span class="o">=</span> <span class="s2">&quot;/home/zhonghua/p/scripts&quot;</span><span class="p">,</span>
-    <span class="n">container_type</span><span class="o">=</span><span class="s1">&#39;docker&#39;</span><span class="p">)</span>
+    <span class="n">input_path</span><span class="o">=</span><span class="s2">"/home/zhonghua/p/scratch/CESMDATAROOT/inputdata"</span><span class="p">,</span>
+    <span class="n">output_path</span><span class="o">=</span><span class="s2">"/home/zhonghua/p/scratch/CESMDATAROOT/Archive/lnd/hist"</span><span class="p">,</span>
+    <span class="n">log_path</span><span class="o">=</span><span class="s2">"/home/zhonghua/p/scratch/CESMDATAROOT/CaseOutputs"</span><span class="p">,</span>
+    <span class="n">scripts_path</span> <span class="o">=</span> <span class="s2">"/home/zhonghua/p/scripts"</span><span class="p">,</span>
+    <span class="n">container_type</span><span class="o">=</span><span class="s1">'docker'</span><span class="p">)</span>
 
-<span class="n">pts</span><span class="o">.</span><span class="n">caseconfig</span><span class="p">[</span><span class="s1">&#39;case_name&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="s1">&#39;pst_spinup&#39;</span>
-<span class="n">pts</span><span class="o">.</span><span class="n">caseconfig</span><span class="p">[</span><span class="s1">&#39;case_length&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="s2">&quot;12&quot;</span>
-<span class="n">pts</span><span class="o">.</span><span class="n">caseconfig</span><span class="p">[</span><span class="s1">&#39;hist_nhtfrq&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="s1">&#39;1&#39;</span>
-<span class="n">pts</span><span class="o">.</span><span class="n">caseconfig</span><span class="p">[</span><span class="s1">&#39;STOP_OPTION&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="s2">&quot;nyears&quot;</span>
-<span class="n">pts</span><span class="o">.</span><span class="n">caseconfig</span><span class="p">[</span><span class="s1">&#39;hist_mfilt&#39;</span><span class="p">]</span><span class="o">=</span><span class="s1">&#39;240000&#39;</span>
-<span class="n">pts</span><span class="o">.</span><span class="n">caseconfig</span><span class="p">[</span><span class="s1">&#39;output_murban&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="s1">&#39;False&#39;</span> <span class="c1"># output the whole urban area weather (if True, the output the TBD, HD and MD urban)</span>
-<span class="n">pts</span><span class="o">.</span><span class="n">caseconfig</span><span class="p">[</span><span class="s1">&#39;mu_urban&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="s2">&quot;&#39;TSA_U&#39;&quot;</span> <span class="c1"># output the TBD urban area weather</span>
-<span class="n">pts</span><span class="o">.</span><span class="n">caseconfig</span><span class="p">[</span><span class="s1">&#39;RUN_STARTDATE&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="s1">&#39;2002-01-01&#39;</span>
-<span class="n">pts</span><span class="o">.</span><span class="n">caseconfig</span><span class="p">[</span><span class="s1">&#39;case_lat&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="nb">str</span><span class="p">(</span><span class="n">closecity</span><span class="p">[</span><span class="s1">&#39;lat&#39;</span><span class="p">])</span>
-<span class="n">pts</span><span class="o">.</span><span class="n">caseconfig</span><span class="p">[</span><span class="s1">&#39;case_lon&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="nb">str</span><span class="p">(</span><span class="n">closecity</span><span class="p">[</span><span class="s1">&#39;lon&#39;</span><span class="p">])</span>
+<span class="n">pts</span><span class="o">.</span><span class="n">caseconfig</span><span class="p">[</span><span class="s1">'case_name'</span><span class="p">]</span> <span class="o">=</span> <span class="s1">'pst_spinup'</span>
+<span class="n">pts</span><span class="o">.</span><span class="n">caseconfig</span><span class="p">[</span><span class="s1">'case_length'</span><span class="p">]</span> <span class="o">=</span> <span class="s2">"12"</span>
+<span class="n">pts</span><span class="o">.</span><span class="n">caseconfig</span><span class="p">[</span><span class="s1">'hist_nhtfrq'</span><span class="p">]</span> <span class="o">=</span> <span class="s1">'1'</span>
+<span class="n">pts</span><span class="o">.</span><span class="n">caseconfig</span><span class="p">[</span><span class="s1">'STOP_OPTION'</span><span class="p">]</span> <span class="o">=</span> <span class="s2">"nyears"</span>
+<span class="n">pts</span><span class="o">.</span><span class="n">caseconfig</span><span class="p">[</span><span class="s1">'hist_mfilt'</span><span class="p">]</span><span class="o">=</span><span class="s1">'240000'</span>
+<span class="n">pts</span><span class="o">.</span><span class="n">caseconfig</span><span class="p">[</span><span class="s1">'output_murban'</span><span class="p">]</span> <span class="o">=</span> <span class="s1">'False'</span> <span class="c1"># output the whole urban area weather (if True, the output the TBD, HD and MD urban)</span>
+<span class="n">pts</span><span class="o">.</span><span class="n">caseconfig</span><span class="p">[</span><span class="s1">'mu_urban'</span><span class="p">]</span> <span class="o">=</span> <span class="s2">"'TSA_U'"</span> <span class="c1"># output the TBD urban area weather</span>
+<span class="n">pts</span><span class="o">.</span><span class="n">caseconfig</span><span class="p">[</span><span class="s1">'RUN_STARTDATE'</span><span class="p">]</span> <span class="o">=</span> <span class="s1">'2002-01-01'</span>
+<span class="n">pts</span><span class="o">.</span><span class="n">caseconfig</span><span class="p">[</span><span class="s1">'case_lat'</span><span class="p">]</span> <span class="o">=</span> <span class="nb">str</span><span class="p">(</span><span class="n">closecity</span><span class="p">[</span><span class="s1">'lat'</span><span class="p">])</span>
+<span class="n">pts</span><span class="o">.</span><span class="n">caseconfig</span><span class="p">[</span><span class="s1">'case_lon'</span><span class="p">]</span> <span class="o">=</span> <span class="nb">str</span><span class="p">(</span><span class="n">closecity</span><span class="p">[</span><span class="s1">'lon'</span><span class="p">])</span>
 
-<span class="n">spinup_pts</span> <span class="o">=</span> <span class="n">pts</span><span class="o">.</span><span class="n">run</span><span class="p">(</span><span class="n">iflog</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">cmdlogfile</span><span class="o">=</span><span class="s1">&#39;pts_London_spinup.log&#39;</span><span class="p">,</span><span class="n">spinup</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="n">spinup_pts</span> <span class="o">=</span> <span class="n">pts</span><span class="o">.</span><span class="n">run</span><span class="p">(</span><span class="n">iflog</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">cmdlogfile</span><span class="o">=</span><span class="s1">'pts_London_spinup.log'</span><span class="p">,</span><span class="n">spinup</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -251,22 +251,22 @@
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">fig</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">12</span><span class="p">,</span> <span class="mi">5</span><span class="p">))</span>
-<span class="n">ds_spinup</span> <span class="o">=</span> <span class="n">ds_spinup</span><span class="o">.</span><span class="n">sel</span><span class="p">(</span><span class="n">time</span><span class="o">=</span><span class="nb">slice</span><span class="p">(</span><span class="s1">&#39;2012&#39;</span><span class="p">,</span><span class="s1">&#39;2014&#39;</span><span class="p">))</span>
+<span class="n">ds_spinup</span> <span class="o">=</span> <span class="n">ds_spinup</span><span class="o">.</span><span class="n">sel</span><span class="p">(</span><span class="n">time</span><span class="o">=</span><span class="nb">slice</span><span class="p">(</span><span class="s1">'2012'</span><span class="p">,</span><span class="s1">'2014'</span><span class="p">))</span>
 <span class="c1">#</span>
-<span class="n">diff</span> <span class="o">=</span> <span class="n">ds_nospinup</span><span class="p">[</span><span class="s1">&#39;TSA_U&#39;</span><span class="p">]</span> <span class="o">-</span> <span class="n">ds_spinup</span><span class="p">[</span><span class="s1">&#39;TSA_U&#39;</span><span class="p">]</span>
+<span class="n">diff</span> <span class="o">=</span> <span class="n">ds_nospinup</span><span class="p">[</span><span class="s1">'TSA_U'</span><span class="p">]</span> <span class="o">-</span> <span class="n">ds_spinup</span><span class="p">[</span><span class="s1">'TSA_U'</span><span class="p">]</span>
 
 <span class="nb">print</span><span class="p">(</span><span class="n">diff</span><span class="o">.</span><span class="n">mean</span><span class="p">()</span><span class="o">.</span><span class="n">values</span><span class="p">)</span>
 
 <span class="n">ax</span> <span class="o">=</span> <span class="n">fig</span><span class="o">.</span><span class="n">add_subplot</span><span class="p">(</span><span class="mi">121</span><span class="p">)</span>
 <span class="n">diff</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">ax</span><span class="o">=</span><span class="n">ax</span><span class="p">)</span>
-<span class="n">ax</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="s1">&#39;Time&#39;</span><span class="p">)</span>
-<span class="n">ax</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="s1">&#39;Temperature difference (K)&#39;</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="s1">'Time'</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="s1">'Temperature difference (K)'</span><span class="p">)</span>
 
 <span class="n">ax</span> <span class="o">=</span> <span class="n">fig</span><span class="o">.</span><span class="n">add_subplot</span><span class="p">(</span><span class="mi">122</span><span class="p">)</span>
 <span class="n">diff</span><span class="o">.</span><span class="n">plot</span><span class="o">.</span><span class="n">hist</span><span class="p">(</span><span class="n">ax</span><span class="o">=</span><span class="n">ax</span><span class="p">,</span> <span class="n">bins</span><span class="o">=</span><span class="mi">50</span><span class="p">)</span>
 
-<span class="n">ax</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="s1">&#39;Temperature difference (K)&#39;</span><span class="p">)</span>
-<span class="n">ax</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="s1">&#39;Frequency&#39;</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="s1">'Temperature difference (K)'</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="s1">'Frequency'</span><span class="p">)</span>
 
 <span class="n">plt</span><span class="o">.</span><span class="n">tight_layout</span><span class="p">()</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
@@ -323,31 +323,31 @@
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># initialize</span>
 <span class="n">usp</span> <span class="o">=</span> <span class="n">usp_clmu</span><span class="p">(</span>
     <span class="n">pwd</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
-    <span class="n">input_path</span><span class="o">=</span><span class="s2">&quot;/home/zhonghua/p/scratch/CESMDATAROOT/inputdata&quot;</span><span class="p">,</span>
-    <span class="n">output_path</span><span class="o">=</span><span class="s2">&quot;/home/zhonghua/p/scratch/CESMDATAROOT/Archive/lnd/hist&quot;</span><span class="p">,</span>
-    <span class="n">log_path</span><span class="o">=</span><span class="s2">&quot;/home/zhonghua/p/scratch/CESMDATAROOT/CaseOutputs&quot;</span><span class="p">,</span>
-    <span class="n">scripts_path</span> <span class="o">=</span> <span class="s2">&quot;/home/zhonghua/p/scripts&quot;</span><span class="p">,</span>
-    <span class="n">container_type</span><span class="o">=</span><span class="s1">&#39;docker&#39;</span><span class="p">)</span>
+    <span class="n">input_path</span><span class="o">=</span><span class="s2">"/home/zhonghua/p/scratch/CESMDATAROOT/inputdata"</span><span class="p">,</span>
+    <span class="n">output_path</span><span class="o">=</span><span class="s2">"/home/zhonghua/p/scratch/CESMDATAROOT/Archive/lnd/hist"</span><span class="p">,</span>
+    <span class="n">log_path</span><span class="o">=</span><span class="s2">"/home/zhonghua/p/scratch/CESMDATAROOT/CaseOutputs"</span><span class="p">,</span>
+    <span class="n">scripts_path</span> <span class="o">=</span> <span class="s2">"/home/zhonghua/p/scripts"</span><span class="p">,</span>
+    <span class="n">container_type</span><span class="o">=</span><span class="s1">'docker'</span><span class="p">)</span>
 
 <span class="c1"># check surface</span>
-<span class="n">usp</span><span class="o">.</span><span class="n">check_surf</span><span class="p">(</span><span class="n">usr_surfdata</span><span class="o">=</span><span class="s2">&quot;/home/zhonghua/p/scratch/CESMDATAROOT/inputdata/Urban-PLUMBER/input_files/UK-Kin/surfdata_1x1_UK-Kin_detailed_simyr2000_c230710.nc&quot;</span><span class="p">)</span>
+<span class="n">usp</span><span class="o">.</span><span class="n">check_surf</span><span class="p">(</span><span class="n">usr_surfdata</span><span class="o">=</span><span class="s2">"/home/zhonghua/p/scratch/CESMDATAROOT/inputdata/Urban-PLUMBER/input_files/UK-Kin/surfdata_1x1_UK-Kin_detailed_simyr2000_c230710.nc"</span><span class="p">)</span>
 <span class="c1"># check the domain</span>
 <span class="c1"># the domain file will be revised according to the surface data if usr_domain is not provided</span>
 <span class="n">usp</span><span class="o">.</span><span class="n">check_domain</span><span class="p">()</span>
 <span class="c1"># check the forcing</span>
 <span class="n">usp</span><span class="o">.</span><span class="n">check_forcing</span><span class="p">(</span>
-    <span class="n">usr_forcing</span><span class="o">=</span><span class="s2">&quot;/home/zhonghua/p/scratch/CESMDATAROOT/inputdata/Urban-PLUMBER/datm_files/UK-Kin/CLM1PT_data/CTSM_DATM_UK-Kin_2002-2014.nc&quot;</span><span class="p">)</span>
+    <span class="n">usr_forcing</span><span class="o">=</span><span class="s2">"/home/zhonghua/p/scratch/CESMDATAROOT/inputdata/Urban-PLUMBER/datm_files/UK-Kin/CLM1PT_data/CTSM_DATM_UK-Kin_2002-2014.nc"</span><span class="p">)</span>
 
 <span class="n">nospinup</span> <span class="o">=</span> <span class="n">usp</span><span class="o">.</span><span class="n">run</span><span class="p">(</span>
-            <span class="n">output_prefix</span><span class="o">=</span> <span class="s2">&quot;_clm.nc&quot;</span><span class="p">,</span>
-            <span class="n">case_name</span> <span class="o">=</span> <span class="s2">&quot;no_spinup&quot;</span><span class="p">,</span>
-            <span class="n">RUN_STARTDATE</span> <span class="o">=</span> <span class="s2">&quot;2012-01-01&quot;</span><span class="p">,</span>
-            <span class="n">STOP_OPTION</span> <span class="o">=</span> <span class="s2">&quot;nyears&quot;</span><span class="p">,</span>
-            <span class="n">STOP_N</span> <span class="o">=</span> <span class="s2">&quot;2&quot;</span><span class="p">,</span>
+            <span class="n">output_prefix</span><span class="o">=</span> <span class="s2">"_clm.nc"</span><span class="p">,</span>
+            <span class="n">case_name</span> <span class="o">=</span> <span class="s2">"no_spinup"</span><span class="p">,</span>
+            <span class="n">RUN_STARTDATE</span> <span class="o">=</span> <span class="s2">"2012-01-01"</span><span class="p">,</span>
+            <span class="n">STOP_OPTION</span> <span class="o">=</span> <span class="s2">"nyears"</span><span class="p">,</span>
+            <span class="n">STOP_N</span> <span class="o">=</span> <span class="s2">"2"</span><span class="p">,</span>
             <span class="n">iflog</span> <span class="o">=</span> <span class="kc">True</span><span class="p">,</span>
-            <span class="n">logfile</span> <span class="o">=</span> <span class="s2">&quot;log.log&quot;</span><span class="p">,</span>
-            <span class="c1">#var_add= &quot;&#39;Qle&#39;,&#39;Qh&#39;,&#39;Qtau&#39;,&#39;Qstor&#39;,&#39;Rnet&#39;,&#39;SWup&#39;,&#39;LWup&#39;&quot;,</span>
-            <span class="n">crun_type</span><span class="o">=</span><span class="s2">&quot;usp-exec&quot;</span><span class="c1">#&quot;case&quot;, when docker container is not start)</span>
+            <span class="n">logfile</span> <span class="o">=</span> <span class="s2">"log.log"</span><span class="p">,</span>
+            <span class="c1">#var_add= "'Qle','Qh','Qtau','Qstor','Rnet','SWup','LWup'",</span>
+            <span class="n">crun_type</span><span class="o">=</span><span class="s2">"usp-exec"</span><span class="c1">#"case", when docker container is not start)</span>
         <span class="p">)</span>
 <span class="n">nospinup</span>
 </pre></div>
@@ -378,31 +378,31 @@ Copying the file CTSM_DATM_UK-Kin_2002-2014.nc to the /home/zhonghua/p/scratch/C
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># initialize</span>
 <span class="n">usp</span> <span class="o">=</span> <span class="n">usp_clmu</span><span class="p">(</span>
     <span class="n">pwd</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
-    <span class="n">input_path</span><span class="o">=</span><span class="s2">&quot;/home/zhonghua/p/scratch/CESMDATAROOT/inputdata&quot;</span><span class="p">,</span>
-    <span class="n">output_path</span><span class="o">=</span><span class="s2">&quot;/home/zhonghua/p/scratch/CESMDATAROOT/Archive/lnd/hist&quot;</span><span class="p">,</span>
-    <span class="n">log_path</span><span class="o">=</span><span class="s2">&quot;/home/zhonghua/p/scratch/CESMDATAROOT/CaseOutputs&quot;</span><span class="p">,</span>
-    <span class="n">scripts_path</span> <span class="o">=</span> <span class="s2">&quot;/home/zhonghua/p/scripts&quot;</span><span class="p">,</span>
-    <span class="n">container_type</span><span class="o">=</span><span class="s1">&#39;docker&#39;</span><span class="p">)</span>
+    <span class="n">input_path</span><span class="o">=</span><span class="s2">"/home/zhonghua/p/scratch/CESMDATAROOT/inputdata"</span><span class="p">,</span>
+    <span class="n">output_path</span><span class="o">=</span><span class="s2">"/home/zhonghua/p/scratch/CESMDATAROOT/Archive/lnd/hist"</span><span class="p">,</span>
+    <span class="n">log_path</span><span class="o">=</span><span class="s2">"/home/zhonghua/p/scratch/CESMDATAROOT/CaseOutputs"</span><span class="p">,</span>
+    <span class="n">scripts_path</span> <span class="o">=</span> <span class="s2">"/home/zhonghua/p/scripts"</span><span class="p">,</span>
+    <span class="n">container_type</span><span class="o">=</span><span class="s1">'docker'</span><span class="p">)</span>
 
 <span class="c1"># check surface</span>
-<span class="n">usp</span><span class="o">.</span><span class="n">check_surf</span><span class="p">(</span><span class="n">usr_surfdata</span><span class="o">=</span><span class="s2">&quot;/home/zhonghua/p/scratch/CESMDATAROOT/inputdata/Urban-PLUMBER/input_files/UK-Kin/surfdata_1x1_UK-Kin_detailed_simyr2000_c230710.nc&quot;</span><span class="p">)</span>
+<span class="n">usp</span><span class="o">.</span><span class="n">check_surf</span><span class="p">(</span><span class="n">usr_surfdata</span><span class="o">=</span><span class="s2">"/home/zhonghua/p/scratch/CESMDATAROOT/inputdata/Urban-PLUMBER/input_files/UK-Kin/surfdata_1x1_UK-Kin_detailed_simyr2000_c230710.nc"</span><span class="p">)</span>
 <span class="c1"># check the domain</span>
 <span class="c1"># the domain file will be revised according to the surface data if usr_domain is not provided</span>
 <span class="n">usp</span><span class="o">.</span><span class="n">check_domain</span><span class="p">()</span>
 <span class="c1"># check the forcing</span>
 <span class="n">usp</span><span class="o">.</span><span class="n">check_forcing</span><span class="p">(</span>
-    <span class="n">usr_forcing</span><span class="o">=</span><span class="s2">&quot;/home/zhonghua/p/scratch/CESMDATAROOT/inputdata/Urban-PLUMBER/datm_files/UK-Kin/CLM1PT_data/CTSM_DATM_UK-Kin_2002-2014.nc&quot;</span><span class="p">)</span>
+    <span class="n">usr_forcing</span><span class="o">=</span><span class="s2">"/home/zhonghua/p/scratch/CESMDATAROOT/inputdata/Urban-PLUMBER/datm_files/UK-Kin/CLM1PT_data/CTSM_DATM_UK-Kin_2002-2014.nc"</span><span class="p">)</span>
 
 <span class="n">spinup_usp</span> <span class="o">=</span> <span class="n">usp</span><span class="o">.</span><span class="n">run</span><span class="p">(</span>
-            <span class="n">output_prefix</span><span class="o">=</span> <span class="s2">&quot;_clm.nc&quot;</span><span class="p">,</span>
-            <span class="n">case_name</span> <span class="o">=</span> <span class="s2">&quot;spinup&quot;</span><span class="p">,</span>
-            <span class="n">RUN_STARTDATE</span> <span class="o">=</span> <span class="s2">&quot;2002-01-01&quot;</span><span class="p">,</span>
-            <span class="n">STOP_OPTION</span> <span class="o">=</span> <span class="s2">&quot;nyears&quot;</span><span class="p">,</span>
-            <span class="n">STOP_N</span> <span class="o">=</span> <span class="s2">&quot;12&quot;</span><span class="p">,</span>
+            <span class="n">output_prefix</span><span class="o">=</span> <span class="s2">"_clm.nc"</span><span class="p">,</span>
+            <span class="n">case_name</span> <span class="o">=</span> <span class="s2">"spinup"</span><span class="p">,</span>
+            <span class="n">RUN_STARTDATE</span> <span class="o">=</span> <span class="s2">"2002-01-01"</span><span class="p">,</span>
+            <span class="n">STOP_OPTION</span> <span class="o">=</span> <span class="s2">"nyears"</span><span class="p">,</span>
+            <span class="n">STOP_N</span> <span class="o">=</span> <span class="s2">"12"</span><span class="p">,</span>
             <span class="n">iflog</span> <span class="o">=</span> <span class="kc">True</span><span class="p">,</span>
-            <span class="n">logfile</span> <span class="o">=</span> <span class="s2">&quot;log.log&quot;</span><span class="p">,</span>
-            <span class="c1">#var_add= &quot;&#39;Qle&#39;,&#39;Qh&#39;,&#39;Qtau&#39;,&#39;Qstor&#39;,&#39;Rnet&#39;,&#39;SWup&#39;,&#39;LWup&#39;&quot;,</span>
-            <span class="n">crun_type</span><span class="o">=</span><span class="s2">&quot;usp-exec&quot;</span><span class="c1">#&quot;case&quot;, when docker container is not start)</span>
+            <span class="n">logfile</span> <span class="o">=</span> <span class="s2">"log.log"</span><span class="p">,</span>
+            <span class="c1">#var_add= "'Qle','Qh','Qtau','Qstor','Rnet','SWup','LWup'",</span>
+            <span class="n">crun_type</span><span class="o">=</span><span class="s2">"usp-exec"</span><span class="c1">#"case", when docker container is not start)</span>
         <span class="p">)</span>
 <span class="n">spinup_usp</span>
 </pre></div>
@@ -441,8 +441,8 @@ The /home/zhonghua/p/scratch/CESMDATAROOT/inputdata/usp/SourceMods already exist
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[14]:
 </pre></div>
 </div>
-<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">ds_usp_spinup</span> <span class="o">=</span> <span class="n">ds_usp_spinup</span><span class="o">.</span><span class="n">sel</span><span class="p">(</span><span class="n">time</span><span class="o">=</span><span class="nb">slice</span><span class="p">(</span><span class="s1">&#39;2012&#39;</span><span class="p">,</span><span class="s1">&#39;2014&#39;</span><span class="p">))</span>
-<span class="n">ds_usp_nospinup</span><span class="p">[</span><span class="s1">&#39;TSA_U&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">values</span><span class="o">.</span><span class="n">shape</span><span class="p">,</span> <span class="n">ds_usp_spinup</span><span class="p">[</span><span class="s1">&#39;TSA_U&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">values</span><span class="o">.</span><span class="n">shape</span>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">ds_usp_spinup</span> <span class="o">=</span> <span class="n">ds_usp_spinup</span><span class="o">.</span><span class="n">sel</span><span class="p">(</span><span class="n">time</span><span class="o">=</span><span class="nb">slice</span><span class="p">(</span><span class="s1">'2012'</span><span class="p">,</span><span class="s1">'2014'</span><span class="p">))</span>
+<span class="n">ds_usp_nospinup</span><span class="p">[</span><span class="s1">'TSA_U'</span><span class="p">]</span><span class="o">.</span><span class="n">values</span><span class="o">.</span><span class="n">shape</span><span class="p">,</span> <span class="n">ds_usp_spinup</span><span class="p">[</span><span class="s1">'TSA_U'</span><span class="p">]</span><span class="o">.</span><span class="n">values</span><span class="o">.</span><span class="n">shape</span>
 </pre></div>
 </div>
 </div>
@@ -461,13 +461,13 @@ The /home/zhonghua/p/scratch/CESMDATAROOT/inputdata/usp/SourceMods already exist
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
 <span class="n">fig</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">6</span><span class="p">,</span> <span class="mi">5</span><span class="p">))</span>
-<span class="n">ds_usp_spinup</span> <span class="o">=</span> <span class="n">ds_usp_spinup</span><span class="o">.</span><span class="n">sel</span><span class="p">(</span><span class="n">time</span><span class="o">=</span><span class="nb">slice</span><span class="p">(</span><span class="s1">&#39;2012&#39;</span><span class="p">,</span><span class="s1">&#39;2014&#39;</span><span class="p">))</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">ds_usp_nospinup</span><span class="p">[</span><span class="s1">&#39;TSA_U&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">values</span><span class="p">,</span> <span class="n">ds_usp_spinup</span><span class="p">[</span><span class="s1">&#39;TSA_U&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">values</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">([</span><span class="mi">260</span><span class="p">,</span> <span class="mi">310</span><span class="p">],</span> <span class="p">[</span><span class="mi">260</span><span class="p">,</span> <span class="mi">310</span><span class="p">],</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;red&#39;</span><span class="p">)</span>
-<span class="n">square_error</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">square</span><span class="p">(</span><span class="n">ds_usp_nospinup</span><span class="p">[</span><span class="s1">&#39;TSA_U&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">values</span> <span class="o">-</span> <span class="n">ds_usp_spinup</span><span class="p">[</span><span class="s1">&#39;TSA_U&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">values</span><span class="p">)</span>
+<span class="n">ds_usp_spinup</span> <span class="o">=</span> <span class="n">ds_usp_spinup</span><span class="o">.</span><span class="n">sel</span><span class="p">(</span><span class="n">time</span><span class="o">=</span><span class="nb">slice</span><span class="p">(</span><span class="s1">'2012'</span><span class="p">,</span><span class="s1">'2014'</span><span class="p">))</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">ds_usp_nospinup</span><span class="p">[</span><span class="s1">'TSA_U'</span><span class="p">]</span><span class="o">.</span><span class="n">values</span><span class="p">,</span> <span class="n">ds_usp_spinup</span><span class="p">[</span><span class="s1">'TSA_U'</span><span class="p">]</span><span class="o">.</span><span class="n">values</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">([</span><span class="mi">260</span><span class="p">,</span> <span class="mi">310</span><span class="p">],</span> <span class="p">[</span><span class="mi">260</span><span class="p">,</span> <span class="mi">310</span><span class="p">],</span> <span class="n">color</span><span class="o">=</span><span class="s1">'red'</span><span class="p">)</span>
+<span class="n">square_error</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">square</span><span class="p">(</span><span class="n">ds_usp_nospinup</span><span class="p">[</span><span class="s1">'TSA_U'</span><span class="p">]</span><span class="o">.</span><span class="n">values</span> <span class="o">-</span> <span class="n">ds_usp_spinup</span><span class="p">[</span><span class="s1">'TSA_U'</span><span class="p">]</span><span class="o">.</span><span class="n">values</span><span class="p">)</span>
 <span class="n">rmse</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="n">square_error</span><span class="o">.</span><span class="n">mean</span><span class="p">())</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">rmse</span><span class="p">)</span>
-<span class="n">error</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">abs</span><span class="p">(</span><span class="n">ds_usp_nospinup</span><span class="p">[</span><span class="s1">&#39;TSA_U&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">values</span> <span class="o">-</span> <span class="n">ds_usp_spinup</span><span class="p">[</span><span class="s1">&#39;TSA_U&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">values</span><span class="p">)</span>
+<span class="n">error</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">abs</span><span class="p">(</span><span class="n">ds_usp_nospinup</span><span class="p">[</span><span class="s1">'TSA_U'</span><span class="p">]</span><span class="o">.</span><span class="n">values</span> <span class="o">-</span> <span class="n">ds_usp_spinup</span><span class="p">[</span><span class="s1">'TSA_U'</span><span class="p">]</span><span class="o">.</span><span class="n">values</span><span class="p">)</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">error</span><span class="o">.</span><span class="n">mean</span><span class="p">())</span>
 </pre></div>
 </div>
@@ -492,13 +492,13 @@ The /home/zhonghua/p/scratch/CESMDATAROOT/inputdata/usp/SourceMods already exist
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[22]:
 </pre></div>
 </div>
-<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">JJA_no</span> <span class="o">=</span> <span class="n">ds_usp_nospinup</span><span class="o">.</span><span class="n">sel</span><span class="p">(</span><span class="n">time</span><span class="o">=</span><span class="n">ds_usp_nospinup</span><span class="p">[</span><span class="s1">&#39;time.season&#39;</span><span class="p">]</span><span class="o">==</span><span class="s1">&#39;JJA&#39;</span><span class="p">)</span>
-<span class="n">JJA</span> <span class="o">=</span> <span class="n">ds_usp_spinup</span><span class="o">.</span><span class="n">sel</span><span class="p">(</span><span class="n">time</span><span class="o">=</span><span class="n">ds_usp_spinup</span><span class="p">[</span><span class="s1">&#39;time.season&#39;</span><span class="p">]</span><span class="o">==</span><span class="s1">&#39;JJA&#39;</span><span class="p">)</span>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">JJA_no</span> <span class="o">=</span> <span class="n">ds_usp_nospinup</span><span class="o">.</span><span class="n">sel</span><span class="p">(</span><span class="n">time</span><span class="o">=</span><span class="n">ds_usp_nospinup</span><span class="p">[</span><span class="s1">'time.season'</span><span class="p">]</span><span class="o">==</span><span class="s1">'JJA'</span><span class="p">)</span>
+<span class="n">JJA</span> <span class="o">=</span> <span class="n">ds_usp_spinup</span><span class="o">.</span><span class="n">sel</span><span class="p">(</span><span class="n">time</span><span class="o">=</span><span class="n">ds_usp_spinup</span><span class="p">[</span><span class="s1">'time.season'</span><span class="p">]</span><span class="o">==</span><span class="s1">'JJA'</span><span class="p">)</span>
 
-<span class="n">square_error</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">square</span><span class="p">(</span><span class="n">JJA_no</span><span class="p">[</span><span class="s1">&#39;TSA_U&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">values</span> <span class="o">-</span> <span class="n">JJA</span><span class="p">[</span><span class="s1">&#39;TSA_U&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">values</span><span class="p">)</span>
+<span class="n">square_error</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">square</span><span class="p">(</span><span class="n">JJA_no</span><span class="p">[</span><span class="s1">'TSA_U'</span><span class="p">]</span><span class="o">.</span><span class="n">values</span> <span class="o">-</span> <span class="n">JJA</span><span class="p">[</span><span class="s1">'TSA_U'</span><span class="p">]</span><span class="o">.</span><span class="n">values</span><span class="p">)</span>
 <span class="n">rmse</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="n">square_error</span><span class="o">.</span><span class="n">mean</span><span class="p">())</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">rmse</span><span class="p">)</span>
-<span class="n">error</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">abs</span><span class="p">(</span><span class="n">JJA_no</span><span class="p">[</span><span class="s1">&#39;TSA_U&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">values</span> <span class="o">-</span> <span class="n">JJA</span><span class="p">[</span><span class="s1">&#39;TSA_U&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">values</span><span class="p">)</span>
+<span class="n">error</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">abs</span><span class="p">(</span><span class="n">JJA_no</span><span class="p">[</span><span class="s1">'TSA_U'</span><span class="p">]</span><span class="o">.</span><span class="n">values</span> <span class="o">-</span> <span class="n">JJA</span><span class="p">[</span><span class="s1">'TSA_U'</span><span class="p">]</span><span class="o">.</span><span class="n">values</span><span class="p">)</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">error</span><span class="o">.</span><span class="n">mean</span><span class="p">())</span>
 </pre></div>
 </div>
@@ -517,22 +517,22 @@ The /home/zhonghua/p/scratch/CESMDATAROOT/inputdata/usp/SourceMods already exist
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">fig</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">12</span><span class="p">,</span> <span class="mi">5</span><span class="p">))</span>
-<span class="n">ds_usp_spinup</span> <span class="o">=</span> <span class="n">ds_usp_spinup</span><span class="o">.</span><span class="n">sel</span><span class="p">(</span><span class="n">time</span><span class="o">=</span><span class="nb">slice</span><span class="p">(</span><span class="s1">&#39;2012&#39;</span><span class="p">,</span><span class="s1">&#39;2014&#39;</span><span class="p">))</span>
+<span class="n">ds_usp_spinup</span> <span class="o">=</span> <span class="n">ds_usp_spinup</span><span class="o">.</span><span class="n">sel</span><span class="p">(</span><span class="n">time</span><span class="o">=</span><span class="nb">slice</span><span class="p">(</span><span class="s1">'2012'</span><span class="p">,</span><span class="s1">'2014'</span><span class="p">))</span>
 <span class="c1">#</span>
-<span class="n">diff</span> <span class="o">=</span> <span class="n">ds_usp_nospinup</span><span class="p">[</span><span class="s1">&#39;TSA_U&#39;</span><span class="p">]</span> <span class="o">-</span> <span class="n">ds_usp_spinup</span><span class="p">[</span><span class="s1">&#39;TSA_U&#39;</span><span class="p">]</span>
+<span class="n">diff</span> <span class="o">=</span> <span class="n">ds_usp_nospinup</span><span class="p">[</span><span class="s1">'TSA_U'</span><span class="p">]</span> <span class="o">-</span> <span class="n">ds_usp_spinup</span><span class="p">[</span><span class="s1">'TSA_U'</span><span class="p">]</span>
 
 <span class="nb">print</span><span class="p">(</span><span class="n">diff</span><span class="o">.</span><span class="n">mean</span><span class="p">()</span><span class="o">.</span><span class="n">values</span><span class="p">)</span>
 
 <span class="n">ax</span> <span class="o">=</span> <span class="n">fig</span><span class="o">.</span><span class="n">add_subplot</span><span class="p">(</span><span class="mi">121</span><span class="p">)</span>
 <span class="n">diff</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">ax</span><span class="o">=</span><span class="n">ax</span><span class="p">)</span>
-<span class="n">ax</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="s1">&#39;Time&#39;</span><span class="p">)</span>
-<span class="n">ax</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="s1">&#39;Temperature difference (K)&#39;</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="s1">'Time'</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="s1">'Temperature difference (K)'</span><span class="p">)</span>
 
 <span class="n">ax</span> <span class="o">=</span> <span class="n">fig</span><span class="o">.</span><span class="n">add_subplot</span><span class="p">(</span><span class="mi">122</span><span class="p">)</span>
 <span class="n">diff</span><span class="o">.</span><span class="n">plot</span><span class="o">.</span><span class="n">hist</span><span class="p">(</span><span class="n">ax</span><span class="o">=</span><span class="n">ax</span><span class="p">,</span> <span class="n">bins</span><span class="o">=</span><span class="mi">50</span><span class="p">)</span>
 
-<span class="n">ax</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="s1">&#39;Temperature difference (K)&#39;</span><span class="p">)</span>
-<span class="n">ax</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="s1">&#39;Frequency&#39;</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="s1">'Temperature difference (K)'</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="s1">'Frequency'</span><span class="p">)</span>
 
 <span class="n">plt</span><span class="o">.</span><span class="n">tight_layout</span><span class="p">()</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>

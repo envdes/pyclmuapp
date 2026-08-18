@@ -141,8 +141,8 @@ EOF
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[2]:
 </pre></div>
 </div>
-<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">raw_forcing</span> <span class="o">=</span> <span class="n">xr</span><span class="o">.</span><span class="n">open_dataset</span><span class="p">(</span><span class="s1">&#39;inputfolder/Urban-PLUMBER/datm_files/UK-Kin/CLM1PT_data/forcing.nc&#39;</span><span class="p">)</span>
-<span class="n">raw_forcing</span> <span class="o">=</span> <span class="n">raw_forcing</span><span class="o">.</span><span class="n">sel</span><span class="p">(</span><span class="n">time</span><span class="o">=</span><span class="nb">slice</span><span class="p">(</span><span class="s1">&#39;2003&#39;</span><span class="p">,</span> <span class="s1">&#39;2004&#39;</span><span class="p">))</span>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">raw_forcing</span> <span class="o">=</span> <span class="n">xr</span><span class="o">.</span><span class="n">open_dataset</span><span class="p">(</span><span class="s1">'inputfolder/Urban-PLUMBER/datm_files/UK-Kin/CLM1PT_data/forcing.nc'</span><span class="p">)</span>
+<span class="n">raw_forcing</span> <span class="o">=</span> <span class="n">raw_forcing</span><span class="o">.</span><span class="n">sel</span><span class="p">(</span><span class="n">time</span><span class="o">=</span><span class="nb">slice</span><span class="p">(</span><span class="s1">'2003'</span><span class="p">,</span> <span class="s1">'2004'</span><span class="p">))</span>
 <span class="n">raw_forcing</span>
 </pre></div>
 </div>
@@ -593,8 +593,8 @@ v0.9 (2021-09-08): beta issue; v1 (2022-09-15): with publication in ESSD</dd><dt
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[3]:
 </pre></div>
 </div>
-<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">if</span> <span class="n">np</span><span class="o">.</span><span class="n">datetime64</span><span class="p">(</span><span class="n">raw_forcing</span><span class="o">.</span><span class="n">time</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">values</span><span class="p">)</span> <span class="o">==</span> <span class="n">np</span><span class="o">.</span><span class="n">datetime64</span><span class="p">(</span><span class="s1">&#39;2015-12-31T23:30:00&#39;</span><span class="p">):</span>
-    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Last time step is 23:00&#39;</span><span class="p">)</span>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">if</span> <span class="n">np</span><span class="o">.</span><span class="n">datetime64</span><span class="p">(</span><span class="n">raw_forcing</span><span class="o">.</span><span class="n">time</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">values</span><span class="p">)</span> <span class="o">==</span> <span class="n">np</span><span class="o">.</span><span class="n">datetime64</span><span class="p">(</span><span class="s1">'2015-12-31T23:30:00'</span><span class="p">):</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s1">'Last time step is 23:00'</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -602,8 +602,8 @@ v0.9 (2021-09-08): beta issue; v1 (2022-09-15): with publication in ESSD</dd><dt
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[8]:
 </pre></div>
 </div>
-<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">anomaly</span> <span class="o">=</span> <span class="n">xr</span><span class="o">.</span><span class="n">open_dataset</span><span class="p">(</span><span class="s1">&#39;/Users/user/Downloads/af.allvars.CESM.SSP3-7.0.2015-2100_c20220628.nc&#39;</span><span class="p">)</span>
-<span class="n">anomaly</span><span class="o">.</span><span class="n">sel</span><span class="p">(</span><span class="n">lat</span><span class="o">=</span><span class="mf">51.5</span><span class="p">,</span> <span class="n">lon</span><span class="o">=</span><span class="mf">0.5</span><span class="p">,</span> <span class="n">method</span><span class="o">=</span><span class="s1">&#39;nearest&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">huss</span><span class="o">.</span><span class="n">plot</span><span class="p">()</span>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">anomaly</span> <span class="o">=</span> <span class="n">xr</span><span class="o">.</span><span class="n">open_dataset</span><span class="p">(</span><span class="s1">'/Users/user/Downloads/af.allvars.CESM.SSP3-7.0.2015-2100_c20220628.nc'</span><span class="p">)</span>
+<span class="n">anomaly</span><span class="o">.</span><span class="n">sel</span><span class="p">(</span><span class="n">lat</span><span class="o">=</span><span class="mf">51.5</span><span class="p">,</span> <span class="n">lon</span><span class="o">=</span><span class="mf">0.5</span><span class="p">,</span> <span class="n">method</span><span class="o">=</span><span class="s1">'nearest'</span><span class="p">)</span><span class="o">.</span><span class="n">huss</span><span class="o">.</span><span class="n">plot</span><span class="p">()</span>
 </pre></div>
 </div>
 </div>
@@ -1096,8 +1096,8 @@ Attributes: (12/15)
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[56]:
 </pre></div>
 </div>
-<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">a</span> <span class="o">=</span> <span class="n">anomaly</span><span class="o">.</span><span class="n">sel</span><span class="p">(</span><span class="n">lat</span><span class="o">=</span><span class="mf">51.5</span><span class="p">,</span> <span class="n">lon</span><span class="o">=</span><span class="mf">0.5</span><span class="p">,</span> <span class="n">method</span><span class="o">=</span><span class="s1">&#39;nearest&#39;</span><span class="p">)</span>
-<span class="n">a</span><span class="o">=</span> <span class="n">a</span><span class="o">.</span><span class="n">assign_coords</span><span class="p">(</span><span class="n">time</span> <span class="o">=</span> <span class="n">a</span><span class="o">.</span><span class="n">indexes</span><span class="p">[</span><span class="s1">&#39;time&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">to_datetimeindex</span><span class="p">())</span>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">a</span> <span class="o">=</span> <span class="n">anomaly</span><span class="o">.</span><span class="n">sel</span><span class="p">(</span><span class="n">lat</span><span class="o">=</span><span class="mf">51.5</span><span class="p">,</span> <span class="n">lon</span><span class="o">=</span><span class="mf">0.5</span><span class="p">,</span> <span class="n">method</span><span class="o">=</span><span class="s1">'nearest'</span><span class="p">)</span>
+<span class="n">a</span><span class="o">=</span> <span class="n">a</span><span class="o">.</span><span class="n">assign_coords</span><span class="p">(</span><span class="n">time</span> <span class="o">=</span> <span class="n">a</span><span class="o">.</span><span class="n">indexes</span><span class="p">[</span><span class="s1">'time'</span><span class="p">]</span><span class="o">.</span><span class="n">to_datetimeindex</span><span class="p">())</span>
 <span class="n">a</span>
 </pre></div>
 </div>
@@ -1528,9 +1528,9 @@ Attributes: (12/15)
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">typing</span><span class="w"> </span><span class="kn">import</span> <span class="n">Union</span>
 <span class="kn">from</span><span class="w"> </span><span class="nn">datetime</span><span class="w"> </span><span class="kn">import</span> <span class="n">datetime</span>
-<span class="n">var_dict</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;Tair&#39;</span><span class="p">:</span> <span class="s1">&#39;tas&#39;</span><span class="p">,</span> <span class="s1">&#39;Qair&#39;</span><span class="p">:</span> <span class="s1">&#39;huss&#39;</span><span class="p">,</span> <span class="s1">&#39;Wind&#39;</span><span class="p">:</span> <span class="s1">&#39;uas,vas&#39;</span><span class="p">,</span>
-            <span class="s1">&#39;SWdown&#39;</span><span class="p">:</span> <span class="s1">&#39;rsds&#39;</span><span class="p">,</span> <span class="s1">&#39;LWdown&#39;</span><span class="p">:</span> <span class="s1">&#39;rlds&#39;</span><span class="p">,</span>
-            <span class="s1">&#39;Prectmms&#39;</span><span class="p">:</span> <span class="s1">&#39;pr&#39;</span><span class="p">,</span> <span class="s1">&#39;PSurf&#39;</span><span class="p">:</span> <span class="s1">&#39;ps&#39;</span><span class="p">}</span>
+<span class="n">var_dict</span> <span class="o">=</span> <span class="p">{</span><span class="s1">'Tair'</span><span class="p">:</span> <span class="s1">'tas'</span><span class="p">,</span> <span class="s1">'Qair'</span><span class="p">:</span> <span class="s1">'huss'</span><span class="p">,</span> <span class="s1">'Wind'</span><span class="p">:</span> <span class="s1">'uas,vas'</span><span class="p">,</span>
+            <span class="s1">'SWdown'</span><span class="p">:</span> <span class="s1">'rsds'</span><span class="p">,</span> <span class="s1">'LWdown'</span><span class="p">:</span> <span class="s1">'rlds'</span><span class="p">,</span>
+            <span class="s1">'Prectmms'</span><span class="p">:</span> <span class="s1">'pr'</span><span class="p">,</span> <span class="s1">'PSurf'</span><span class="p">:</span> <span class="s1">'ps'</span><span class="p">}</span>
 
 <span class="k">def</span><span class="w"> </span><span class="nf">get_anomaly_frocing</span><span class="p">(</span><span class="n">raw_forcing</span><span class="p">:</span> <span class="n">Union</span><span class="p">[</span><span class="n">xr</span><span class="o">.</span><span class="n">Dataset</span><span class="p">,</span> <span class="nb">str</span><span class="p">],</span>
                         <span class="n">anomaly</span><span class="p">:</span> <span class="n">Union</span><span class="p">[</span><span class="n">xr</span><span class="o">.</span><span class="n">Dataset</span><span class="p">,</span> <span class="nb">str</span><span class="p">],</span>
@@ -1538,7 +1538,7 @@ Attributes: (12/15)
                         <span class="n">lon</span> <span class="p">:</span> <span class="nb">float</span><span class="p">,</span>
                         <span class="n">var_dict</span> <span class="p">:</span> <span class="nb">dict</span><span class="p">,</span>
                         <span class="n">outputname</span> <span class="p">:</span> <span class="nb">str</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">xr</span><span class="o">.</span><span class="n">Dataset</span><span class="p">:</span>
-<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="w">    </span><span class="sd">"""</span>
 <span class="sd">    Args:</span>
 <span class="sd">        era5 (_type_): the era5 dataset, or the path of the era5 dataset</span>
 <span class="sd">        lat (_type_): latitude of interest point</span>
@@ -1547,42 +1547,42 @@ Attributes: (12/15)
 
 <span class="sd">    Returns:</span>
 <span class="sd">        _type_: the forcing dataset</span>
-<span class="sd">    &quot;&quot;&quot;</span>
+<span class="sd">    """</span>
     <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">raw_forcing</span><span class="p">,</span> <span class="nb">str</span><span class="p">):</span>
         <span class="n">forcing</span> <span class="o">=</span> <span class="n">xr</span><span class="o">.</span><span class="n">open_dataset</span><span class="p">(</span><span class="n">raw_forcing</span><span class="p">)</span>
     <span class="k">elif</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">raw_forcing</span><span class="p">,</span> <span class="n">xr</span><span class="o">.</span><span class="n">Dataset</span><span class="p">):</span>
         <span class="n">forcing</span> <span class="o">=</span> <span class="n">raw_forcing</span>
     <span class="k">else</span><span class="p">:</span>
-        <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s2">&quot;The era5 should be a xarray dataset or a file path.&quot;</span><span class="p">)</span>
+        <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s2">"The era5 should be a xarray dataset or a file path."</span><span class="p">)</span>
 
     <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">anomaly</span><span class="p">,</span> <span class="nb">str</span><span class="p">):</span>
         <span class="n">anomaly</span> <span class="o">=</span> <span class="n">xr</span><span class="o">.</span><span class="n">open_dataset</span><span class="p">(</span><span class="n">anomaly</span><span class="p">)</span>
     <span class="k">elif</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">anomaly</span><span class="p">,</span> <span class="n">xr</span><span class="o">.</span><span class="n">Dataset</span><span class="p">):</span>
         <span class="n">anomaly</span> <span class="o">=</span> <span class="n">anomaly</span>
     <span class="k">else</span><span class="p">:</span>
-        <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s2">&quot;The anomaly should be a xarray dataset or a file path.&quot;</span><span class="p">)</span>
+        <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s2">"The anomaly should be a xarray dataset or a file path."</span><span class="p">)</span>
 
-    <span class="n">anomaly</span> <span class="o">=</span> <span class="n">anomaly</span><span class="o">.</span><span class="n">sel</span><span class="p">(</span><span class="n">lat</span><span class="o">=</span><span class="n">lat</span><span class="p">,</span> <span class="n">lon</span><span class="o">=</span><span class="n">lon</span><span class="p">,</span> <span class="n">method</span><span class="o">=</span><span class="s1">&#39;nearest&#39;</span><span class="p">)</span>
+    <span class="n">anomaly</span> <span class="o">=</span> <span class="n">anomaly</span><span class="o">.</span><span class="n">sel</span><span class="p">(</span><span class="n">lat</span><span class="o">=</span><span class="n">lat</span><span class="p">,</span> <span class="n">lon</span><span class="o">=</span><span class="n">lon</span><span class="p">,</span> <span class="n">method</span><span class="o">=</span><span class="s1">'nearest'</span><span class="p">)</span>
 
     <span class="c1"># check the forcing date</span>
 
     <span class="n">forcing_start_year</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">to_datetime</span><span class="p">(</span><span class="n">forcing</span><span class="o">.</span><span class="n">time</span><span class="o">.</span><span class="n">values</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span><span class="o">.</span><span class="n">year</span>
     <span class="n">forcing_end_year</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">to_datetime</span><span class="p">(</span><span class="n">forcing</span><span class="o">.</span><span class="n">time</span><span class="o">.</span><span class="n">values</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">])</span><span class="o">.</span><span class="n">year</span>
-    <span class="c1">#forcing = forcing.resample(time=&#39;30T&#39;).interpolate(&#39;linear&#39;)</span>
+    <span class="c1">#forcing = forcing.resample(time='30T').interpolate('linear')</span>
 
     <span class="k">while</span> <span class="n">forcing_end_year</span> <span class="o">&lt;</span> <span class="n">anomaly</span><span class="o">.</span><span class="n">time</span><span class="o">.</span><span class="n">values</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">year</span><span class="p">:</span>
 
         <span class="n">offsetyear</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">to_datetime</span><span class="p">(</span><span class="n">forcing</span><span class="o">.</span><span class="n">time</span><span class="o">.</span><span class="n">values</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">])</span><span class="o">.</span><span class="n">year</span> <span class="o">-</span> <span class="n">pd</span><span class="o">.</span><span class="n">to_datetime</span><span class="p">(</span><span class="n">forcing</span><span class="o">.</span><span class="n">time</span><span class="o">.</span><span class="n">values</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span><span class="o">.</span><span class="n">year</span>
-        <span class="n">new_times</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">to_datetime</span><span class="p">(</span><span class="n">forcing</span><span class="p">[</span><span class="s1">&#39;time&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">values</span><span class="p">)</span> <span class="o">+</span> <span class="n">pd</span><span class="o">.</span><span class="n">DateOffset</span><span class="p">(</span><span class="n">years</span><span class="o">=</span><span class="n">offsetyear</span><span class="p">)</span>
+        <span class="n">new_times</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">to_datetime</span><span class="p">(</span><span class="n">forcing</span><span class="p">[</span><span class="s1">'time'</span><span class="p">]</span><span class="o">.</span><span class="n">values</span><span class="p">)</span> <span class="o">+</span> <span class="n">pd</span><span class="o">.</span><span class="n">DateOffset</span><span class="p">(</span><span class="n">years</span><span class="o">=</span><span class="n">offsetyear</span><span class="p">)</span>
         <span class="n">forcing_</span> <span class="o">=</span> <span class="n">forcing</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span>
-        <span class="n">forcing_</span><span class="p">[</span><span class="s1">&#39;time&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">new_times</span>
-        <span class="n">forcing</span> <span class="o">=</span> <span class="n">xr</span><span class="o">.</span><span class="n">concat</span><span class="p">([</span><span class="n">forcing</span><span class="p">,</span> <span class="n">forcing_</span><span class="p">],</span> <span class="n">dim</span><span class="o">=</span><span class="s1">&#39;time&#39;</span><span class="p">)</span>
+        <span class="n">forcing_</span><span class="p">[</span><span class="s1">'time'</span><span class="p">]</span> <span class="o">=</span> <span class="n">new_times</span>
+        <span class="n">forcing</span> <span class="o">=</span> <span class="n">xr</span><span class="o">.</span><span class="n">concat</span><span class="p">([</span><span class="n">forcing</span><span class="p">,</span> <span class="n">forcing_</span><span class="p">],</span> <span class="n">dim</span><span class="o">=</span><span class="s1">'time'</span><span class="p">)</span>
         <span class="n">forcing_end_year</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">to_datetime</span><span class="p">(</span><span class="n">forcing</span><span class="o">.</span><span class="n">time</span><span class="o">.</span><span class="n">values</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">])</span><span class="o">.</span><span class="n">year</span>
 
-    <span class="n">forcing</span> <span class="o">=</span> <span class="n">forcing</span><span class="o">.</span><span class="n">sortby</span><span class="p">(</span><span class="s1">&#39;time&#39;</span><span class="p">)</span>
-    <span class="n">anomaly</span> <span class="o">=</span> <span class="n">anomaly</span><span class="o">.</span><span class="n">resample</span><span class="p">(</span><span class="n">time</span><span class="o">=</span><span class="s1">&#39;M&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">ffill</span><span class="p">()</span>
-    <span class="n">anomaly</span> <span class="o">=</span> <span class="n">anomaly</span><span class="o">.</span><span class="n">resample</span><span class="p">(</span><span class="n">time</span><span class="o">=</span><span class="s1">&#39;30T&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">ffill</span><span class="p">()</span>
-    <span class="n">anomaly</span> <span class="o">=</span> <span class="n">anomaly</span><span class="o">.</span><span class="n">assign_coords</span><span class="p">(</span><span class="n">time</span> <span class="o">=</span> <span class="n">anomaly</span><span class="o">.</span><span class="n">indexes</span><span class="p">[</span><span class="s1">&#39;time&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">to_datetimeindex</span><span class="p">())</span>
+    <span class="n">forcing</span> <span class="o">=</span> <span class="n">forcing</span><span class="o">.</span><span class="n">sortby</span><span class="p">(</span><span class="s1">'time'</span><span class="p">)</span>
+    <span class="n">anomaly</span> <span class="o">=</span> <span class="n">anomaly</span><span class="o">.</span><span class="n">resample</span><span class="p">(</span><span class="n">time</span><span class="o">=</span><span class="s1">'M'</span><span class="p">)</span><span class="o">.</span><span class="n">ffill</span><span class="p">()</span>
+    <span class="n">anomaly</span> <span class="o">=</span> <span class="n">anomaly</span><span class="o">.</span><span class="n">resample</span><span class="p">(</span><span class="n">time</span><span class="o">=</span><span class="s1">'30T'</span><span class="p">)</span><span class="o">.</span><span class="n">ffill</span><span class="p">()</span>
+    <span class="n">anomaly</span> <span class="o">=</span> <span class="n">anomaly</span><span class="o">.</span><span class="n">assign_coords</span><span class="p">(</span><span class="n">time</span> <span class="o">=</span> <span class="n">anomaly</span><span class="o">.</span><span class="n">indexes</span><span class="p">[</span><span class="s1">'time'</span><span class="p">]</span><span class="o">.</span><span class="n">to_datetimeindex</span><span class="p">())</span>
 
     <span class="c1">#print(str(pd.to_datetime(anomaly.time.values[0]).year), str(pd.to_datetime(anomaly.time.values[-1]).year))</span>
 
@@ -1593,8 +1593,8 @@ Attributes: (12/15)
     <span class="nb">print</span><span class="p">(</span><span class="n">forcing</span><span class="o">.</span><span class="n">time</span><span class="o">.</span><span class="n">values</span><span class="o">.</span><span class="n">shape</span><span class="p">,</span> <span class="n">anomaly</span><span class="o">.</span><span class="n">time</span><span class="o">.</span><span class="n">values</span><span class="o">.</span><span class="n">shape</span><span class="p">)</span>
 
     <span class="k">for</span> <span class="n">var</span> <span class="ow">in</span> <span class="n">var_dict</span><span class="p">:</span>
-        <span class="k">if</span> <span class="n">var</span> <span class="o">==</span> <span class="s1">&#39;Wind&#39;</span><span class="p">:</span>
-            <span class="n">uas</span><span class="p">,</span> <span class="n">vas</span> <span class="o">=</span> <span class="n">var_dict</span><span class="p">[</span><span class="n">var</span><span class="p">]</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s1">&#39;,&#39;</span><span class="p">)</span>
+        <span class="k">if</span> <span class="n">var</span> <span class="o">==</span> <span class="s1">'Wind'</span><span class="p">:</span>
+            <span class="n">uas</span><span class="p">,</span> <span class="n">vas</span> <span class="o">=</span> <span class="n">var_dict</span><span class="p">[</span><span class="n">var</span><span class="p">]</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s1">','</span><span class="p">)</span>
             <span class="n">forcing</span><span class="p">[</span><span class="n">var</span><span class="p">]</span> <span class="o">=</span> <span class="n">forcing</span><span class="p">[</span><span class="n">var</span><span class="p">]</span> <span class="o">+</span> <span class="p">(</span><span class="n">anomaly</span><span class="p">[</span><span class="n">uas</span><span class="p">]</span><span class="o">**</span><span class="mi">2</span> <span class="o">+</span> <span class="n">anomaly</span><span class="p">[</span><span class="n">vas</span><span class="p">]</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span><span class="o">**</span><span class="mf">0.5</span>
         <span class="k">else</span><span class="p">:</span>
             <span class="n">forcing</span><span class="p">[</span><span class="n">var</span><span class="p">]</span> <span class="o">=</span> <span class="n">forcing</span><span class="p">[</span><span class="n">var</span><span class="p">]</span> <span class="o">+</span> <span class="n">anomaly</span><span class="p">[</span><span class="n">var_dict</span><span class="p">[</span><span class="n">var</span><span class="p">]]</span>
@@ -1613,7 +1613,7 @@ Attributes: (12/15)
     <span class="mf">51.5</span><span class="p">,</span>
     <span class="mf">0.5</span><span class="p">,</span>
     <span class="n">var_dict</span><span class="p">,</span>
-    <span class="s1">&#39;outputfile.nc&#39;</span>
+    <span class="s1">'outputfile.nc'</span>
 <span class="p">)</span>
 </pre></div>
 </div>
@@ -1748,7 +1748,7 @@ File <span class="ansi-green-fg">~/miniconda3/envs/u_climate_yjj/lib/python3.9/s
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[100]:
 </pre></div>
 </div>
-<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">ds</span><span class="o">.</span><span class="n">sortby</span><span class="p">(</span><span class="s1">&#39;time&#39;</span><span class="p">)</span>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">ds</span><span class="o">.</span><span class="n">sortby</span><span class="p">(</span><span class="s1">'time'</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>

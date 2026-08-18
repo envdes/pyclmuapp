@@ -135,12 +135,12 @@
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># the mask if from UrbanClimateExplorer/docs/notebooks/CESM1_get_urban_areas_mask.ipynb</span>
 <span class="c1"># https://github.com/zhonghua-zheng/UrbanClimateExplorer/blob/main/docs/notebooks/CESM1_get_urban_areas_mask.ipynb</span>
-<span class="n">mask</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s2">&quot;src/CESM1_urban_mask.csv&quot;</span><span class="p">,</span> <span class="n">index_col</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
+<span class="n">mask</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s2">"src/CESM1_urban_mask.csv"</span><span class="p">,</span> <span class="n">index_col</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
 <span class="n">citylist</span> <span class="o">=</span> <span class="n">get_mask_cities</span><span class="p">(</span><span class="n">mask</span><span class="p">)</span>
 
 
 <span class="c1"># set the location of London</span>
-<span class="n">London</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;lat&#39;</span><span class="p">:</span> <span class="mf">51.5</span><span class="p">,</span> <span class="s1">&#39;lon&#39;</span><span class="p">:</span> <span class="o">-</span><span class="mf">0.1</span><span class="p">}</span>
+<span class="n">London</span> <span class="o">=</span> <span class="p">{</span><span class="s1">'lat'</span><span class="p">:</span> <span class="mf">51.5</span><span class="p">,</span> <span class="s1">'lon'</span><span class="p">:</span> <span class="o">-</span><span class="mf">0.1</span><span class="p">}</span>
 
 <span class="c1"># find the closest city grid point to London (resolution is 1 degree, CESM nominal resolution)</span>
 <span class="n">closecity</span> <span class="o">=</span> <span class="n">closest</span><span class="p">(</span><span class="n">citylist</span><span class="p">,</span><span class="n">London</span><span class="p">)</span>
@@ -166,26 +166,26 @@
 
 <span class="n">pts</span> <span class="o">=</span> <span class="n">pts_clmu</span><span class="p">(</span>
     <span class="n">pwd</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
-    <span class="n">input_path</span><span class="o">=</span><span class="s2">&quot;/home/zhonghua/p/scratch/CESMDATAROOT/inputdata&quot;</span><span class="p">,</span>
-    <span class="n">output_path</span><span class="o">=</span><span class="s2">&quot;/home/zhonghua/p/scratch/CESMDATAROOT/Archive/lnd/hist&quot;</span><span class="p">,</span>
-    <span class="n">log_path</span><span class="o">=</span><span class="s2">&quot;/home/zhonghua/p/scratch/CESMDATAROOT/CaseOutputs&quot;</span><span class="p">,</span>
-    <span class="n">scripts_path</span> <span class="o">=</span> <span class="s2">&quot;/home/zhonghua/p/scripts&quot;</span><span class="p">,</span>
-    <span class="n">container_type</span><span class="o">=</span><span class="s1">&#39;docker&#39;</span><span class="p">)</span>
+    <span class="n">input_path</span><span class="o">=</span><span class="s2">"/home/zhonghua/p/scratch/CESMDATAROOT/inputdata"</span><span class="p">,</span>
+    <span class="n">output_path</span><span class="o">=</span><span class="s2">"/home/zhonghua/p/scratch/CESMDATAROOT/Archive/lnd/hist"</span><span class="p">,</span>
+    <span class="n">log_path</span><span class="o">=</span><span class="s2">"/home/zhonghua/p/scratch/CESMDATAROOT/CaseOutputs"</span><span class="p">,</span>
+    <span class="n">scripts_path</span> <span class="o">=</span> <span class="s2">"/home/zhonghua/p/scripts"</span><span class="p">,</span>
+    <span class="n">container_type</span><span class="o">=</span><span class="s1">'docker'</span><span class="p">)</span>
 
 <span class="c1"># set the case configuration</span>
-<span class="n">pts</span><span class="o">.</span><span class="n">caseconfig</span><span class="p">[</span><span class="s1">&#39;case_name&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="s1">&#39;London&#39;</span>
-<span class="n">pts</span><span class="o">.</span><span class="n">caseconfig</span><span class="p">[</span><span class="s1">&#39;case_length&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="s2">&quot;3&quot;</span>
-<span class="n">pts</span><span class="o">.</span><span class="n">caseconfig</span><span class="p">[</span><span class="s1">&#39;hist_nhtfrq&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="s1">&#39;-24&#39;</span>
-<span class="n">pts</span><span class="o">.</span><span class="n">caseconfig</span><span class="p">[</span><span class="s1">&#39;STOP_OPTION&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="s2">&quot;nmonths&quot;</span>
-<span class="n">pts</span><span class="o">.</span><span class="n">caseconfig</span><span class="p">[</span><span class="s1">&#39;hist_mfilt&#39;</span><span class="p">]</span><span class="o">=</span><span class="s1">&#39;240000&#39;</span>
-<span class="n">pts</span><span class="o">.</span><span class="n">caseconfig</span><span class="p">[</span><span class="s1">&#39;RUN_STARTDATE&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="s1">&#39;2012-06-01&#39;</span>
-<span class="n">pts</span><span class="o">.</span><span class="n">caseconfig</span><span class="p">[</span><span class="s1">&#39;DATM_CLMNCEP_YR_START&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="s1">&#39;2012&#39;</span>
-<span class="n">pts</span><span class="o">.</span><span class="n">caseconfig</span><span class="p">[</span><span class="s1">&#39;DATM_CLMNCEP_YR_END&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="s1">&#39;2012&#39;</span>
-<span class="n">pts</span><span class="o">.</span><span class="n">caseconfig</span><span class="p">[</span><span class="s1">&#39;case_lat&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="nb">str</span><span class="p">(</span><span class="n">closecity</span><span class="p">[</span><span class="s1">&#39;lat&#39;</span><span class="p">])</span>
-<span class="n">pts</span><span class="o">.</span><span class="n">caseconfig</span><span class="p">[</span><span class="s1">&#39;case_lon&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="nb">str</span><span class="p">(</span><span class="n">closecity</span><span class="p">[</span><span class="s1">&#39;lon&#39;</span><span class="p">])</span>
+<span class="n">pts</span><span class="o">.</span><span class="n">caseconfig</span><span class="p">[</span><span class="s1">'case_name'</span><span class="p">]</span> <span class="o">=</span> <span class="s1">'London'</span>
+<span class="n">pts</span><span class="o">.</span><span class="n">caseconfig</span><span class="p">[</span><span class="s1">'case_length'</span><span class="p">]</span> <span class="o">=</span> <span class="s2">"3"</span>
+<span class="n">pts</span><span class="o">.</span><span class="n">caseconfig</span><span class="p">[</span><span class="s1">'hist_nhtfrq'</span><span class="p">]</span> <span class="o">=</span> <span class="s1">'-24'</span>
+<span class="n">pts</span><span class="o">.</span><span class="n">caseconfig</span><span class="p">[</span><span class="s1">'STOP_OPTION'</span><span class="p">]</span> <span class="o">=</span> <span class="s2">"nmonths"</span>
+<span class="n">pts</span><span class="o">.</span><span class="n">caseconfig</span><span class="p">[</span><span class="s1">'hist_mfilt'</span><span class="p">]</span><span class="o">=</span><span class="s1">'240000'</span>
+<span class="n">pts</span><span class="o">.</span><span class="n">caseconfig</span><span class="p">[</span><span class="s1">'RUN_STARTDATE'</span><span class="p">]</span> <span class="o">=</span> <span class="s1">'2012-06-01'</span>
+<span class="n">pts</span><span class="o">.</span><span class="n">caseconfig</span><span class="p">[</span><span class="s1">'DATM_CLMNCEP_YR_START'</span><span class="p">]</span> <span class="o">=</span> <span class="s1">'2012'</span>
+<span class="n">pts</span><span class="o">.</span><span class="n">caseconfig</span><span class="p">[</span><span class="s1">'DATM_CLMNCEP_YR_END'</span><span class="p">]</span> <span class="o">=</span> <span class="s1">'2012'</span>
+<span class="n">pts</span><span class="o">.</span><span class="n">caseconfig</span><span class="p">[</span><span class="s1">'case_lat'</span><span class="p">]</span> <span class="o">=</span> <span class="nb">str</span><span class="p">(</span><span class="n">closecity</span><span class="p">[</span><span class="s1">'lat'</span><span class="p">])</span>
+<span class="n">pts</span><span class="o">.</span><span class="n">caseconfig</span><span class="p">[</span><span class="s1">'case_lon'</span><span class="p">]</span> <span class="o">=</span> <span class="nb">str</span><span class="p">(</span><span class="n">closecity</span><span class="p">[</span><span class="s1">'lon'</span><span class="p">])</span>
 
 <span class="c1"># run the case</span>
-<span class="n">pts_or</span><span class="o">=</span><span class="n">pts</span><span class="o">.</span><span class="n">run</span><span class="p">(</span><span class="n">iflog</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">cmdlogfile</span><span class="o">=</span><span class="s1">&#39;./pts_London.log&#39;</span><span class="p">)</span>
+<span class="n">pts_or</span><span class="o">=</span><span class="n">pts</span><span class="o">.</span><span class="n">run</span><span class="p">(</span><span class="n">iflog</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">cmdlogfile</span><span class="o">=</span><span class="s1">'./pts_London.log'</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -193,8 +193,8 @@
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[4]:
 </pre></div>
 </div>
-<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">forcing</span> <span class="o">=</span> <span class="n">pts</span><span class="o">.</span><span class="n">input_path</span><span class="o">+</span><span class="s2">&quot;/atm/datm7/atm_forcing.datm7.cruncep_qianFill.0.5d.v7.c160715&quot;</span> <span class="o">+</span> \
-         <span class="s2">&quot;/TPHWL6Hrly&quot;</span> <span class="o">+</span> <span class="s2">&quot;/clmforc.cruncep.V7.c2016.0.5d.TPQWL.2012-</span><span class="si">{month}</span><span class="s2">.nc&quot;</span>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">forcing</span> <span class="o">=</span> <span class="n">pts</span><span class="o">.</span><span class="n">input_path</span><span class="o">+</span><span class="s2">"/atm/datm7/atm_forcing.datm7.cruncep_qianFill.0.5d.v7.c160715"</span> <span class="o">+</span> \
+         <span class="s2">"/TPHWL6Hrly"</span> <span class="o">+</span> <span class="s2">"/clmforc.cruncep.V7.c2016.0.5d.TPQWL.2012-</span><span class="si">{month}</span><span class="s2">.nc"</span>
 
 <span class="c1"># modify the forcing</span>
 <span class="c1"># Here, we modify the forcing to increase the temperature by 1 degree of forcing</span>
@@ -203,18 +203,18 @@
 <span class="c1"># the action is a dict, the key is the forcing variable, the value is the modification value</span>
 <span class="c1"># the modification value is the value to be added to the original forcing value</span>
 <span class="c1"># the modification value can be negative, which means to decrease the original forcing value</span>
-<span class="n">action</span> <span class="o">=</span> <span class="p">{</span><span class="s2">&quot;TBOT&quot;</span><span class="p">:</span><span class="mf">1.0</span><span class="p">}</span>
-<span class="n">action_r</span> <span class="o">=</span> <span class="p">{</span><span class="s2">&quot;TBOT&quot;</span><span class="p">:</span><span class="o">-</span><span class="mf">1.0</span><span class="p">}</span>
+<span class="n">action</span> <span class="o">=</span> <span class="p">{</span><span class="s2">"TBOT"</span><span class="p">:</span><span class="mf">1.0</span><span class="p">}</span>
+<span class="n">action_r</span> <span class="o">=</span> <span class="p">{</span><span class="s2">"TBOT"</span><span class="p">:</span><span class="o">-</span><span class="mf">1.0</span><span class="p">}</span>
 
 <span class="k">def</span><span class="w"> </span><span class="nf">modify_forcing</span><span class="p">(</span><span class="n">forcing</span><span class="p">,</span> <span class="n">action</span><span class="p">):</span>
     <span class="k">for</span> <span class="n">month</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">6</span><span class="p">,</span> <span class="mi">9</span><span class="p">):</span>
         <span class="n">forcing_file</span> <span class="o">=</span> <span class="n">forcing</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">month</span><span class="o">=</span><span class="nb">str</span><span class="p">(</span><span class="n">month</span><span class="p">)</span><span class="o">.</span><span class="n">zfill</span><span class="p">(</span><span class="mi">2</span><span class="p">))</span>
-        <span class="n">pts</span><span class="o">.</span><span class="n">modify_forcing</span><span class="p">(</span><span class="n">var</span><span class="o">=</span><span class="s2">&quot;None&quot;</span><span class="p">,</span> <span class="n">action</span><span class="o">=</span><span class="n">action</span><span class="p">,</span> <span class="n">forcing_location</span><span class="o">=</span><span class="n">forcing_file</span><span class="p">)</span>
+        <span class="n">pts</span><span class="o">.</span><span class="n">modify_forcing</span><span class="p">(</span><span class="n">var</span><span class="o">=</span><span class="s2">"None"</span><span class="p">,</span> <span class="n">action</span><span class="o">=</span><span class="n">action</span><span class="p">,</span> <span class="n">forcing_location</span><span class="o">=</span><span class="n">forcing_file</span><span class="p">)</span>
 
 <span class="n">modify_forcing</span><span class="p">(</span><span class="n">forcing</span><span class="p">,</span> <span class="n">action</span><span class="p">)</span>
 
 <span class="c1"># get the result</span>
-<span class="n">pts_warming</span> <span class="o">=</span> <span class="n">pts</span><span class="o">.</span><span class="n">run</span><span class="p">(</span><span class="n">iflog</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">cmdlogfile</span><span class="o">=</span><span class="s1">&#39;./pts_London.log&#39;</span><span class="p">)</span>
+<span class="n">pts_warming</span> <span class="o">=</span> <span class="n">pts</span><span class="o">.</span><span class="n">run</span><span class="p">(</span><span class="n">iflog</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">cmdlogfile</span><span class="o">=</span><span class="s1">'./pts_London.log'</span><span class="p">)</span>
 
 <span class="c1"># recover the forcing</span>
 <span class="n">modify_forcing</span><span class="p">(</span><span class="n">forcing</span><span class="p">,</span> <span class="n">action_r</span><span class="p">)</span>

@@ -126,28 +126,28 @@
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">pyclmuapp</span><span class="w"> </span><span class="kn">import</span> <span class="n">usp_clmu</span>
 
 <span class="c1"># initialize</span>
-<span class="n">o</span> <span class="o">=</span> <span class="n">usp_clmu</span><span class="p">(</span><span class="n">container_type</span><span class="o">=</span><span class="s1">&#39;singularity&#39;</span><span class="p">)</span>  <span class="c1"># important to define the container_type. The default is docker</span>
+<span class="n">o</span> <span class="o">=</span> <span class="n">usp_clmu</span><span class="p">(</span><span class="n">container_type</span><span class="o">=</span><span class="s1">'singularity'</span><span class="p">)</span>  <span class="c1"># important to define the container_type. The default is docker</span>
 
 <span class="c1"># the clmu-app_1.0.sif image will be download from docker hub at the current work dir.</span>
-<span class="c1"># o.docker(cmd=&quot;pull&quot;, cmdlogfile=&quot;None&quot;,)  # This will pull the image from the docker hub if you not have a local image</span>
+<span class="c1"># o.docker(cmd="pull", cmdlogfile="None",)  # This will pull the image from the docker hub if you not have a local image</span>
 
 <span class="c1"># other parameters are available, see the Python API documentation</span>
-<span class="c1"># no need to o.docker(cmd=&quot;run&quot;) for singularity</span>
+<span class="c1"># no need to o.docker(cmd="run") for singularity</span>
 <span class="c1"># then same as usually</span>
 <span class="n">o</span><span class="o">.</span><span class="n">check_surf_data</span><span class="p">()</span>
 <span class="n">o</span><span class="o">.</span><span class="n">check_domain_data</span><span class="p">()</span>
 <span class="n">o</span><span class="o">.</span><span class="n">check_forcing_data</span><span class="p">(</span>
-    <span class="n">usr_forcing</span><span class="o">=</span><span class="s2">&quot;provided_forcing_netcdf_file.nc&quot;</span><span class="p">)</span>
+    <span class="n">usr_forcing</span><span class="o">=</span><span class="s2">"provided_forcing_netcdf_file.nc"</span><span class="p">)</span>
 
 <span class="n">original</span> <span class="o">=</span> <span class="n">o</span><span class="o">.</span><span class="n">run</span><span class="p">(</span>
-    <span class="n">ouptname</span><span class="o">=</span><span class="s2">&quot;_clm.nc&quot;</span><span class="p">,</span>
-    <span class="n">case_name</span><span class="o">=</span><span class="s2">&quot;usp_case&quot;</span><span class="p">,</span>
-    <span class="n">RUN_STARTDATE</span><span class="o">=</span><span class="s2">&quot;2012-08-08&quot;</span><span class="p">,</span>
-    <span class="n">STOP_OPTION</span><span class="o">=</span><span class="s2">&quot;ndays&quot;</span><span class="p">,</span>
-    <span class="n">STOP_N</span><span class="o">=</span><span class="s2">&quot;10&quot;</span><span class="p">,</span>
+    <span class="n">ouptname</span><span class="o">=</span><span class="s2">"_clm.nc"</span><span class="p">,</span>
+    <span class="n">case_name</span><span class="o">=</span><span class="s2">"usp_case"</span><span class="p">,</span>
+    <span class="n">RUN_STARTDATE</span><span class="o">=</span><span class="s2">"2012-08-08"</span><span class="p">,</span>
+    <span class="n">STOP_OPTION</span><span class="o">=</span><span class="s2">"ndays"</span><span class="p">,</span>
+    <span class="n">STOP_N</span><span class="o">=</span><span class="s2">"10"</span><span class="p">,</span>
     <span class="n">iflog</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
-    <span class="n">logfile</span><span class="o">=</span><span class="s2">&quot;log.log&quot;</span><span class="p">,</span>
-    <span class="n">crun_type</span><span class="o">=</span><span class="s2">&quot;usp-exec&quot;</span>  <span class="c1">#</span>
+    <span class="n">logfile</span><span class="o">=</span><span class="s2">"log.log"</span><span class="p">,</span>
+    <span class="n">crun_type</span><span class="o">=</span><span class="s2">"usp-exec"</span>  <span class="c1">#</span>
 <span class="p">)</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">original</span><span class="p">)</span>
 </pre></div>
