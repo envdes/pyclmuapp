@@ -28,6 +28,14 @@ U-Surf for 1KM urban surface parameters
 
 Integration of local climate zone maps
 
+🔥🔥🔥 Local platform: `pyclmuapp-web <https://hub.docker.com/r/junjieyu/clmuweb>`_
+----------------------------------------------------------------------------------
+pyclmuapp for urban climate modeling
+
+U-Surf for 1KM urban surface parameters
+
+Integration of local climate zone maps
+
 Installation
 ------------
 

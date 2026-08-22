@@ -72,6 +72,11 @@ Yu, J., Sun, Y., Lindley, S., Jay, C., Topping, D. O., Oleson, K. W., & Zheng, Z
 
 .. toctree::
    :maxdepth: 2
+   :caption: Recommended usage
+   notebooks/basic/basic_usage_new.md
+
+.. toctree::
+   :maxdepth: 2
    :caption: Other usage
 
    notebooks/basic/basic_usage_inter.md
