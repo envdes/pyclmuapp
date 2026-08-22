@@ -1,7 +1,7 @@
 # Recommended usage
 ---
 
-1 Download: https://drive.google.com/file/d/12nCArI8FsD4JSWdMyQO8CAfgh_pdEePC/view?usp=sharing
+1 Download input data: [data](https://drive.google.com/file/d/12nCArI8FsD4JSWdMyQO8CAfgh_pdEePC/view?usp=sharing)
 
 2 Decompression
 ```
@@ -26,11 +26,11 @@ docker run \
 # then open http://localhost:8080/ or http://localhost:8080/.
 ```
 
+successful Web interface will look like:
+
+![run clmuweb](./fig/clmuweb.png)
+
 5 Remove
 ```
 docker rm clmuweb-container
 ```
-
-successful Web interface will look like:
-
-![run clmuweb](./fig/clmuweb.png)
