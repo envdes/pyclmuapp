@@ -71,12 +71,13 @@ Yu, J., Sun, Y., Lindley, S., Jay, C., Topping, D. O., Oleson, K. W., & Zheng, Z
    notebooks/usp/example3_usp_adaptation.ipynb
 
 .. toctree::
-   :maxdepth: 2
+   :maxdepth: 1
    :caption: Recommended usage
+
    notebooks/basic/basic_usage_new.md
 
 .. toctree::
-   :maxdepth: 2
+   :maxdepth: 1
    :caption: Other usage
 
    notebooks/basic/basic_usage_inter.md
