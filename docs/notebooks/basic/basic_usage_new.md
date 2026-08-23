@@ -30,7 +30,8 @@ successful Web interface will look like:
 
 ![run clmuweb](./fig/clmuweb.png)
 
-5 Remove
+5 Stop and Remove
 ```
+docker stop clmuweb-container
 docker rm clmuweb-container
 ```
