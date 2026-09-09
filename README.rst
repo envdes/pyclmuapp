@@ -46,13 +46,13 @@ Install Docker on `Mac <https://docs.docker.com/desktop/setup/install/mac-instal
 Install Docker on `Windows <https://docs.docker.com/desktop/setup/install/windows-install/>`_, 
 
 
-Step 1: create an environment::
+Step 2: create an environment::
 
     $ conda create -n pyclmuapp python=3.9
     $ conda activate pyclmuapp
     $ conda install -c conda-forge numpy pandas xarray haversine netcdf4 nc-time-axis
 
-Step 2: install from source:: 
+Step 3: install from source:: 
 
     $ git clone https://github.com/envdes/pyclmuapp.git
     $ cd pyclmuapp
