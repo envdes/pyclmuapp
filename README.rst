@@ -56,7 +56,8 @@ Step 3: install from source::
 
     $ git clone https://github.com/envdes/pyclmuapp.git
     $ cd pyclmuapp
-    $ python setup.py pyclmuapp
+    $ python setup.py install
+    $ pyclmuapp --has_container False --container_type docker --init True # or singularity
 
 testing installation::
 
@@ -66,6 +67,7 @@ testing installation::
 (optional) install using pip::
 
     $ pip install pyclmuapp
+    $ pyclmuapp --has_container False --container_type docker --init True # or singularity
     
 Please check `online documentation <https://envdes.github.io/pyclmuapp/>`_ for more information.
 
